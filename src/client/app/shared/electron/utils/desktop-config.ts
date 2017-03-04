@@ -10,7 +10,7 @@ export class DesktopConfig {
     { code: 'ru', title: 'Russian' },
     { code: 'bg', title: 'Bulgarian' },
 
-    // angular-seed-advanced-spikes
+    // angular-seed-advanced-mutuatech
     { code: 'pt', title: 'Portuguese' },
   ];
 

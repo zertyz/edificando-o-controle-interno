@@ -12,11 +12,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from '@ngx-translate/core';
 
 // Mutua Modules and Components Loading Configuration
-import { MutuaExportedComponents, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.html.loading.config';
+import { MutuaExportedComponents, MutuaExportedRoutes, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.html.loading.config';
 
 // app
 //import { APP_COMPONENTS, AppComponent } from './app/components/index';
-import { routes } from './app/components/app.routes';
+//import { routes } from './app/components/app.routes';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
@@ -41,12 +41,12 @@ import { MultilingualService } from './app/shared/i18n/services/multilingual.ser
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
 
-let routerModule = RouterModule.forRoot(routes);
+let routerModule = RouterModule.forRoot(MutuaExportedRoutes);
 
 if (String('<%= TARGET_DESKTOP %>') === 'true') {
   Config.PLATFORM_TARGET = Config.PLATFORMS.DESKTOP;
   // desktop (electron) must use hash
-  routerModule = RouterModule.forRoot(routes, {useHash: true});
+  routerModule = RouterModule.forRoot(MutuaExportedRoutes, {useHash: true});
 }
 
 declare var window, console;

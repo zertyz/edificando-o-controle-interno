@@ -107,6 +107,9 @@ interface IMutuaAvailableComponentConfiguration {
   /** specifies the source code for this component. If it is a local component, the path should be relative to the path of this file */
   source          : string;
 
+  /** if specified, means that a route should be included for this component, meaning it has "a(some) page(s)" */
+  routes?         : string;
+
   // component building properties
   ////////////////////////////////
 
@@ -139,16 +142,19 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
   // home page
   HomeComponent: {
     source: '../../components/home/home.component',
+    routes: '../../components/home/home.routes',
   },
 
   // about page
   AboutComponent: {
     source: '../../components/about/about.component',
+    routes: '../../components/about/about.routes',
   },
 
   // gv-home page
   GvHomeComponent: {
     source: '../../components/pages/gv-home/gv-home.component',
+    routes: '../../components/pages/gv-home/gv-home.routes',
   },
 
 };
@@ -221,7 +227,23 @@ export class DataManipulation {
       exportedComponentsArray.push(activatedComponent.componentName);
     }
 
-    lines.push('', `export const MutuaExportedComponents: any[] = [${exportedComponentsArray.toString()}];`);
+    lines.push('', `export const MutuaExportedComponents: any[] = [${exportedComponentsArray.toString()}];`, '');
+
+    let exportedRoutesArray: string[] = [];
+
+    lines.push(`// routes`);
+    lines.push(`/////////`, '')
+
+    for (let i in activatedComponents) {
+      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
+      if (activatedComponent.routes != null) {
+        let symbolName: string = activatedComponent.componentName.replace('Component', 'Routes');
+        lines.push(`import { ${symbolName} } from '${activatedComponent.routes}';`);
+        exportedRoutesArray.push(`...${symbolName}`);
+      }
+    }
+
+    lines.push('', `export const MutuaExportedRoutes: any[] = [${exportedRoutesArray.toString()}];`);
 
     return lines;
   }

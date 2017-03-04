@@ -8,7 +8,10 @@ export class DesktopConfig {
     { code: 'es', title: 'Spanish' },
     { code: 'fr', title: 'French' },
     { code: 'ru', title: 'Russian' },
-    { code: 'bg', title: 'Bulgarian' }
+    { code: 'bg', title: 'Bulgarian' },
+
+    // angular-seed-advanced-spikes
+    { code: 'pt', title: 'Portuguese' },
   ];
 
 }

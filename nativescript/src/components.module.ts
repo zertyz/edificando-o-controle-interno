@@ -20,6 +20,9 @@ import { AboutComponent } from './app/components/about/about.component';
 import { HomeComponent } from './app/components/home/home.component';
 import { routes } from './app/components/app.routes';
 
+// Mutua Modules and Components Loading Configuration
+import { MutuaExportedComponents, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';
+
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
 import { AnalyticsModule } from './app/shared/analytics/analytics.module';
@@ -31,6 +34,9 @@ import { SampleModule } from './app/shared/sample/sample.module';
 // note: couple ways this could be done, just one option presented here...
 @NgModule({
   imports: [
+
+    ...MutuaExportedModules,
+
     NativeScriptModule,
     NativeScriptFormsModule,
     NativeScriptHttpModule,
@@ -45,9 +51,7 @@ import { SampleModule } from './app/shared/sample/sample.module';
     SampleModule
   ],
   declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent
+    ...MutuaExportedComponents,
   ],
   schemas: [
     NO_ERRORS_SCHEMA,
@@ -59,7 +63,7 @@ import { SampleModule } from './app/shared/sample/sample.module';
     NativeScriptHttpModule,
     NativeScriptRouterModule,
     MultilingualModule,
-    AppComponent,
+    MutuaAppComponent,
     AnalyticsModule,
     CoreModule,
     SampleModule

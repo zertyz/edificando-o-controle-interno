@@ -3,6 +3,8 @@ import { SeedConfig } from './seed.config';
 import * as path from 'path';
 import { ExtendPackages } from './seed.config.interfaces';
 
+import { DataManipulation } from './mutua.available.modules.and.components.config';
+
 export class SeedAdvancedConfig extends SeedConfig {
   /**
    * The base folder of the nativescript applications source files.
@@ -152,6 +154,7 @@ export class SeedAdvancedConfig extends SeedConfig {
      this.DESKTOP_PACKAGES = [
       ...this.DESKTOP_PACKAGES,
       ...additionalPackages,
+      ...DataManipulation.getActivatedModulesAndComponentsHTMLnpmDependencies(),
       ];
 
     this.addPackagesBundles(additionalPackages);

@@ -11,8 +11,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from '@ngx-translate/core';
 
+// Mutua Modules and Components Loading Configuration
+import { MutuaExportedComponents, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.html.loading.config';
+
 // app
-import { APP_COMPONENTS, AppComponent } from './app/components/index';
+//import { APP_COMPONENTS, AppComponent } from './app/components/index';
 import { routes } from './app/components/app.routes';
 
 // feature modules
@@ -70,6 +73,9 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
 
 @NgModule({
   imports: [
+
+    ...MutuaExportedModules,
+
     BrowserModule,
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
@@ -90,7 +96,7 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
     EffectsModule.run(NameListEffects)
   ],
   declarations: [
-    APP_COMPONENTS
+    ...MutuaExportedComponents,
   ],
   providers: [
     {
@@ -98,7 +104,7 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
       useValue: '<%= APP_BASE %>'
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [MutuaAppComponent]
 })
 
 export class WebModule { }

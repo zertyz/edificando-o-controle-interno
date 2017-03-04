@@ -18,8 +18,11 @@ import {
   RouterExtensions,
   AppService
 } from './app/shared/core/index';
-import { AppComponent } from './app/components/app.component';
-import { routes } from './app/components/app.routes';
+//import { AppComponent } from './app/components/app.component';
+//import { routes } from './app/components/app.routes';
+
+// Mutua Modules and Components Loading Configuration
+import { MutuaExportedComponents, MutuaExportedRoutes, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
@@ -61,7 +64,7 @@ MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
       { provide: LogTarget, multi: true, deps: [ConsoleService], useFactory: (consoleLogTarget) }
     ]),
     ComponentsModule,
-    NativeScriptRouterModule.forRoot(<any>routes),
+    NativeScriptRouterModule.forRoot(<any>MutuaExportedRoutes),
     StoreModule.provideStore(AppReducer),
     EffectsModule.run(MultilingualEffects),
     EffectsModule.run(NameListEffects)
@@ -75,6 +78,6 @@ MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [MutuaAppComponent]
 })
 export class NativeModule { }

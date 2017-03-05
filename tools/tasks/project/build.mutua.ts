@@ -16,11 +16,11 @@
 
 import * as gulp from 'gulp';
 import { relative, join } from 'path';
-import Config from '../../config';
+import BuildConfig from '../../config';
 
+import { Config } from '../../../src/client/app/shared/core/utils/config';
 import { DataManipulation } from '../../config/mutua.available.modules.and.components.config';
 
-// continue with the traditional gulp task mechanism
 export = () => {
 
   // run the code generation script (mutua. html and mobile .loading.config.ts)
@@ -29,12 +29,16 @@ export = () => {
   let src: string[] = [];
 
   // include components and modules files (font files, for instance)
-  if (Config.TARGET_DESKTOP) {
-    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(true, false));
-  } else // if it is for the web {
-    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(true, false));
-  } // else if it is for mobile... ?
+  if (Config.IS_MOBILE_NATIVE()) {
+    //src.push(...DataManipulation.getActivatedModulesAndComponentsMobileFiles());    soon or later this function will have to be implemented...
+  } else if (Config.IS_MOBILE_HYBRID()) {
+    let errorMsg: string = `build.mutua.ts: don't know how to build to 'MOBILE_HIBRID'... please update this script.`;
+    console.log(errorMsg);
+    throw new Error(errorMsg);
+  } else /* it is for either web or desktop */ {
+    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(Config.IS_WEB(), Config.IS_DESKTOP()));
+  }
 
   return gulp.src(src, { base: './' } )
-    .pipe(gulp.dest(join(Config.APP_DEST)));
+    .pipe(gulp.dest(join(BuildConfig.APP_DEST)));
 };

@@ -26,7 +26,14 @@ export = () => {
   // run the code generation script (mutua. html and mobile .loading.config.ts)
   DataManipulation.generateSourceFiles('src/');     // this script is run having it's current folder set to the project's root, hence, we get to the 'src' directory directly
 
-  let src: string[] = Config.TARGET_DESKTOP ? DataManipulation.getActivatedModulesAndComponentsHTMLFiles(true, false) : DataManipulation.getActivatedModulesAndComponentsHTMLFiles(true, false);
+  let src: string[] = [];
+
+  // include components and modules files (font files, for instance)
+  if (Config.TARGET_DESKTOP) {
+    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(true, false));
+  } else // if it is for the web {
+    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(true, false));
+  } // else if it is for mobile... ?
 
   return gulp.src(src, { base: './' } )
     .pipe(gulp.dest(join(Config.APP_DEST)));

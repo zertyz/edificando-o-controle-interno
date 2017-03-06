@@ -58,10 +58,11 @@ export = () => {
 
     // copy the theme files -- modules *.html and *.scss
     gulp.src([`themes/${appTheme}/modules/**/*`], { base: `themes/${appTheme}`})
-      .pipe(gulp.dest(join('src/client/app/shared')))
+      .pipe(gulp.dest(join('src/client/app/shared'))),
 
-    // copy the theme files -- assets
-    // gulp.src(...
+    // copy the theme files -- assets -- this one is copied to the right place: the dist folder (unlike the other two above)
+    gulp.src([`themes/${appTheme}/assets/**/*`], { base: `themes/${appTheme}`})
+        .pipe(gulp.dest(join(BuildConfig.APP_DEST))),
   );
 
 /*

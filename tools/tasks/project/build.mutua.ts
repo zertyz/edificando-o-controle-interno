@@ -36,7 +36,8 @@ export = () => {
     console.log(errorMsg);
     throw new Error(errorMsg);
   } else /* it is for either web or desktop */ {
-    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(Config.IS_WEB(), Config.IS_DESKTOP()));
+    src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(Config.IS_WEB(), Config.IS_DESKTOP()),
+             ...DataManipulation.getHTMLTheme);
   }
 
   return gulp.src(src, { base: './' } )

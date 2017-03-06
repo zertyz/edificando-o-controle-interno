@@ -75,3 +75,7 @@ src/client/app/components/**/*.html
 src/client/app/components/**/*.scss
 src/client/app/shared/modules/**/*.html
 src/client/app/shared/modules/**/*.scss
+src/client/app/shared/i18n/**/*.html
+src/client/app/shared/i18n/**/*.scss
+src/client/app/shared/sample/**/*.html
+src/client/app/shared/sample/**/*.css

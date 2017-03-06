@@ -29,6 +29,8 @@ import { IInstanceProjectsComponentActivationConfiguration,
  * */
 export const appTitle: string = 'angular-seed-advanced-mutuatech';
 
+/** One of the directory names present in 'theme/' */
+export const appTheme: string = 'seed-theme';
 
 /** Defines the components this application should bundle and load, for html (web and desktop) and mobile platforms.
  *  All 'component' entries must have been previously defined by 'MutuaAvailableComponentsConfiguration', from

@@ -79,3 +79,5 @@ src/client/app/shared/i18n/**/*.html
 src/client/app/shared/i18n/**/*.scss
 src/client/app/shared/sample/**/*.html
 src/client/app/shared/sample/**/*.css
+src/client/css/**/*.*
+src/client/scss/**/*.*

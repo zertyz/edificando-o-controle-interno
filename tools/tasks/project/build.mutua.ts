@@ -52,25 +52,26 @@ export = () => {
     gulp.src(src, { base: './' } )
       .pipe(gulp.dest(join(BuildConfig.APP_DEST))),
 
-    // copy the theme files -- components *.html and *.scss
-    gulp.src([`themes/${appTheme}/components/**/*`], { base: `themes/${appTheme}`})
-      .pipe(gulp.dest(join('src/client/app'))),
-
-    // copy the theme files -- modules *.html and *.scss
-    gulp.src([`themes/${appTheme}/modules/**/*`, `!themes/${appTheme}/modules/i18n/**/*`, `!themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}`})
-      .pipe(gulp.dest(join('src/client/app/shared'))),
-
-    // copy the theme files -- default 'i18n' module *.html and *.scss
-    gulp.src([`themes/${appTheme}/modules/i18n/**/*`], { base: `themes/${appTheme}/modules`})
-      .pipe(gulp.dest(join('src/client/app/shared'))),
-
-    // copy the theme files -- default 'sample' module *.html and *.scss
-    gulp.src([`themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}/modules`})
-      .pipe(gulp.dest(join('src/client/app/shared'))),
-
-    // copy the theme files -- assets -- this one is copied to the right place: the dist folder (unlike the other two above)
+    // copy the theme files -- assets -- this one is copied to the right place: the dist folder (unlike the ones below)
     gulp.src([`themes/${appTheme}/assets/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join(BuildConfig.APP_DEST))),
+
+    // copy the theme files -- components *.html and *.scss files
+    gulp.src([`themes/${appTheme}/components/**/*`], { base: `themes/${appTheme}`})
+        .pipe(gulp.dest(join('src/client/app'))),
+
+    // copy the theme files -- modules *.html and *.scss files
+    gulp.src([`themes/${appTheme}/modules/**/*`, `!themes/${appTheme}/modules/i18n/**/*`, `!themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}`})
+        .pipe(gulp.dest(join('src/client/app/shared'))),
+
+    // copy the theme files -- default 'i18n' and 'sample' modules *.html and *.scss files
+    gulp.src([`themes/${appTheme}/modules/i18n/**/*`, `themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}/modules`})
+        .pipe(gulp.dest(join('src/client/app/shared'))),
+
+    // copy the theme files -- default 'css' and 'scss' directories
+    gulp.src([`themes/${appTheme}/css/**/*`, `themes/${appTheme}/scss/**/*`], { base: `themes/${appTheme}`})
+        .pipe(gulp.dest(join('src/client'))),
+
   );
 
 /*

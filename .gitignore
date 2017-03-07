@@ -71,13 +71,13 @@ ChromeDebugger-UserData
 
 # MutuaTech patches: themes: *.html and *.scss files now belongs to the themes/ directory, and they
 # are ignored when placed on the following locations by the (not so elegant) solution implemented in 'build.mutua.ts'
-src/client/app/components/**/*.html
-src/client/app/components/**/*.scss
-src/client/app/shared/modules/**/*.html
-src/client/app/shared/modules/**/*.scss
-src/client/app/shared/i18n/**/*.html
-src/client/app/shared/i18n/**/*.scss
-src/client/app/shared/sample/**/*.html
-src/client/app/shared/sample/**/*.css
-src/client/css/**/*.*
-src/client/scss/**/*.*
+#src/client/app/components/**/*.html
+#src/client/app/components/**/*.scss
+#src/client/app/shared/modules/**/*.html
+#src/client/app/shared/modules/**/*.scss
+#src/client/app/shared/i18n/**/*.html
+#src/client/app/shared/i18n/**/*.scss
+#src/client/app/shared/sample/**/*.html
+#src/client/app/shared/sample/**/*.css
+#src/client/css/**/*.*
+#src/client/scss/**/*.*

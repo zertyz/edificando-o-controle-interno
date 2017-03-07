@@ -34,6 +34,7 @@
 
 // mutua configuration
 import { appTheme,
+         primeNGTheme,
          MutuaInstanceProjectComponentsActivationConfiguration,
          MutuaInstanceProjectModulesActivationConfiguration,
          MutuaHTMLAppComponentName,
@@ -201,9 +202,9 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                        npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
                        webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
                        desktopFiles:      [sameAsWeb],
-                       htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                inject: true},
-                                           {src: 'primeng/resources/themes/cupertino/theme.css', inject: true},
-                                           {src: 'font-awesome/css/font-awesome.css',            inject: true}],
+                       htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
+                                           {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
+                                           {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
     },
 
 };

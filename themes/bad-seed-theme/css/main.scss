@@ -24,6 +24,18 @@ body {
   color: #8a8b8c;
 }
 
+/* used by app.component.html to set the top fixed #header and a scrolling #content */
+#header {
+  background: #2f2f2f;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+#content {
+  margin-top: 100px;
+}
+
 p {
   font-weight: 400;
   letter-spacing: 0.01em;

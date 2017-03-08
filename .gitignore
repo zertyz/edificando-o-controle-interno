@@ -83,3 +83,6 @@ src/client/app/shared/sample/**/*.html
 src/client/app/shared/sample/**/*.css
 src/client/css/**/*.*
 src/client/scss/**/*.*
+nativescript/src/_common.scss
+nativescript/src/app.android.scss
+nativescript/src/app.ios.scss

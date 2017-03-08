@@ -72,6 +72,13 @@ export = () => {
     gulp.src([`themes/${appTheme}/css/**/*`, `themes/${appTheme}/scss/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join('src/client'))),
 
+    // copy the theme files -- nativescrip global styling files residing inside 'scss'
+    gulp.src([`themes/${appTheme}/scss/_common.scss`,
+              `themes/${appTheme}/scss/app.android.scss`,
+              `themes/${appTheme}/scss/app.ios.scss`],
+             { base: `themes/${appTheme}/scss`})
+        .pipe(gulp.dest(join('nativescript/src'))),
+
   );
 
 /*

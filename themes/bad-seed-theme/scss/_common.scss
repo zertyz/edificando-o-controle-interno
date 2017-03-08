@@ -1,0 +1,38 @@
+// base theme. Please see https://docs.nativescript.org/ui/theme
+@import 'nativescript-theme-core/scss/dark';
+
+$accent: #101c48;
+
+// ActionBar
+$ab-background: #462c28;
+$ab-color: rgba(195, 195, 195, 0.87);
+$btn-color: $accent;
+$btn-color-secondary: darken($accent, 5%);
+
+// Import the theme’s main ruleset.
+@import 'nativescript-theme-core/scss/index';
+
+StackLayout {
+  background-color: #1a1b1c;
+}
+
+Label {
+  color: #8a8b8c;
+}
+
+.input {
+  background-color: #3a3a3a;
+  placeholder-color: #7a6f6f;
+  color: #9a9a9a;
+}
+
+.link {
+  border-width: 0;
+  background-color: transparent;
+}
+.odd {
+  background-color: #5f5f5f;
+}
+.even {
+  background-color: #2f2f2f;
+}

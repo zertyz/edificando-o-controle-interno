@@ -2,10 +2,10 @@ Theme gathered from https://github.com/BlackrockDigital/startbootstrap-freelance
 
 Steps for updating:
 
-1. Download the bootstrap 4.0's zip version from the master repository and unzip it somewhere else
-2. Execute "npm install" and "gulp" to build the css folder, or "gulp dev" to test the theme
-3. Copy the following folders to "assets": img js lib
-4. Copy the relevant contents of "index.html" to components/app.component.html, preserving the <div platform> and <router-outlet> tags
-   and not using (or not using only for freelancer.min.js, which should not be included anyway?) the *.min.* versions
-   (should we also theme the angular2's index.html?? to include jquery and other javascripts, fonts, stylesheets...)
-5. Copy "css/freelancer.css" to css/main.scss
+1. Clone the git repo: cd /tmp; git clone //github.com/BlackrockDigital/startbootstrap-freelancer.git; cd startbootstrap-freelancer
+   -- you may do a 'git checkout v4-dev' to get early access to the development version, which uses bootstrap 4;
+2. To test the theme: chromium index.html -- you may also execute "npm install" and "gulp" to build the css folder, or "gulp dev" to test the theme;
+3. Copy the following folders to "assets": img js lib. You may delete 'lib/bootstrap' and 'lib/font-awesome', but this will require instance applications to enable the modules 'NgbModule' (ng-bootstrap) and 'PRIMENG_MODULES' (PrimeNG);
+4. Grab the original 'index.html' from 'seed-theme' and copy it here, mixing with the startbootstrap-freelancer's index.html
+4. Grab the original 'components/app.component.html' from 'seed-theme' and move there the relevant contents of startbootstrap-freelancer's index.html, preserving the <div platform> and <router-outlet> tags
+5. Copy startbootstrap-freelancer's 'css/freelancer.css' here, on 'css/main.css' -- making sure no 'css/main.scss' exists

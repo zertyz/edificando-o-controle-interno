@@ -48,31 +48,37 @@ export = () => {
   // src/client/app/components and src/client/app/shared/modules. This way, we didn't have to mess with the original 'build.html_css.ts', that would elegantly solve the metter.
   return merge(
 
+    // copying of modules and components files
+    //////////////////////////////////////////
+
     // copy the files modules and components declare they want to copy
     gulp.src(src, { base: './' } )
       .pipe(gulp.dest(join(BuildConfig.APP_DEST))),
 
-    // copy the theme files -- assets -- this one is copied to the right place: the dist folder (unlike the ones below)
+    // copying of theme files
+    /////////////////////////
+
+    // theme assets -- this one is copied to the right place: the dist folder (unlike the ones below)
     gulp.src([`themes/${appTheme}/assets/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join(BuildConfig.APP_DEST))),
 
-    // copy the theme files -- components *.html and *.scss files
+    // theme components *.html and *.scss files
     gulp.src([`themes/${appTheme}/components/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join('src/client/app'))),
 
-    // copy the theme files -- modules *.html and *.scss files
+    // theme modules *.html and *.scss files
     gulp.src([`themes/${appTheme}/modules/**/*`, `!themes/${appTheme}/modules/i18n/**/*`, `!themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join('src/client/app/shared'))),
 
-    // copy the theme files -- default 'i18n' and 'sample' modules *.html and *.scss files
+    // default 'i18n' and 'sample' modules *.html and *.scss files
     gulp.src([`themes/${appTheme}/modules/i18n/**/*`, `themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}/modules`})
         .pipe(gulp.dest(join('src/client/app/shared'))),
 
-    // copy the theme files -- default 'css' and 'scss' directories
-    gulp.src([`themes/${appTheme}/css/**/*`, `themes/${appTheme}/scss/**/*`], { base: `themes/${appTheme}`})
+    // default 'css', 'scss' directories and 'index.html'
+    gulp.src([`themes/${appTheme}/css/**/*`, `themes/${appTheme}/scss/**/*`, `themes/${appTheme}/index.html`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join('src/client'))),
 
-    // copy the theme files -- nativescrip global styling files residing inside 'scss'
+    // nativescrip global styling files residing inside 'scss'
     gulp.src([`themes/${appTheme}/scss/_common.scss`,
               `themes/${appTheme}/scss/app.android.scss`,
               `themes/${appTheme}/scss/app.ios.scss`],

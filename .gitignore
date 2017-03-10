@@ -36,16 +36,16 @@ ts-node
 .typingsrc
 
 #IDE configuration files
-.idea
+.idea/
 *.iml
 .vscode/angulardoc.json
 
-dist
-dev
-docs
-lib
-test
-tmp
+dist/
+dev/
+docs/
+lib/
+test/
+tmp/
 
 src/**/*.js
 src/**/*.js.map

@@ -1,5 +1,5 @@
 <form>
-  <select [(ngModel)]="lang" (change)="changeLang($event)" name="lang">
-    <option *ngFor="let l of supportedLanguages" [value]="l.code">{{l.title}}</option>
+  <select [(ngModel)]="lang" (change)="changeLang($event)" name="lang" class="selectpicker" data-width="fit" data-show-icon="true">
+    <option *ngFor="let l of supportedLanguages" [value]="l.code" [data-subtext]="'&lt;span class=\'flag-icon flag-icon-' + 'us' + '\'&gt;&lt;/span&gt;' + l.title">{{l.title}} {{'a\''}}</option>
   </select>
 </form>

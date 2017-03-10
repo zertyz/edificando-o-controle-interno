@@ -96,60 +96,6 @@ header {
   header .intro-text .skills {
     font-size: 1.75em; } }
 
-#mainNav {
-  background: #2C3E50;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  border: none; }
-  #mainNav a:focus {
-    outline: none; }
-  #mainNav .navbar-brand {
-    color: white; }
-    #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:active, #mainNav .navbar-brand.active {
-      color: white; }
-  #mainNav .navbar-nav {
-    letter-spacing: 1px; }
-    #mainNav .navbar-nav li.nav-item a.nav-link {
-      color: white; }
-      #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-        color: #18BC9C;
-        outline: none; }
-      #mainNav .navbar-nav li.nav-item a.nav-link:focus, #mainNav .navbar-nav li.nav-item a.nav-link:active {
-        color: white; }
-    #mainNav .navbar-nav li.nav-item.active a {
-      color: white;
-      background: #18BC9C; }
-      #mainNav .navbar-nav li.nav-item.active a:hover, #mainNav .navbar-nav li.nav-item.active a:focus, #mainNav .navbar-nav li.nav-item.active a:active {
-        color: white;
-        background: #18BC9C; }
-  #mainNav .navbar-toggler {
-    color: white;
-    text-transform: uppercase;
-    font-size: 14px;
-    border-color: white;
-    padding: 11px; }
-    #mainNav .navbar-toggler:hover, #mainNav .navbar-toggler:focus {
-      background-color: #18BC9C;
-      color: white;
-      border-color: #18BC9C; }
-
-@media (min-width: 992px) {
-  #mainNav {
-    padding: 25px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    transition: padding 0.3s; }
-    #mainNav .navbar-brand {
-      font-size: 2em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s; }
-  #mainNav.navbar-shrink {
-    padding: 10px 0; }
-    #mainNav.navbar-shrink .navbar-brand {
-      font-size: 1.5em; } }
-
 section {
   padding: 100px 0; }
   section h2 {

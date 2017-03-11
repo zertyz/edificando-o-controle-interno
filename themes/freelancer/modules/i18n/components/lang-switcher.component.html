@@ -5,14 +5,16 @@
 </form>
 -->
 
-<!--<ngbDropDown class="btn btn-default dropdown-toggle i18n">
-  <span class='flag-icon flag-icon-br'></span>&nbsp;Portuguese <span class="caret"></span>
-  <ul class="dropdown-menu list-inline i18n" role="menu">
-    <li><span class='flag-icon flag-icon-us'></span>&nbsp;English</li>
+<div ngbDropDown class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle i18n" data-toggle="dropdown" ngbDropdownToggle>
+    <span class="flag-icon flag-icon-br"></span>&nbsp;Portuguese
+  </button>
+  <ul class="dropdown-menu i18n" role="menu">
+    <li *ngFor="let l of supportedLanguages"><span [class]="'flag-icon flag-icon-' + l.flag"></span>&nbsp;{{l.title}}</li>
   </ul>
-</ngbDropDown>-->
+</div>
 
-<div class="btn-group">
+<!--<div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle i18n" data-toggle="dropdown">
 	  <span class='flag-icon flag-icon-br'></span>&nbsp;Portuguese <span class="caret"></span>
   </button>
@@ -20,3 +22,4 @@
     <li><span class='flag-icon flag-icon-us'></span>&nbsp;Englissh</li>
   </ul>
 </div>
+-->

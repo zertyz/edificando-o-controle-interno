@@ -22,6 +22,6 @@ export function TEST_MULTILINGUAL_PROVIDERS(): Array<any> {
 export function TEST_MULTILINGUAL_RESET(): void {
   // ensure static is reset
   MultilingualService.SUPPORTED_LANGUAGES = [
-    { code: 'en', title: 'English' }
+    { code: 'en', flag: 'us', title: 'English' }
   ];
 }

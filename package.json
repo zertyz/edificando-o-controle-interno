@@ -177,10 +177,10 @@
     "@angular/platform-browser-dynamic": "~2.4.0",
     "@angular/router": "~3.4.1",
 
-    "bootstrap": "^4.0.0-alpha.5",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.14",
+    "bootstrap": "^4.0.0-alpha.6",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20",
     "font-awesome": "^4.7.0",
-    "primeng": "^1.0.1",
+    "primeng": "^2.0.3",
 
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^2.0.0",

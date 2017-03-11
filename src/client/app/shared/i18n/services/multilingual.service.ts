@@ -22,7 +22,7 @@ export class MultilingualService extends Analytics {
   // default supported languages
   // see web.module.ts for example of how to provide different value
   public static SUPPORTED_LANGUAGES: Array<ILang> = [
-    { code: 'en', title: 'English' }
+    { code: 'en', flag: 'us', title: 'English' }
   ];
 
   constructor(

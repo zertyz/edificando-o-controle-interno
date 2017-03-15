@@ -9,3 +9,13 @@ Steps for updating:
 4. Grab the original 'index.html' from 'seed-theme' and copy it here, mixing with the startbootstrap-freelancer's index.html
 5. Grab the original 'components/app.component.html' from 'seed-theme' and move there the relevant contents of startbootstrap-freelancer's index.html, preserving the <div platform> and <router-outlet> tags. Tip: include everything inside the body tag and preserve the body tag id into the app.component's div
 6. Copy startbootstrap-freelancer's 'css/freelancer.css' here, on 'css/main.css' -- making sure no 'css/main.scss' exists
+
+--
+This theme seems to require the following components:
+<m-product-title img='' title='' subtitle=''/>
+<m-marquee data = "{{ {img: '', title: '', subTitle: ''} }}" />
+<m-portfolio-list data = "{{ [{img: '', title: '', subTitle: '', route: ''}, {imgFile: '', title: '', subTitle: '', route: ''}] }}" />
+<m-about data = "{{ [{p: ''}, {link: '', url: ''}, {img: ''}] }}" />
+<m-contact data = "{{ {nameStr: 'Name', nameValidationStr: 'Please enter your name.', emailStr: 'Email Address', emailValidationStr: 'Please enter your email address.', phoneStr: 'Phone Number', phoneValidationStr: 'Please enter your phone number.', messageStr: 'Message', messageValidationStr: 'Please enter a message.', submitStr: 'Send'} }}" />
+<m-footer...>
+<m-portfolio-entry...>

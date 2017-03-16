@@ -19,3 +19,21 @@ This theme seems to require the following components:
 <m-contact data = "{{ {nameStr: 'Name', nameValidationStr: 'Please enter your name.', emailStr: 'Email Address', emailValidationStr: 'Please enter your email address.', phoneStr: 'Phone Number', phoneValidationStr: 'Please enter your phone number.', messageStr: 'Message', messageValidationStr: 'Please enter a message.', submitStr: 'Send'} }}" />
 <m-footer...>
 <m-portfolio-entry...>
+
+And, for mutua & instant vas:
+m-audio-player
+m-beta-disclaimer
+m-carousel
+m-contact-us
+m-faq
+m-features
+m-navigation-menu
+m-pricing
+m-proposal
+m-signup
+m-slides
+m-social-networks
+m-subscribe
+m-timeline
+m-video-player
+m-welcome

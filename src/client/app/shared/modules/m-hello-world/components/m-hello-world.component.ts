@@ -16,10 +16,28 @@ export class MHelloWorldComponent {
 
   @Input() hello: string;
   @Input() world: string;
+  @Input() data: HelloData;
 
-  constructor() {
-    this.hello = 'hello';
-    this.world = 'my default world';
+  ngOnInit() {
+     if (this.data != null) {
+      this.hello = this.data.hello;
+      this.world = this.data.world;
+     } else {
+       this.data = {
+          hello: 'hello',
+          world: 'my object world',
+       }
+    }
+
+    if ( (this.hello == null) || (this.world == null) ) {
+      this.hello = 'hello';
+      this.world = 'my string world';
+    }
   }
 
+}
+
+interface HelloData {
+  hello: string;
+  world: string;
 }

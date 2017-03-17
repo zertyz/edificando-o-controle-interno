@@ -30,3 +30,6 @@ Our themes will have all the items above, except for the first and last. In addi
 ## Themes List
 * [new-age](new-age/README.md)
 * [freelancer](freelancer/README.md)
+
+## Workflow
+* gulp build.mutua; npm start & while read; do gulp build.mutua; done; echo -en "\n###\nEND\n\n"; fg

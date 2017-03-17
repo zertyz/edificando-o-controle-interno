@@ -13,10 +13,10 @@ Steps for updating:
 --
 This theme seems to require the following components:
 <m-product-title img='' title='' subtitle=''/>
-<m-marquee data = "{{ {img: '', title: '', subTitle: ''} }}" />
-<m-portfolio-list data = "{{ [{img: '', title: '', subTitle: '', route: ''}, {imgFile: '', title: '', subTitle: '', route: ''}] }}" />
-<m-about data = "{{ [{p: ''}, {link: '', url: ''}, {img: ''}] }}" />
-<m-contact data = "{{ {nameStr: 'Name', nameValidationStr: 'Please enter your name.', emailStr: 'Email Address', emailValidationStr: 'Please enter your email address.', phoneStr: 'Phone Number', phoneValidationStr: 'Please enter your phone number.', messageStr: 'Message', messageValidationStr: 'Please enter a message.', submitStr: 'Send'} }}" />
+<m-welcome [data] = "{img: '', title: '', slogan: ''}" />
+<m-portfolio-list [data] = "[{img: '', title: '', subTitle: '', route: ''}, {imgFile: '', title: '', subTitle: '', route: ''}]" />
+<m-about [data] = "[{p: ''}, {link: '', url: ''}, {img: ''}]" />
+<m-contact [data] = "{nameStr: 'Name', nameValidationStr: 'Please enter your name.', emailStr: 'Email Address', emailValidationStr: 'Please enter your email address.', phoneStr: 'Phone Number', phoneValidationStr: 'Please enter your phone number.', messageStr: 'Message', messageValidationStr: 'Please enter a message.', submitStr: 'Send'}" />
 <m-footer...>
 <m-portfolio-entry...>
 

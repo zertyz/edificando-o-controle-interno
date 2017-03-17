@@ -7,7 +7,8 @@ import { HttpModule, Http } from '@angular/http';
 
 // app
 import { Config } from '../../core/index';
-import { MHelloWorldComponent } from './components/index';
+import { MHelloWorldComponent,
+         MWelcomeComponent } from './components/index';
 
 @NgModule({
   imports: [
@@ -17,10 +18,12 @@ import { MHelloWorldComponent } from './components/index';
     HttpModule,
   ],
   declarations: [
-    MHelloWorldComponent
+    MHelloWorldComponent,
+    MWelcomeComponent,
   ],
   exports: [
     MHelloWorldComponent,
+    MWelcomeComponent,
   ],
   providers: [],
   schemas: [

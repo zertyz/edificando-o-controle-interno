@@ -3,7 +3,7 @@
  * ======================
  * (created by luiz on Sex, mar, 17, 2017)
  *
- * Responsible for presenting the welcome message and visual idendities of SaaS sites, apps and landing pages.
+ * Responsible for presenting the welcome message and visual identities of SaaS sites, apps and landing pages.
  *
  * Usually the first component to be called on the content area of the site / app / landing page, bellow the
  * project's name (which is usually on a top toolbar).
@@ -50,12 +50,12 @@ import { Input } from '@angular/core';
 })
 export class MWelcomeComponent {
 
-  @Input() img:                  string = "assets/svg/smile.svg";
-  @Input() imgAlt:               string = "The default logo, available for every angular-seed-advanced-mutuatech instance application";
-  @Input() subTitle:             string = "Angular2 Framework & Components for State-of-the-Art frontend development";
-  @Input() slogan:               string = "Easily build state-of-art web/desktop/mobile sites and apps sharing the same business logic code and customizing the frontend as you wish";
-  @Input() callToActionText:     string = "Learn More...";
-  @Input() callToActionRoute:    string = "/about";
-  @Input() callToActionSubTitle: string = "or explore as you wish";
+  @Input() img:                  string = 'assets/svg/smile.svg';
+  @Input() imgAlt:               string = 'The default logo, available for every angular-seed-advanced-mutuatech instance application';
+  @Input() subTitle:             string = 'Angular2 Framework & Components for State-of-the-Art frontend development';
+  @Input() slogan:               string = 'Easily build state-of-art web/desktop/mobile sites and apps sharing the same business logic code and customizing the frontend as you wish';
+  @Input() callToActionText:     string = 'Learn More...';
+  @Input() callToActionRoute:    string = '/about';
+  @Input() callToActionSubTitle: string = 'or explore as you wish';
 
 }

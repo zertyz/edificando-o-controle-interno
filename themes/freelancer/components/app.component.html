@@ -17,74 +17,12 @@
   </m-welcome>
 
   <!-- Portfolio Grid Section -->
-  <section id="portfolio">
-    <div class="container">
-      <h2 class="text-center">Portfolio</h2>
-      <hr class="star-primary">
-      <div class="row">
-        <div class="col-sm-4 portfolio-item">
-          <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="assets/img/portfolio/cabin.png" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 portfolio-item">
-          <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="assets/img/portfolio/cake.png" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 portfolio-item">
-          <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="assets/img/portfolio/circus.png" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 portfolio-item">
-          <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="assets/img/portfolio/game.png" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 portfolio-item">
-          <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="assets/img/portfolio/safe.png" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 portfolio-item">
-          <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="assets/img/portfolio/submarine.png" class="img-fluid" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <m-portfolio
+               sectionTitle  = "Portfolio"
+               sectionImg    = ""
+               sectionImgAlt = ""
+               [items]       = "[{name: 'Cabin',     slogan: '', route: '#portfolioModal1', img: 'assets/img/portfolio/cabin.png',     imgAlt: ''}, {name: 'Cake',      slogan: '', route: '#portfolioModal2', img: 'assets/img/portfolio/cake.png',      imgAlt: ''}, {name: 'Circus',    slogan: '', route: '#portfolioModal3', img: 'assets/img/portfolio/circus.png',    imgAlt: ''}, {name: 'Game',      slogan: '', route: '#portfolioModal4', img: 'assets/img/portfolio/game.png',      imgAlt: ''}, {name: 'Safe',      slogan: '', route: '#portfolioModal5', img: 'assets/img/portfolio/safe.png',      imgAlt: ''}, {name: 'Submarine', slogan: '', route: '#portfolioModal6', img: 'assets/img/portfolio/submarine.png', imgAlt: ''}]">
+  </m-portfolio>
 
   <!-- About Section -->
   <section class="success" id="about">

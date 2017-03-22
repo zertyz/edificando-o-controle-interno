@@ -1,0 +1,17 @@
+<span *ngFor="let markup of markupData">
+
+  <p *ngIf="markup.p">
+    <span *ngFor = "let pEntry of markup.p">
+      <span *ngIf = "isString(pEntry)">{{pEntry}}</span>
+      <m-markup *ngIf = "isObject(pEntry)" [markupData] = "[pEntry]"></m-markup>
+    </span>
+  </p>
+
+  <ul *ngIf="markup.list">
+    <li *ngFor = "let listEntry of markup.list">
+      <span *ngIf = "isString(listEntry)">{{listEntry}}</span>
+      <m-markup *ngIf = "isObject(listEntry)" [markupData] = "[listEntry]"></m-markup>
+    </li>
+  </ul>
+
+</span>

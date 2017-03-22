@@ -46,7 +46,7 @@ import { Input } from '@angular/core';
   templateUrl: 'm-about.component.html',
   styleUrls: ['m-about.component.css']
 })
-export class MPortfolioComponent {
+export class MAboutComponent {
 
   @Input() sectionTitle:   string = '§§ ABOUT §§';
   @Input() sectionImg:     string = 'sectionImg#not used';

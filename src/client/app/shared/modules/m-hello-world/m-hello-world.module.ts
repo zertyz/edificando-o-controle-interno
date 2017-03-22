@@ -12,6 +12,8 @@ import { Config } from '../../core/index';
 import { MHelloWorldComponent,
          MWelcomeComponent,
          MPortfolioComponent,
+         MMarkupComponent,
+         MAboutComponent,
                                   } from './components/index';
 
 @NgModule({
@@ -25,11 +27,15 @@ import { MHelloWorldComponent,
     MHelloWorldComponent,
     MWelcomeComponent,
     MPortfolioComponent,
+    MMarkupComponent,
+    MAboutComponent,
   ],
   exports: [
     MHelloWorldComponent,
     MWelcomeComponent,
     MPortfolioComponent,
+    MMarkupComponent,
+    MAboutComponent,
   ],
   providers: [],
   schemas: [

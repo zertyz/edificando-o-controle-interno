@@ -25,7 +25,8 @@
  *           sectionTitle  = "Meet the Team"
  *           sectionImg    = "sectionImg#not used"
  *           sectionImgAlt = "sectionImgAlt#not used"
- *           [markupData]  = "[{p: ['Our team is made of, bla bla, the following people:', {list: ['mf 1', {link: 'mf 2', url: 'mf2resume.pdf'}]}]}, {p: '... and that is all we have.'}]">
+ *           [markupData]  = "[{p: ['Our team is made of, bla bla, the following people:', {list: ['mf 1', {link: 'mf 2', url: 'mf2resume.pdf'}]}]}, {p: '... and that is all we have.'}]"
+ *           [styles]      = "{0: 'class for everyone', list: ['evenListClass', 'oddListClass']}">
  *  </m-about>
  *
  * @see RelatedClass(es)
@@ -51,6 +52,7 @@ export class MAboutComponent {
   @Input() sectionTitle:   string = '§§ ABOUT §§';
   @Input() sectionImg:     string = 'sectionImg#not used';
   @Input() sectionImgAlt:  string = 'sectionImgAlt#not used';
-  @Input() markupData:     any[];
+  @Input() markupData:     any[]  = [];
+  @Input() styles:         any[]  = [];
 
 }

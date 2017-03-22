@@ -1,6 +1,6 @@
 /** <pre>
  * m-portfolio.component.ts
- * ======================
+ * ========================
  * (created by luiz on Mon, mar, 20, 2017)
  *
  * Responsible for presenting the portfolio (or products and services list) of SaaS sites, apps and landing pages, in case

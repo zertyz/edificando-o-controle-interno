@@ -1,0 +1,26 @@
+<!--<section id="about">
+  <div class="container">
+    <h2 class="text-center">{{sectionTitle}}</h2>
+    <hr class="star-primary">
+    <div class="row">-->
+
+      <span *ngFor="let markup of markupData">
+
+        <p *ngIf="markup.p">
+          <span *ngFor = "let pEntry of markup.p">
+            <span *ngIf = "typeof(pEntry) == 'string'">{{pEntry}}</span>
+            <m-about *ngIf = "typeof(pEntry) == 'object'" [markupData] = "[pEntry]"></m-about>
+          </span>
+        </p>
+
+        <ul *ngIf="markup.list">
+          <li *ngFor = "let listEntry of markup.list">
+            <span *ngIf = "typeof(listEntry) == 'string'">{{listEntry}}</span>
+            <m-about *ngIf = "typeof(listEntry) == 'object'" [markupData] = "[listEntry]"></m-about>
+          </li>
+        </ul>
+
+      </span>
+<!--    </div>
+  </div>
+</section>-->

@@ -1,8 +1,10 @@
-<div *ngFor="let markup of markupData; let rootStyleIndex=index" [ngClass]="styles[rootStyleIndex % styles.length]">
+<ng-container *ngFor="let markup of markupData; let rootStyleIndex=index">
 
   <template ngFor let-pEntry [ngForOf]="markup.p || []" let-pStyleIndex="index">
-    <p *ngIf = "isString(pEntry)">{{pEntry}}</p>
-    <m-markup *ngIf = "isObject(pEntry)" [markupData] = "[pEntry]"></m-markup>
+    <div [ngClass]="styles[rootStyleIndex % styles.length]">
+      <p *ngIf = "isString(pEntry)">{{pEntry}}</p>
+      <m-markup *ngIf = "isObject(pEntry)" [markupData] = "[pEntry]"></m-markup>
+    </div>
   </template>
 
   <template [ngIf]="markup.link">
@@ -19,4 +21,4 @@
     </li>
   </ul>
 
-</div>
+</ng-container>

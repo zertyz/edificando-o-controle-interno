@@ -12,6 +12,8 @@
  *  sectionTitle:         the title, if any, to be present in the beginning of the component. Some very simple examples are "CONTACT US" or "SUBSCRIBE"
  *  sectionImg:           the same as above, but specifying an image
  *  sectionImgAlt:        the specification of the image above -- the briefing you'd give to a designer when creating the image. Great SEO opportunity.
+ *  backendURL:           where to submit (partial) results
+ *  backendMethod:        either GET or POST -- the HTTP method to use to call the backend
  *  fields:               an array containing all fields to be shown, as described bellow.
  *
  * 'fields' properties:
@@ -23,12 +25,12 @@
  *
  * Usage example:
  *
- *  <m-portfolio
- *               sectionTitle  = "SMS Applications & Platforms"
- *               sectionImg    = "sectionImg#not used"
- *               sectionImgAlt = "sectionImgAlt#not used"
- *               [items]       = "[{name: 'Quiz', slogan: 'The classic questions and answers game', route: 'apps/quiz', img: 'assets/img/smsApps/quiz.png', imgAlt: 'Image describing that the Instant VAS Quiz SMS Application, although being a comodity service, is based on a rock solid platform'}, {name: 'Chat', slogan: 'SMS/USSD one-to-one and one-to-many messaging system', route: 'apps/chat', img: 'assets/img/smsApps/chat.png', imgAlt: '...'}]">
- *  </m-portfolio>
+ *  <m-form
+ *               sectionTitle  = "Contact us"
+ *               sectionImg    = ""
+ *               sectionImgAlt = ""
+ *               [items]       = "[{name: 'email', label: 'E-Mail', tip: 'Please give us your email so we can contact you', fieldType: EFieldTypes.Text}, {}]">
+ *  </m-form>
  *
  * @see RelatedClass(es)
  * @author luiz
@@ -44,23 +46,27 @@ import { Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'm-portfolio',
-  templateUrl: 'm-portfolio.component.html',
-  styleUrls: ['m-portfolio.component.css']
+  selector: 'm-form',
+  templateUrl: 'm-form.component.html',
+  styleUrls: ['m-form.component.css']
 })
-export class MPortfolioComponent {
+export class MFormComponent {
 
-  @Input() sectionTitle:   string = '§§ PORTFOLIO §§';
-  @Input() sectionImg:     string = 'sectionImg#not used';
-  @Input() sectionImgAlt:  string = 'sectionImgAlt#not used';
-  @Input() items:          PortfolioItem[];
+  @Input() sectionTitle:   string          = '§§ FORM §§';
+  @Input() sectionImg:     string          = 'sectionImg#not used';
+  @Input() sectionImgAlt:  string          = 'sectionImgAlt#not used';
+  @Input() backendURL:     string          = "/?.cgi";
+  @Input() backendMethod:  EBackendMethods = EBackendMethods.GET;
+  @Input() fields:         FormField[]     = [];
 
 }
 
-interface PortfolioItem {
-  name:   string;
-  slogan: string;
-  img:    string;
-  imgAlt: string;
-  route:  string;
+enum EBackendMethods { GET, POST };
+enum EFieldTypes     { Text, Radiobox, Checkbox, Combobox, Listbox, TextArea, Date, DateTime };
+
+interface FormField {
+  name:      string;
+  label:     string;
+  tip:       string;
+  fieldType: EFieldTypes;
 }

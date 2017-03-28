@@ -14,6 +14,7 @@ import { MHelloWorldComponent,
          MPortfolioComponent,
          MMarkupComponent,
          MAboutComponent,
+         MFormComponent,
                                   } from './components/index';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MHelloWorldComponent,
     MPortfolioComponent,
     MMarkupComponent,
     MAboutComponent,
+    MFormComponent,
   ],
   exports: [
     MHelloWorldComponent,
@@ -36,6 +38,7 @@ import { MHelloWorldComponent,
     MPortfolioComponent,
     MMarkupComponent,
     MAboutComponent,
+    MFormComponent,
   ],
   providers: [],
   schemas: [

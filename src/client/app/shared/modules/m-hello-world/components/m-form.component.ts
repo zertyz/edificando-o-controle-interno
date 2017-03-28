@@ -12,6 +12,8 @@
  *  sectionTitle:         the title, if any, to be present in the beginning of the component. Some very simple examples are "CONTACT US" or "SUBSCRIBE"
  *  sectionImg:           the same as above, but specifying an image
  *  sectionImgAlt:        the specification of the image above -- the briefing you'd give to a designer when creating the image. Great SEO opportunity.
+ *  formName:
+ *  formId:
  *  backendURL:           where to submit (partial) results
  *  backendMethod:        either GET or POST -- the HTTP method to use to call the backend
  *  fields:               an array containing all fields to be shown, as described bellow.
@@ -26,10 +28,15 @@
  * Usage example:
  *
  *  <m-form
- *               sectionTitle  = "Contact us"
- *               sectionImg    = ""
- *               sectionImgAlt = ""
- *               [items]       = "[{name: 'email', label: 'E-Mail', tip: 'Please give us your email so we can contact you', fieldType: EFieldTypes.Text}, {}]">
+ *          sectionTitle  = "Contact us"
+ *          sectionImg    = ""
+ *          sectionImgAlt = ""
+ *          formName      = "formName"
+ *          formId        = "formId"
+ *          backendURL    = "/?.cgi"
+ *          backendMethod = "GET"
+ *          submitText    = "Send"
+ *          [fields]      = "[{label: 'E-Mail', name: 'email', tip: 'Please give us your email so we can contact you', type: EFieldTypes.Text}, {...}]">
  *  </m-form>
  *
  * @see RelatedClass(es)
@@ -55,18 +62,21 @@ export class MFormComponent {
   @Input() sectionTitle:   string          = '§§ FORM §§';
   @Input() sectionImg:     string          = 'sectionImg#not used';
   @Input() sectionImgAlt:  string          = 'sectionImgAlt#not used';
-  @Input() backendURL:     string          = "/?.cgi";
+  @Input() formName:       string          = 'formName';
+  @Input() formId:         string          = 'formId';
+  @Input() backendURL:     string          = '/?.cgi';
   @Input() backendMethod:  EBackendMethods = EBackendMethods.GET;
+  @Input() submitText:     string          = 'Send';
   @Input() fields:         FormField[]     = [];
 
 }
 
 enum EBackendMethods { GET, POST };
-enum EFieldTypes     { Text, Radiobox, Checkbox, Combobox, Listbox, TextArea, Date, DateTime };
+enum EFieldTypes     { Text, RadioBox, CheckBox, ComboBox, ListBox, TextArea, Date, DateTime };
 
 interface FormField {
-  name:      string;
-  label:     string;
-  tip:       string;
-  fieldType: EFieldTypes;
+  label: string;
+  name:  string;
+  tip:   string;
+  type:  EFieldTypes;
 }

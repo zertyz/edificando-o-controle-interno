@@ -4,16 +4,16 @@
     <hr class="star-primary">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
-        <form [name]="formName" [id]="formId" [action]="backendURL" [method]="backendMethod" novalidate>
+        <form [attr.name]="formName" [attr.id]="formId" [attr.action]="backendURL" [attr.method]="backendMethod" novalidate>
 
           <div *ngFor="let field of fields" class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>{{field.label}}</label>
               <template [ngIf]="field.type == 'Text'">
-                <input type="text" class="form-control" [placeholder]="field.label" [id]="field.name" required [attr.data-validation-required-message]="field.tip">
+                <input type="text" class="form-control" [attr.placeholder]="field.label" [attr.id]="field.name" required [attr.data-validation-required-message]="field.tip">
               </template>
               <template [ngIf]="field.type == 'TextArea'">
-                <textarea rows="5" class="form-control" [placeholder]="field.label" [id]="field.name" required [attr.data-validation-required-message]="field.tip"></textarea>
+                <textarea rows="5" class="form-control" [attr.placeholder]="field.label" [attr.id]="field.name" required [attr.data-validation-required-message]="field.tip"></textarea>
               </template>
               <p class="help-block text-danger"></p>
             </div>
@@ -23,7 +23,7 @@
           <div id="success"></div>
           <div class="row">
             <div class="form-group col-xs-12">
-              <button type="submit" class="btn btn-success btn-lg">{{submitText}}</button>
+              <input type="submit" class="btn btn-success btn-lg" value="{{submitText}}">
             </div>
           </div>
         </form>

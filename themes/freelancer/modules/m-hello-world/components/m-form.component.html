@@ -1,0 +1,34 @@
+<section id="contact">
+  <div class="container">
+    <h2 class="text-center">{{sectionTitle}}</h2>
+    <hr class="star-primary">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <form [name]="formName" [id]="formId" [action]="backendURL" [method]="backendMethod" novalidate>
+
+          <div *ngFor="let field of fields" class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>{{field.label}}</label>
+              <template [ngIf]="field.type == 'Text'">
+                <input type="text" class="form-control" [placeholder]="field.label" [id]="field.name" required [attr.data-validation-required-message]="field.tip">
+              </template>
+              <template [ngIf]="field.type == 'TextArea'">
+                <textarea rows="5" class="form-control" [placeholder]="field.label" [id]="field.name" required [attr.data-validation-required-message]="field.tip"></textarea>
+              </template>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <br>
+          <div id="success"></div>
+          <div class="row">
+            <div class="form-group col-xs-12">
+              <button type="submit" class="btn btn-success btn-lg">{{submitText}}</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

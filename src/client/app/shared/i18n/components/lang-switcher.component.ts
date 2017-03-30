@@ -19,11 +19,13 @@ export class LangSwitcherComponent {
 
   public lang: string;
   public supportedLanguages: Array<ILang> = multilingual.MultilingualService.SUPPORTED_LANGUAGES;
+  public language: ILang;
 
   constructor(private log: LogService, private store: Store<IAppState>) {
     store.take(1).subscribe((s: any) => {
       // s && s.18n - ensures testing works in all cases (since some tests dont use i18n state)
       this.lang = s && s.i18n ? s.i18n.lang : '';
+      this.language = this.getLanguageFromLangCode(this.lang);
     });
 
     if (Config.IS_DESKTOP()) {
@@ -45,6 +47,26 @@ export class LangSwitcherComponent {
       lang = e.target.value;
     }
     this.log.debug(`Language change: ${lang}`);
+    this.language = this.getLanguageFromLangCode(this.lang);
     this.store.dispatch(new multilingual.ChangeAction(lang));
+  }
+
+  /** allows changing the language from UI clicks */
+  clkSetLanguage(clickedLang: ILang) {
+    let lang = clickedLang.code;
+    this.language = this.getLanguageFromLangCode(lang);
+    this.store.dispatch(new multilingual.ChangeAction(lang));
+  }
+
+  /** method to sinc the ILang model to the 'lang' text */
+  private getLanguageFromLangCode(langCode: string): ILang {
+    for (let i in this.supportedLanguages) {
+      let supportedLanguage: ILang = this.supportedLanguages[i];
+      if (supportedLanguage.code === langCode) {
+        return supportedLanguage;
+      }
+    }
+    // else, return the default language
+    return this.supportedLanguages[0];
   }
 }

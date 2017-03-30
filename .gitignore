@@ -36,30 +36,29 @@ ts-node
 .typingsrc
 
 #IDE configuration files
-.idea
+.idea/
 *.iml
 .vscode/angulardoc.json
 
-dist
-dev
-docs
-lib
-test
-tmp
+dist/
+dev/
+docs/
+lib/
+test/
+tmp/
 
 src/**/*.js
 src/**/*.js.map
 !src/client/app/shared/test
 nativescript/app
-nativescript/src/app
 nativescript/hooks
 nativescript/node_modules
 nativescript/platforms
-nativescript/**/*.js
-nativescript/**/*.js.map
+nativescript/src/app
+nativescript/src/**/*.js
+nativescript/src/**/*.js.map
 nativescript/*.d.ts
-!nativescript/references.d.ts
-!nativescript/app/App_Resources
+!nativescript/src/references.d.ts
 desktop
 gulpfile.js
 gulpfile.js.map
@@ -69,3 +68,22 @@ ChromeDebugger-UserData
 
 # OS X trash files
 .DS_Store
+
+# MutuaTech patches: themes: *.html and *.scss files now belongs to the themes/ directory, and they
+# are ignored when placed on the following locations by the (not so elegant) solution implemented in 'build.mutua.ts'
+src/client/app/components/**/*.html
+src/client/app/components/**/*.scss
+src/client/app/shared/modules/**/*.html
+src/client/app/shared/modules/**/*.scss
+src/client/app/shared/modules/i18n/
+src/client/app/shared/modules/sample/
+src/client/app/shared/i18n/**/*.html
+src/client/app/shared/i18n/**/*.scss
+src/client/app/shared/sample/**/*.html
+src/client/app/shared/sample/**/*.css
+src/client/css/**/*.*
+src/client/scss/**/*.*
+src/client/index.html
+nativescript/src/_common.scss
+nativescript/src/app.android.scss
+nativescript/src/app.ios.scss

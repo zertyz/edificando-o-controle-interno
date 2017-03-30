@@ -15,10 +15,13 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // app
-import { AppComponent } from './app/components/app.component';
-import { AboutComponent } from './app/components/about/about.component';
-import { HomeComponent } from './app/components/home/home.component';
-import { routes } from './app/components/app.routes';
+// import { AppComponent } from './app/components/app.component';
+// import { AboutComponent } from './app/components/about/about.component';
+// import { HomeComponent } from './app/components/home/home.component';
+// import { routes } from './app/components/app.routes';
+
+// Mutua Modules and Components Loading Configuration
+import { MutuaExportedComponents, MutuaExportedRoutes, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';
 
 // Mutua Modules and Components Loading Configuration
 import { MutuaExportedComponents, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';

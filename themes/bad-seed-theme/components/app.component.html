@@ -1,0 +1,17 @@
+<div platform>
+
+  <div id="header">
+    <sd-toolbar></sd-toolbar>
+    <sd-navbar></sd-navbar>
+  </div>
+
+  <div id="content">
+    <router-outlet id="home"></router-outlet>
+    <!--<sd-home id="home"></sd-home> <router-outlet> loads the default route '/' which happens to be 'home', so we don't need to invoke 'sd-home' component -->
+    <hr/>
+    <sd-about id="about"></sd-about>
+    <hr/>
+    <gv-home id="gv-home"></gv-home>
+  </div>
+
+</div>

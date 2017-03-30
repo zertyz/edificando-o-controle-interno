@@ -1,0 +1,8 @@
+<div ngbDropDown class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle i18n" data-toggle="dropdown" ngbDropdownToggle>
+    <span [ngClass]="'flag-icon flag-icon-' + language.flag"></span>&nbsp;{{language.title}}
+  </button>
+  <ul class="dropdown-menu i18n">
+    <li *ngFor="let l of supportedLanguages" (click)="clkSetLanguage(l)"><span [ngClass]="'flag-icon flag-icon-' + l.flag"></span>&nbsp;{{l.title}}</li>
+  </ul>
+</div>

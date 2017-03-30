@@ -1,0 +1,148 @@
+@import '../scss/variables';
+
+/* Reset */
+html,
+body,
+div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Box-sizing border-box */
+* {
+  box-sizing: border-box;
+}
+
+/* Set up a default font and some padding to provide breathing room */
+body {
+  background-color: #1a1b1c;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #8a8b8c;
+}
+
+/* used by app.component.html to set the top fixed #header and a scrolling #content */
+#header {
+  background: #2f2f2f;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+#content {
+  margin-top: 100px;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+ul {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+input {
+  background-color: #2a2b2c;
+  color: #626f70;
+  border: 1px solid $primary;
+  font-size: 14px;
+  height: 40px;
+  outline: none;
+  padding: 8px;
+}
+
+button {
+  background-color: $primary;
+  border-style: none;
+  color: rgba(155, 155, 155, 0.87);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  padding: 8px 18px;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: $secondary;
+}
+
+/* platform specific */
+.desktop lang-switcher {
+  display: none;
+}
+
+/*************/
+/* bootstrap */
+/*************/
+
+// alerts
+
+.alert-success {
+  background-color: #6f9068;
+  border-color: #60e356;
+  color: #0c160d;
+}
+
+.alert-success hr {
+  border-top-color: #517243;
+}
+
+.alert-success .alert-link {
+  color: #0b040c;
+}
+
+.alert-info {
+  background-color: #697d87;
+  border-color: #4c6f81;
+  color: #01000f;
+}
+
+.alert-info hr {
+  border-top-color: #36657c;
+}
+
+.alert-info .alert-link {
+  color: #040209;
+}
+
+.alert-warning {
+  background-color: #8c8873;
+  border-color: #7a725c;
+  color: #0a0d0b;
+}
+
+.alert-warning hr {
+  border-top-color: #776c45;
+}
+
+.alert-warning .alert-link {
+  color: #06010c;
+}
+
+.alert-danger {
+  background-color: #826e6e;
+  border-color: #7b5c5c;
+  color: #390402;
+}
+
+.alert-danger hr {
+  border-top-color: #744939;
+}
+
+.alert-danger .alert-link {
+  color: #140504;
+}

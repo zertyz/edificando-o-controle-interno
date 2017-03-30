@@ -17,6 +17,15 @@ import { GvHomeComponent } from '../../components/pages/gv-home/gv-home.componen
 
 export const MutuaExportedComponents: any[] = [AppComponent,AboutComponent,HomeComponent,GvHomeComponent];
 
+// routes
+/////////
+
+import { AboutRoutes } from '../../components/about/about.routes';
+import { HomeRoutes } from '../../components/home/home.routes';
+import { GvHomeRoutes } from '../../components/pages/gv-home/gv-home.routes';
+
+export const MutuaExportedRoutes: any[] = [...AboutRoutes,...HomeRoutes,...GvHomeRoutes];
+
 // modules
 //////////
 

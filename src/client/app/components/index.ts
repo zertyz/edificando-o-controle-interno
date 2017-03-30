@@ -13,8 +13,9 @@ export * from './about/about.component';
 export * from './home/home.component';
 
 // note: mutuatech patches: this file won't be used and is kept for reference only.
-// it used to be included by 'src/web.module.ts' and was dropped in favor of
-// 'src/client/mutua/mutua.instance-project.config.ts', which defines
-// 'webComponents' and 'mobileComponents'.
+// it used to be included by 'src/web.module.ts' and 'nativescript/src/components.module.ts'
+// but was dropped in favor of 'src/client/app/shared/mutua/mutua.html.loading.config'
+// and 'src/client/app/shared/mutua/mutua.mobile.loading.config', which defines
+// 'MutuaExportedComponents', 'MutuaExportedRoutes', 'MutuaExportedModules' and 'MutuaAppComponent'.
 // note 2: instance projects may safely delete this file and assure it is no
-// longer included by 'src/web.module.ts'
+// longer included by 'src/web.module.ts' nor 'nativescript/src/components.module.ts'

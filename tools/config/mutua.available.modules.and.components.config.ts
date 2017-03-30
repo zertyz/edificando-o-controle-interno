@@ -89,6 +89,11 @@ interface IMutuaAvailableModuleConfiguration {
   htmlNPMInjections   ?: InjectableDependency[];
   htmlLocalInjections ?: InjectableDependency[];
 
+  // module source options
+  ////////////////////////
+
+  packageDefinition ?: string[];
+
 }
 
 /** specifies a set of 'IMutuaAvailableModulesConfiguration' */
@@ -178,6 +183,8 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                 npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap', path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
                 webFiles:          null,
                 htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
+                packageDefinition: ['bootstrap',                  '^4.0.0-alpha.6',
+                                    '@ng-bootstrap/ng-bootstrap', '^1.0.0-alpha.22'],
     },
 
     // PrimeNG module
@@ -197,14 +204,16 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                       'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
                                       'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
                                       'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
-                       packageEntries:    ['"font-awesome": "^4.7.0"',
-                                           '"primeng":      "^1.0.1"'],
-                       npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
-                       webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
-                       desktopFiles:      [sameAsWeb],
-                       htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
-                                           {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
-                                           {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
+                      packageEntries:    ['"font-awesome": "^4.7.0"',
+                                          '"primeng":      "^1.0.1"'],
+                      npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
+                      webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
+                      desktopFiles:      [sameAsWeb],
+                      htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
+                                          {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
+                                          {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
+                      packageDefinition: ['font-awesome', '^4.7.0',
+                                          'primeng',      '^2.0.5'],
     },
 
 };

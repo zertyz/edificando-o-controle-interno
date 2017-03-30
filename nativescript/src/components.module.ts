@@ -23,6 +23,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // Mutua Modules and Components Loading Configuration
 import { MutuaExportedComponents, MutuaExportedRoutes, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';
 
+// Mutua Modules and Components Loading Configuration
+import { MutuaExportedComponents, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';
+
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
 import { AnalyticsModule } from './app/shared/analytics/analytics.module';

@@ -14,6 +14,8 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
   constructor() {
     super();
+    // this.APP_TITLE = 'Put name of your app here';
+    // this.GOOGLE_ANALYTICS_ID = 'Your site's ID';
     this.APP_TITLE = appTitle;
 
     /* Enable typeless compiler runs (faster) between typed compiler runs. */
@@ -46,8 +48,13 @@ export class ProjectConfig extends SeedAdvancedConfig {
     //
     // this.addPackagesBundles(additionalPackages);
 
+    /* Add proxy middleware */
+    // this.PROXY_MIDDLEWARE = [
+    //   require('http-proxy-middleware')({ ws: false, target: 'http://localhost:3003' })
+    // ];
+
     /* Add to or override NPM module configurations: */
-    // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+    // this.PLUGIN_CONFIGS['browser-sync'] = { ghostMode: false };
   }
 
 }

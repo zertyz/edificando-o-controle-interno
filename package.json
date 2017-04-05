@@ -182,7 +182,7 @@
     "bootstrap": "^4.0.0-alpha.6",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.22",
     "font-awesome": "^4.7.0",
-    "primeng": "^2.0.5",
+    "primeng": "^4.0.0-rc.2",
 
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^2.0.2",

@@ -66,9 +66,6 @@ interface IMutuaAvailableModuleConfiguration {
   /** when set, specifies that the module returns a property named 'moduleName' */
   moduleName     ?: string;
 
-  /** if set, specifies that this module is a 'node' dependency and that the listed strings are to be placed on 'package.json' */
-  packageEntries ?: string[];
-
   /** specifies the source code for this component. If it is a local component, the path should be relative to the path of this file */
   source          : string;
 
@@ -92,6 +89,7 @@ interface IMutuaAvailableModuleConfiguration {
   // module source options
   ////////////////////////
 
+  /** if set, specifies that this module is a 'node' dependency and that the listed strings are to be placed on 'package.json' */
   packageDefinition ?: string[];
 
 }
@@ -169,6 +167,11 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
 /** available modules */
 const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = {
 
+  BrowserAnimationsModule: {
+    source:  '@angular/platform-browser/animations',
+    forRoot: false,
+  },
+
     // m-hello-world module
     MHelloWorldModule: {
                         source: '../modules/m-hello-world/m-hello-world.module',
@@ -178,8 +181,6 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     // ng-bootstrap module
     NgbModule: {
                 source: '@ng-bootstrap/ng-bootstrap',
-                packageEntries:    ['"bootstrap":                  "^4.0.0-alpha.5"',
-                                    '"@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.14"'],
                 npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap', path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
                 webFiles:          null,
                 htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
@@ -187,7 +188,7 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                     '@ng-bootstrap/ng-bootstrap', '^1.0.0-alpha.22'],
     },
 
-    // PrimeNG module
+    // PrimeNG module (depends on 'AngularAnimations' module)
     PRIMENG_MODULES: {
                       source: 'primeng/primeng',
                       forRoot: false,
@@ -204,8 +205,6 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                       'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
                                       'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
                                       'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
-                      packageEntries:    ['"font-awesome": "^4.7.0"',
-                                          '"primeng":      "^1.0.1"'],
                       npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
                       webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
                       desktopFiles:      [sameAsWeb],
@@ -213,7 +212,7 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                           {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
                                           {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
                       packageDefinition: ['font-awesome', '^4.7.0',
-                                          'primeng',      '^2.0.5'],
+                                          'primeng',      '^4.0.0-rc.2'],
     },
 
 };

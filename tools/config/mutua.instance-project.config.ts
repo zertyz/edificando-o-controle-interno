@@ -31,7 +31,7 @@ export const appTitle: string = 'angular-seed-advanced-mutuatech';
 
 /** theme configuration */
 export const appTheme    : string = 'freelancer';     /** One of the directories in 'themes/' */
-export const primeNGTheme: string = 'trontastic';         /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
+export const primeNGTheme: string = 'trontastic';     /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
 
 /** Defines the components this application should bundle and load, for html (web and desktop) and mobile platforms.
  *  All 'component' entries must have been previously defined by 'MutuaAvailableComponentsConfiguration', from
@@ -47,9 +47,10 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
  *  All 'module' entries must have been previously defined by 'MutuaAvailableModulesConfiguration', from
  *  'mutua.available.modules.and.components.config.ts' */
 export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjectsModuleActivationConfiguration[] = [
-  {moduleName: 'MHelloWorldModule',   htmlEnabled: true,  mobileEnabled: true},
-  {moduleName: 'NgbModule',           htmlEnabled: true,  mobileEnabled: false},
-  {moduleName: 'PRIMENG_MODULES',     htmlEnabled: true,  mobileEnabled: false},
+  {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},
+  {moduleName: 'MHelloWorldModule',       htmlEnabled: true,  mobileEnabled: true},
+  {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},
+  {moduleName: 'PRIMENG_MODULES',         htmlEnabled: true,  mobileEnabled: false},
 ];
 
 // app components

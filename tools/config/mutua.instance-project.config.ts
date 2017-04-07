@@ -50,7 +50,7 @@ export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjec
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},
   {moduleName: 'MHelloWorldModule',       htmlEnabled: true,  mobileEnabled: true},
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},
-  {moduleName: 'PRIMENG_MODULES',         htmlEnabled: true,  mobileEnabled: false},
+  {moduleName: 'PRIMENG_MODULES',         htmlEnabled: true,  mobileEnabled: false},  // depends on 'BrowserAnimationsModule'
 ];
 
 // app components

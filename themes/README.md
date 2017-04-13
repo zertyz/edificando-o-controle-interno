@@ -33,3 +33,7 @@ Our themes will have all the items above, except for the first and last. In addi
 
 ## Workflow
 * gulp build.mutua; npm start & while read; do gulp build.mutua; done; echo -en "\n###\nEND\n\n"; fg
+
+## Nice themes for the future
+* https://agmstudio.io/themes/material-style/1.3.2/
+* https://wrapbootstrap.com/theme/smartadmin-responsive-webapp-WB0573SK0

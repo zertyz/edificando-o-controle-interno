@@ -167,53 +167,60 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
 /** available modules */
 const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = {
 
+  // angular 4.x module for animations, required by 'PRIMENG_MODULES'
   BrowserAnimationsModule: {
     source:  '@angular/platform-browser/animations',
     forRoot: false,
   },
 
-    // m-hello-world module
-    MHelloWorldModule: {
-                        source: '../modules/m-hello-world/m-hello-world.module',
-                        htmlLocalInjections: null,
-    },
+  // m-hello-world module
+  MHelloWorldModule: {
+                      source: '../modules/m-hello-world/m-hello-world.module',
+                      htmlLocalInjections: null,
+  },
 
-    // ng-bootstrap module
-    NgbModule: {
-                source: '@ng-bootstrap/ng-bootstrap',
-                npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap', path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
-                webFiles:          null,
-                htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
-                packageDefinition: ['bootstrap',                  '^4.0.0-alpha.6',
-                                    '@ng-bootstrap/ng-bootstrap', '^1.0.0-alpha.22'],
-    },
+  // m-ng2-admin module
+  MNg2Admin: {
+              source: '../modules/m-ng2-admin/m-ng2-admin.module',
+              htmlLocalInjections: null,
+  },
 
-    // PrimeNG module (depends on 'AngularAnimations' module)
-    PRIMENG_MODULES: {
-                      source: 'primeng/primeng',
-                      forRoot: false,
-                      packedModules: ['AccordionModule',     'AutoCompleteModule', 'BlockUIModule',     'BreadcrumbModule',    'ButtonModule',
-                                      'CalendarModule',      'CarouselModule',     'ChartModule',       'CheckboxModule',      'CodeHighlighterModule',
-                                      'ConfirmDialogModule', 'ContextMenuModule',  'DataGridModule',    'DataListModule',      'DataScrollerModule',
-                                      'DataTableModule',     'DialogModule',       'DragDropModule',    'DropdownModule',      'EditorModule',
-                                      'FieldsetModule',      'FileUploadModule',   'GalleriaModule',    'GMapModule',          'GrowlModule',
-                                      'InplaceModule',       'InputMaskModule',    'InputSwitchModule', 'InputTextareaModule', 'InputTextModule',
-                                      'LightboxModule',      'ListboxModule',      'MegaMenuModule',    'MenubarModule',       'MenuModule',
-                                      'MessagesModule',      'MultiSelectModule',  'OrderListModule',   'OverlayPanelModule',  'PaginatorModule',
-                                      'PanelMenuModule',     'PanelModule',        'PasswordModule',    'PickListModule',      'ProgressBarModule',
-                                      'RadioButtonModule',   'RatingModule',       'ScheduleModule',    'SelectButtonModule',  'SharedModule',
-                                      'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
-                                      'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
-                                      'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
-                      npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
-                      webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
-                      desktopFiles:      [sameAsWeb],
-                      htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
-                                          {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
-                                          {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
-                      packageDefinition: ['font-awesome', '^4.7.0',
-                                          'primeng',      '^4.0.0-rc.2'],
-    },
+  // ng-bootstrap module
+  NgbModule: {
+              source: '@ng-bootstrap/ng-bootstrap',
+              npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap', path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
+              webFiles:          null,
+              htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
+              packageDefinition: ['bootstrap',                  '^4.0.0-alpha.6',
+                                  '@ng-bootstrap/ng-bootstrap', '^1.0.0-alpha.22'],
+  },
+
+  // PrimeNG module (depends on 'BrowserAnimationsModule' module)
+  PRIMENG_MODULES: {
+                    source: 'primeng/primeng',
+                    forRoot: false,
+                    packedModules: ['AccordionModule',     'AutoCompleteModule', 'BlockUIModule',     'BreadcrumbModule',    'ButtonModule',
+                                    'CalendarModule',      'CarouselModule',     'ChartModule',       'CheckboxModule',      'CodeHighlighterModule',
+                                    'ConfirmDialogModule', 'ContextMenuModule',  'DataGridModule',    'DataListModule',      'DataScrollerModule',
+                                    'DataTableModule',     'DialogModule',       'DragDropModule',    'DropdownModule',      'EditorModule',
+                                    'FieldsetModule',      'FileUploadModule',   'GalleriaModule',    'GMapModule',          'GrowlModule',
+                                    'InplaceModule',       'InputMaskModule',    'InputSwitchModule', 'InputTextareaModule', 'InputTextModule',
+                                    'LightboxModule',      'ListboxModule',      'MegaMenuModule',    'MenubarModule',       'MenuModule',
+                                    'MessagesModule',      'MultiSelectModule',  'OrderListModule',   'OverlayPanelModule',  'PaginatorModule',
+                                    'PanelMenuModule',     'PanelModule',        'PasswordModule',    'PickListModule',      'ProgressBarModule',
+                                    'RadioButtonModule',   'RatingModule',       'ScheduleModule',    'SelectButtonModule',  'SharedModule',
+                                    'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
+                                    'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
+                                    'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
+                    npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
+                    webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
+                    desktopFiles:      [sameAsWeb],
+                    htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
+                                        {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
+                                        {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
+                    packageDefinition: ['font-awesome', '^4.7.0',
+                                        'primeng',      '^4.0.0-rc.2'],
+  },
 
 };
 

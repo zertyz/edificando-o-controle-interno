@@ -3,6 +3,7 @@ import { CommonModule }  from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
+import { MultilingualModule } from '../../i18n/multilingual.module';
 
 import {
   BaThemeConfig
@@ -26,7 +27,8 @@ import {
   BaMultiCheckbox,
   BaPageTop,
   BaPictureUploader,
-  BaSidebar
+  BaSidebar,
+  BaFileUploader
 } from './components';
 
 import { BaCardBlur } from './components/baCard/baCardBlur.directive';
@@ -69,7 +71,8 @@ const NGA_COMPONENTS = [
   BaMultiCheckbox,
   BaPageTop,
   BaPictureUploader,
-  BaSidebar
+  BaSidebar,
+  BaFileUploader
 ];
 
 const NGA_DIRECTIVES = [
@@ -108,7 +111,8 @@ const NGA_VALIDATORS = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgUploaderModule,
+    MultilingualModule,
+    NgUploaderModule
   ],
   exports: [
     ...NGA_PIPES,
@@ -116,9 +120,7 @@ const NGA_VALIDATORS = [
     ...NGA_COMPONENTS
   ]
 })
-
 export class MNg2AdminModule {
-
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders> {
       ngModule: MNg2AdminModule,

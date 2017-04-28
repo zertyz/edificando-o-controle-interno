@@ -173,6 +173,11 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     forRoot: false,
   },
 
+  // JQuery module, required by 'MNg2Admin'
+  JQueryModule: {
+
+  },
+
   // m-hello-world module
   MHelloWorldModule: {
                       source: '../modules/m-hello-world/m-hello-world.module',

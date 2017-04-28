@@ -1,6 +1,6 @@
 import {Component, ElementRef, HostListener} from '@angular/core';
-import {GlobalState} from '../../../global.state';
-import {layoutSizes} from '../../../theme';
+import {GlobalState} from '../../global.state';
+import {layoutSizes} from '../../';
 
 import 'style-loader!./baSidebar.scss';
 

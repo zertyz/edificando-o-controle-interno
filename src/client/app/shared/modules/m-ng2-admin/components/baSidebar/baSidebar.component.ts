@@ -1,12 +1,11 @@
 import {Component, ElementRef, HostListener} from '@angular/core';
 import {GlobalState} from '../../global.state';
-import {layoutSizes} from '../../';
-
-import 'style-loader!./baSidebar.scss';
+import {layoutSizes} from '../../index';
 
 @Component({
   selector: 'ba-sidebar',
-  templateUrl: './baSidebar.html'
+  templateUrl: './baSidebar.html',
+  styleUrls: ['baSidebar.css']
 })
 export class BaSidebar {
   public menuHeight:number;

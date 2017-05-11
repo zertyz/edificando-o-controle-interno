@@ -1,6 +1,6 @@
 import {Component, ViewChild, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
-import {BaThemePreloader} from '../../services';
+import {BaThemePreloader} from '../../services/index';
 
 import 'amcharts3';
 import 'amcharts3/amcharts/plugins/responsive/responsive.js';
@@ -12,11 +12,10 @@ import 'ammap3/ammap/maps/js/worldLow';
 
 import {BaAmChartThemeService} from './baAmChartTheme.service';
 
-import 'style-loader!./baAmChart.scss';
-
 @Component({
   selector: 'ba-am-chart',
   templateUrl: './baAmChart.html',
+  styleUrls: ['baAmChart.css'],
   providers: [BaAmChartThemeService],
 })
 export class BaAmChart {

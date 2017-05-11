@@ -2,11 +2,10 @@ import {Component, ViewChild, Input, Output, ElementRef, EventEmitter} from '@an
 
 import 'fullcalendar/dist/fullcalendar.js';
 
-import 'style-loader!./baFullCalendar.scss';
-
 @Component({
   selector: 'ba-full-calendar',
   templateUrl: './baFullCalendar.html',
+  styleUrls: ['baFullCalendar.css']
 })
 export class BaFullCalendar {
 

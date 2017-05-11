@@ -1,5 +1,5 @@
 import {Directive, ElementRef, HostListener, HostBinding} from '@angular/core';
-import {BaThemeConfigProvider} from '../../';
+import {BaThemeConfigProvider} from '../../index';
 
 import {BaCardBlurHelper} from './baCardBlurHelper.service';
 import {BgMetrics} from './bgMetrics';

@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {layoutPaths} from '../../';
+import {layoutPaths} from '../../index';
 
 @Pipe({name: 'baKameleonPicture'})
 export class BaKameleonPicturePipe implements PipeTransform {

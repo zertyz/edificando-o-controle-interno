@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import {BaThemeConfigProvider} from '../../';
+import {BaThemeConfigProvider} from '../../index';
 
 
 @Injectable()

@@ -1,6 +1,6 @@
 import {Directive, HostBinding} from '@angular/core';
 
-import {BaThemeConfigProvider, isMobile} from '../../../theme';
+import {BaThemeConfigProvider, isMobile} from '../../index';
 
 @Directive({
   selector: '[baThemeRun]'

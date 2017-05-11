@@ -173,8 +173,41 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     forRoot: false,
   },
 
-  // JQuery module, required by 'MNg2Admin'
+  // ngx-uploader module, required by 'MNg2AdminModule'
+  NgUploaderModule: {
+                     source: 'ngx-uploader',
+                     npmDependencies:   [{name: 'ngx-uploader', path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'}],
+                     forRoot: false,
+
+  },
+
+  // amcharts3 module, required by 'MNg2AdminModule'
+  AmChartsModule: {
+    source: 'amcharts3',
+    npmDependencies:   [{name: 'amcharts3', path: 'node_modules/amcharts3/amcharts/amcharts.js'}],
+    forRoot: false,
+
+  },
+
+  // ammap3 module, required by 'MNg2AdminModule'
+  AmMapModule: {
+    source: 'ammap3',
+    npmDependencies:   [{name: 'ammap3', path: 'node_modules/ammap3/ammap/ammap.js'}],
+    forRoot: false,
+
+  },
+
+  // chartist module, required by 'MNg2AdminModule'
+  ChartistModule: {
+    source: 'chartist',
+    npmDependencies:   [{name: 'chartist', path: 'node_modules/chartist/dist/chartist.js'}],
+    forRoot: false,
+
+  },
+
+  // JQuery module, required by 'MNg2AdminModule'
   JQueryModule: {
+    source: 'jquery',
 
   },
 
@@ -185,15 +218,20 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
   },
 
   // m-ng2-admin module
-  MNg2Admin: {
-              source: '../modules/m-ng2-admin/m-ng2-admin.module',
-              htmlLocalInjections: null,
+  MNg2AdminModule: {
+                    source: '../modules/m-ng2-admin/m-ng2-admin.module',
+                    htmlLocalInjections: null,
+                    npmDependencies:     [{name: 'fullcalendar',        path: 'node_modules/fullcalendar/dist/fullcalendar.js'},
+                                          {name: 'jquery-slimscroll',   path: 'node_modules/jquery-slimscroll/jquery.slimscroll.js'},
+                                          {name: 'jquery',              path: 'node_modules/jquery/dist/jquery.js'},
+                                          {name: 'moment',              path: 'node_modules/moment/moment.js'}],
+                    //htmlNPMInjections:   [{src: 'jquery/dist/jquery',   inject: true}],
   },
 
   // ng-bootstrap module
   NgbModule: {
               source: '@ng-bootstrap/ng-bootstrap',
-              npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap', path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
+              npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap',      path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
               webFiles:          null,
               htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
               packageDefinition: ['bootstrap',                  '^4.0.0-alpha.6',

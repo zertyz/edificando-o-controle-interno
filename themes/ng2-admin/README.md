@@ -7,11 +7,15 @@ Steps for updating:
 4) Delete the contents of 'src/client/app/shared/modules/m-ng2-admin' and copy ng2-admin's 'src/app/theme/*' there, observing the following:
    - preserve 'm-ng2-admin.module.ts'
    - copy also ng-admin's **src/app/global.state.ts** there
-   - change paths like '../../../theme' to '../..' (do it also for all *.service.ts files down under the directory tree)
+   - change paths like '../../../theme' to '../../index' (do it also for all *.service.ts, pipe, directives, ... files down under the directory tree)
    - make 'm-ng2-admin.module.ts' match 'nga.module.ts' and delete 'nga.module.ts'. The following may be useful:
      - import { AppTranslationModule } from '../app.translation.module' becomes import { MultilingualModule } from '../../i18n/multilingual.module';
+     - imports to 'components', 'directives', 'pipes', 'services' and 'validators' must all have the **'/index'** suffix
+     - all those ***/index** files above have their own includes, which, again, must be also suffixed by **'/index'** as well -- except for **m-ng2-admin/validators/index.ts**
+     - do the same for 'm-ng2/admin/index.ts' -- add the **'/index'** suffix to imports who imports directories
      - remember to maintain the constructor at the end of the file
      - remember to change the exported class 'NgaModule' to 'MNg2AdminModule'
+     - correct all .ts files who includes scss files using 'style-loader!...'. Delete these imports and include them as **styleUrls: ['xxx.css']** instead
 5) index.html: preserve '<div id="preloader">' for the startup animation. Other than that, nothing special. The default from angular-seed-advanced-mutuatech may be used.
 6) Move 'src/client/app/shared/modules/m-ng2-admin/sass' to 'theme/ng2-admin/scss'
 7) Move all .html and .scss from 'src/client/aoo/modules/m-ng2-admin/components/**' to theme/ng2-admin/modules/m-ng2-admin/components/** -- the following one-liner may help: for fp in `find src/client/app/shared/modules/m-ng2-admin/components/ -type d | tail -n +2`; do basename "$fp"; done | while read d; do td=themes/ng2-admin/modules/m-ng2-admin/components/"$d"; mkdir -p "$td"; mv src/client/app/shared/modules/m-ng2-admin/components/$d/*.[sh][ct][sm][sl] "$td"; done
@@ -29,3 +33,16 @@ Steps for updating:
    - all scss files in theme/ng2-admin/modules/m-ng2-admin/components/**/... -- add an five more of '../' and also correct 'sass' to 'scss'
 
 9) Replace all imports like "saas/" with "scss/" from theme.scss
+
+## Activating and Using ng2-admin theme and MNg2AdminModule on angular-seed-advanced-mutuatech ##
+Simply edit **mutua.instance-project.config.ts** and perform the following two steps:
+  - Set the theme:
+    ```typescript
+    /** theme configuration */
+    export const appTheme    : string = 'ng2-admin';     /** One of the directories in 'themes/' */
+    ```
+  - Enable the needed modules:
+    ```typescript
+    {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // enable this module for HTML if you are using 'ng2-admin' theme
+    {moduleName: 'NgUploaderModule',        htmlEnabled: true,  mobileEnabled: false},  // idem
+    ```

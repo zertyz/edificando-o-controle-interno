@@ -3,8 +3,9 @@ import {GlobalState} from '../../global.state';
 import {layoutSizes} from '../../index';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-sidebar',
-  templateUrl: './baSidebar.html',
+  templateUrl: 'baSidebar.html',
   styleUrls: ['baSidebar.css']
 })
 export class BaSidebar {

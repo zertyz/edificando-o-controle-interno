@@ -16,6 +16,7 @@ Steps for updating:
      - remember to maintain the constructor at the end of the file
      - remember to change the exported class 'NgaModule' to 'MNg2AdminModule'
      - correct all .ts files who includes scss files using 'style-loader!...'. Delete these imports and include them as **styleUrls: ['xxx.css']** instead
+     - import 'GlobalState' and declare it in the PROVIDERS section
 5) index.html: preserve '<div id="preloader">' for the startup animation. Other than that, nothing special. The default from angular-seed-advanced-mutuatech may be used.
 6) Move 'src/client/app/shared/modules/m-ng2-admin/sass' to 'theme/ng2-admin/scss'
 7) Move all .html and .scss from 'src/client/aoo/modules/m-ng2-admin/components/**' to theme/ng2-admin/modules/m-ng2-admin/components/** -- the following one-liner may help: for fp in `find src/client/app/shared/modules/m-ng2-admin/components/ -type d | tail -n +2`; do basename "$fp"; done | while read d; do td=themes/ng2-admin/modules/m-ng2-admin/components/"$d"; mkdir -p "$td"; mv src/client/app/shared/modules/m-ng2-admin/components/$d/*.[sh][ct][sm][sl] "$td"; done
@@ -34,6 +35,16 @@ Steps for updating:
 
 9) Replace all imports like "saas/" with "scss/" from theme.scss
 
+10) Add **import 'jquery';** to components that complain about not finding it when the project is compiled -- currently, baBackTop.component.ts, baFullCalendar.component.ts, baMenu.component.ts, baSlimScroll.directive.ts
+
+11) The same as above for **AmCharts** (in baAmChart.component.ts)
+
+12) Correct the import of **html templates** by removing the preceding **./** from template names. Do the same for **css styles**
+
+13) Add **moduleId: module.id,** to all **@Component({** declarations
+
+13) Correct any other erros when you build for dev and prod.
+
 ## Activating and Using ng2-admin theme and MNg2AdminModule on angular-seed-advanced-mutuatech ##
 Simply edit **mutua.instance-project.config.ts** and perform the following two steps:
   - Set the theme:
@@ -41,7 +52,7 @@ Simply edit **mutua.instance-project.config.ts** and perform the following two s
     /** theme configuration */
     export const appTheme    : string = 'ng2-admin';     /** One of the directories in 'themes/' */
     ```
-  - Enable the needed modules:
+  - Enable the needed modules (please, update this):
     ```typescript
     {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // enable this module for HTML if you are using 'ng2-admin' theme
     {moduleName: 'NgUploaderModule',        htmlEnabled: true,  mobileEnabled: false},  // idem

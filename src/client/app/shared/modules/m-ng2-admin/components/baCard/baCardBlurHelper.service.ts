@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core'
+import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 
 import {BgMetrics} from './bgMetrics';
@@ -21,7 +21,7 @@ export class BaCardBlurHelper {
   public getBodyBgImageSizes():BgMetrics {
     let elemW = document.documentElement.clientWidth;
     let elemH = document.documentElement.clientHeight;
-    if(elemW <= 640) return;
+    if(elemW <= 640) return null;
     let imgRatio = (this.image.height / this.image.width);       // original img ratio
     let containerRatio = (elemH / elemW);     // container ratio
 

@@ -2,9 +2,10 @@ import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer}
 import { NgUploaderOptions } from 'ngx-uploader';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-picture-uploader',
-  styleUrls: ['./baPictureUploader.scss'],
-  templateUrl: './baPictureUploader.html',
+  styleUrls: ['baPictureUploader.css'],
+  templateUrl: 'baPictureUploader.html',
 })
 export class BaPictureUploader {
 

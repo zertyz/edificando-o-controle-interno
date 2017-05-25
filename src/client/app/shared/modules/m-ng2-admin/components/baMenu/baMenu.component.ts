@@ -5,9 +5,12 @@ import { Subscription } from 'rxjs/Rx';
 import { BaMenuService } from '../../services/index';
 import { GlobalState } from '../../global.state';
 
+import 'jquery';
+
 @Component({
+  moduleId: module.id,
   selector: 'ba-menu',
-  templateUrl: './baMenu.html',
+  templateUrl: 'baMenu.html',
   styleUrls: ['baMenu.css']
 })
 export class BaMenu {

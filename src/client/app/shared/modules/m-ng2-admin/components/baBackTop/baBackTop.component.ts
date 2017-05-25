@@ -1,8 +1,11 @@
 import {Component, ViewChild, HostListener, Input, ElementRef} from '@angular/core';
 
+import 'jquery';
+
 @Component({
+  moduleId: module.id,
   selector: 'ba-back-top',
-  styleUrls: ['./baBackTop.scss'],
+  styleUrls: ['baBackTop.css'],
   template: `
     <i #baBackTop class="fa fa-angle-up back-top ba-back-top" title="Back to Top"></i>
   `

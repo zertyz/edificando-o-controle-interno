@@ -1,8 +1,9 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-menu-item',
-  templateUrl: './baMenuItem.html',
+  templateUrl: 'baMenuItem.html',
   styleUrls: ['baMenuItem.css']
 })
 export class BaMenuItem {

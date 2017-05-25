@@ -57,6 +57,9 @@ import {
   EqualPasswordsValidator
 } from './validators/index';
 
+import { GlobalState } from './global.state';
+
+
 const NGA_COMPONENTS = [
   BaAmChart,
   BaBackTop,
@@ -127,6 +130,7 @@ export class MNg2AdminModule {
       providers: [
         BaThemeConfigProvider,
         BaThemeConfig,
+        GlobalState,
         ...NGA_VALIDATORS,
         ...NGA_SERVICES
       ],

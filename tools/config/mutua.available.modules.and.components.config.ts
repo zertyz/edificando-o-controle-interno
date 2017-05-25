@@ -224,7 +224,11 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                     npmDependencies:     [{name: 'fullcalendar',        path: 'node_modules/fullcalendar/dist/fullcalendar.js'},
                                           {name: 'jquery-slimscroll',   path: 'node_modules/jquery-slimscroll/jquery.slimscroll.js'},
                                           {name: 'jquery',              path: 'node_modules/jquery/dist/jquery.js'},
-                                          {name: 'moment',              path: 'node_modules/moment/moment.js'}],
+                                          {name: 'moment',              path: 'node_modules/moment/moment.js'},
+                                          {name: 'ngx-uploader', path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'},
+                                          {name: 'ammap3', path: 'node_modules/ammap3/ammap/ammap.js'},
+                                          {name: 'amcharts3', path: 'node_modules/amcharts3/amcharts/amcharts.js'},
+                                          {name: 'chartist', path: 'node_modules/chartist/dist/chartist.js'}],
                     //htmlNPMInjections:   [{src: 'jquery/dist/jquery',   inject: true}],
   },
 
@@ -271,89 +275,6 @@ export class DataManipulation {
 
   /** file manipulation under node.js */
   private static fs: any = require('fs');
-
-  /** Returns all the lines a .ts source file should have to load the provided 'activatedComponents' */
-  private static getActivatedComponentsLoadingLines(activatedComponents: IMutuaAvailableComponentConfiguration[]): string[] {
-
-    let lines                  : string[] = [];
-    let exportedComponentsArray: string[] = [];
-
-    lines.push(`// components`);
-    lines.push(`/////////////`, '')
-
-    for (let i in activatedComponents) {
-      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
-      lines.push(`import { ${activatedComponent.componentName} } from '${activatedComponent.source}';`);
-      exportedComponentsArray.push(activatedComponent.componentName);
-    }
-
-    lines.push('', `export const MutuaExportedComponents: any[] = [${exportedComponentsArray.toString()}];`, '');
-
-    let exportedRoutesArray: string[] = [];
-
-    lines.push(`// routes`);
-    lines.push(`/////////`, '')
-
-    for (let i in activatedComponents) {
-      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
-      if (activatedComponent.routes != null) {
-        let symbolName: string = activatedComponent.componentName.replace('Component', 'Routes');
-        lines.push(`import { ${symbolName} } from '${activatedComponent.routes}';`);
-        exportedRoutesArray.push(`...${symbolName}`);
-      }
-    }
-
-    lines.push('', `export const MutuaExportedRoutes: any[] = [${exportedRoutesArray.toString()}];`);
-
-    return lines;
-  }
-
-  /** Returns all the lines a .ts source file should have to load the provided 'activatedModules' */
-  private static getActivatedModulesLoadingLines(activatedModules: IMutuaAvailableModuleConfiguration[]): string[] {
-
-    let lines               : string[] = [];
-    let exportedModulesArray: string[] = [];
-
-    lines.push(`// modules`);
-    lines.push(`//////////`, '');
-
-    // apply module loading rules
-    for (let i in activatedModules) {
-      let activatedModule:IMutuaAvailableModuleConfiguration = activatedModules[i];
-
-      // resolve the optional 'forRoot' property
-      let forRoot = ((activatedModule.forRoot != null) && (activatedModule.forRoot == false)) ? false : true;
-
-      lines.push(`// ${activatedModule.moduleName}`);
-
-      // to pack or not to pack
-      if (activatedModule.packedModules == null) {
-        lines.push(`import { ${activatedModule.moduleName} } from '${activatedModule.source}';`);
-        if (forRoot) {
-          exportedModulesArray.push(`${activatedModule.moduleName}.forRoot()`);
-        } else {
-          exportedModulesArray.push(activatedModule.moduleName);
-        }
-      } else {
-        lines.push(`import { ${activatedModule.packedModules.toString()} } from '${activatedModule.source}';`);
-        let packedForRootModules = [];
-        for (let packedModule of activatedModule.packedModules) {
-          if (forRoot) {
-            packedForRootModules.push(`${packedModule}.forRoot()`);
-          } else {
-            packedForRootModules.push(packedModule);
-          }
-        }
-        lines.push(`let ${activatedModule.moduleName}: any[] = [${activatedModule.packedModules.toString()}];`);
-        exportedModulesArray.push(`...${activatedModule.moduleName}`);
-      }
-    }
-
-    lines.push('', `export const MutuaExportedModules: any[] = [${exportedModulesArray.toString()}];`);
-
-    return lines;
-
-  }
 
   /** Returns an array of files (and also folders, wildcards, etc) to be bundled with the project, when building.
    *  The booleans control if the array should include files for web and/or desktop and the "same entries as for web"
@@ -522,6 +443,88 @@ export class DataManipulation {
 */
   }
 
+  /** Returns all the lines a .ts source file should have to load the provided 'activatedComponents' */
+  private static getActivatedComponentsLoadingLines(activatedComponents: IMutuaAvailableComponentConfiguration[]): string[] {
+
+    let lines                  : string[] = [];
+    let exportedComponentsArray: string[] = [];
+
+    lines.push(`// components`);
+    lines.push(`/////////////`, '');
+
+    for (let i in activatedComponents) {
+      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
+      lines.push(`import { ${activatedComponent.componentName} } from '${activatedComponent.source}';`);
+      exportedComponentsArray.push(activatedComponent.componentName);
+    }
+
+    lines.push('', `export const MutuaExportedComponents: any[] = [${exportedComponentsArray.toString()}];`, '');
+
+    let exportedRoutesArray: string[] = [];
+
+    lines.push(`// routes`);
+    lines.push(`/////////`, '');
+
+    for (let i in activatedComponents) {
+      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
+      if (activatedComponent.routes != null) {
+        let symbolName: string = activatedComponent.componentName.replace('Component', 'Routes');
+        lines.push(`import { ${symbolName} } from '${activatedComponent.routes}';`);
+        exportedRoutesArray.push(`...${symbolName}`);
+      }
+    }
+
+    lines.push('', `export const MutuaExportedRoutes: any[] = [${exportedRoutesArray.toString()}];`);
+
+    return lines;
+  }
+
+  /** Returns all the lines a .ts source file should have to load the provided 'activatedModules' */
+  private static getActivatedModulesLoadingLines(activatedModules: IMutuaAvailableModuleConfiguration[]): string[] {
+
+    let lines               : string[] = [];
+    let exportedModulesArray: string[] = [];
+
+    lines.push(`// modules`);
+    lines.push(`//////////`, '');
+
+    // apply module loading rules
+    for (let i in activatedModules) {
+      let activatedModule:IMutuaAvailableModuleConfiguration = activatedModules[i];
+
+      // resolve the optional 'forRoot' property
+      let forRoot = ((activatedModule.forRoot != null) && (activatedModule.forRoot == false)) ? false : true;
+
+      lines.push(`// ${activatedModule.moduleName}`);
+
+      // to pack or not to pack
+      if (activatedModule.packedModules == null) {
+        lines.push(`import { ${activatedModule.moduleName} } from '${activatedModule.source}';`);
+        if (forRoot) {
+          exportedModulesArray.push(`${activatedModule.moduleName}.forRoot()`);
+        } else {
+          exportedModulesArray.push(activatedModule.moduleName);
+        }
+      } else {
+        lines.push(`import { ${activatedModule.packedModules.toString()} } from '${activatedModule.source}';`);
+        let packedForRootModules = [];
+        for (let packedModule of activatedModule.packedModules) {
+          if (forRoot) {
+            packedForRootModules.push(`${packedModule}.forRoot()`);
+          } else {
+            packedForRootModules.push(packedModule);
+          }
+        }
+        lines.push(`let ${activatedModule.moduleName}: any[] = [${activatedModule.packedModules.toString()}];`);
+        exportedModulesArray.push(`...${activatedModule.moduleName}`);
+      }
+    }
+
+    lines.push('', `export const MutuaExportedModules: any[] = [${exportedModulesArray.toString()}];`);
+
+    return lines;
+
+  }
 
 };
 

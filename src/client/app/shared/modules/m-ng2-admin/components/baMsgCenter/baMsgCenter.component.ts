@@ -3,10 +3,11 @@ import {Component} from '@angular/core';
 import {BaMsgCenterService} from './baMsgCenter.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-msg-center',
   providers: [BaMsgCenterService],
-  styleUrls: ['./baMsgCenter.scss'],
-  templateUrl: './baMsgCenter.html'
+  styleUrls: ['baMsgCenter.css'],
+  templateUrl: 'baMsgCenter.html'
 })
 export class BaMsgCenter {
 

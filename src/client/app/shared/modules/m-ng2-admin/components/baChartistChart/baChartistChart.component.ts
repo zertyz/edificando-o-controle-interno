@@ -10,8 +10,9 @@ import {
 import * as Chartist from 'chartist';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-chartist-chart',
-  templateUrl: './baChartistChart.html',
+  templateUrl: 'baChartistChart.html',
   styleUrls: ['baChartistChart.css'],
   providers: [],
 })

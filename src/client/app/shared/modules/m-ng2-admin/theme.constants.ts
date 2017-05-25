@@ -17,11 +17,11 @@ export const layoutPaths = {
 export class colorHelper {
   static shade = (color, weight) => {
     return colorHelper.mix('#000000', color, weight);
-  };
+  }
 
   static tint = (color, weight) => {
     return colorHelper.mix('#ffffff', color, weight);
-  };
+  }
 
   static hexToRgbA = (hex, alpha) => {
     let c;
@@ -34,14 +34,14 @@ export class colorHelper {
       return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
     }
     throw new Error('Bad Hex');
-  };
+  }
 
   static mix = (color1, color2, weight) => {
 
     let d2h = (d) => d.toString(16);
     let h2d = (h) => parseInt(h, 16);
 
-    let result = "#";
+    let result = '#';
     for (let i = 1; i < 7; i += 2) {
       let color1Part = h2d(color1.substr(i, 2));
       let color2Part = h2d(color2.substr(i, 2));
@@ -49,7 +49,7 @@ export class colorHelper {
       result += ('0' + resultPart).slice(-2);
     }
     return result;
-  };
+  }
 }
 
 export const isMobile = () => (/android|webos|iphone|ipad|ipod|blackberry|windows phone/).test(navigator.userAgent.toLowerCase());

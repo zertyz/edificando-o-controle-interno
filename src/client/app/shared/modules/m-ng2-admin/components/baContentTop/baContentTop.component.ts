@@ -3,9 +3,10 @@ import {Component} from '@angular/core';
 import {GlobalState} from '../../global.state';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-content-top',
-  styleUrls: ['./baContentTop.scss'],
-  templateUrl: './baContentTop.html',
+  styleUrls: ['baContentTop.css'],
+  templateUrl: 'baContentTop.html',
 })
 export class BaContentTop {
 

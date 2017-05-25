@@ -12,9 +12,12 @@ import 'ammap3/ammap/maps/js/worldLow';
 
 import {BaAmChartThemeService} from './baAmChartTheme.service';
 
+import { AmCharts } from 'amcharts3';
+
 @Component({
+  moduleId: module.id,
   selector: 'ba-am-chart',
-  templateUrl: './baAmChart.html',
+  templateUrl: 'baAmChart.html',
   styleUrls: ['baAmChart.css'],
   providers: [BaAmChartThemeService],
 })

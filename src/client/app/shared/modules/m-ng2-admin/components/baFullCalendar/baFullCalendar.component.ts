@@ -1,10 +1,12 @@
 import {Component, ViewChild, Input, Output, ElementRef, EventEmitter} from '@angular/core';
 
+import 'jquery';
 import 'fullcalendar/dist/fullcalendar.js';
 
 @Component({
+  moduleId: module.id,
   selector: 'ba-full-calendar',
-  templateUrl: './baFullCalendar.html',
+  templateUrl: 'baFullCalendar.html',
   styleUrls: ['baFullCalendar.css']
 })
 export class BaFullCalendar {

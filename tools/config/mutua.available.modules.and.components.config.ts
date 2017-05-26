@@ -190,7 +190,8 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                           {name: 'ngx-uploader',        path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'},
                                           {name: 'ammap3',              path: 'node_modules/ammap3/ammap/ammap.js'},
                                           {name: 'amcharts3',           path: 'node_modules/amcharts3/amcharts/amcharts.js'},
-                                          {name: 'chartist',            path: 'node_modules/chartist/dist/chartist.js'}],
+                                          {name: 'chartist',            path: 'node_modules/chartist/dist/chartist.js'},
+                                          {name: 'ckeditor',            path: 'node_modules/ckeditor/ckeditor.js'}],
                     packageDefinition: ['@types/fullcalendar',      '2.7.40',
                                         '@types/jquery',            '2.0.41',
                                         '@types/jquery.slimscroll', '1.3.30',   // all those @types are 'devDependencies', as opposed to the ones bellow, which are just 'dependencies'
@@ -213,8 +214,6 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                         'ng2-smart-table',          '1.0.3',
                                         'ng2-tree',                 '2.0.0-alpha.5',
                                         'roboto-fontface',          '0.7.0'],
-
-    //htmlNPMInjections:   [{src: 'jquery/dist/jquery',   inject: true}],
   },
 
   // ng-bootstrap module

@@ -55,5 +55,4 @@ Simply edit **mutua.instance-project.config.ts** and perform the following two s
   - Enable the needed modules (please, update this):
     ```typescript
     {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // enable this module for HTML if you are using 'ng2-admin' theme
-    {moduleName: 'NgUploaderModule',        htmlEnabled: true,  mobileEnabled: false},  // idem
     ```

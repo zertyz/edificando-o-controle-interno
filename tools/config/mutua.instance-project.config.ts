@@ -48,10 +48,6 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
  *  'mutua.available.modules.and.components.config.ts' */
 export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjectsModuleActivationConfiguration[] = [
   {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // enable this module for HTML if you are using 'ng2-admin' theme
-  {moduleName: 'NgUploaderModule',        htmlEnabled: false,  mobileEnabled: false},  // idem
-  {moduleName: 'AmChartsModule',          htmlEnabled: false,  mobileEnabled: false},  // idem
-  {moduleName: 'AmMapModule',             htmlEnabled: false,  mobileEnabled: false},  // idem
-  {moduleName: 'ChartistModule',          htmlEnabled: false,  mobileEnabled: false},  // idem
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},
   {moduleName: 'MHelloWorldModule',       htmlEnabled: true,  mobileEnabled: true},
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},

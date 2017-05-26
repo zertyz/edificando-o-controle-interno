@@ -173,44 +173,6 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     forRoot: false,
   },
 
-  // ngx-uploader module, required by 'MNg2AdminModule'
-  NgUploaderModule: {
-                     source: 'ngx-uploader',
-                     npmDependencies:   [{name: 'ngx-uploader', path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'}],
-                     forRoot: false,
-
-  },
-
-  // amcharts3 module, required by 'MNg2AdminModule'
-  AmChartsModule: {
-    source: 'amcharts3',
-    npmDependencies:   [{name: 'amcharts3', path: 'node_modules/amcharts3/amcharts/amcharts.js'}],
-    forRoot: false,
-
-  },
-
-  // ammap3 module, required by 'MNg2AdminModule'
-  AmMapModule: {
-    source: 'ammap3',
-    npmDependencies:   [{name: 'ammap3', path: 'node_modules/ammap3/ammap/ammap.js'}],
-    forRoot: false,
-
-  },
-
-  // chartist module, required by 'MNg2AdminModule'
-  ChartistModule: {
-    source: 'chartist',
-    npmDependencies:   [{name: 'chartist', path: 'node_modules/chartist/dist/chartist.js'}],
-    forRoot: false,
-
-  },
-
-  // JQuery module, required by 'MNg2AdminModule'
-  JQueryModule: {
-    source: 'jquery',
-
-  },
-
   // m-hello-world module
   MHelloWorldModule: {
                       source: '../modules/m-hello-world/m-hello-world.module',
@@ -225,11 +187,34 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                           {name: 'jquery-slimscroll',   path: 'node_modules/jquery-slimscroll/jquery.slimscroll.js'},
                                           {name: 'jquery',              path: 'node_modules/jquery/dist/jquery.js'},
                                           {name: 'moment',              path: 'node_modules/moment/moment.js'},
-                                          {name: 'ngx-uploader', path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'},
-                                          {name: 'ammap3', path: 'node_modules/ammap3/ammap/ammap.js'},
-                                          {name: 'amcharts3', path: 'node_modules/amcharts3/amcharts/amcharts.js'},
-                                          {name: 'chartist', path: 'node_modules/chartist/dist/chartist.js'}],
-                    //htmlNPMInjections:   [{src: 'jquery/dist/jquery',   inject: true}],
+                                          {name: 'ngx-uploader',        path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'},
+                                          {name: 'ammap3',              path: 'node_modules/ammap3/ammap/ammap.js'},
+                                          {name: 'amcharts3',           path: 'node_modules/amcharts3/amcharts/amcharts.js'},
+                                          {name: 'chartist',            path: 'node_modules/chartist/dist/chartist.js'}],
+                    packageDefinition: ['@types/fullcalendar',      '2.7.40',
+                                        '@types/jquery',            '2.0.41',
+                                        '@types/jquery.slimscroll', '1.3.30',   // all those @types are 'devDependencies', as opposed to the ones bellow, which are just 'dependencies'
+                                        'ionicons',                 '2.0.1',
+                                        'animate.css',              '3.5.2',
+                                        'jquery',                   '3.2.1',
+                                        'jquery-slimscroll',        '1.3.8',
+                                        'amcharts3',                'github:amcharts/amcharts3',
+                                        'ammap3',                   'github:amcharts/ammap3',
+                                        'animate.css',              '3.5.2',
+                                        'chart.js',                 '1.1.1',
+                                        'chartist',                 '0.10.1',
+                                        'ckeditor',                 '4.6.2',
+                                        'easy-pie-chart',           '2.1.7',
+                                        'fullcalendar',             '3.3.1',
+                                        'google-maps',              '3.2.1',
+                                        'ngx-uploader',             '2.2.5',
+                                        'ng2-ckeditor',             '1.1.6',
+                                        'ng2-completer',            '1.3.1',
+                                        'ng2-smart-table',          '1.0.3',
+                                        'ng2-tree',                 '2.0.0-alpha.5',
+                                        'roboto-fontface',          '0.7.0'],
+
+    //htmlNPMInjections:   [{src: 'jquery/dist/jquery',   inject: true}],
   },
 
   // ng-bootstrap module

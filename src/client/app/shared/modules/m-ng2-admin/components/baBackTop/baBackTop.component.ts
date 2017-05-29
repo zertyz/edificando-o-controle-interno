@@ -5,7 +5,7 @@ import 'jquery';
 @Component({
   moduleId: module.id,
   selector: 'ba-back-top',
-  styleUrls: ['baBackTop.css'],
+  styleUrls: ['baBackTop.component.css'],
   template: `
     <i #baBackTop class="fa fa-angle-up back-top ba-back-top" title="Back to Top"></i>
   `

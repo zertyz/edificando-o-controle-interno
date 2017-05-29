@@ -17,8 +17,8 @@ import { AmCharts } from 'amcharts3';
 @Component({
   moduleId: module.id,
   selector: 'ba-am-chart',
-  templateUrl: 'baAmChart.html',
-  styleUrls: ['baAmChart.css'],
+  templateUrl: 'baAmChart.component.html',
+  styleUrls: ['baAmChart.component.css'],
   providers: [BaAmChartThemeService],
 })
 export class BaAmChart {

@@ -3,8 +3,8 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'ba-menu-item',
-  templateUrl: 'baMenuItem.html',
-  styleUrls: ['baMenuItem.css']
+  templateUrl: 'baMenuItem.component.html',
+  styleUrls: ['baMenuItem.component.css']
 })
 export class BaMenuItem {
 

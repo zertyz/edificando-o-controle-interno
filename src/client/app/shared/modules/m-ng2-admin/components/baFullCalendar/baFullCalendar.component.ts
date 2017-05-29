@@ -6,8 +6,8 @@ import 'fullcalendar/dist/fullcalendar.js';
 @Component({
   moduleId: module.id,
   selector: 'ba-full-calendar',
-  templateUrl: 'baFullCalendar.html',
-  styleUrls: ['baFullCalendar.css']
+  templateUrl: 'baFullCalendar.component.html',
+  styleUrls: ['baFullCalendar.component.css']
 })
 export class BaFullCalendar {
 

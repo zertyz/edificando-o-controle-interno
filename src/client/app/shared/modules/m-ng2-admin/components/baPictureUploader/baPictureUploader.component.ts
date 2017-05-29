@@ -4,8 +4,8 @@ import { NgUploaderOptions } from 'ngx-uploader';
 @Component({
   moduleId: module.id,
   selector: 'ba-picture-uploader',
-  styleUrls: ['baPictureUploader.css'],
-  templateUrl: 'baPictureUploader.html',
+  styleUrls: ['baPictureUploader.component.css'],
+  templateUrl: 'baPictureUploader.component.html',
 })
 export class BaPictureUploader {
 

@@ -3,8 +3,8 @@ import { NgUploaderOptions } from 'ngx-uploader';
 @Component({
   moduleId: module.id,
   selector: 'ba-file-uploader',
-  styleUrls: ['baFileUploader.css'],
-  templateUrl: 'baFileUploader.html',
+  styleUrls: ['baFileUploader.component.css'],
+  templateUrl: 'baFileUploader.component.html',
 })
 export class BaFileUploader {
   @Input() fileUploaderOptions: NgUploaderOptions = { url: '' };

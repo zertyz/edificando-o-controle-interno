@@ -10,8 +10,8 @@ import 'jquery';
 @Component({
   moduleId: module.id,
   selector: 'ba-menu',
-  templateUrl: 'baMenu.html',
-  styleUrls: ['baMenu.css']
+  templateUrl: 'baMenu.component.html',
+  styleUrls: ['baMenu.component.css']
 })
 export class BaMenu {
 

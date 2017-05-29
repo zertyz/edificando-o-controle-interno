@@ -1,0 +1,18 @@
+<section id="portfolio">
+  <div class="container">
+    <h2 class="text-center">{{sectionTitle}}</h2>
+    <hr class="star-primary">
+    <div class="row">
+      <div class="col-sm-4 portfolio-item" *ngFor="let item of items">
+        <a href="{{item.route}}" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <img src="{{item.img}}" class="img-fluid" alt="{{item.imgAlt}}">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

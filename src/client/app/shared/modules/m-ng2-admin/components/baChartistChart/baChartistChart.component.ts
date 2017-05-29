@@ -12,8 +12,8 @@ import * as Chartist from 'chartist';
 @Component({
   moduleId: module.id,
   selector: 'ba-chartist-chart',
-  templateUrl: 'baChartistChart.html',
-  styleUrls: ['baChartistChart.css'],
+  templateUrl: 'baChartistChart.component.html',
+  styleUrls: ['baChartistChart.component.css'],
   providers: [],
 })
 export class BaChartistChart {

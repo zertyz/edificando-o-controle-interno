@@ -20,12 +20,17 @@ Steps for updating:
 5) index.html: preserve '<div id="preloader">' for the startup animation. Other than that, nothing special. The default from angular-seed-advanced-mutuatech may be used.
 6) Move 'src/client/app/shared/modules/m-ng2-admin/sass' to 'theme/ng2-admin/scss'
 7) Move all .html and .scss from 'src/client/aoo/modules/m-ng2-admin/components/**' to theme/ng2-admin/modules/m-ng2-admin/components/** -- the following one-liner may help: for fp in `find src/client/app/shared/modules/m-ng2-admin/components/ -type d | tail -n +2`; do basename "$fp"; done | while read d; do td=themes/ng2-admin/modules/m-ng2-admin/components/"$d"; mkdir -p "$td"; mv src/client/app/shared/modules/m-ng2-admin/components/$d/*.[sh][ct][sm][sl] "$td"; done
-6) Create 'components/app.component.html' in the theme's folder and grab the contents of 'pages.component.ts'
+8) Rename all component template files (.html and .css/.scss) to match the convention: they should be in the form: <name>.component.[html|scss]
+9) Create 'components/app.component.html' in the theme's folder and grab the contents of 'pages.component.ts'
+
+-- candidates for deletion: theme.scss and initial.scss
 
 --
 
-7) Change lines like **@import 'sass/...** to **@import 'src/client/scss/...**, from the following files:
+6) Move **theme.scss** and **initial.scss** to 'themes/ng2-admin/scss'
+7) Change lines like **@import 'sass/...** to **@import '...**, from the following files:
    - initial.scss
+   - theme.scss
 
 8) Change the paths like "~ionicons/" to "../../../node_modules/ionicons/", from the files:
    - _ionicons.scss

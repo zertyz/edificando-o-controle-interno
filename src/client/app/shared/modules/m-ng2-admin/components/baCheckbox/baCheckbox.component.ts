@@ -4,8 +4,8 @@ import {ControlValueAccessor, NgModel} from '@angular/forms';
 @Component({
   moduleId: module.id,
   selector: 'ba-checkbox[ngModel]',
-  styleUrls: ['baCheckbox.css'],
-  templateUrl: 'baCheckbox.html',
+  styleUrls: ['baCheckbox.component.css'],
+  templateUrl: 'baCheckbox.component.html',
   providers: [NgModel]
 })
 export class BaCheckbox implements ControlValueAccessor {

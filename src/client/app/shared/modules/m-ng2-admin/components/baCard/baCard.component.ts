@@ -3,7 +3,7 @@ import {Component, Input} from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'ba-card',
-  templateUrl: 'baCard.html',
+  templateUrl: 'baCard.component.html',
 })
 export class BaCard {
   @Input() title:String;

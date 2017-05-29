@@ -5,8 +5,8 @@ import {layoutSizes} from '../../index';
 @Component({
   moduleId: module.id,
   selector: 'ba-sidebar',
-  templateUrl: 'baSidebar.html',
-  styleUrls: ['baSidebar.css']
+  templateUrl: 'baSidebar.component.html',
+  styleUrls: ['baSidebar.component.css']
 })
 export class BaSidebar {
   public menuHeight:number;

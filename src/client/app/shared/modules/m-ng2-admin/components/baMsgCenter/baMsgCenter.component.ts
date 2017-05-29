@@ -6,8 +6,8 @@ import {BaMsgCenterService} from './baMsgCenter.service';
   moduleId: module.id,
   selector: 'ba-msg-center',
   providers: [BaMsgCenterService],
-  styleUrls: ['baMsgCenter.css'],
-  templateUrl: 'baMsgCenter.html'
+  styleUrls: ['baMsgCenter.component.css'],
+  templateUrl: 'baMsgCenter.component.html'
 })
 export class BaMsgCenter {
 

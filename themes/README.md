@@ -33,3 +33,26 @@ Our themes will have all the items above, except for the first and last. In addi
 
 ## Workflow
 * gulp build.mutua; npm start & while read; do gulp build.mutua; done; echo -en "\n###\nEND\n\n"; fg
+
+## Nice themes for the future
+### material (animated) ###
+* https://agmstudio.io/themes/material-style/1.3.2/
+* http://materialdesignthemes.com/themes/materialkitwp/ (not animated)
+* http://materialdesignthemes.com/themes/pluto/
+* https://github.com/joashp/material-design-template (github, not animated)
+* https://github.com/google/material-design-lite ( github, not animated (material design lite), has some different templates)
+* https://github.com/anamhira47/Material-Design-Resume-Template (github, not animated)
+* https://github.com/CreativeIT/material-dashboard-lite (github, dashboard)
+* https://github.com/felippepuhle/aero-admin (github, dashboard)
+* https://github.com/720kb/hubuntu-ui ( "  " )
+* https://github.com/Teradata/covalent (angular4, dashboard, ui application framework)
+* https://github.com/mseemann/angular2-mdl (angular4, material ui components)
+* https://github.com/material-components/material-components-web (themeles, tons of components -- also has versions for ios and android)
+* https://github.com/muicss/mui ( idem, but just for web -- has angular and react )
+* https://github.com/digicorp/propeller ( bootstrap + material + templates. Maybe the best one )
+### bootstrap ###
+* https://wrapbootstrap.com/theme/smartadmin-responsive-webapp-WB0573SK0
+
+## Plugins ##
+* Presentation Engine -- https://github.com/shower
+* 

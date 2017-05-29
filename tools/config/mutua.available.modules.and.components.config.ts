@@ -66,9 +66,6 @@ interface IMutuaAvailableModuleConfiguration {
   /** when set, specifies that the module returns a property named 'moduleName' */
   moduleName     ?: string;
 
-  /** if set, specifies that this module is a 'node' dependency and that the listed strings are to be placed on 'package.json' */
-  packageEntries ?: string[];
-
   /** specifies the source code for this component. If it is a local component, the path should be relative to the path of this file */
   source          : string;
 
@@ -92,6 +89,7 @@ interface IMutuaAvailableModuleConfiguration {
   // module source options
   ////////////////////////
 
+  /** if set, specifies that this module is a 'node' dependency and that the listed strings are to be placed on 'package.json' */
   packageDefinition ?: string[];
 
 }
@@ -169,52 +167,91 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
 /** available modules */
 const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = {
 
-    // m-hello-world module
-    MHelloWorldModule: {
-                        source: '../modules/m-hello-world/m-hello-world.module',
-                        htmlLocalInjections: null,
-    },
+  // angular 4.x module for animations, required by 'PRIMENG_MODULES'
+  BrowserAnimationsModule: {
+    source:  '@angular/platform-browser/animations',
+    forRoot: false,
+  },
 
-    // ng-bootstrap module
-    NgbModule: {
-                source: '@ng-bootstrap/ng-bootstrap',
-                packageEntries:    ['"bootstrap":                  "^4.0.0-alpha.5"',
-                                    '"@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.14"'],
-                npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap', path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
-                webFiles:          null,
-                htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
-                packageDefinition: ['bootstrap',                  '^4.0.0-alpha.6',
-                                    '@ng-bootstrap/ng-bootstrap', '^1.0.0-alpha.22'],
-    },
+  // m-hello-world module
+  MHelloWorldModule: {
+                      source: '../modules/m-hello-world/m-hello-world.module',
+                      htmlLocalInjections: null,
+  },
 
-    // PrimeNG module
-    PRIMENG_MODULES: {
-                      source: 'primeng/primeng',
-                      forRoot: false,
-                      packedModules: ['AccordionModule',     'AutoCompleteModule', 'BlockUIModule',     'BreadcrumbModule',    'ButtonModule',
-                                      'CalendarModule',      'CarouselModule',     'ChartModule',       'CheckboxModule',      'CodeHighlighterModule',
-                                      'ConfirmDialogModule', 'ContextMenuModule',  'DataGridModule',    'DataListModule',      'DataScrollerModule',
-                                      'DataTableModule',     'DialogModule',       'DragDropModule',    'DropdownModule',      'EditorModule',
-                                      'FieldsetModule',      'FileUploadModule',   'GalleriaModule',    'GMapModule',          'GrowlModule',
-                                      'InplaceModule',       'InputMaskModule',    'InputSwitchModule', 'InputTextareaModule', 'InputTextModule',
-                                      'LightboxModule',      'ListboxModule',      'MegaMenuModule',    'MenubarModule',       'MenuModule',
-                                      'MessagesModule',      'MultiSelectModule',  'OrderListModule',   'OverlayPanelModule',  'PaginatorModule',
-                                      'PanelMenuModule',     'PanelModule',        'PasswordModule',    'PickListModule',      'ProgressBarModule',
-                                      'RadioButtonModule',   'RatingModule',       'ScheduleModule',    'SelectButtonModule',  'SharedModule',
-                                      'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
-                                      'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
-                                      'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
-                      packageEntries:    ['"font-awesome": "^4.7.0"',
-                                          '"primeng":      "^1.0.1"'],
-                      npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
-                      webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
-                      desktopFiles:      [sameAsWeb],
-                      htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
-                                          {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
-                                          {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
-                      packageDefinition: ['font-awesome', '^4.7.0',
-                                          'primeng',      '^2.0.5'],
-    },
+  // m-ng2-admin module
+  MNg2AdminModule: {
+                    source: '../modules/m-ng2-admin/m-ng2-admin.module',
+                    htmlLocalInjections: null,
+                    npmDependencies:     [{name: 'fullcalendar',        path: 'node_modules/fullcalendar/dist/fullcalendar.js'},
+                                          {name: 'jquery-slimscroll',   path: 'node_modules/jquery-slimscroll/jquery.slimscroll.js'},
+                                          {name: 'jquery',              path: 'node_modules/jquery/dist/jquery.js'},
+                                          {name: 'moment',              path: 'node_modules/moment/moment.js'},
+                                          {name: 'ngx-uploader',        path: 'node_modules/ngx-uploader/bundle/ngx-uploader.umd.js'},
+                                          {name: 'ammap3',              path: 'node_modules/ammap3/ammap/ammap.js'},
+                                          {name: 'amcharts3',           path: 'node_modules/amcharts3/amcharts/amcharts.js'},
+                                          {name: 'chartist',            path: 'node_modules/chartist/dist/chartist.js'},
+                                          {name: 'ckeditor',            path: 'node_modules/ckeditor/ckeditor.js'}],
+                    packageDefinition: ['@types/fullcalendar',      '2.7.40',
+                                        '@types/jquery',            '2.0.41',
+                                        '@types/jquery.slimscroll', '1.3.30',   // all those @types are 'devDependencies', as opposed to the ones bellow, which are just 'dependencies'
+                                        'ionicons',                 '2.0.1',
+                                        'animate.css',              '3.5.2',
+                                        'jquery',                   '3.2.1',
+                                        'jquery-slimscroll',        '1.3.8',
+                                        'amcharts3',                'github:amcharts/amcharts3',
+                                        'ammap3',                   'github:amcharts/ammap3',
+                                        'animate.css',              '3.5.2',
+                                        'chart.js',                 '1.1.1',
+                                        'chartist',                 '0.10.1',
+                                        'ckeditor',                 '4.6.2',
+                                        'easy-pie-chart',           '2.1.7',
+                                        'fullcalendar',             '3.3.1',
+                                        'google-maps',              '3.2.1',
+                                        'ngx-uploader',             '2.2.5',
+                                        'ng2-ckeditor',             '1.1.6',
+                                        'ng2-completer',            '1.3.1',
+                                        'ng2-smart-table',          '1.0.3',
+                                        'ng2-tree',                 '2.0.0-alpha.5',
+                                        'roboto-fontface',          '0.7.0'],
+  },
+
+  // ng-bootstrap module
+  NgbModule: {
+              source: '@ng-bootstrap/ng-bootstrap',
+              npmDependencies:   [{name: '@ng-bootstrap/ng-bootstrap',      path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'}],
+              webFiles:          null,
+              htmlNPMInjections: [{src: 'bootstrap/dist/css/bootstrap.css', inject: true}],
+              packageDefinition: ['bootstrap',                  '^4.0.0-alpha.6',
+                                  '@ng-bootstrap/ng-bootstrap', '^1.0.0-alpha.22'],
+  },
+
+  // PrimeNG module (depends on 'BrowserAnimationsModule' module)
+  PRIMENG_MODULES: {
+                    source: 'primeng/primeng',
+                    forRoot: false,
+                    packedModules: ['AccordionModule',     'AutoCompleteModule', 'BlockUIModule',     'BreadcrumbModule',    'ButtonModule',
+                                    'CalendarModule',      'CarouselModule',     'ChartModule',       'CheckboxModule',      'CodeHighlighterModule',
+                                    'ConfirmDialogModule', 'ContextMenuModule',  'DataGridModule',    'DataListModule',      'DataScrollerModule',
+                                    'DataTableModule',     'DialogModule',       'DragDropModule',    'DropdownModule',      'EditorModule',
+                                    'FieldsetModule',      'FileUploadModule',   'GalleriaModule',    'GMapModule',          'GrowlModule',
+                                    'InplaceModule',       'InputMaskModule',    'InputSwitchModule', 'InputTextareaModule', 'InputTextModule',
+                                    'LightboxModule',      'ListboxModule',      'MegaMenuModule',    'MenubarModule',       'MenuModule',
+                                    'MessagesModule',      'MultiSelectModule',  'OrderListModule',   'OverlayPanelModule',  'PaginatorModule',
+                                    'PanelMenuModule',     'PanelModule',        'PasswordModule',    'PickListModule',      'ProgressBarModule',
+                                    'RadioButtonModule',   'RatingModule',       'ScheduleModule',    'SelectButtonModule',  'SharedModule',
+                                    'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
+                                    'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
+                                    'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
+                    npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
+                    webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
+                    desktopFiles:      [sameAsWeb],
+                    htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
+                                        {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
+                                        {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
+                    packageDefinition: ['font-awesome', '^4.7.0',
+                                        'primeng',      '^4.0.0-rc.2'],
+  },
 
 };
 
@@ -222,89 +259,6 @@ export class DataManipulation {
 
   /** file manipulation under node.js */
   private static fs: any = require('fs');
-
-  /** Returns all the lines a .ts source file should have to load the provided 'activatedComponents' */
-  private static getActivatedComponentsLoadingLines(activatedComponents: IMutuaAvailableComponentConfiguration[]): string[] {
-
-    let lines                  : string[] = [];
-    let exportedComponentsArray: string[] = [];
-
-    lines.push(`// components`);
-    lines.push(`/////////////`, '')
-
-    for (let i in activatedComponents) {
-      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
-      lines.push(`import { ${activatedComponent.componentName} } from '${activatedComponent.source}';`);
-      exportedComponentsArray.push(activatedComponent.componentName);
-    }
-
-    lines.push('', `export const MutuaExportedComponents: any[] = [${exportedComponentsArray.toString()}];`, '');
-
-    let exportedRoutesArray: string[] = [];
-
-    lines.push(`// routes`);
-    lines.push(`/////////`, '')
-
-    for (let i in activatedComponents) {
-      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
-      if (activatedComponent.routes != null) {
-        let symbolName: string = activatedComponent.componentName.replace('Component', 'Routes');
-        lines.push(`import { ${symbolName} } from '${activatedComponent.routes}';`);
-        exportedRoutesArray.push(`...${symbolName}`);
-      }
-    }
-
-    lines.push('', `export const MutuaExportedRoutes: any[] = [${exportedRoutesArray.toString()}];`);
-
-    return lines;
-  }
-
-  /** Returns all the lines a .ts source file should have to load the provided 'activatedModules' */
-  private static getActivatedModulesLoadingLines(activatedModules: IMutuaAvailableModuleConfiguration[]): string[] {
-
-    let lines               : string[] = [];
-    let exportedModulesArray: string[] = [];
-
-    lines.push(`// modules`);
-    lines.push(`//////////`, '');
-
-    // apply module loading rules
-    for (let i in activatedModules) {
-      let activatedModule:IMutuaAvailableModuleConfiguration = activatedModules[i];
-
-      // resolve the optional 'forRoot' property
-      let forRoot = ((activatedModule.forRoot != null) && (activatedModule.forRoot == false)) ? false : true;
-
-      lines.push(`// ${activatedModule.moduleName}`);
-
-      // to pack or not to pack
-      if (activatedModule.packedModules == null) {
-        lines.push(`import { ${activatedModule.moduleName} } from '${activatedModule.source}';`);
-        if (forRoot) {
-          exportedModulesArray.push(`${activatedModule.moduleName}.forRoot()`);
-        } else {
-          exportedModulesArray.push(activatedModule.moduleName);
-        }
-      } else {
-        lines.push(`import { ${activatedModule.packedModules.toString()} } from '${activatedModule.source}';`);
-        let packedForRootModules = [];
-        for (let packedModule of activatedModule.packedModules) {
-          if (forRoot) {
-            packedForRootModules.push(`${packedModule}.forRoot()`);
-          } else {
-            packedForRootModules.push(packedModule);
-          }
-        }
-        lines.push(`let ${activatedModule.moduleName}: any[] = [${activatedModule.packedModules.toString()}];`);
-        exportedModulesArray.push(`...${activatedModule.moduleName}`);
-      }
-    }
-
-    lines.push('', `export const MutuaExportedModules: any[] = [${exportedModulesArray.toString()}];`);
-
-    return lines;
-
-  }
 
   /** Returns an array of files (and also folders, wildcards, etc) to be bundled with the project, when building.
    *  The booleans control if the array should include files for web and/or desktop and the "same entries as for web"
@@ -473,6 +427,88 @@ export class DataManipulation {
 */
   }
 
+  /** Returns all the lines a .ts source file should have to load the provided 'activatedComponents' */
+  private static getActivatedComponentsLoadingLines(activatedComponents: IMutuaAvailableComponentConfiguration[]): string[] {
+
+    let lines                  : string[] = [];
+    let exportedComponentsArray: string[] = [];
+
+    lines.push(`// components`);
+    lines.push(`/////////////`, '');
+
+    for (let i in activatedComponents) {
+      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
+      lines.push(`import { ${activatedComponent.componentName} } from '${activatedComponent.source}';`);
+      exportedComponentsArray.push(activatedComponent.componentName);
+    }
+
+    lines.push('', `export const MutuaExportedComponents: any[] = [${exportedComponentsArray.toString()}];`, '');
+
+    let exportedRoutesArray: string[] = [];
+
+    lines.push(`// routes`);
+    lines.push(`/////////`, '');
+
+    for (let i in activatedComponents) {
+      let activatedComponent: IMutuaAvailableComponentConfiguration = activatedComponents[i];
+      if (activatedComponent.routes != null) {
+        let symbolName: string = activatedComponent.componentName.replace('Component', 'Routes');
+        lines.push(`import { ${symbolName} } from '${activatedComponent.routes}';`);
+        exportedRoutesArray.push(`...${symbolName}`);
+      }
+    }
+
+    lines.push('', `export const MutuaExportedRoutes: any[] = [${exportedRoutesArray.toString()}];`);
+
+    return lines;
+  }
+
+  /** Returns all the lines a .ts source file should have to load the provided 'activatedModules' */
+  private static getActivatedModulesLoadingLines(activatedModules: IMutuaAvailableModuleConfiguration[]): string[] {
+
+    let lines               : string[] = [];
+    let exportedModulesArray: string[] = [];
+
+    lines.push(`// modules`);
+    lines.push(`//////////`, '');
+
+    // apply module loading rules
+    for (let i in activatedModules) {
+      let activatedModule:IMutuaAvailableModuleConfiguration = activatedModules[i];
+
+      // resolve the optional 'forRoot' property
+      let forRoot = ((activatedModule.forRoot != null) && (activatedModule.forRoot == false)) ? false : true;
+
+      lines.push(`// ${activatedModule.moduleName}`);
+
+      // to pack or not to pack
+      if (activatedModule.packedModules == null) {
+        lines.push(`import { ${activatedModule.moduleName} } from '${activatedModule.source}';`);
+        if (forRoot) {
+          exportedModulesArray.push(`${activatedModule.moduleName}.forRoot()`);
+        } else {
+          exportedModulesArray.push(activatedModule.moduleName);
+        }
+      } else {
+        lines.push(`import { ${activatedModule.packedModules.toString()} } from '${activatedModule.source}';`);
+        let packedForRootModules = [];
+        for (let packedModule of activatedModule.packedModules) {
+          if (forRoot) {
+            packedForRootModules.push(`${packedModule}.forRoot()`);
+          } else {
+            packedForRootModules.push(packedModule);
+          }
+        }
+        lines.push(`let ${activatedModule.moduleName}: any[] = [${activatedModule.packedModules.toString()}];`);
+        exportedModulesArray.push(`...${activatedModule.moduleName}`);
+      }
+    }
+
+    lines.push('', `export const MutuaExportedModules: any[] = [${exportedModulesArray.toString()}];`);
+
+    return lines;
+
+  }
 
 };
 

@@ -1,0 +1,39 @@
+<div platform>
+  <ba-sidebar></ba-sidebar>
+  <ba-page-top></ba-page-top>
+  <div class="al-main">
+    <div class="al-content">
+      <ba-content-top></ba-content-top>
+      <router-outlet></router-outlet>
+
+      <!-- demo that the components defined in this theme works fine -->
+      <!--<p>So, this is the CKEditor -- doesn't work because we need a component to import it</p>
+      <div class="row">
+        <div class="col-md-12">
+          <ba-card title="ckeditor" baCardClass="with-scroll">
+            <ckeditor [ngModel]="'Hello, CKEditor. We are in angular-seed-advanced-mutuatech'" [config]="{uiColor: '#F0F3F4',height: '600'}"></ckeditor>
+          </ba-card>
+        </div>
+      </div>-->
+      <p>So, this is the Chartist's line</p>
+      <ba-chartist-chart baChartistChartClass="ct-chart"
+                         baChartistChartType="Line"
+                         [baChartistChartData]="{labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], series: [[20, 20, 12, 45, 50],[10, 45, 30, 14, 12],[34, 12, 12, 40, 50],[10, 43, 25, 22, 16],[3, 6, 30, 33, 43]]}"
+                         [baChartistChartOptions]="{color: '#ffffff',fullWidth: true,height: '300px',chartPadding: {right: 40}}">
+      </ba-chartist-chart>
+    </div>
+  </div>
+  <footer class="al-footer clearfix">
+    <div class="al-footer-right" translate>{{'general.created_with'}} <i class="ion-heart"></i></div>
+    <div class="al-footer-main clearfix">
+      <div class="al-copy">&copy; <a href="http://akveo.com" translate>{{'general.akveo'}}</a> 2016</div>
+      <ul class="al-share clearfix">
+        <li><i class="socicon socicon-facebook"></i></li>
+        <li><i class="socicon socicon-twitter"></i></li>
+        <li><i class="socicon socicon-google"></i></li>
+        <li><i class="socicon socicon-github"></i></li>
+      </ul>
+    </div>
+  </footer>
+  <ba-back-top position="200"></ba-back-top>
+</div>

@@ -10,12 +10,12 @@
 // components
 /////////////
 
-import { AppComponent } from '../../components/app.component';
+import { NG2AppComponent } from '../../shared/modules/m-ng2-admin/ng2app.component';
 import { AboutComponent } from '../../components/about/about.component';
 import { HomeComponent } from '../../components/home/home.component';
 import { GvHomeComponent } from '../../components/pages/gv-home/gv-home.component';
 
-export const MutuaExportedComponents: any[] = [AppComponent,AboutComponent,HomeComponent,GvHomeComponent];
+export const MutuaExportedComponents: any[] = [NG2AppComponent,AboutComponent,HomeComponent,GvHomeComponent];
 
 // routes
 /////////
@@ -43,4 +43,4 @@ let PRIMENG_MODULES: any[] = [AccordionModule,AutoCompleteModule,BlockUIModule,B
 
 export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,MHelloWorldModule.forRoot(),NgbModule.forRoot(),...PRIMENG_MODULES];
 
-export const MutuaAppComponent: any = AppComponent;
+export const MutuaAppComponent: any = NG2AppComponent;

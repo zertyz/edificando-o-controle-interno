@@ -27,20 +27,21 @@ import { IInstanceProjectsComponentActivationConfiguration,
  * 4) Search for 'Angular Seed' in ./tools/install.js
  * 5) nativescript/platforms/android/src/main/res/values/strings.xml
  * */
-export const appTitle: string = 'angular-seed-advanced-mutuatech';
+export const appTitle: string = 'edificando-o-controle-interno';
 
 /** theme configuration */
-export const appTheme    : string = 'bad-seed-theme'; /** One of the directories in 'themes/' NOTE: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too */
-export const primeNGTheme: string = 'trontastic';     /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
+export const appTheme    : string = 'edificando-o-controle-interno'; /** One of the directories in 'themes/' NOTE: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too */
+export const primeNGTheme: string = 'trontastic';                    /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
 
 /** Defines the components this application should bundle and load, for html (web and desktop) and mobile platforms.
  *  All 'component' entries must have been previously defined by 'MutuaAvailableComponentsConfiguration', from
  *  'mutua.available.modules.and.components.config.ts' */
 export const MutuaInstanceProjectComponentsActivationConfiguration: IInstanceProjectsComponentActivationConfiguration[] = [
-  {componentName: 'AppComponent',    htmlEnabled: true, mobileEnabled: true},
-  {componentName: 'AboutComponent',  htmlEnabled: true, mobileEnabled: true},
-  {componentName: 'HomeComponent',   htmlEnabled: true, mobileEnabled: true},
-  {componentName: 'GvHomeComponent', htmlEnabled: true, mobileEnabled: true},
+  {componentName: 'NG2AppComponent', htmlEnabled: true,  mobileEnabled: false},
+  {componentName: 'AppComponent',    htmlEnabled: false, mobileEnabled: true},
+  {componentName: 'AboutComponent',  htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'HomeComponent',   htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'GvHomeComponent', htmlEnabled: true,  mobileEnabled: true},
 ];
 
 /** Defines the modules this application should bundle and load, for html (web and desktop) and mobile platforms.
@@ -55,5 +56,5 @@ export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjec
 ];
 
 // app components
-export const MutuaHTMLAppComponentName   :string = 'AppComponent';
+export const MutuaHTMLAppComponentName   :string = 'NG2AppComponent';
 export const MutuaMobileAppComponentName :string = 'AppComponent';

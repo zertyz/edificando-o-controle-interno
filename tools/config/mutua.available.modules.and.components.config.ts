@@ -167,6 +167,43 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
     routes: '../../components/pages/gv-home/gv-home.routes',
   },
 
+  // home page
+  MPEdificandoOControleInternoHomeComponent: {
+    source: '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.component',
+    routes: '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.routes',
+  },
+
+  // fale-com-o-mprj
+  MPFaleComOMPRJComponent: {
+    source: '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.component',
+    routes: '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.routes',
+  },
+
+  // informacoes-gerais
+  MPInformacoesGeraisComponent: {
+    source: '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.component',
+    routes: '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.routes',
+  },
+
+  // metodologia
+  MPMetodologiaComponent: {
+    source: '../../components/pages/mp-metodologia/mp-metodologia.component',
+    routes: '../../components/pages/mp-metodologia/mp-metodologia.routes',
+  },
+
+  // outros-rankings
+  MPOutrosRankingsComponent: {
+    source: '../../components/pages/mp-outros-rankings/mp-outros-rankings.component',
+    routes: '../../components/pages/mp-outros-rankings/mp-outros-rankings.routes',
+  },
+
+  // ranking-completo
+  MPRankingCompletoComponent: {
+    source: '../../components/pages/mp-ranking-completo/mp-ranking-completo.component',
+    routes: '../../components/pages/mp-ranking-completo/mp-ranking-completo.routes',
+  },
+
+
 };
 
 /** available modules */

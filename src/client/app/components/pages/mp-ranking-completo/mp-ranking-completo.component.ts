@@ -8,11 +8,11 @@ import { Config, RouterExtensions } from '../../../shared/core/index';
 
 @Component({
   moduleId: module.id,
-  selector: 'mp-edificando-o-controle-interno-home',
-  templateUrl: 'mp-edificando-o-controle-interno-home.component.html',
-  styleUrls: ['mp-edificando-o-controle-interno-home.component.css']
+  selector: 'mp-ranking-completo',
+  templateUrl: 'mp-ranking-completo.component.html',
+  styleUrls: ['mp-ranking-completo.component.css']
 })
-export class MPEdificandoOControleInternoHomeComponent {
+export class MPRankingCompletoComponent {
 
   constructor(private injector: Injector, public routerext: RouterExtensions) {
   }

@@ -11,20 +11,26 @@
 /////////////
 
 import { NG2AppComponent } from '../../shared/modules/m-ng2-admin/ng2app.component';
-import { AboutComponent } from '../../components/about/about.component';
-import { HomeComponent } from '../../components/home/home.component';
-import { GvHomeComponent } from '../../components/pages/gv-home/gv-home.component';
+import { MPEdificandoOControleInternoHomeComponent } from '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.component';
+import { MPFaleComOMPRJComponent } from '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.component';
+import { MPInformacoesGeraisComponent } from '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.component';
+import { MPMetodologiaComponent } from '../../components/pages/mp-metodologia/mp-metodologia.component';
+import { MPOutrosRankingsComponent } from '../../components/pages/mp-outros-rankings/mp-outros-rankings.component';
+import { MPRankingCompletoComponent } from '../../components/pages/mp-ranking-completo/mp-ranking-completo.component';
 
-export const MutuaExportedComponents: any[] = [NG2AppComponent,AboutComponent,HomeComponent,GvHomeComponent];
+export const MutuaExportedComponents: any[] = [NG2AppComponent,MPEdificandoOControleInternoHomeComponent,MPFaleComOMPRJComponent,MPInformacoesGeraisComponent,MPMetodologiaComponent,MPOutrosRankingsComponent,MPRankingCompletoComponent];
 
 // routes
 /////////
 
-import { AboutRoutes } from '../../components/about/about.routes';
-import { HomeRoutes } from '../../components/home/home.routes';
-import { GvHomeRoutes } from '../../components/pages/gv-home/gv-home.routes';
+import { MPEdificandoOControleInternoHomeRoutes } from '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.routes';
+import { MPFaleComOMPRJRoutes } from '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.routes';
+import { MPInformacoesGeraisRoutes } from '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.routes';
+import { MPMetodologiaRoutes } from '../../components/pages/mp-metodologia/mp-metodologia.routes';
+import { MPOutrosRankingsRoutes } from '../../components/pages/mp-outros-rankings/mp-outros-rankings.routes';
+import { MPRankingCompletoRoutes } from '../../components/pages/mp-ranking-completo/mp-ranking-completo.routes';
 
-export const MutuaExportedRoutes: any[] = [...AboutRoutes,...HomeRoutes,...GvHomeRoutes];
+export const MutuaExportedRoutes: any[] = [...MPEdificandoOControleInternoHomeRoutes,...MPFaleComOMPRJRoutes,...MPInformacoesGeraisRoutes,...MPMetodologiaRoutes,...MPOutrosRankingsRoutes,...MPRankingCompletoRoutes];
 
 // modules
 //////////

@@ -39,9 +39,17 @@ export const primeNGTheme: string = 'trontastic';                    /** One of 
 export const MutuaInstanceProjectComponentsActivationConfiguration: IInstanceProjectsComponentActivationConfiguration[] = [
   {componentName: 'NG2AppComponent', htmlEnabled: true,  mobileEnabled: false},
   {componentName: 'AppComponent',    htmlEnabled: false, mobileEnabled: true},
+/*
   {componentName: 'AboutComponent',  htmlEnabled: true,  mobileEnabled: true},
   {componentName: 'HomeComponent',   htmlEnabled: true,  mobileEnabled: true},
   {componentName: 'GvHomeComponent', htmlEnabled: true,  mobileEnabled: true},
+*/
+  {componentName: 'MPEdificandoOControleInternoHomeComponent', htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'MPFaleComOMPRJComponent',                   htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'MPInformacoesGeraisComponent',              htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'MPMetodologiaComponent',                    htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'MPOutrosRankingsComponent',                 htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'MPRankingCompletoComponent',                htmlEnabled: true,  mobileEnabled: true},
 ];
 
 /** Defines the modules this application should bundle and load, for html (web and desktop) and mobile platforms.

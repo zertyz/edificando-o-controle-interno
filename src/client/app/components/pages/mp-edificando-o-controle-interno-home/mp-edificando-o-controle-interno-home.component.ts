@@ -8,17 +8,17 @@ import { Config, RouterExtensions } from '../../../shared/core/index';
 
 @Component({
   moduleId: module.id,
-  selector: 'mp-fale-com-o-mprj',
-  templateUrl: 'mp-fale-com-o-mprj.component.html',
-  styleUrls: ['mp-fale-com-o-mprj.component.css']
+  selector: 'mp-edificando-o-controle-interno-home',
+  templateUrl: 'mp-edificando-o-controle-interno-home.component.html',
+  styleUrls: ['mp-edificando-o-controle-interno-home.component.css']
 })
-export class MPFaleComOMPRJComponent {
+export class MPEdificandoOControleInternoHomeComponent {
 
   constructor(private injector: Injector, public routerext: RouterExtensions) {
   }
 
   public gotoFaleComOMPRJ() {
-    this.routerext.navigate(['/about'], {
+    this.routerext.navigate(['/mp-fale-com-o-mprj'], {
       transition: {
         duration: 1000,
         name: 'slideTop',

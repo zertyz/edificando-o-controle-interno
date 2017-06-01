@@ -2,7 +2,7 @@ import { MPEdificandoOControleInternoHomeComponent } from './mp-edificando-o-con
 
 export const MPEdificandoOControleInternoHomeRoutes: Array<any> = [
   {
-    path: '/',
+    path: '',
     component: MPEdificandoOControleInternoHomeComponent
   }
 ];

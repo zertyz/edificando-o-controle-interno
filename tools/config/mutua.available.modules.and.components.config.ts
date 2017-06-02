@@ -139,6 +139,11 @@ const sameAsWeb: string = '%%SAME_AS_WEB%%';
 /** available components */
 const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfiguration = {
 
+  // ng2-admin theme's app component
+  NG2AppComponent: {
+    source: '../../shared/modules/m-ng2-admin/ng2app.component',
+  },
+
   // app component
   AppComponent: {
     source: '../../components/app.component',
@@ -197,11 +202,11 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                         '@types/jquery.slimscroll', '1.3.30',   // all those @types are 'devDependencies', as opposed to the ones bellow, which are just 'dependencies'
                                         'ionicons',                 '2.0.1',
                                         'animate.css',              '3.5.2',
+                                        'normalize.css',            '7.0.0',
                                         'jquery',                   '3.2.1',
                                         'jquery-slimscroll',        '1.3.8',
                                         'amcharts3',                'github:amcharts/amcharts3',
                                         'ammap3',                   'github:amcharts/ammap3',
-                                        'animate.css',              '3.5.2',
                                         'chart.js',                 '1.1.1',
                                         'chartist',                 '0.10.1',
                                         'ckeditor',                 '4.6.2',

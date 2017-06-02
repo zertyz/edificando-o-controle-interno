@@ -39,7 +39,7 @@ gulp.task('watch.while_deving', function () {
   watchAppFiles('**/!(*.ts)', (e: any, done: any) =>
     runSequence('build.assets.dev', 'build.html_css', 'build.index.dev', () => { notifyLiveReload(e); done(); }));
   watchAppFiles('**/(*.ts)', (e: any, done: any) =>
-    runSequence('build.js.dev', 'build.index.dev', () => {
+    runSequence('build.mutua', 'build.js.dev', 'build.index.dev', () => {
       notifyLiveReload(e);
       runSequence('build.js.test', 'karma.run.with_coverage', done);
     }));

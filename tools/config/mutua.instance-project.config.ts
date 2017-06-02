@@ -37,17 +37,18 @@ export const primeNGTheme: string = 'trontastic';     /** One of the directories
  *  All 'component' entries must have been previously defined by 'MutuaAvailableComponentsConfiguration', from
  *  'mutua.available.modules.and.components.config.ts' */
 export const MutuaInstanceProjectComponentsActivationConfiguration: IInstanceProjectsComponentActivationConfiguration[] = [
-  {componentName: 'AppComponent',    htmlEnabled: true, mobileEnabled: true},
-  {componentName: 'AboutComponent',  htmlEnabled: true, mobileEnabled: true},
-  {componentName: 'HomeComponent',   htmlEnabled: true, mobileEnabled: true},
-  {componentName: 'GvHomeComponent', htmlEnabled: true, mobileEnabled: true},
+  {componentName: 'NG2AppComponent', htmlEnabled: false, mobileEnabled: false},
+  {componentName: 'AppComponent',    htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'AboutComponent',  htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'HomeComponent',   htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'GvHomeComponent', htmlEnabled: true,  mobileEnabled: true},
 ];
 
 /** Defines the modules this application should bundle and load, for html (web and desktop) and mobile platforms.
  *  All 'module' entries must have been previously defined by 'MutuaAvailableModulesConfiguration', from
  *  'mutua.available.modules.and.components.config.ts' */
 export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjectsModuleActivationConfiguration[] = [
-  {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // Modules from ng2-admin project. Use it along with 'ng2-admin' theme
+  {moduleName: 'MNg2AdminModule',         htmlEnabled: false, mobileEnabled: false},  // Modules from ng2-admin project. Use it along with 'ng2-admin' theme
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},  // angular4 module. Required by 'PRIMENG_MODULES'
   {moduleName: 'MHelloWorldModule',       htmlEnabled: true,  mobileEnabled: true},   // sample module with some SaaS components
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},  // bootstrap for angular

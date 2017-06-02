@@ -359,7 +359,7 @@ export class SeedConfig {
    * Extra paths for the gulp process to watch for to trigger compilation.
    * @type {string[]}
    */
-  EXTRA_WATCH_PATHS: string[] = [];
+  EXTRA_WATCH_PATHS: string[] = ['themes/'];
 
   /**
    * The list of NPM dependcies to be injected in the `index.html`.

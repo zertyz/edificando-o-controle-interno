@@ -221,6 +221,12 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                       htmlLocalInjections: null,
   },
 
+  // m-edificando-o-controle-interno module
+  MEdificandoOControleInternoModule: {
+    source: '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module',
+    htmlLocalInjections: null,
+  },
+
   // m-ng2-admin module
   MNg2AdminModule: {
                     source: '../modules/m-ng2-admin/m-ng2-admin.module',

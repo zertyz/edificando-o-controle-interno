@@ -1,6 +1,6 @@
 /** <pre>
- * e-dimensao.component
- * ====================
+ * e-dimensoes.component
+ * =====================
  * (created by luiz on Qui, jun, 01, 2017)
  *
  * Apresenta a lista dos cards, cada um com sua nota, gráfico e mapa do resultado de uma dimensão específica.
@@ -28,11 +28,11 @@ import { Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'e-dimensao',
-  templateUrl: 'e-dimensao.component.html',
-  styleUrls: ['e-dimensao.component.css']
+  selector: 'e-dimensoes',
+  templateUrl: 'e-dimensoes.component.html',
+  styleUrls: ['e-dimensoes.component.css']
 })
-export class EDimensaoComponent {
+export class EDimensoesComponent {
 
   @Input() municipio:   string = '§§ MUNICIPIO §§';
   @Input() ordenacao:   string = 'titulo';

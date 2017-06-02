@@ -9,8 +9,8 @@ import { HttpModule, Http } from '@angular/http';
 import { Config } from '../../core/index';
 
 // components
-import { EConstrucaoComponent,
-         EDimensaoComponent,
+import { EStatusEdificacaoComponent,
+         EDimensoesComponent,
          ELinkComponent,
          EMapaInterativoComponent,
          ERankingGeralComponent,
@@ -24,16 +24,16 @@ import { EConstrucaoComponent,
     HttpModule,
   ],
   declarations: [
-    EConstrucaoComponent,
-    EDimensaoComponent,
+    EStatusEdificacaoComponent,
+    EDimensoesComponent,
     ELinkComponent,
     EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
   ],
   exports: [
-    EConstrucaoComponent,
-    EDimensaoComponent,
+    EStatusEdificacaoComponent,
+    EDimensoesComponent,
     ELinkComponent,
     EMapaInterativoComponent,
     ERankingGeralComponent,

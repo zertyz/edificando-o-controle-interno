@@ -1,6 +1,6 @@
 /** <pre>
- * e-construcao.component
- * ======================
+ * e-status-edificacao.component
+ * =============================
  * (created by luiz on Qui, jun, 01, 2017)
  *
  * Apresenta visualmente a nota do município, através de uma imagem ilustrativa (prédio)
@@ -27,11 +27,11 @@ import { Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'e-construcao',
-  templateUrl: 'e-construcao.component.html',
-  styleUrls: ['e-construcao.component.css']
+  selector: 'e-status-edificacao',
+  templateUrl: 'e-status-edificacao.component.html',
+  styleUrls: ['e-status-edificacao.component.css']
 })
-export class EConstrucaoComponent {
+export class EStatusEdificacaoComponent {
 
   @Input() municipio:   string = '§§ MUNICIPIO §§';
 

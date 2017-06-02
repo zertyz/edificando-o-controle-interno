@@ -1,5 +1,5 @@
-export * from './e-construcao.component';
-export * from './e-dimensao.component';
+export * from './e-status-edificacao.component';
+export * from './e-dimensoes.component';
 export * from './e-link.component';
 export * from './e-mapa-interativo.component';
 export * from './e-ranking-geral.component';

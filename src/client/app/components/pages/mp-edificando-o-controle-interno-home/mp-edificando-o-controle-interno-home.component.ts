@@ -14,15 +14,6 @@ import { Config, RouterExtensions } from '../../../shared/core/index';
 })
 export class MPEdificandoOControleInternoHomeComponent {
 
-  constructor(private injector: Injector, public routerext: RouterExtensions) {
-  }
+  constructor(private injector: Injector, public routerext: RouterExtensions) {}
 
-  public gotoFaleComOMPRJ() {
-    this.routerext.navigate(['/mp-fale-com-o-mprj'], {
-      transition: {
-        duration: 1000,
-        name: 'slideTop',
-      }
-    });
-  }
 }

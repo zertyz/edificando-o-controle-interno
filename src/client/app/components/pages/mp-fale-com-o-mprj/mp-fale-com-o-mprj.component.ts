@@ -14,15 +14,6 @@ import { Config, RouterExtensions } from '../../../shared/core/index';
 })
 export class MPFaleComOMPRJComponent {
 
-  constructor(private injector: Injector, public routerext: RouterExtensions) {
-  }
+  constructor(private injector: Injector, public routerext: RouterExtensions) {}
 
-  public gotoHome() {
-    this.routerext.navigate(['/'], {
-      transition: {
-        duration: 1000,
-        name: 'slideTop',
-      }
-    });
-  }
 }

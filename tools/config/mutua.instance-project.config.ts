@@ -43,7 +43,8 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
   {componentName: 'AboutComponent',  htmlEnabled: true,  mobileEnabled: true},
   {componentName: 'HomeComponent',   htmlEnabled: true,  mobileEnabled: true},
   {componentName: 'GvHomeComponent', htmlEnabled: true,  mobileEnabled: true},
-*/
+ */
+
 
   // componentes do projeto Edificando o Controle Interno
   {componentName: 'MPEdificandoOControleInternoHomeComponent', htmlEnabled: true,  mobileEnabled: true},
@@ -62,7 +63,7 @@ export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjec
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},  // angular4 module. Required by 'PRIMENG_MODULES'
   {moduleName: 'MHelloWorldModule',       htmlEnabled: true,  mobileEnabled: true},   // sample module with some SaaS components
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},  // bootstrap for angular
-  {moduleName: 'PRIMENG_MODULES',         htmlEnabled: true,  mobileEnabled: false},  // form components. depends on 'BrowserAnimationsModule'
+  {moduleName: 'PRIMENG_MODULES',         htmlEnabled: false, mobileEnabled: false},  // form components. depends on 'BrowserAnimationsModule'
 
   // módulos do projeto Edificando o Controle Interno
   {moduleName: 'MEdificandoOControleInternoModule', htmlEnabled: true, mobileEnabled: true},

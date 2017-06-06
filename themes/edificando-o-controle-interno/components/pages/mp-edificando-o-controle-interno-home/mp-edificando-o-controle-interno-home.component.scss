@@ -1,0 +1,89 @@
+.img-envolvida {
+  float: left;
+  width: 60%;
+  shape-outside: url(/assets/img/construcao.png);
+  shape-margin: 15px;
+  shape-image-threshold: 0.5;
+  //mask-image: url(/assets/img/construcao.png);
+}
+
+p{
+  font-size: 130%;
+  text-align: right;
+}
+.b-r{
+  border-right: 2px solid #FFFFFF;
+  padding-right: 5%;
+  border-color: black
+}
+
+.b-l {
+  border-left: 2px solid #FFFFFF;
+  padding-left: 5%;
+  border-color: black;
+}
+
+@media(max-width:1000px){
+  .b-l { border-color: transparent;}
+}
+
+e-link{
+  color: rebeccapurple;
+}
+
+/*.container-main{
+  max-width: 100%;
+  max-height: 100%;
+}*/
+
+
+
+.municipio{
+  font-size: 18px;
+  font-weight: normal;
+  width:110px;
+}
+
+.borda-dir{
+  border-right: 1px solid;
+}
+
+
+.titulo{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.sub-titulo{
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+  border-bottom:2px dotted;
+  padding-bottom: 5px;
+}
+
+.margem{
+  padding-top: 10px;
+}
+
+.sem-borda-bottom{
+  border-bottom: none;
+}
+
+
+td{
+  border-bottom: 2px dotted;
+}
+
+hr{
+  border:1px dotted;
+}
+
+strong{
+  font-size: 38px;
+  font-weight: bold;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width:5px;
+}

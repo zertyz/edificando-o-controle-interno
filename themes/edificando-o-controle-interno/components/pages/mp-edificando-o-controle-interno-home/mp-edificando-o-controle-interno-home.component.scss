@@ -4,6 +4,7 @@
   shape-outside: url(/assets/img/construcao.png);
   shape-margin: 15px;
   shape-image-threshold: 0.5;
+  //mask-image faz com que haja o contorno, porém a imagem em sí não é exibida
   //mask-image: url(/assets/img/construcao.png);
 }
 

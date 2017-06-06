@@ -1,1 +1,30 @@
-<p>e-top-5.component</p>
+<br/>
+<p class="titulo">Top 5 Controle Interno</p>
+<p class="sub-titulo">Ranking Geral</p>
+
+rankings: {{ rankings }}
+errorMessage: {{ errorMessage }}
+
+<table>
+
+  <tr>
+    <td class="margem"> <strong> 01 </strong>  </td>
+    <td class="margem municipio borda-dir"> {{top5Cidades[0]}} </td>
+
+    <td class="margem"> <strong> 02 </strong> </td>
+    <td class="margem municipio"> {{top5Cidades[1]}} </td>
+  </tr>
+
+  <tr>
+    <td class="margem"> <strong> 03 </strong>  </td>
+    <td class="margem municipio borda-dir"> {{top5Cidades[2]}} </td>
+    <td class="margem"> <strong> 04 </strong> </td>
+    <td class="municipio"> {{top5Cidades[3]}} </td>
+  </tr>
+
+  <tr>
+    <td class="sem-borda-bottom"> <strong> 05 </strong>  </td>
+    <td class="municipio borda-dir sem-borda-bottom"> {{top5Cidades[4]}} </td>
+  </tr>
+
+</table>

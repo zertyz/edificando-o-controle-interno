@@ -1,0 +1,51 @@
+
+
+.municipio{
+  font-size: 18px;
+  font-weight: normal;
+  width:40%;
+}
+
+.borda-dir{
+  border-right: 1px solid;
+}
+
+
+.titulo{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.sub-titulo{
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+  border-bottom:2px dotted;
+  padding-bottom: 5px;
+}
+
+.margem{
+  padding-top: 10px;
+}
+
+.sem-borda-bottom{
+  border-bottom: none;
+}
+
+
+td{
+  border-bottom: 2px dotted;
+}
+
+hr{
+  border:1px dotted;
+}
+
+strong{
+  font-size: 38px;
+  font-weight: bold;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width:5px;
+}

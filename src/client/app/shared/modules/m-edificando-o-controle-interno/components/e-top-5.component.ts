@@ -39,6 +39,10 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../core/index';
 import { Input } from '@angular/core';
 
+// services
+import { RankingsService } from '../services/rankings.service';
+import { IRankings }       from '../services/IRankings';
+
 @Component({
   moduleId: module.id,
   selector: 'e-top-5',
@@ -52,5 +56,20 @@ export class ETop5Component {
   @Input() sectionImgAlt:  string = 'sectionImgAlt#not used';
   @Input() markupData:     any[]  = [];
   @Input() styles:         any[]  = [];
+
+  public top5Cidades: string[] = [
+    "Rio de Janeiro",
+    "São Francisco de Itabapoana",
+    "Niterói",
+    "Cachoeiras de Macacu",
+    "Santa Maria Madalena",
+  ];
+
+  rankings: IRankings[];
+  errorMessage: string;
+
+  constructor(private rankingsService: RankingsService) {
+    this.rankingsService.getRankings().subscribe(response => this.rankings = response, error => this.errorMessage = < any > error);
+  };
 
 }

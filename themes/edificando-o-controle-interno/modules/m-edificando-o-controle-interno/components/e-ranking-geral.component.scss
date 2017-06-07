@@ -7,7 +7,7 @@
 }
 
 .municipio{
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
   width:110px;
   vertical-align: top;
@@ -23,7 +23,7 @@
 .notas{
   vertical-align: top;
   padding-left: 5px;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .fonte{
@@ -38,16 +38,17 @@
 
 small{
   color:gray;
-  font-size: 18px;
+  font-size: 15px;
 }
 
-big{
-  color:green;
+h4{
+  color:#00b050;
   font-size: 30px;
+  font-weight: normal;
 }
 
 strong{
-  font-size: 38px;
+  font-size: 30px;
   font-weight: bold;
   width:5px;
 }
@@ -74,12 +75,13 @@ ul li a{
 
 }
 ul li a:hover {
-  background-color: #00008B;
+  background-color: #2e3a48;
   text-decoration: none;
+  color: white;
 }
 
 ul li a:active {
-  background-color: #00008B;
+  background-color: #2e3a48;
   text-decoration: none;
 }
 

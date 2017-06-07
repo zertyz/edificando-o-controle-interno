@@ -1,100 +1,24 @@
 <ul class="barra-de-rolagem">
-  <li>
+
+  <li *ngFor="let notas of ranking; let posicao = index">
     <a href="#">
       <table>
         <tr>
-          <td> <strong> 01 </strong> </td>
-          <td class="municipio"> Rio de Janeiro </td>
+          <td> <strong> {{posicao+1 | number: '2.0-0'}} </strong> </td>
+          <td class="municipio"> {{notas.cidade}} </td>
           <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
         </tr>
 
         <tr>
           <td> <img src="/assets/img/seta-up.png"> </td>
           <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> 5,2 </small> </td>
-          <td class="notas" width="80px"> Nota Atual <h4> 9,4 </h4></td>
+          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small> </td>
+          <td class="notas" width="80px"> Nota Atual <h4> {{(notas[dimensao] | number: '1.1-1').replace(".",",")}} </h4></td>
         </tr>
       </table>
     </a>
   </li>
 
-  <li>
-    <a href="#">
-      <table>
-        <tr>
-          <td> <strong> 02 </strong> </td>
-          <td class="municipio"> São Francisco de Itabapoana </td>
-          <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
-        </tr>
-
-        <tr>
-          <td> <img src="/assets/img/seta-up.png"> </td>
-          <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> 5,2 </small> </td>
-          <td class="notas" width="80px"> Nota Atual <h4> 9,4 </h4></td>
-        </tr>
-      </table>
-    </a>
-  </li>
-
-  <li>
-    <a href="#">
-      <table>
-        <tr>
-          <td> <strong> 15 </strong> </td>
-          <td class="municipio"> Angra dos Reis </td>
-          <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
-        </tr>
-
-        <tr>
-          <td> <img src="/assets/img/seta-up.png"> </td>
-          <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> 5,2 </small> </td>
-          <td class="notas" width="80px"> Nota Atual <h4> 9,4 </h4></td>
-        </tr>
-      </table>
-    </a>
-  </li>
-
-
-  <li>
-    <a href="#">
-      <table>
-        <tr>
-          <td> <strong> 40 </strong> </td>
-          <td class="municipio"> Volta Redonda </td>
-          <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
-        </tr>
-
-        <tr>
-          <td> <img src="/assets/img/seta-up.png"> </td>
-          <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> 5,2 </small> </td>
-          <td class="notas" width="80px"> Nota Atual <h4> 9,4 </h4></td>
-        </tr>
-      </table>
-    </a>
-  </li>
-
-
-  <li>
-    <a href="#">
-      <table>
-        <tr>
-          <td> <strong> 97 </strong> </td>
-          <td class="municipio"> Macaé </td>
-          <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
-        </tr>
-
-        <tr>
-          <td> <img src="/assets/img/seta-up.png"> </td>
-          <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> 5,2 </small> </td>
-          <td class="notas" width="80px"> Nota Atual <h4> 9,4 </h4></td>
-        </tr>
-      </table>
-    </a>
-  </li>
 
 
 </ul>

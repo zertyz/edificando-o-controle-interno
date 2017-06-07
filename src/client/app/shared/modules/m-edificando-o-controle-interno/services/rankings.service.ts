@@ -41,10 +41,10 @@ export class RankingsService {
       return < IRankings[] > response.json();
     })/*.catch(this.handleError)*/;
   }
-  //
+  /*
   private handleError(errorResponse: Response) {
     console.log(errorResponse.statusText);
     return Observable.throw(errorResponse.json().error || "Server error");
   }
-
+*/
 }

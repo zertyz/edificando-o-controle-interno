@@ -57,19 +57,17 @@ export class ETop5Component {
   @Input() markupData:     any[]  = [];
   @Input() styles:         any[]  = [];
 
-  public top5Cidades: string[] = [
-    "Rio de Janeiro",
-    "São Francisco de Itabapoana",
-    "Niterói",
-    "Cachoeiras de Macacu",
-    "Santa Maria Madalena",
-  ];
-
+  top5Cidades: string[] = ['§vazio§', '§vazio§', '§vazio§', '§vazio§', '§vazio§'];
   rankings: IRankings[];
   errorMessage: string;
 
   constructor(private rankingsService: RankingsService) {
-    this.rankingsService.getRankings().subscribe(response => this.rankings = response, error => this.errorMessage = < any > error);
+    this.rankingsService.getRankings().subscribe(response => {
+      this.rankings = response.sort( (e1, e2) => e2.geral - e1.geral);
+      for (let i = 0; i < this.top5Cidades.length; i++) {
+        this.top5Cidades[i] = this.rankings[i].cidade;
+      }
+    }, error => this.errorMessage = < any > error);
   };
 
 }

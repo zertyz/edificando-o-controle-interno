@@ -36,15 +36,11 @@ export class RankingsService {
 
   constructor(private http: Http) {}
 
-  getRankings(): Observable < IRankings[] > {
-    return this.http.get(this.jsonFileURL).map((response: Response) => {
-      return < IRankings[] > response.json();
-    })/*.catch(this.handleError)*/;
+  public fetchRankings(): Observable < IRankings[] > {
+    return this.http.get(this.jsonFileURL)
+                    .map((response: Response) => {
+                      return < IRankings[] > response.json();
+                    }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor'));
   }
-  /*
-  private handleError(errorResponse: Response) {
-    console.log(errorResponse.statusText);
-    return Observable.throw(errorResponse.json().error || "Server error");
-  }
-*/
+
 }

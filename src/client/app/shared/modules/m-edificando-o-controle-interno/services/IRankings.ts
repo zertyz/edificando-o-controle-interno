@@ -12,6 +12,7 @@
 
 export interface IRankings {
   cidade: string;
+  // dimensões
   geral: number;
   auditoria: number;
   ouvidoria: number;

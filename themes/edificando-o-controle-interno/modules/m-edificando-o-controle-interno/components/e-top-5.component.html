@@ -2,6 +2,10 @@
 <p class="titulo">Top 5 Controle Interno</p>
 <p class="sub-titulo">Ranking Geral</p>
 
+<div *ngIf="errorMessage != null" class="alert alert-danger">
+  <b>Erro obtendo dados:</b> {{errorMessage}}
+</div>
+
 <table>
 
   <tr>

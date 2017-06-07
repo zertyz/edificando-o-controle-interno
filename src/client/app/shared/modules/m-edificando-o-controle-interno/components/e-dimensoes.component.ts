@@ -19,12 +19,17 @@
  */
 
 // libs
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 import { Config, LogService, ILang } from '../../../core/index';
 import { Input } from '@angular/core';
+
+// services
+import { RankingsService } from '../services/rankings.service';
+import { IRankings }       from '../services/IRankings';
+
 
 @Component({
   moduleId: module.id,
@@ -32,9 +37,53 @@ import { Input } from '@angular/core';
   templateUrl: 'e-dimensoes.component.html',
   styleUrls: ['e-dimensoes.component.css']
 })
-export class EDimensoesComponent {
+export class EDimensoesComponent implements OnInit {
 
-  @Input() municipio:   string = '§§ MUNICIPIO §§';
-  @Input() ordenacao:   string = 'titulo';
+  @Input() municipio: string;
+  @Input() ordenacao: string;
+
+  public rankings: IRankings[];
+  // a lista de municípios, ordenada pela dimensão escolhida
+  public notas: IRankings;
+
+  public errorMessage: string = null;
+
+  // constroi a estrutura 'top5Cidades'
+  constructor(private rankingsService: RankingsService) {
+
+    this.notas = {
+      cidade: "semissabida",
+      geral: -1,
+      auditoria: -1,
+      ouvidoria: -1,
+      correicao: -1,
+      controladoria: -1,
+      estrutura: -1,
+      planejamento: -1,
+      transparencia: -1,
+      auxilioAoControleExterno: -1,
+      orcamento: -1,
+      regulamentacao: -1,
+      autonomia: -1,
+      concretizacao: -1,
+      abrangencia: -1,
+      resolutividade: -1,
+      iniciativaLouvavel: -1,
+    };
+
+    this.rankingsService.fetchRankings().subscribe(response => {
+      this.rankings = response;
+      this.ngOnChanges();
+    }, error => this.errorMessage = < any > error);
+  }
+
+  ngOnInit() {
+  };
+
+  ngOnChanges() {
+    if (this.rankings != null) {
+      this.notas = this.rankings.find(e => e.cidade == this.municipio);
+    }
+  }
 
 }

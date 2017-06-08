@@ -95,7 +95,7 @@ export class EDimensoesComponent implements OnInit {
       iniciativaLouvavel: -1,
     };
 
-    this.rankingsService.fetchRankings().subscribe(response => {
+    rankingsService.fetchRankings().subscribe(response => {
       this.rankings = response;
       this.ngOnChanges();
     }, error => this.errorMessage = < any > error);

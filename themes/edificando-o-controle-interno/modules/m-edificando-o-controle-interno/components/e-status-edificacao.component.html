@@ -3,13 +3,12 @@
   <div class="col-md-6">
     <h2>{{municipio}}</h2>
     <p></p>
-    <h4>Posição</h4>
-    <p>RESUMO </p>
+    <h4>Posição {{posicao}}|{{nota}}</h4>
+    <p>{{dimensao}}</p>
   </div>
 
 </div>
 <p>
-
-  <img class="img-envolvida" src="/assets/img/construcao.png" width="100%">
+  <img class="img-envolvida" [src]="gradacoes.getImagemConstrucao(nota)" width="100%">
   <e-link href="/mp-informacoes-gerais">informações gerais</e-link>
 </p>

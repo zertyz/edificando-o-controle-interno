@@ -1,6 +1,6 @@
 <div class="row">
-<table>
-  municipio: {{municipio}} / {{notas.cidade}}
+  <!--municipio: {{municipio}} / {{notas.cidade}}-->
+  <table>
 <tr *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
   <td>
     <table class="bordas">
@@ -13,6 +13,7 @@
     </table>
   </td>
 
+  <div class="borderedL" style="padding-left: inherit">
   <td *ngIf="quarteto[2] && quarteto[3]">
     <table class="bordas">
       <tr>
@@ -23,6 +24,7 @@
       </tr>
     </table>
   </td>
+  </div>
 </tr>
 
 </table>

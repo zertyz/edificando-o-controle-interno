@@ -4,8 +4,6 @@
   shape-outside: url(/assets/img/construcao.png);
   shape-margin: 15px;
   shape-image-threshold: 0.5;
-  //mask-image faz com que haja o contorno, porém a imagem em sí não é exibida
-  //mask-image: url(/assets/img/construcao.png);
 }
 
 h1{
@@ -16,28 +14,8 @@ p{
   font-size: 95%;
   text-align: right;
 }
-.b-r{
-  border-right: 2px solid #FFFFFF;
-  padding-right: 5%;
-  border-color: black
-}
-
-.b-l {
-  border-left: 2px solid #FFFFFF;
-  padding-left: 5%;
-  border-color: black;
-}
 
 @media(max-width:1000px){
-  .b-l { border-color: transparent;}
+  div.borderedL { border-color: transparent;}
+  div.borderedR { border-color: transparent;}
 }
-
-e-link{
-  color: rebeccapurple;
-}
-
-/*.container-main{
-  max-width: 100%;
-  max-height: 100%;
-}*/
-

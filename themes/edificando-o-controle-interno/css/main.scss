@@ -2,3 +2,13 @@
 @import "../scss/theme";
 @import "../scss/initial";
 @import "GradacoesDeCores";
+
+div.borderedR{
+  border-right: 2px solid #000000;
+  padding-right: 5%;
+}
+
+div.borderedL{
+  border-left: 2px solid #000000;
+  padding-left: 5%;
+}

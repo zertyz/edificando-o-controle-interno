@@ -3,7 +3,7 @@
   <div class="col-md-6">
     <h2>{{municipio}}</h2>
     <p></p>
-    <h4>Posição {{posicao}}|{{nota}}</h4>
+    <h4>Posição {{posicao}}|<div [ngClass]="gradacoes.getCSSClass(nota)">{{nota}}</div></h4>
     <p>{{dimensao}}</p>
   </div>
 

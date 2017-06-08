@@ -26,22 +26,31 @@ export class GradacoesDeCores {
   private notaMaxima: number = 10;
   private notaMinima: number = 0;
 
-  // gradações de cores
-  private gradacoesCores:  number = 6;
-  private classesCSSCores: string[] = ['notaEmProjeto', 'notaEmAlicerce', 'notaConstrucaoIniciada', 'notaConstrucaoAdiantada', 'notaEmAcabamento', 'notaConstruido'];
-
-  // gradações da construção
-  private gradacoesConstrucao: number = 4;
-  private imgsConstrucao:      string[] = ['alicerce.png', 'construcao.png', 'acabamento.png', 'construido.png'];
+  // gradações -- os valores em 'faixas' denotam o limite superior da nota
+  private gradacoes:       number = 6;
+  private faixas:          number[] = [2,                                   4,                                    6,                                            7.5,                                           9,                                      10];
+  private classesCSSCores: string[] = ['notaEmProjeto',                     'notaEmAlicerce',                     'notaConstrucaoIniciada',                     'notaConstrucaoAdiantada',                     'notaEmAcabamento',                     'notaConstruido'];
+  private imgsConstrucao:  string[] = ['Predio Estagio 1 - Em Projeto.png', 'Predio Estagio 2 - Em Alicerce.png', 'Predio Estagio 3 - Construção Iniciada.png', 'Predio Estagio 4 - Construção Adiantada.png', 'Predio Estagio 5 - Em Acabamento.png', 'Predio Estagio 6 - Construído.png'];
 
   /** Retorna a classe CSS para ser usada para colorificar o valor da nota passado */
   public getCSSClass(nota: number): string {
-    return this.classesCSSCores[Math.min(this.classesCSSCores.length-1, Math.floor((nota*this.gradacoesCores)/(this.notaMaxima-this.notaMinima)))];
+    for (let i: number = 0; i<this.gradacoes; i++) {
+      if (nota < this.faixas[i]) {
+        return this.classesCSSCores[i];
+      }
+    }
+    return this.classesCSSCores[this.classesCSSCores.length-1];
   }
 
   /** Retorna a imagem representando o estágio da construção atual */
   public getImagemConstrucao(nota: number): string {
-    let img = this.imgsConstrucao[Math.min(this.imgsConstrucao.length-1, Math.floor((nota*this.gradacoesConstrucao)/(this.notaMaxima-this.notaMinima)))];
+    let img: string = this.imgsConstrucao[this.imgsConstrucao.length-1];
+    for (let i: number = 0; i<this.gradacoes; i++) {
+      if (nota < this.faixas[i]) {
+        img = this.imgsConstrucao[i];
+        break;
+      }
+    }
     return `/assets/img/${img}`;
   }
 

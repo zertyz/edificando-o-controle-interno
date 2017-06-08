@@ -1,193 +1,25 @@
 <div class="row">
 <table>
   municipio: {{municipio}} / {{notas.cidade}}
-<tr>
+<tr *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
   <td>
     <table class="bordas">
       <tr>
-        <td class="fonte"> Auditoria </td>
+        <td class="fonte"> {{quarteto[1]}} </td>
         <td> <img src="/assets/img/seta-up.png"> </td>
         <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.auditoria || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
+        <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="notas[quarteto[0]] >= 7 ? 'verde' : 'vermelha'"> {{(notas[quarteto[0]] || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
       </tr>
     </table>
   </td>
 
-  <td>
+  <td *ngIf="quarteto[2] && quarteto[3]">
     <table class="bordas">
       <tr>
-        <td class="fonte"> Ouvidoria </td>
+        <td class="fonte"> {{quarteto[3]}} </td>
         <td> <img src="/assets/img/seta-up.png"> </td>
         <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.ouvidoria || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Correição </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.correicao || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Controladoria </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.controladoria || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte">Transparência </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.transparencia || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Controle Externo </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.auxilioAoControleExterno || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Estrutura </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.estrutura || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Abrangência </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.abrangencia || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Autonomia </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.autonomia || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Regulamentação </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.regulamentacao || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Orçamento </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.orcamento || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Planejamento </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.planejamento || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Evolução </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.evolucao || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> Resolutividade </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.resolutividade || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    <table>
-      <tr>
-        <td class="fonte"> Concretização de Políticas Públicas </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.concretizacao || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-
-  <td>
-    <table>
-      <tr>
-        <td class="fonte"> Iniciativa Louvável </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4> {{(notas.iniciativaLouvavel || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
+        <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="notas[quarteto[0]] >= 7 ? 'verde' : 'vermelha'"> {{(notas[quarteto[2]] || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
       </tr>
     </table>
   </td>

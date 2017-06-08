@@ -30,7 +30,6 @@ import { Input } from '@angular/core';
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../services/IRankings';
 
-
 @Component({
   moduleId: module.id,
   selector: 'e-dimensoes',
@@ -42,23 +41,44 @@ export class EDimensoesComponent implements OnInit {
   @Input() municipio: string;
   @Input() ordenacao: string;
 
+  // dados do JSON
   public rankings: IRankings[];
   // a lista de municípios, ordenada pela dimensão escolhida
   public notas: IRankings;
+  // transformações do nome do campo para o título, na ordem em que devem aparecer.
+  public mapaDeCamposParaTitulos: string[][] = [
+    //['geral',                    'Classificação Geral'],
+    ['auditoria',                'Auditoria' ,
+     'ouvidoria',                'Ouvidoria'],
+    ['correicao',                'Correição' ,
+     'controladoria',            'Controladoria'],
+    ['transparencia',            'Transparência' ,
+     'auxilioAoControleExterno', 'Controle Externo'],
+    ['estrutura',                'Estrutura' ,
+     'abrangencia',              'Abrangência'],
+    ['autonomia',                'Autonomia' ,
+     'regulamentacao',           'Regulamentação'],
+    ['orcamento',                'Orçamento' ,
+     'planejamento',             'Planejamento'],
+    ['evolucao',                 'Evolução' ,
+     'resolutividade',           'Resolutividade'],
+    ['concretizacao',            'Concretização de Políticas Públicas' ,
+     'iniciativaLouvavel',       'Iniciativa Louvável'],
+  ];
 
   public errorMessage: string = null;
 
-  // constroi a estrutura 'top5Cidades'
+  // inicializa a strutura com dados apresentáveis, porém vazios, até que sejam lidos e interpretados
   constructor(private rankingsService: RankingsService) {
-
     this.notas = {
-      cidade: "semissabida",
+      cidade: "desconhecida",
       geral: -1,
       auditoria: -1,
       ouvidoria: -1,
       correicao: -1,
       controladoria: -1,
       estrutura: -1,
+      evolucao: -1,
       planejamento: -1,
       transparencia: -1,
       auxilioAoControleExterno: -1,
@@ -80,6 +100,7 @@ export class EDimensoesComponent implements OnInit {
   ngOnInit() {
   };
 
+  // a cada mudança nos parâmetros, 'notas' é repopulado
   ngOnChanges() {
     if (this.rankings != null) {
       this.notas = this.rankings.find(e => e.cidade == this.municipio);

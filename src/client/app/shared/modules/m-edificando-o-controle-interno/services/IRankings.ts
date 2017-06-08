@@ -29,4 +29,5 @@ export interface IRankings {
   abrangencia: number;
   resolutividade: number;
   iniciativaLouvavel: number;
+  evolucao: number;
 };

@@ -28,6 +28,9 @@ import { Input } from '@angular/core';
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../services/IRankings';
 
+// module libs
+import { GradacoesDeCores } from '../GradacoesDeCores';
+
 
 @Component({
   moduleId: module.id,
@@ -45,7 +48,8 @@ export class ERankingGeralComponent {
   public errorMessage: string = null;
 
   // constroi a estrutura 'top5Cidades'
-  constructor(private rankingsService: RankingsService) {
+  constructor(private rankingsService: RankingsService,
+              private gradacoes: GradacoesDeCores) {
     rankingsService.fetchRankings().subscribe(response => {
       this.ranking = response.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
     }, error => this.errorMessage = < any > error);

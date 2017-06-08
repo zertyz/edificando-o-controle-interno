@@ -30,6 +30,9 @@ import { Input } from '@angular/core';
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../services/IRankings';
 
+// module libs
+import { GradacoesDeCores } from '../GradacoesDeCores';
+
 @Component({
   moduleId: module.id,
   selector: 'e-dimensoes',
@@ -69,7 +72,8 @@ export class EDimensoesComponent implements OnInit {
   public errorMessage: string = null;
 
   // inicializa a strutura com dados apresentáveis, porém vazios, até que sejam lidos e interpretados
-  constructor(private rankingsService: RankingsService) {
+  constructor(private rankingsService: RankingsService,
+              private gradacoes: GradacoesDeCores) {
     this.notas = {
       cidade: "desconhecida",
       geral: -1,

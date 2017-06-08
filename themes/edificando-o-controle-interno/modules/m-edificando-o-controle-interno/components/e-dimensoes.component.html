@@ -8,7 +8,7 @@
         <td class="fonte"> {{quarteto[1]}} </td>
         <td> <img src="/assets/img/seta-up.png"> </td>
         <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="notas[quarteto[0]] >= 7 ? 'verde' : 'vermelha'"> {{(notas[quarteto[0]] || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
+        <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="gradacoes.getCSSClass(notas[quarteto[0]])"> {{(notas[quarteto[0]] || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
       </tr>
     </table>
   </td>
@@ -19,7 +19,7 @@
         <td class="fonte"> {{quarteto[3]}} </td>
         <td> <img src="/assets/img/seta-up.png"> </td>
         <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="notas[quarteto[0]] >= 7 ? 'verde' : 'vermelha'"> {{(notas[quarteto[2]] || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
+        <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="gradacoes.getCSSClass(notas[quarteto[2]])"> {{(notas[quarteto[2]] || -1 | number: '1.1-1').replace(".",",")}} </h4> </td>
       </tr>
     </table>
   </td>

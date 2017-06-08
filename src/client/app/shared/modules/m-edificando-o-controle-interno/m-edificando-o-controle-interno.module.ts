@@ -20,6 +20,9 @@ import { EStatusEdificacaoComponent,
 import { RankingsService } from './services/rankings.service';
 import { IRankings }       from './services/IRankings';
 
+// injectable libs
+import { GradacoesDeCores } from './GradacoesDeCores';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -45,6 +48,7 @@ import { IRankings }       from './services/IRankings';
   ],
   providers: [
     RankingsService,
+    GradacoesDeCores,
   ],
   schemas: [
     NO_ERRORS_SCHEMA,

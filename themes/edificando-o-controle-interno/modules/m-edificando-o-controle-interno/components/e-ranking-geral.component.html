@@ -12,7 +12,7 @@
         <tr>
           <td> <img src="/assets/img/seta-up.png"> </td>
           <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5px"> Última Nota <small> --- </small> </td>
+          <td class="alinhamento-dir notas" width="5%"> Última Nota <small> --- </small> </td>
           <td class="notas" width="80px"> Nota Atual <h4 [ngClass]="notas[dimensao] >= 7 ? 'verde' : 'vermelha'"> {{(notas[dimensao] | number: '1.1-1').replace(".",",")}} </h4></td>
         </tr>
       </table>

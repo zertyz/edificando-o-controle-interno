@@ -11,7 +11,7 @@
  *
  * Exemplo de uso:
  *
- *  <e-status-edificacao municipio="Rio de Janeiro"></e-status-edificacao>
+ *  <e-status-edificacao municipio="Rio de Janeiro" nota="9.7" posicao="1"></e-status-edificacao>
  *
  * @see RelatedClass(es)
  * @author luiz
@@ -25,6 +25,14 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../core/index';
 import { Input } from '@angular/core';
 
+// services
+import { RankingsService } from '../services/rankings.service';
+import { IRankings }       from '../services/IRankings';
+
+// module libs
+import { GradacoesDeCores } from '../GradacoesDeCores';
+
+
 @Component({
   moduleId: module.id,
   selector: 'e-status-edificacao',
@@ -33,6 +41,42 @@ import { Input } from '@angular/core';
 })
 export class EStatusEdificacaoComponent {
 
-  @Input() municipio:   string = '§§ MUNICIPIO §§';
+  // parâmetros do componente
+  @Input() municipio: string = '§§ MUNICIPIO §§';
+  @Input() dimensao:  string = '§§ DIMENSÃO §§';
+
+  // dados do JSON
+  public rankings: IRankings[];
+
+  // dados consolidados
+  public nota:    number = -1;
+  public posicao: number = -1;
+
+  public errorMessage: string = null;
+
+
+  constructor(private rankingsService: RankingsService,
+              private gradacoes: GradacoesDeCores) {
+
+    rankingsService.fetchRankings().subscribe(response => {
+      this.rankings = response;
+      this.ngOnChanges();
+    }, error => this.errorMessage = < any > error);
+  }
+
+  // a cada mudança nos parâmetros, 'nota' e 'posicao' são recomputados
+  ngOnChanges() {
+    this.posicao = -1;
+    this.nota    = -1;
+    if (this.rankings != null) {
+      let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
+      let elemento: IRankings = rankingOrdenadoPorDimensao.find(e => e.cidade == this.municipio);
+      if (elemento) {
+        this.posicao = 1 + rankingOrdenadoPorDimensao.indexOf(elemento);
+        this.nota    = elemento[this.dimensao];
+      }
+    }
+  }
+
 
 }

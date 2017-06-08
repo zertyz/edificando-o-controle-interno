@@ -1,7 +1,9 @@
 <p>
   ##município: {{municipio}}##
-  ##POSICAO##
+  ##POSICAO:   {{posicao}}##
+  ##NOTA:      {{nota}}##
+  ##DIMENSAO:  {{dimensao}}##
   ##RESUMO##
-  <img class="img-envolvida" src="/assets/img/construcao.png" width="100%">
+  <img class="img-envolvida" [src]="gradacoes.getImagemConstrucao(nota)" width="100%">
   <e-link href="/mp-informacoes-gerais">informações gerais</e-link>
 </p>

@@ -25,11 +25,24 @@ export class GradacoesDeCores {
 
   private notaMaxima: number = 10;
   private notaMinima: number = 0;
-  private gradacoes:  number = 6;
-  private classesCSS: string[] = ['notaEmProjeto', 'notaEmAlicerce', 'notaConstrucaoIniciada', 'notaConstrucaoAdiantada', 'notaEmAcabamento', 'notaConstruido'];
 
+  // gradações de cores
+  private gradacoesCores:  number = 6;
+  private classesCSSCores: string[] = ['notaEmProjeto', 'notaEmAlicerce', 'notaConstrucaoIniciada', 'notaConstrucaoAdiantada', 'notaEmAcabamento', 'notaConstruido'];
+
+  // gradações da construção
+  private gradacoesConstrucao: number = 4;
+  private imgsConstrucao:      string[] = ['alicerce.png', 'construcao.png', 'acabamento.png', 'construido.png'];
+
+  /** Retorna a classe CSS para ser usada para colorificar o valor da nota passado */
   public getCSSClass(nota: number): string {
-    return this.classesCSS[Math.min(this.classesCSS.length-1, Math.floor((nota*this.gradacoes)/(this.notaMaxima-this.notaMinima)))];
+    return this.classesCSSCores[Math.min(this.classesCSSCores.length-1, Math.floor((nota*this.gradacoesCores)/(this.notaMaxima-this.notaMinima)))];
+  }
+
+  /** Retorna a imagem representando o estágio da construção atual */
+  public getImagemConstrucao(nota: number): string {
+    let img = this.imgsConstrucao[Math.min(this.imgsConstrucao.length-1, Math.floor((nota*this.gradacoesConstrucao)/(this.notaMaxima-this.notaMinima)))];
+    return `/assets/img/${img}`;
   }
 
 }

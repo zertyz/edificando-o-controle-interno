@@ -3,6 +3,13 @@
 @import "../scss/initial";
 @import "GradacoesDeCores";
 
+.img-envolvida {
+  float: left;
+  shape-outside: url("/assets/img/Predio Estagio 4 - Construção Adiantada.png");
+  shape-margin: 15px;
+  shape-image-threshold: 0.5;
+}
+
 div.borderedR{
   border-right: 2px solid #000000;
   padding-right: 5%;

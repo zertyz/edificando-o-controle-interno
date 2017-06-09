@@ -1,11 +1,3 @@
-.img-envolvida {
-  float: left;
-  width: 60%;
-  shape-outside: url("/assets/img/Predio Estagio 4 - Construção Adiantada.png");
-  shape-margin: 15px;
-  shape-image-threshold: 0.5;
-}
-
 h1{
   text-align:right;
 }
@@ -15,7 +7,9 @@ p{
   text-align: right;
 }
 
-@media(max-width:1000px){
+@media(max-width:1199px){
   div.borderedL { border-color: transparent;}
   div.borderedR { border-color: transparent;}
+  img.img-responsive { width:80%;}
+  max-width: 100%;
 }

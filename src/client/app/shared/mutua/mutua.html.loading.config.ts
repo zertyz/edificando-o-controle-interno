@@ -39,13 +39,11 @@ export const MutuaExportedRoutes: any[] = [...MPEdificandoOControleInternoHomeRo
 import { MNg2AdminModule } from '../modules/m-ng2-admin/m-ng2-admin.module';
 // BrowserAnimationsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// MHelloWorldModule
-import { MHelloWorldModule } from '../modules/m-hello-world/m-hello-world.module';
 // NgbModule
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // MEdificandoOControleInternoModule
 import { MEdificandoOControleInternoModule } from '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module';
 
-export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,MHelloWorldModule.forRoot(),NgbModule.forRoot(),MEdificandoOControleInternoModule.forRoot()];
+export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MEdificandoOControleInternoModule.forRoot()];
 
 export const MutuaAppComponent: any = NG2AppComponent;

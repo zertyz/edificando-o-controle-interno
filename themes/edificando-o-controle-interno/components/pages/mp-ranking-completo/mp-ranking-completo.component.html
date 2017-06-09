@@ -9,7 +9,16 @@
        <b> Ranking </b> {{dimensao}}
       </p>
 
-      <e-link href="/mp-outros-rankings"> outros rankings </e-link>
+      <!-- Outros Rankings -->
+      Outros Rankings: <div ngbDropDown class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle outrosRankings" data-toggle="dropdown" ngbDropdownToggle>
+          {{dimensao}}
+        </button>
+        <ul class="dropdown-menu outrosRankings">
+          <li *ngFor="let campo of mapaDeCamposParaTitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</li>
+        </ul>
+      </div>
+
       <e-ranking-geral dimensao="{{dimensao}}"> </e-ranking-geral>
     </div>
 

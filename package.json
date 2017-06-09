@@ -185,7 +185,7 @@
     "@angular/service-worker": "^1.0.0-beta.6",
 
     "bootstrap": "^4.0.0-alpha.6",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.22",
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.24",
     "font-awesome": "^4.7.0",
     "primeng": "^4.0.0-rc.2",
 

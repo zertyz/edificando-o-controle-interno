@@ -61,7 +61,7 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
 export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjectsModuleActivationConfiguration[] = [
   {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // Modules from ng2-admin project. Use it along with 'ng2-admin' theme
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},  // angular4 module. Required by 'PRIMENG_MODULES'
-  {moduleName: 'MHelloWorldModule',       htmlEnabled: true,  mobileEnabled: true},   // sample module with some SaaS components
+  {moduleName: 'MHelloWorldModule',       htmlEnabled: false, mobileEnabled: false},   // sample module with some SaaS components
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},  // bootstrap for angular
   {moduleName: 'PRIMENG_MODULES',         htmlEnabled: false, mobileEnabled: false},  // form components. depends on 'BrowserAnimationsModule'
 

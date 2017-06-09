@@ -20,6 +20,9 @@ import { EStatusEdificacaoComponent,
 import { RankingsService } from './services/rankings.service';
 import { IRankings }       from './services/IRankings';
 
+// bootstrap?
+import { NgbModule, NgbDropdown, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
 // injectable libs
 import { GradacoesDeCores } from './GradacoesDeCores';
 
@@ -29,6 +32,8 @@ import { GradacoesDeCores } from './GradacoesDeCores';
     RouterModule,
     FormsModule,
     HttpModule,
+    NgbModule,
+    NgbDropdownModule,
   ],
   declarations: [
     EStatusEdificacaoComponent,
@@ -49,6 +54,8 @@ import { GradacoesDeCores } from './GradacoesDeCores';
   providers: [
     RankingsService,
     GradacoesDeCores,
+    NgbModule,
+    NgbDropdown,
   ],
   schemas: [
     NO_ERRORS_SCHEMA,
@@ -60,7 +67,7 @@ export class MEdificandoOControleInternoModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: MEdificandoOControleInternoModule,
-      providers: [RankingsService]
+      providers: [RankingsService, GradacoesDeCores, NgbModule, NgbDropdown]
     };
   }
 

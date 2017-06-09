@@ -1,25 +1,33 @@
 // este arquivo foi construído de acordo com a especificação de src/client/app/shared/modules/m-edificando-o-controle-interno/GradacoesDeCores.ts
 
+// construído de acordo com a palheta de cores do portal:
+// va: em projeto			      #DB4437
+// aa: em alicerce			    #E6BD45
+// ouro: constr. iniciada		#C99E52
+// aa: constr. adiantada		#427FED
+// me: em acabamento		    #2E3A48
+// v: construidoo			      #53A93F
+
 .notaEmProjeto {
-  color:#ff0000;
+  color:#DB4437;
 }
 
 .notaEmAlicerce {
-  color:#d99694;
+  color:#E6BD45;
 }
 
 .notaConstrucaoIniciada {
-  color:#b08027;
+  color:#C99E52;
 }
 
 .notaConstrucaoAdiantada {
-  color:#95b3d7;
+  color:#427FED;
 }
 
 .notaEmAcabamento {
-  color:#376092;
+  color:#2E3A48;
 }
 
 .notaConstruido {
-  color:#354152;
+  color:#53A93F;
 }

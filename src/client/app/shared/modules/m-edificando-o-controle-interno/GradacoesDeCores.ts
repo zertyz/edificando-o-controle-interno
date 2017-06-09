@@ -23,6 +23,28 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class GradacoesDeCores {
 
+  // transformações do nome do campo para o título, na ordem em que devem aparecer.
+  public mapaDeCamposParaTitulos: string[][] = [
+    ['geral',                    'Classificação Geral'],
+    ['auditoria',                'Auditoria'],
+    ['ouvidoria',                'Ouvidoria'],
+    ['correicao',                'Correição'],
+    ['controladoria',            'Controladoria'],
+    ['transparencia',            'Transparência'],
+    ['auxilioAoControleExterno', 'Controle Externo'],
+    ['estrutura',                'Estrutura'],
+    ['abrangencia',              'Abrangência'],
+    ['autonomia',                'Autonomia'],
+    ['regulamentacao',           'Regulamentação'],
+    ['orcamento',                'Orçamento'],
+    ['planejamento',             'Planejamento'],
+    ['evolucao',                 'Evolução'],
+    ['resolutividade',           'Resolutividade'],
+    ['concretizacao',            'Concretização de Políticas Públicas'],
+    ['iniciativaLouvavel',       'Iniciativa Louvável'],
+  ];
+
+  // gradações
   private notaMaxima: number = 10;
   private notaMinima: number = 0;
 

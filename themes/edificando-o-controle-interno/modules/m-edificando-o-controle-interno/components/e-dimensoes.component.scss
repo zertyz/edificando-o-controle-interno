@@ -1,15 +1,13 @@
 .notas{
   vertical-align: top;
-  font-size: 10px;
-  color: black;
+  font-size: 60%;
 }
 
 .fonte{
   font-weight: bold;
-  font-size:13px;
-  font-family: Arial ;
-  width:95px;
-  color: black;
+  font-size:90%;
+  font-family: Arial, Verdana, sans-serif;
+  width:40%;
 }
 
 .alinhamento-dir{
@@ -17,22 +15,21 @@
 }
 
 .bordas {
-  border-bottom: 2px dotted;
+  border-bottom: 1px dotted;
+  border-bottom-color: #2e3a48;
 }
 
 img{
-  width:30px;
-  height:30px;
-  float: right;
+ float: right;
 }
 
 small{
   color:gray;
-  font-size: 15px;
+  font-size: 180%;
 }
 
 h4{
-  font-size: 30px;
+  font-size: 280%;
   font-weight: normal;
 }
 

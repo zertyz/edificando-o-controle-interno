@@ -1,13 +1,13 @@
 
 .barra-de-rolagem {
-  width:90%;
+  width:95%;
   height:5%;
   background-color: transparent;
   overflow: auto;
 }
 
 .municipio{
-  font-size: 100%;
+  font-size: 90%;
   font-weight: normal;
   width:45%;
   vertical-align: top;
@@ -21,34 +21,28 @@
 
 .notas{
   vertical-align: top;
-  padding-left: 5px;
-  font-size: 10px;
-}
-
-.fonte{
-  font-weight: bold;
-  font-size:20px;
+  padding-left: 3%;
+  font-size: 60%;
 }
 
 .alinhamento-dir{
   text-align: right;
 }
 
-
 small{
   color:gray;
-  font-size: 15px;
+  font-size: 180%;
 }
 
 h4{
-  font-size: 30px;
+  font-size: 280%;
   font-weight: normal;
 }
 
 strong{
-  font-size: 30px;
+  font-size: 180%;
   font-weight: bold;
-  width:5px;
+  width:5%;
 }
 
 a:hover{
@@ -66,7 +60,7 @@ ul li {
 }
 
 ul li a{
-  padding: 5px;
+  padding: 5%;
   text-decoration: none;
   color:black;
   display: block;
@@ -83,6 +77,9 @@ ul li a:active {
   text-decoration: none;
 }
 
-.bordas{
-  border-bottom: 2px dotted;
+hr {
+  border-style: dotted;
+  border-color: #000000;
+  width: 90%;
+  margin-left: 0;
 }

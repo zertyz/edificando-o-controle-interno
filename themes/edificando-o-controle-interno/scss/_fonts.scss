@@ -1,3 +1,89 @@
 $roboto-font-path: "../../../node_modules/roboto-fontface/fonts";
 
 @import "../../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface";
+
+@import "../../../node_modules/roboto-fontface/css/roboto-condensed/sass/roboto-condensed-fontface";
+@import "../../../node_modules/roboto-fontface/css/roboto-slab/sass/roboto-slab-fontface";
+
+// from "node-modules/roboto-fontface/test.html":
+.roboto {
+  font-family: 'Roboto';
+}
+
+.roboto-italic {
+  font-family: 'Roboto-RegularItalic';
+}
+
+.roboto-light {
+  font-family: 'Roboto-Light';
+}
+
+.roboto-light-italic {
+  font-family: 'Roboto-LightItalic';
+}
+
+.roboto-bold {
+  font-family: 'Roboto-Bold';
+}
+
+.roboto-bold-italic {
+  font-family: 'Roboto-BoldItalic';
+}
+
+.roboto-medium {
+  font-family: 'Roboto-Medium';
+}
+
+.roboto-medium-italic {
+  font-family: 'Roboto-MediumItalic';
+}
+
+.roboto-thin {
+  font-family: 'Roboto-Thin';
+}
+
+.roboto-thin-italic {
+  font-family: 'Roboto-ThinItalic';
+}
+/*Roboto Condensed*/
+
+.roboto-condensed {
+  font-family: 'Roboto-Condensed';
+}
+
+.roboto-condensed-italic {
+  font-family: 'Roboto-Condensed-RegularItalic';
+}
+
+.roboto-condensed-light {
+  font-family: 'Roboto-Condensed-Light';
+}
+
+.roboto-condensed-light-italic {
+  font-family: 'Roboto-Condensed-LightItalic';
+}
+
+.roboto-condensed-bold {
+  font-family: 'Roboto-Condensed-Bold';
+}
+
+.roboto-condensed-bold-italic {
+  font-family: 'Roboto-Condensed-BoldItalic';
+}
+/*Roboto Slab*/
+
+.roboto-slab {
+  font-family: 'Roboto-Slab';
+}
+
+.roboto-slab-light {
+  font-family: 'Roboto-Slab-Light';
+}
+
+.roboto-slab-bold {
+  font-family: 'Roboto-Slab-Bold';
+}
+
+.roboto-slab-thin {
+  font-family: 'Roboto-Slab-Thin';
+}

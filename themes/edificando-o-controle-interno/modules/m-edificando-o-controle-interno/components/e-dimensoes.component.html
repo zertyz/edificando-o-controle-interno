@@ -1,30 +1,16 @@
 <div class="row">
   <!--municipio: {{municipio}} / {{notas.cidade}}-->
   <table>
-<tr *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
-  <td>
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> {{quarteto[1]}} </td>
-        <td> <img src="/assets/img/seta-up.png"> </td>
-        <td class="alinhamento-dir notas" width="5%"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="50%"> Nota Atual <h4 [ngClass]="gradacoes.getCSSClass(notas[quarteto[0]])"> {{(notas[quarteto[0]] || 0 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
+<tr class="bordas" *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
+        <td class="dimensao" width="35%"> {{quarteto[1]}} </td>
+        <td> <img src="/assets/img/seta-up.png" width="30px"> </td>
+        <td class="alinhamento-dir notasHeader"> ÚLTIMA NOTA <br/><br/><span class="ultimaNota"> --- </span>  </td>
+        <td class="notasHeader"> NOTA ATUAL <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[quarteto[0]])"> {{(notas[quarteto[0]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4> </td>
 
-  <div class="borderedL">
-  <td *ngIf="quarteto[2] && quarteto[3]">
-    <table class="bordas">
-      <tr>
-        <td class="fonte"> {{quarteto[3]}} </td>
-        <td> <img src="/assets/img/seta-up.png">  </td>
-        <td class="alinhamento-dir notas" width="5%"> Última Nota <small> --- </small>  </td>
-        <td class="notas" width="50%"> Nota Atual <h4 [ngClass]="gradacoes.getCSSClass(notas[quarteto[2]])"> {{(notas[quarteto[2]] || 0 | number: '1.1-1').replace(".",",")}} </h4> </td>
-      </tr>
-    </table>
-  </td>
-  </div>
+        <td class="bordaEsquerda dimensao" width="35%"> {{quarteto[3]}} </td>
+        <td> <img src="/assets/img/seta-up.png" width="30px">  </td>
+        <td class="alinhamento-dir notasHeader"> ÚLTIMA NOTA <br/><br/><span class="ultimaNota"> --- </span>  </td>
+        <td class="notasHeader"> NOTA ATUAL <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[quarteto[2]])"> {{(notas[quarteto[2]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4> </td>
 </tr>
 
 </table>

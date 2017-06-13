@@ -1,12 +1,28 @@
-.notas{
+.notasHeader {
+  font-family: 'Roboto-Condensed';
+  font-size: 7pt;
+  line-height: 6pt;
   vertical-align: top;
+  text-align: center;
   font-size: 60%;
 }
 
-.fonte{
-  font-weight: bold;
-  font-size:90%;
-  font-family: Arial, Verdana, sans-serif;
+.ultimaNota {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 12pt;
+  vertical-align: bottom;
+}
+
+.notaAtual {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 20pt;
+  vertical-align: bottom;
+}
+
+
+.dimensao{
+  font-family: 'Roboto-Condensed-Bold';
+  font-size: 14pt;
   width:40%;
 }
 
@@ -18,6 +34,11 @@
   border-bottom: 1px dotted;
   border-bottom-color: #2e3a48;
 }
+
+.bordaEsquerda {
+  border-left: 2px solid #000000;
+}
+
 
 img{
  float: right;

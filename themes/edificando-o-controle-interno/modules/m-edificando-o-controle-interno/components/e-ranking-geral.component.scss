@@ -1,15 +1,22 @@
 
 .barra-de-rolagem {
   width:95%;
-  height:60%;
+  height:70%;
   background-color: transparent;
   overflow: auto;
 }
 
+.posicao {
+  font-family: 'Roboto-Condensed';
+  font-size: 34pt;
+  line-height: 15pt;
+  vertical-align: top;
+}
+
 .municipio{
-  font-size: 90%;
-  font-weight: normal;
-  width:45%;
+  font-family: 'Roboto-Condensed-Light-Bold';
+  font-size: 16pt;
+  line-height: 90%;
   vertical-align: top;
 }
 
@@ -19,10 +26,25 @@
 
 }
 
-.notas{
+.notasHeader {
+  font-family: 'Roboto-Condensed';
+  font-size: 7pt;
+  line-height: 6pt;
   vertical-align: top;
+  text-align: center;
   padding-left: 3%;
-  font-size: 60%;
+}
+
+.ultimaNota {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 12pt;
+  vertical-align: bottom;
+}
+
+.notaAtual {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 20pt;
+  vertical-align: bottom;
 }
 
 .alinhamento-dir{

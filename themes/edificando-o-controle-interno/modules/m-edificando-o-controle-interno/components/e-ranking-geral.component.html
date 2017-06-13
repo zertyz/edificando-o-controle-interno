@@ -4,7 +4,7 @@
     <a [routerLink]="['/mp-ranking-completo', notas.cidade, dimensao]">
       <table>
         <tr>
-          <td> <strong> {{posicao+1 | number: '2.0-0'}} </strong> </td>
+          <td class="posicao">{{posicao+1 | number: '2.0-0'}}</td>
           <td class="municipio"> {{notas.cidade}} </td>
           <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
         </tr>
@@ -12,8 +12,8 @@
         <tr>
           <td> <img src="/assets/img/seta-up.png"> </td>
           <td> <img src="/assets/img/grafico-linha.png">  </td>
-          <td class="alinhamento-dir notas" width="5%"> Última Nota <small> --- </small> </td>
-          <td class="notas" width="40%"> Nota Atual <h4 [ngClass]="gradacoes.getCSSClass(notas[dimensao])"> {{(notas[dimensao] | number: '1.1-1').replace(".",",")}} </h4></td>
+          <td class="alinhamento-dir notasHeader" width="5%"> ÚLTIMA NOTA <br/><br/><span class="ultimaNota"> --- </span> </td>
+          <td class="notasHeader" width="40%"> NOTA ATUAL <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[dimensao])"> {{(notas[dimensao] | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4></td>
         </tr>
       </table>
     </a>

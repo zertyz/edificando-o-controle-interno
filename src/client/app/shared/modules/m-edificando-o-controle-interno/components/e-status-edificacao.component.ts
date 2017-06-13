@@ -70,7 +70,7 @@ export class EStatusEdificacaoComponent {
     this.nota    = -1;
     if (this.rankings != null) {
       let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
-      let elemento: IRankings = rankingOrdenadoPorDimensao.find(e => e.cidade == this.municipio);
+      let elemento: IRankings = rankingOrdenadoPorDimensao.find(e => e.municipio == this.municipio);
       if (elemento) {
         this.posicao = 1 + rankingOrdenadoPorDimensao.indexOf(elemento);
         this.nota    = elemento[this.dimensao];

@@ -75,7 +75,7 @@ export class EDimensoesComponent implements OnInit {
   constructor(private rankingsService: RankingsService,
               private gradacoes: GradacoesDeCores) {
     this.notas = {
-      cidade: "desconhecida",
+      municipio: "desconhecida",
       geral: -1,
       auditoria: -1,
       ouvidoria: -1,
@@ -107,7 +107,7 @@ export class EDimensoesComponent implements OnInit {
   // a cada mudança nos parâmetros, 'notas' é repopulado
   ngOnChanges() {
     if (this.rankings != null) {
-      this.notas = this.rankings.find(e => e.cidade == this.municipio);
+      this.notas = this.rankings.find(e => e.municipio == this.municipio);
     }
   }
 

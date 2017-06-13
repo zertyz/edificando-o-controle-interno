@@ -77,6 +77,12 @@ a:hover{
   color: white;
 }
 
+a:active{
+  background-color: #2e3a48;
+  text-decoration: none;
+  color: white;
+}
+
 ul {
   padding: 0;
   list-style: none;

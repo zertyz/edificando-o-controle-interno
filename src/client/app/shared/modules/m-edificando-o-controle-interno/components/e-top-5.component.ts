@@ -40,7 +40,7 @@ export class ETop5Component {
     rankingsService.fetchRankings().subscribe(response => {
       let rankings: IRankings[] = response.sort( (e1, e2) => e2.geral - e1.geral);
       for (let i = 0; i < this.top5Cidades.length; i++) {
-        this.top5Cidades[i] = rankings[i].cidade;
+        this.top5Cidades[i] = rankings[i].municipio;
       }
     }, error => this.errorMessage = < any > error);
   };

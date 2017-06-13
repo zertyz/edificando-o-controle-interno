@@ -7,7 +7,9 @@
  * ... todos para um município específico.
  *
  * Recebe as seguintes propriedades:
- *  municipio:         o município para o qual se deve apresentar a lista de dimensões
+ *  municipio:         o município para o qual se deve apresentar a lista de dimensões.
+ *                     Pode ser uma string com o nome exato do município, ou um número, com sua posição no array do ranking
+ *  dimensao:          o nome do campo de 'IRankings' que deve ser usado para ordenar os valores
  *  ordenacao:         especifica como se deve ordenar a lista. Pode ter um dos valores: [ 'titulo', 'nota' ]
  *
  * Exemplo de uso:
@@ -41,7 +43,9 @@ import { GradacoesDeCores } from '../GradacoesDeCores';
 })
 export class EDimensoesComponent implements OnInit {
 
+  // parâmetros do componente
   @Input() municipio: string;
+  @Input() dimensao:  string;
   @Input() ordenacao: string;
 
   // dados do JSON
@@ -75,7 +79,7 @@ export class EDimensoesComponent implements OnInit {
   constructor(private rankingsService: RankingsService,
               private gradacoes: GradacoesDeCores) {
     this.notas = {
-      cidade: "desconhecida",
+      municipio: "desconhecida",
       geral: -1,
       auditoria: -1,
       ouvidoria: -1,
@@ -107,7 +111,14 @@ export class EDimensoesComponent implements OnInit {
   // a cada mudança nos parâmetros, 'notas' é repopulado
   ngOnChanges() {
     if (this.rankings != null) {
-      this.notas = this.rankings.find(e => e.cidade == this.municipio);
+      let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
+
+      // encontra 'notas' baseado no índice (se 'município' for um número) ou no nome do município (se for uma string)
+      if (isNaN(Number(this.municipio))) {
+        this.notas = rankingOrdenadoPorDimensao.find(e => e.municipio == this.municipio);
+      } else {
+        this.notas = rankingOrdenadoPorDimensao[Number(this.municipio)];
+      }
     }
   }
 

@@ -50,7 +50,7 @@ export class MPRankingCompletoComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.municipio = params['municipio'] || 'estado';
+      this.municipio = params['municipio'] || '0';
       this.dimensao  = params['dimensao']  || 'geral';
     });
   }

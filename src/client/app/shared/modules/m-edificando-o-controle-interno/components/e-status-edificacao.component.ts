@@ -7,11 +7,13 @@
  * com a descrição do status atual e os pontos a melhorar
  *
  * Recebe as seguintes propriedades:
- *  municipio:         o município para o qual deve se apresentar o status da edificação do controle interno
+ *  municipio:         o município para o qual deve se apresentar o status da edificação do controle interno.
+ *                     Pode ser uma string com o nome exato do município, ou um número, com sua posição no array do ranking
+ *  dimensao:          o nome do campo de 'IRankings' que deve ser usado para ordenar os valores
  *
  * Exemplo de uso:
  *
- *  <e-status-edificacao municipio="Rio de Janeiro" nota="9.7" posicao="1"></e-status-edificacao>
+ *  <e-status-edificacao municipio="Rio de Janeiro" dimensao="geral"></e-status-edificacao>
  *
  * @see RelatedClass(es)
  * @author luiz
@@ -70,7 +72,15 @@ export class EStatusEdificacaoComponent {
     this.nota    = -1;
     if (this.rankings != null) {
       let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
-      let elemento: IRankings = rankingOrdenadoPorDimensao.find(e => e.cidade == this.municipio);
+
+      // encontra 'elemento' baseado no índice (se 'município' for um número) ou no nome do município (se for uma string)
+      let elemento: IRankings;
+      if (isNaN(Number(this.municipio))) {
+        elemento = rankingOrdenadoPorDimensao.find(e => e.municipio == this.municipio);
+      } else {
+        elemento = this.rankings[Number(this.municipio)];
+        this.municipio = elemento.municipio;
+      }
       if (elemento) {
         this.posicao = 1 + rankingOrdenadoPorDimensao.indexOf(elemento);
         this.nota    = elemento[this.dimensao];

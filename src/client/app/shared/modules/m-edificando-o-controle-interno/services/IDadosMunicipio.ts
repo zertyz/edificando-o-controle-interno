@@ -1,0 +1,18 @@
+/** <pre>
+ * IDadosMunicipio.ts
+ * ==================
+ * (created by luiz on Ter, jun, 13, 2017)
+ *
+ * Representa um registro de 'dados_municipios_20170614.json', a saber:
+ *  {municipio:, populacaoProjetada2016:, percentualPopulacionalEstadual:, orcamento2015:}
+ *
+ * @see RelatedClass(es)
+ * @author luiz
+ */
+
+export interface IDadosMunicipio {
+  municipio:                      string;
+  populacaoProjetada2016:         string;
+  percentualPopulacionalEstadual: string;
+  orcamento2015:                  string;
+}

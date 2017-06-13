@@ -6,8 +6,16 @@
     <div class="borderedL">
       <h2 class="title">{{municipio}}</h2>
       <p></p>
-      <h4 class="subtitle">Posição {{posicao}} |  <span [ngClass]="gradacoes.getCSSClass(nota)">{{(nota | number: '1.1-1').replace(".",",").replace("10,0", "10")}}</span></h4>
-      <p class="info">{{dimensao}} </p>
+      <h4 class="subtitle">Posição geral: {{posicaoGeral}} |  <span [ngClass]="gradacoes.getCSSClass(notaGeral)">{{(notaGeral | number: '1.1-1').replace(".",",").replace("10,0", "10")}}</span></h4>
+      <h4 *ngIf="dimensao != 'geral'" class="subtitle">Posição {{dimensao}}: {{posicao}} |  <span [ngClass]="gradacoes.getCSSClass(nota)">{{(nota | number: '1.1-1').replace(".",",").replace("10,0", "10")}}</span></h4>
+      <div *ngIf="dadosMunicipiosErrorMessage != null" class="alert alert-danger">
+        <b>Erro obtendo dados:</b> {{dadosMunicipiosErrorMessage}}
+      </div>
+      <p class="info">
+        população: <strong>{{dadosDoMunicipio.populacaoProjetada2016}}</strong><br/>
+        % estadual: <strong>{{dadosDoMunicipio.percentualPopulacionalEstadual}}</strong><br/>
+        orçamento: <strong>{{dadosDoMunicipio.orcamento2015}}</strong><br/>
+      </p>
       <row>
         <e-link href="/mp-informacoes-gerais">mais informações</e-link>
       </row>

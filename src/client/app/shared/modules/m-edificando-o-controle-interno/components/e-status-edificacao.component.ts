@@ -30,6 +30,7 @@ import { Input } from '@angular/core';
 // services
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../services/IRankings';
+import { IDadosMunicipio } from '../services/IDadosMunicipio';
 
 // module libs
 import { GradacoesDeCores } from '../GradacoesDeCores';
@@ -47,23 +48,46 @@ export class EStatusEdificacaoComponent {
   @Input() municipio: string = '§§ MUNICIPIO §§';
   @Input() dimensao:  string = '§§ DIMENSÃO §§';
 
-  // dados do JSON
-  public rankings: IRankings[];
+  // dados dos JSONs
+  public rankings:        IRankings[];
+  public dadosMunicipios: IDadosMunicipio[];
 
   // dados consolidados
-  public nota:    number = -1;
-  public posicao: number = -1;
+  public notaGeral:        number = -1;
+  public posicaoGeral:     number = -1;
+  public nota:             number = -1;
+  public posicao:          number = -1;
+  public dadosDoMunicipio: IDadosMunicipio;
 
-  public errorMessage: string = null;
+  public rankingsErrorMessage: string = null;
+  public dadosMunicipiosErrorMessage: string = null;
 
 
   constructor(private rankingsService: RankingsService,
               private gradacoes: GradacoesDeCores) {
 
+    this.setDefaultDadosDoMunicipio();
+
+    // rankings
     rankingsService.fetchRankings().subscribe(response => {
       this.rankings = response;
       this.ngOnChanges();
-    }, error => this.errorMessage = < any > error);
+    }, error => this.rankingsErrorMessage = < any > error);
+
+    // dados dos municípios
+    rankingsService.fetchDadosMunicipios().subscribe(response => {
+      this.dadosMunicipios = response;
+      this.ngOnChanges();
+    }, error => this.dadosMunicipiosErrorMessage = < any > error);
+  }
+
+  setDefaultDadosDoMunicipio() {
+    this.dadosDoMunicipio = {
+      municipio:                      "desconhecido",
+      populacaoProjetada2016:         "desconhecido",
+      percentualPopulacionalEstadual: "desconhecido",
+      orcamento2015:                  "desconhecido",
+    };
   }
 
   // a cada mudança nos parâmetros, 'nota' e 'posicao' são recomputados
@@ -71,7 +95,7 @@ export class EStatusEdificacaoComponent {
     this.posicao = -1;
     this.nota    = -1;
     if (this.rankings != null) {
-      let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
+      let rankingOrdenadoPorDimensao:      IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
 
       // encontra 'elemento' baseado no índice (se 'município' for um número) ou no nome do município (se for uma string)
       let elemento: IRankings;
@@ -84,8 +108,22 @@ export class EStatusEdificacaoComponent {
       if (elemento) {
         this.posicao = 1 + rankingOrdenadoPorDimensao.indexOf(elemento);
         this.nota    = elemento[this.dimensao];
+        if (this.dadosMunicipios) {
+          this.dadosDoMunicipio = this.dadosMunicipios.find(e => e.municipio == this.municipio);
+        }
+
+        // computa dados da dimensão geral
+        let rankingOrdenadoPorDimensaoGeral: IRankings[] = this.rankings.sort( (e1, e2) => e2.geral - e1.geral);
+        this.posicaoGeral = 1 + rankingOrdenadoPorDimensaoGeral.indexOf(elemento);
+        this.notaGeral    = elemento.geral;
+
       }
     }
+
+    if (!this.dadosDoMunicipio) {
+      this.setDefaultDadosDoMunicipio();
+    }
+
   }
 
 

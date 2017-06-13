@@ -75,7 +75,7 @@
   {"municipio": "São João da Barra",                                 "populacaoProjetada2016":    "34.583",              "percentualPopulacionalEstadual":  "0,21%",   "orcamento2015":    "R$ 524.451.265,00"},
   {"municipio": "São João de Meriti",                                "populacaoProjetada2016":   "460.625",              "percentualPopulacionalEstadual":  "2,78%",   "orcamento2015":    "R$ 600.000.000,00"},
   {"municipio": "São José de Ubá",                                   "populacaoProjetada2016":     "7.206",              "percentualPopulacionalEstadual":  "0,04%",   "orcamento2015":     "R$ 38.351.249,40"},
-  {"municipio": "São José do Vale do Rio Pre",                       "populacaoProjetada2016":    "20.916",              "percentualPopulacionalEstadual":  "0,13%",   "orcamento2015":     "R$ 60.618.000,00"},
+  {"municipio": "São José do Vale do Rio Preto",                     "populacaoProjetada2016":    "20.916",              "percentualPopulacionalEstadual":  "0,13%",   "orcamento2015":     "R$ 60.618.000,00"},
   {"municipio": "São Pedro da Aldeia",                               "populacaoProjetada2016":    "96.920",              "percentualPopulacionalEstadual":  "0,59%",   "orcamento2015":    "R$ 215.500.000,00"},
   {"municipio": "São Sebastião do Alto",                             "populacaoProjetada2016":     "9.054",              "percentualPopulacionalEstadual":  "0,05%",   "orcamento2015":     "R$ 38.220.871,90"},
   {"municipio": "Sapucaia",                                          "populacaoProjetada2016":    "17.606",              "percentualPopulacionalEstadual":  "0,11%",   "orcamento2015":     "R$ 66.796.841,00"},
@@ -90,5 +90,5 @@
   {"municipio": "Valença",                                           "populacaoProjetada2016":    "73.725",              "percentualPopulacionalEstadual":  "0,45%",   "orcamento2015":    "R$ 152.691.803,20"},
   {"municipio": "Varre-Sai",                                         "populacaoProjetada2016":    "10.402",              "percentualPopulacionalEstadual":  "0,06%",   "orcamento2015":     "R$ 42.538.627,00"},
   {"municipio": "Vassouras",                                         "populacaoProjetada2016":    "35.432",              "percentualPopulacionalEstadual":  "0,21%",   "orcamento2015":    "R$ 164.164.278,90"},
-  {"municipio": "Volta Redonda",                                     "populacaoProjetada2016":   "262.970",              "percentualPopulacionalEstadual":  "1,59%",   "orcamento2015":  "R$ 1.051.089.000,00"},
+  {"municipio": "Volta Redonda",                                     "populacaoProjetada2016":   "262.970",              "percentualPopulacionalEstadual":  "1,59%",   "orcamento2015":  "R$ 1.051.089.000,00"}
 ]

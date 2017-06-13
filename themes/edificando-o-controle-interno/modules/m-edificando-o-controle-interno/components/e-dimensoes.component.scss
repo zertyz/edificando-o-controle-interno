@@ -4,7 +4,8 @@
   line-height: 90%;
   vertical-align: top;
   text-align: center;
-  font-size: 60%;
+  padding-top: 3%;
+  light: 20;
 }
 
 .ultimaNota {
@@ -17,13 +18,13 @@
   font-family: 'Roboto-Condensed-Light';
   font-size: 280%;
   vertical-align: bottom;
+  margin-top: 10%;
 }
 
 
 .dimensao{
   font-family: 'Roboto-Condensed-Bold';
-  font-size: 110%;
-  width:40%;
+  font-size: 120%;
 }
 
 .alinhamento-dir{
@@ -39,9 +40,16 @@
   border-left: 2px solid #000000;
 }
 
+td{
+  padding-bottom: 2.3%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
 
 img{
- float: right;
+  float: right;
+  margin-left: 0;
+  margin-right:0;
 }
 
 small{

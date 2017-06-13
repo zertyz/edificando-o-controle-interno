@@ -1,1 +1,14 @@
 .backImg {position: absolute; z-index: 1; top: 0; left: 0;}
+
+@media(max-width:1199px){
+  .backImg{
+    position: inherit;
+    z-index: inherit;
+    top:inherit;
+    left: inherit;
+    width: 90%;
+    height: 90%;
+    padding-left: 5%;
+  }
+  max-width: 100%;
+}

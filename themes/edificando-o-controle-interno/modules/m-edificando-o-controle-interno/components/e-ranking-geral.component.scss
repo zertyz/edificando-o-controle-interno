@@ -29,6 +29,12 @@
   text-align: right;
 }
 
+.bordas {
+  border-bottom: 1px dotted;
+  border-bottom-color: #2e3a48;
+}
+
+
 small{
   color:gray;
   font-size: 180%;
@@ -78,7 +84,7 @@ ul li a:active {
 }
 
 hr {
-  border-style: dotted;
+  border: 1px solid;
   border-color: #2e3a48;
   width: 90%;
   margin-left: 0;

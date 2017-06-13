@@ -1,3 +1,4 @@
+<hr>
 <ul class="barra-de-rolagem">
 
   <li *ngFor="let notas of ranking; let posicao = index">
@@ -9,7 +10,7 @@
           <td class="mapa" colspan="2"> <img src="/assets/img/mapa.png"> </td>
         </tr>
 
-        <tr>
+        <tr class="bordas">
           <td> <img src="/assets/img/seta-up.png"> </td>
           <td> <img src="/assets/img/grafico-linha.png">  </td>
           <td class="alinhamento-dir notas" width="5%"> Última Nota <small> --- </small> </td>
@@ -18,9 +19,5 @@
       </table>
     </a>
   </li>
-
-
-
 </ul>
 
-<hr>

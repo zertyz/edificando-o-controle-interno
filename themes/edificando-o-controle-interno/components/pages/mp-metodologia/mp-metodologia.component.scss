@@ -18,3 +18,10 @@ p {
   padding-right: 4%;
   padding-left: 5%;
 }
+
+@media(max-width:1199px){
+  div.borderedL { border-color: transparent;}
+  div.borderedR { border-color: transparent;}
+  img.img-responsive { width:80%;}
+  max-width: 100%;
+}

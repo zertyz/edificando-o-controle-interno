@@ -1,13 +1,15 @@
+.backImg {position: absolute; z-index: 1; top: 0; left: 0;}
+
 .title {
   font-family: 'Roboto-Condensed-Bold';
-  font-size: 18pt;
-  line-height: 15px;
+  font-size: 180%;
+  line-height: 80%;
 }
 
 .subtitle {
   font-family: 'Roboto-Condensed-Bold';
-  font-size: 12pt;
-  line-height: 10px;
+  font-size: 120%;
+  line-height: 70%;
 }
 
 .info {

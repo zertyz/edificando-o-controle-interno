@@ -4,22 +4,28 @@
   </div>
   <div class="row" >
     <div class="col-lg-3 col-xs-12 "style="max-height: 45rem">
-      <p>
-        <a [routerLink]="['/']">
-        <img src="assets/img/Logo Edificando o Controle Interno.png" height="150px">
-        </a>
-       <b> Ranking </b> {{dimensao}}
-      </p>
+      <table>
+        <tr>
+          <td><a [routerLink]="['/']">
+            <img src="assets/img/Logo Edificando o Controle Interno.png" height="150px">
+          </a></td>
+          <td style="padding-left: 10%;"><span class="title">Ranking </span> <br/>
+          <span class="dimensao">{{dimensao}}</span>
+          </td>
+        </tr>
+      </table>
 
       <!-- Outros Rankings -->
-      Outros Rankings: <div ngbDropDown class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle outrosRankings" data-toggle="dropdown" ngbDropdownToggle>
-          {{dimensao}}
-        </button>
-        <ul class="dropdown-menu outrosRankings">
-          <li *ngFor="let campo of mapaDeCamposParaTitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</li>
-        </ul>
-      </div>
+      <span class="fonteOutrosRankings">Outros rankings
+        <div ngbDropDown class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle outrosRankings" data-toggle="dropdown" ngbDropdownToggle>
+            {{dimensao}}
+          </button>
+          <ul class="dropdown-menu outrosRankings">
+            <li *ngFor="let campo of mapaDeCamposParaTitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</li>
+          </ul>
+        </div>
+      </span>
 
       <e-ranking-geral dimensao="{{dimensao}}"> </e-ranking-geral>
     </div>

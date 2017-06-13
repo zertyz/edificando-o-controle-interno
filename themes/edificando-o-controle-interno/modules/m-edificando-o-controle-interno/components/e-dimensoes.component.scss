@@ -24,8 +24,10 @@
 
 
 .dimensao{
-  font-family: 'Roboto-Condensed-Bold';
-  font-size: 150%;
+  font-family: 'Roboto-Condensed';
+  font-weight: bold;
+  font-size: 140%;
+  line-height: 90%;
 }
 
 .alinhamento-dir{
@@ -38,7 +40,8 @@
 }
 
 .bordaEsquerda {
-  border-left: 2px solid #000000;
+  border-left: 1px solid #000000;
+  padding-left: 3%;
 }
 
 td{

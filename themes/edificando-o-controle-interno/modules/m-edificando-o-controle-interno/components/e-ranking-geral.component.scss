@@ -1,23 +1,24 @@
 
 .barra-de-rolagem {
   width:95%;
-  height:68%;
+  height:85%;
   background-color: transparent;
   overflow: auto;
 }
 
 .posicao {
   font-family: 'Roboto-Condensed';
-  font-size: 250%;
+  font-size: 280%;
   line-height: 90%;
   vertical-align: top;
   width: 5%;
 }
 
 .municipio{
-  font-family: 'Roboto-Condensed-Light-Bold';
-  font-size: 120%;
+  font-family: 'Roboto-Condensed';
+  font-size: 160%;
   line-height: 90%;
+  padding-left: 3%;
   vertical-align: center;
 }
 
@@ -28,16 +29,18 @@
 
 .notasHeader {
   font-family: 'Roboto-Condensed';
-  font-size: 55%;
+  font-size: 70%;
   line-height: 90%;
   vertical-align: top;
   text-align: center;
-  padding-left: 3%;
+  padding-top: 3%;
+  light: 20;
+  color: black;
 }
 
 .ultimaNota {
   font-family: 'Roboto-Condensed-Light';
-  font-size: 100%;
+  font-size: 200%;
   vertical-align: bottom;
 }
 
@@ -45,6 +48,7 @@
   font-family: 'Roboto-Condensed-Light';
   font-size: 280%;
   vertical-align: bottom;
+  margin-top: 10%;
 }
 
 .alinhamento-dir{

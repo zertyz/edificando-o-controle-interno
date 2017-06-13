@@ -2,18 +2,41 @@
 
 .title {
   font-family: 'Roboto-Condensed-Bold';
-  font-size: 180%;
+  font-size: 200%;
   line-height: 80%;
 }
 
 .subtitle {
   font-family: 'Roboto-Condensed-Bold';
   font-size: 120%;
+  line-height: 90%;
+}
+
+.dimensao {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 100%;
+  line-height: 70%;
+}
+
+.posicao {
+  font-family: 'Roboto-Condensed';
+  font-size: 180%;
+  line-height: 70%;
+}
+
+.nota {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 140%;
   line-height: 70%;
 }
 
 .info {
 
+}
+
+.bordaEsquerda {
+  border-left: 1px solid #404040;
+  padding-left: 7%;
 }
 
 @media(max-width:1199px){

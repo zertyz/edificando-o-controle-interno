@@ -8,14 +8,15 @@
 
 .posicao {
   font-family: 'Roboto-Condensed';
-  font-size: 34pt;
-  line-height: 15pt;
+  font-size: 250%;
+  line-height: 90%;
   vertical-align: top;
+  width: 5%;
 }
 
 .municipio{
   font-family: 'Roboto-Condensed-Light-Bold';
-  font-size: 16pt;
+  font-size: 120%;
   line-height: 90%;
   vertical-align: top;
 }
@@ -28,8 +29,8 @@
 
 .notasHeader {
   font-family: 'Roboto-Condensed';
-  font-size: 7pt;
-  line-height: 6pt;
+  font-size: 55%;
+  line-height: 90%;
   vertical-align: top;
   text-align: center;
   padding-left: 3%;
@@ -37,13 +38,13 @@
 
 .ultimaNota {
   font-family: 'Roboto-Condensed-Light';
-  font-size: 12pt;
+  font-size: 100%;
   vertical-align: bottom;
 }
 
 .notaAtual {
   font-family: 'Roboto-Condensed-Light';
-  font-size: 20pt;
+  font-size: 280%;
   vertical-align: bottom;
 }
 
@@ -111,3 +112,5 @@ hr {
   width: 90%;
   margin-left: 0;
 }
+
+

@@ -1,5 +1,5 @@
 .footer-align{
-  position: fixed;
+  position: relative;
   width: 100%;
   bottom: 0;
 }
@@ -8,7 +8,7 @@
   background: #2e3a48;
   height: 10%;
   width: 100%;
-  margin-left: 0px;
+  margin-left: 0;
   padding : 1%;
 }
 
@@ -24,6 +24,25 @@ p{
 }
 
 img{
-  height:60%;
+  height: 70%;
 }
 
+hr{
+  width: 1px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+.logo-texto{
+  font-family: Roboto-Condensed;
+  font-weight: 100;
+  color: white;
+}
+.texto-mp{
+  font-size: 16px;
+
+}
+.texto-rj{
+  font-size:9.5px;
+  line-height: 15px;
+}

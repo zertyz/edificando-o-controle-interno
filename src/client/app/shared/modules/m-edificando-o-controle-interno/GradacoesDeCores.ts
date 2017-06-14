@@ -73,7 +73,7 @@ export class GradacoesDeCores {
         break;
       }
     }
-    return `/assets/img/${img}`;
+    return `./assets/img/${img}`;
   }
 
 }

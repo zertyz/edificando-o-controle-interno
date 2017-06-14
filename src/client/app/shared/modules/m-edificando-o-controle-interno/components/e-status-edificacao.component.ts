@@ -84,10 +84,9 @@ export class EStatusEdificacaoComponent {
 
   setDefaultDadosDoMunicipio() {
     this.dadosDoMunicipio = {
-      municipio:                      "desconhecido",
-      populacaoProjetada2016:         "desconhecido",
-      percentualPopulacionalEstadual: "desconhecido",
-      orcamento2015:                  "desconhecido",
+      municipio:                      'desconhecido',
+      populacaoProjetada2016:         'desconhecido',
+      orcamento2015:                  'desconhecido',
     };
   }
 

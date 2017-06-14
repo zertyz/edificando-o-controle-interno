@@ -6,7 +6,7 @@
         <tr>
           <td class="posicao">{{posicao+1 | number: '2.0-0'}}</td>
           <td class="municipio"> {{notas.municipio}} </td>
-          <td class="mapa" colspan="2"> <img src="./assets/img/mapa.png"> </td>
+          <td class="mapa" colspan="2"> <img style="height: auto;width: auto;max-width: 57px;max-height: 39px;" [src]="'./assets/img/municipios/'+notas.municipio+'.png'"> </td>
         </tr>
 
         <tr class="bordas">

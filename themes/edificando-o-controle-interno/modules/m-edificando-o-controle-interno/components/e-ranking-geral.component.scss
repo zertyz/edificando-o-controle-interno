@@ -79,21 +79,12 @@ strong{
   width:5%;
 }
 
-a:hover{
-  color: white;
-}
-
 a:active{
   background-color: #2e3a48;
   text-decoration: none;
   color: white;
 }
 
-a:visited{
-  background-color: #2e3a48;
-  text-decoration: none;
-  color: white;
-}
 
 ul {
   padding: 0;
@@ -120,6 +111,7 @@ ul li a:hover {
 ul li a:active {
   background-color: #2e3a48;
   text-decoration: none;
+  color: white;
 }
 
 hr {

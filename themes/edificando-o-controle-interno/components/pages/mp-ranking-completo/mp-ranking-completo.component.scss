@@ -18,7 +18,7 @@ font-size: 20px;
   line-height: 70%;
 }
 
-.fonteOutrosRankings {
+.tituloOutrosRankings {
   font-family: 'Roboto-Condensed-Light';
   font-size: 120%;
   line-height: 200%;
@@ -26,11 +26,13 @@ font-size: 20px;
 
 
 .outrosRankings {
-  background-color: #101c48;
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 100%;
+  line-height: 100%;
+  background-color: #E0E0E0;
   border-style: none;
-  color: rgba(155, 155, 155, 0.87);
+  color: rgba(10, 10, 10, 0.87);
   cursor: pointer;
-  font-size: 14px;
   padding: 4px 8px;
   text-decoration: none;
   margin-right: 10px;

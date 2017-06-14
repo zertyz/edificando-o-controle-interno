@@ -40,10 +40,13 @@ import { GradacoesDeCores } from '../GradacoesDeCores';
 })
 export class ERankingGeralComponent {
 
-  @Input() dimensao:   string = 'geral';
+  @Input() dimensao:   string;
+
+  // dados do JSON
+  public ranking: IRankings[];
 
   // a lista de municípios, ordenada pela dimensão escolhida
-  public ranking: IRankings[];
+  public rankingOrdenado: IRankings[];
 
   public errorMessage: string = null;
 
@@ -51,9 +54,16 @@ export class ERankingGeralComponent {
   constructor(private rankingsService: RankingsService,
               private gradacoes: GradacoesDeCores) {
     rankingsService.fetchRankings().subscribe(response => {
-      this.ranking = response.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
+      this.ranking = response;
+      this.ngOnChanges();
     }, error => this.errorMessage = < any > error);
   };
+
+  ngOnChanges() {
+    if (this.ranking) {
+      this.rankingOrdenado = this.ranking.sort((e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2.geral) - (e1[this.dimensao]*e1[this.dimensao]+e1.geral));
+    }
+  }
 
 
 }

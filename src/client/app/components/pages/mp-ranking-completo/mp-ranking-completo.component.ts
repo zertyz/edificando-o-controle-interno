@@ -21,8 +21,8 @@ import { ActivatedRoute } from '@angular/router';
 export class MPRankingCompletoComponent implements OnInit {
 
   // transformações do nome do campo para o título, na ordem em que devem aparecer.
-  mapaDeCamposParaTitulos: string[][] = [
-    ['geral',                    'Classificação Geral'],
+  listaDeDimensoesETitulos: string[][] = [
+    ['geral',                    'Geral'],
     ['auditoria',                'Auditoria'],
     ['ouvidoria',                'Ouvidoria'],
     ['correicao',                'Correição'],
@@ -40,13 +40,18 @@ export class MPRankingCompletoComponent implements OnInit {
     ['concretizacao',            'Concretização de Políticas Públicas'],
     ['iniciativaLouvavel',       'Iniciativa Louvável'],
   ];
+  mapaDeDimensoesParaTitulos: any = {};
 
   municipio: string;
   dimensao:  string;
 
   constructor(private injector: Injector,
               private route:ActivatedRoute,
-              public routerext: RouterExtensions) {}
+              public routerext: RouterExtensions) {
+    for (let campo of this.listaDeDimensoesETitulos) {
+      this.mapaDeDimensoesParaTitulos[campo[0]] = campo[1];
+    }
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -56,7 +61,9 @@ export class MPRankingCompletoComponent implements OnInit {
   }
 
   trocaRanking(novaDimensao: string) {
-    this.routerext.navigate([`/mp-ranking-completo/${this.municipio}/${novaDimensao}`]);
+    this.municipio = '0';
+    this.dimensao = novaDimensao;
+    this.routerext.navigate([`/mp-ranking-completo/0/${novaDimensao}`]);
   }
 
 }

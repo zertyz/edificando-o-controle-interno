@@ -45,8 +45,9 @@ import { GradacoesDeCores } from '../GradacoesDeCores';
 export class EStatusEdificacaoComponent {
 
   // parâmetros do componente
-  @Input() municipio: string = '§§ MUNICIPIO §§';
-  @Input() dimensao:  string = '§§ DIMENSÃO §§';
+  @Input() municipio:     string = '0';
+  @Input() dimensao:      string = '§§ DIMENSÃO §§';
+  public   nomeMunicipio: string = '§§ MUNICIPIO §§';
 
   // dados dos JSONs
   public rankings:        IRankings[];
@@ -95,7 +96,7 @@ export class EStatusEdificacaoComponent {
     this.posicao = -1;
     this.nota    = -1;
     if (this.rankings != null) {
-      let rankingOrdenadoPorDimensao:      IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
+      let rankingOrdenadoPorDimensao:      IRankings[] = this.rankings.sort( (e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2.geral) - (e1[this.dimensao]*e1[this.dimensao]+e1.geral));
 
       // encontra 'elemento' baseado no índice (se 'município' for um número) ou no nome do município (se for uma string)
       let elemento: IRankings;
@@ -103,13 +104,13 @@ export class EStatusEdificacaoComponent {
         elemento = rankingOrdenadoPorDimensao.find(e => e.municipio == this.municipio);
       } else {
         elemento = this.rankings[Number(this.municipio)];
-        this.municipio = elemento.municipio;
       }
       if (elemento) {
+        this.nomeMunicipio = elemento.municipio;
         this.posicao = 1 + rankingOrdenadoPorDimensao.indexOf(elemento);
         this.nota    = elemento[this.dimensao];
         if (this.dadosMunicipios) {
-          this.dadosDoMunicipio = this.dadosMunicipios.find(e => e.municipio == this.municipio);
+          this.dadosDoMunicipio = this.dadosMunicipios.find(e => e.municipio == this.nomeMunicipio);
         }
 
         // computa dados da dimensão geral

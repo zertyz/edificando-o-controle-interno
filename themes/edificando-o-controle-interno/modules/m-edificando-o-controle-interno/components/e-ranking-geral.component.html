@@ -1,6 +1,6 @@
 <ul class="barra-de-rolagem">
 
-  <li *ngFor="let notas of ranking; let posicao = index">
+  <li *ngFor="let notas of rankingOrdenado; let posicao = index">
     <a [routerLink]="['/mp-ranking-completo', notas.municipio, dimensao]" style="padding:2%; margin:2%;">
       <table>
         <tr>

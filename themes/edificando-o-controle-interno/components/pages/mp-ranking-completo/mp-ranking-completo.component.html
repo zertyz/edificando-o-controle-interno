@@ -10,12 +10,12 @@
             <img src="assets/img/Logo Edificando o Controle Interno.png" height="150px">
           </a></td>
           <td style="padding-left: 10%;"><span class="title">Ranking </span> <br/>
-            <span class="dimensao">{{mapaDeDimensoesParaTitulos[dimensao]}}</span>
+            <span class="dimensao">{{gradacoes.mapaDeDimensoesParaTitulos[dimensao]}}</span>
             <br/><br/>
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn-outline-primary outrosRankings" id="dropdownBasic1" ngbDropdownToggle>Outros rankings</button>
               <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item outrosRankings" *ngFor="let campo of listaDeDimensoesETitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</button>
+                <button class="dropdown-item outrosRankings" *ngFor="let campo of gradacoes.listaDeDimensoesETitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</button>
               </div>
             </div>
           </td>
@@ -23,9 +23,6 @@
       </table>
 
       <!-- Outros Rankings -->
-      <!--<p *ngFor="let campo of mapaDeCamposParaTitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</p>-->
-
-
       <e-ranking-geral dimensao="{{dimensao}}"> </e-ranking-geral>
     </div>
 

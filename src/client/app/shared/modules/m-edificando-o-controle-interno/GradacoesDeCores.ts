@@ -24,8 +24,8 @@ import { Injectable } from '@angular/core';
 export class GradacoesDeCores {
 
   // transformações do nome do campo para o título, na ordem em que devem aparecer.
-  public mapaDeCamposParaTitulos: string[][] = [
-    ['geral',                    'Classificação Geral'],
+  public listaDeDimensoesETitulos: string[][] = [
+    ['geral',                    'Geral'],
     ['auditoria',                'Auditoria'],
     ['ouvidoria',                'Ouvidoria'],
     ['correicao',                'Correição'],
@@ -43,6 +43,7 @@ export class GradacoesDeCores {
     ['concretizacao',            'Concretização de Políticas Públicas'],
     ['iniciativaLouvavel',       'Iniciativa Louvável'],
   ];
+  public mapaDeDimensoesParaTitulos: any = {};
 
   // gradações
   private notaMaxima: number = 10;
@@ -53,6 +54,12 @@ export class GradacoesDeCores {
   private faixas:          number[] = [2,                                   4,                                    6,                                            7.5,                                           9,                                      10];
   private classesCSSCores: string[] = ['notaEmProjeto',                     'notaEmAlicerce',                     'notaConstrucaoIniciada',                     'notaConstrucaoAdiantada',                     'notaEmAcabamento',                     'notaConstruido'];
   private imgsConstrucao:  string[] = ['Predio Estagio 1 - Em Projeto.png', 'Predio Estagio 2 - Em Alicerce.png', 'Predio Estagio 3 - Construção Iniciada.png', 'Predio Estagio 4 - Construção Adiantada.png', 'Predio Estagio 5 - Em Acabamento.png', 'Predio Estagio 6 - Construído.png'];
+
+  constructor() {
+    for (let campo of this.listaDeDimensoesETitulos) {
+      this.mapaDeDimensoesParaTitulos[campo[0]] = campo[1];
+    }
+  }
 
   /** Retorna a classe CSS para ser usada para colorificar o valor da nota passado */
   public getCSSClass(nota: number): string {

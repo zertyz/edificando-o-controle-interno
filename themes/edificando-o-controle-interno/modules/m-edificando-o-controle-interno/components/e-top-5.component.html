@@ -1,31 +1,39 @@
 <br/>
-<p class="titulo">Top 5 Controle Interno</p>
-<p class="sub-titulo">Ranking Geral</p>
+
+<span class="titulo">Top 5 do Controle Interno<br/></span>
+<span class="sub-titulo">Ranking Geral</span>
 
 <div *ngIf="errorMessage != null" class="alert alert-danger">
   <b>Erro obtendo dados:</b> {{errorMessage}}
 </div>
 
+
 <table>
-
   <tr>
-    <td class="margem"> <strong> 01 </strong>  </td>
-    <td class="margem municipio borda-dir"> {{top5Cidades[0]}} </td>
+    <td class="posicao" width="5%">01</td>
+    <td class="municipio" width="25%"> {{top5Cidades[0]}} </td>
+    <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[0])"> {{(top5Notas[0] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
 
-    <td class="margem"> <strong> 02 </strong> </td>
-    <td class="margem municipio"> {{top5Cidades[1]}} </td>
+    <td class="posicao borda-esq" width="5%">02</td>
+    <td class="municipio" width="25%"> {{top5Cidades[1]}} </td>
+    <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[1])"> {{(top5Notas[1] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
   </tr>
 
   <tr>
-    <td class="margem"> <strong> 03 </strong>  </td>
-    <td class="margem municipio borda-dir"> {{top5Cidades[2]}} </td>
-    <td class="margem"> <strong> 04 </strong> </td>
-    <td class="municipio"> {{top5Cidades[3]}} </td>
+    <td class="posicao" width="5%">01</td>
+    <td class="municipio" width="25%"> {{top5Cidades[2]}} </td>
+    <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[2])"> {{(top5Notas[2] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
+
+    <td class="posicao borda-esq" width="5%">02</td>
+    <td class="municipio" width="25%"> {{top5Cidades[3]}} </td>
+    <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[3])"> {{(top5Notas[3] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
   </tr>
 
   <tr>
-    <td class="sem-borda-bottom"> <strong> 05 </strong>  </td>
-    <td class="municipio borda-dir sem-borda-bottom"> {{top5Cidades[4]}} </td>
-  </tr>
+    <td class="sem-borda-bottom posicao" width="5%">01</td>
+    <td class="sem-borda-bottom municipio" width="25%"> {{top5Cidades[4]}} </td>
+    <td class="sem-borda-bottom" width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[4])"> {{(top5Notas[4] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
 
+    <td class="borda-esq sem-borda-bottom">&nbsp;</td>
+  </tr>
 </table>

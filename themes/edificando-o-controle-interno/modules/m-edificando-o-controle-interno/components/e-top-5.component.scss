@@ -1,27 +1,56 @@
-.municipio{
-  font-size: 18px;
-  font-weight: normal;
-  width:40%;
+.borda-esq{
+  border-left: 1px solid;
+  padding-left: 2%;
 }
 
-.borda-dir{
-  border-right: 1px solid;
+.link {
+  font-family: 'Roboto-Condensed';
+  font-size: 200%;
+  line-height: 90%;
+  text-align: right;
+  color: rgb(5, 127, 178);
 }
-
 
 .titulo{
-  font-size: 25px;
-  font-weight: bold;
+  font-family: 'Roboto-Condensed-Bold';
+  font-size: 240%;
+  line-height: 130%;
   text-align: left;
 }
 
 .sub-titulo{
-  font-size: 18px;
-  font-weight: normal;
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 150%;
+  line-height: 70%;
   text-align: left;
-  border-bottom:2px dotted;
-  padding-bottom: 5px;
 }
+
+.posicao {
+  font-family: 'Roboto-Condensed';
+  font-size: 280%;
+  line-height: 90%;
+  vertical-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.municipio{
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 160%;
+  line-height: 90%;
+  padding-left: 1%;
+  vertical-align: center;
+}
+
+.notaAtual {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 240%;
+  vertical-align: bottom;
+  margin-top: 10%;
+  text-align: right;
+  padding-right: 10%;
+}
+
 
 .margem{
   padding-top: 10px;
@@ -33,7 +62,7 @@
 
 
 td{
-  border-bottom: 2px dotted;
+  border-bottom: 1px dotted;
 }
 
 strong{

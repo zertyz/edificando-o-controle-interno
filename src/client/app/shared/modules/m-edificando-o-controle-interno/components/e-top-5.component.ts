@@ -23,6 +23,10 @@ import { Input } from '@angular/core';
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../services/IRankings';
 
+// module libs
+import { GradacoesDeCores } from '../GradacoesDeCores';
+
+
 @Component({
   moduleId: module.id,
   selector: 'e-top-5',
@@ -32,15 +36,18 @@ import { IRankings }       from '../services/IRankings';
 export class ETop5Component {
 
   public top5Cidades: string[] = ['§vazio§', '§vazio§', '§vazio§', '§vazio§', '§vazio§'];
+  public top5Notas:   number[] = [-1, -1, -1, -1, -1];
 
   public errorMessage: string = null;
 
   // constroi a estrutura 'top5Cidades'
-  constructor(private rankingsService: RankingsService) {
+  constructor(private rankingsService: RankingsService,
+              private gradacoes: GradacoesDeCores) {
     rankingsService.fetchRankings().subscribe(response => {
       let rankings: IRankings[] = response.sort( (e1, e2) => e2.geral - e1.geral);
       for (let i = 0; i < this.top5Cidades.length; i++) {
         this.top5Cidades[i] = rankings[i].municipio;
+        this.top5Notas[i]   = rankings[i].geral;
       }
     }, error => this.errorMessage = < any > error);
   };

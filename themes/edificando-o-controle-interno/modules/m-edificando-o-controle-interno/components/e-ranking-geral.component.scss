@@ -79,12 +79,17 @@ strong{
   width:5%;
 }
 
-a:active{
+a:active .notasHeader{
   background-color: #2e3a48;
   text-decoration: none;
   color: white;
 }
 
+a:active .notaAtual{
+  background-color: #2e3a48;
+  text-decoration: none;
+  color: white;
+}
 
 ul {
   padding: 0;

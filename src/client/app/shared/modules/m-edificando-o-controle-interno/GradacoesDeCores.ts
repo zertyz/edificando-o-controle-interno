@@ -31,7 +31,7 @@ export class GradacoesDeCores {
     ['correicao',                'Correição'],
     ['controladoria',            'Controladoria'],
     ['transparencia',            'Transparência'],
-    ['auxilioAoControleExterno', 'Controle Externo'],
+    ['auxilioAoControleExterno', 'Auxílio ao Controle Externo'],
     ['estrutura',                'Estrutura'],
     ['abrangencia',              'Abrangência'],
     ['autonomia',                'Autonomia'],

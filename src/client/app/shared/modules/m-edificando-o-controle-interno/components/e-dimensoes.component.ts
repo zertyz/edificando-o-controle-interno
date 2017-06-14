@@ -79,7 +79,7 @@ export class EDimensoesComponent implements OnInit {
   constructor(private rankingsService: RankingsService,
               private gradacoes: GradacoesDeCores) {
     this.notas = {
-      municipio: "desconhecida",
+      municipio: 'desconhecida',
       geral: -1,
       auditoria: -1,
       ouvidoria: -1,

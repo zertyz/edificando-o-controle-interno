@@ -13,6 +13,5 @@
 export interface IDadosMunicipio {
   municipio:                      string;
   populacaoProjetada2016:         string;
-  percentualPopulacionalEstadual: string;
   orcamento2015:                  string;
 }

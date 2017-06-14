@@ -1,3 +1,7 @@
 Instruções para gerar o bundle:
 
+# deploy no lighttpd local
 npm run build.prod -- --base /mprj/tmp/ECI/; mkdir dist/prod/node_modules; cp -a node_modules/roboto-fontface/ dist/prod/node_modules; rm -fr ~/tmp/ECI; cp -a dist/prod/ ~/tmp/ECI
+
+# deploy em produção
+rm /mnt/MPRJ/Deploy/Homologacao/Estatico/eci.zip; npm run build.prod -- --base /sistema/eci/; mkdir dist/prod/node_modules; cp -a node_modules/roboto-fontface/ dist/prod/node_modules; rm -fr ~/tmp/eci; cp -a dist/prod/ ~/tmp/eci; cd ~/tmp; zip -9r /tmp/eci.zip eci; cd -; mv /tmp/eci.zip /mnt/MPRJ/Deploy/Homologacao/Estatico/eci.zip; rm -fr ~/tmp/eci; echo "O pacote pronto para ir pra produção está em /mnt/MPRJ/Deploy/Homologacao/Estatico/eci.zip";

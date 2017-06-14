@@ -12,8 +12,8 @@
           <td *ngIf="dimensao != 'geral'" class="subtitle bordaEsquerda">Posição <br/><span class="dimensao">{{dimensao}}</span></td>
         </tr>
         <tr>
-          <td style="padding-top: 5%;padding-right: 5%;" width="40%"><span class="posicao">{{posicaoGeral}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(notaGeral)">{{(notaGeral | number: '1.1-1').replace(".",",").replace("10,0", "10")}}</span></td>
-          <td *ngIf="dimensao != 'geral'" style="padding-top: 5%;" class="bordaEsquerda"><span class="posicao">{{posicao}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(nota)">{{(nota | number: '1.1-1').replace(".",",").replace("10,0", "10")}}</span></td>
+          <td style="padding-top: 5%;padding-right: 5%;" width="40%"><span class="posicao">{{posicaoGeral}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(notaGeral)">{{(notaGeral | number: '1.2-2').replace(".",",").replace("10,00", "10")}}</span></td>
+          <td *ngIf="dimensao != 'geral'" style="padding-top: 5%;" class="bordaEsquerda"><span class="posicao">{{posicao}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(nota)">{{(nota | number: '1.2-2').replace(".",",").replace("10,00", "10")}}</span></td>
         </tr>
       </table>
 <!--      <h4 class="subtitle">Posição geral: <span class="posicao">{{posicaoGeral}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(notaGeral)">{{(notaGeral | number: '1.1-1').replace(".",",").replace("10,0", "10")}}</span></h4>

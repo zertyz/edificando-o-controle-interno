@@ -1,7 +1,18 @@
+html,body {
+  position: relative;
+  min-height: 100%;
+}
+
 .footer-align{
-  position: absolute;
   width: 100%;
-  bottom: 0;
+  position:relative;
+  bottom: -5%;
+  height: 5%;
+}
+
+footer{
+  background-color: #2e3a48;
+  padding : 1%;
 }
 
 .navbar{
@@ -9,14 +20,28 @@
   height: 10%;
   width: 100%;
   margin-left: 0;
+  margin-right: 0%;
   padding : 1%;
+  display: block;
+}
+
+nav a {
+  color: #ffffff;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 120%;
+  line-height: 100%;
+  margin-left: 3%;
+  text-decoration: none;
+  vertical-align: bottom;
+  cursor: pointer;
 }
 
 
-footer{
-  background-color: #2e3a48;
-  padding : 1%;
-  }
+nav a.router-link-active {
+  color: #106cc8;
+  display: none;
+}
 
 p{
   color: white;

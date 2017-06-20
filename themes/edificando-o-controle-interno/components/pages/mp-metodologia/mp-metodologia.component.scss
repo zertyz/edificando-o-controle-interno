@@ -8,12 +8,6 @@
   padding-right: 1%;
 }
 
-@media(max-width:1199px){
-  div.scroll { height: 75%;}
-  div.barraH{border-color: transparent}
-}
-
-
 .titulo {
   font-family: 'Roboto-Condensed';
   font-size: 220%;
@@ -86,6 +80,8 @@ p {
   div.borderedL { border-color: transparent;}
   div.borderedR { border-color: transparent;}
   img.img-responsive { width:80%;}
+  div.scroll { height: 75%;}
+  div.barraH{border-color: transparent}
   max-width: 100%;
 }
 

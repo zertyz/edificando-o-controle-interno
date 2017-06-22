@@ -14,14 +14,17 @@ import { EStatusEdificacaoComponent,
          ELinkComponent,
          EMapaInterativoComponent,
          ERankingGeralComponent,
-         ETop5Component } from './components/index';
+         ETop5Component,
+         ESubscribeComponent, ESubscribeContentComponent } from './components/index';
 
 // services
 import { RankingsService } from './services/rankings.service';
 import { IRankings }       from './services/IRankings';
 
 // bootstrap?
-import { NgbModule, NgbDropdown, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule,
+         NgbDropdown, NgbDropdownModule,
+         NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 // injectable libs
 import { GradacoesDeCores } from './GradacoesDeCores';
@@ -42,6 +45,7 @@ import { GradacoesDeCores } from './GradacoesDeCores';
     EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
+    ESubscribeComponent, ESubscribeContentComponent,
   ],
   exports: [
     EStatusEdificacaoComponent,
@@ -50,12 +54,17 @@ import { GradacoesDeCores } from './GradacoesDeCores';
     EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
+    ESubscribeComponent, ESubscribeContentComponent,
+  ],
+  entryComponents: [
+    ESubscribeContentComponent,
   ],
   providers: [
     RankingsService,
     GradacoesDeCores,
     NgbModule,
     NgbDropdown,
+    NgbActiveModal,
   ],
   schemas: [
     NO_ERRORS_SCHEMA,

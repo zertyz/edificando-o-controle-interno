@@ -67,7 +67,7 @@ export class ESubscribeComponent implements OnInit {
   }
 
   ngOnInit() {
-    const modalRef = this.modalService.open(ESubscribeContentComponent);
+    const modalRef = this.modalService.open(ESubscribeContentComponent, {size: 'lg'});
   }
 
 }

@@ -1,41 +1,14 @@
 <div platform>
-  <!--<ba-sidebar></ba-sidebar>-->
-  <!--<ba-page-top></ba-page-top>-->
-<!--  <div class="al-main">
-    <div class="al-content">-->
-      <!--<ba-content-top></ba-content-top>-->
-
       <nav class="navbar">
         <img style="margin-left:20%;" alt="MPRJ-image" src="./assets/img/logo_mprj2.png" width="18%" height="18%">
         <a [routerLink]="['/']"                      [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Início</a>
-<!--        <a [routerLink]="['/mp-informacoes-gerais']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Informações Gerais</a>-->
         <a [routerLink]="['/mp-metodologia']"        [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Metodologia</a>
         <a [routerLink]="['/mp-ranking-completo']"   [routerLinkActive]="['router-link-active']"                                         >Ranking</a>
-
-<!--
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-            </div>
--->
-<!--
-          </div>
-        </div>
--->
       </nav>
-
-
-
-
-
       <router-outlet></router-outlet>
-
-<!--    </div>
-  </div>-->
-
   <br/>
 
-  <!--  <footer class="bd-footer text-muted footer-align">-->
+  <!-- Footer -->
   <footer class="bd-footer text-muted footer-align">
     <div class="container-fluid">
       <div class = "row">
@@ -63,22 +36,5 @@
       </div>
     </div>
   </footer>
-
-
-<!--
-  <footer class="al-footer clearfix">
-    <div class="al-footer-right" translate>{{'general.created_with'}} <i class="ion-heart"></i></div>
-    <div class="al-footer-main clearfix">
-      <div class="al-copy">&copy; <a href="http://akveo.com" translate>{{'general.akveo'}}</a> 2016</div>
-      <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook"></i></li>
-        <li><i class="socicon socicon-twitter"></i></li>
-        <li><i class="socicon socicon-google"></i></li>
-        <li><i class="socicon socicon-github"></i></li>
-      </ul>
-    </div>
-  </footer>
--->
-<!--  <ba-back-top position="200"></ba-back-top>-->
 
 </div>

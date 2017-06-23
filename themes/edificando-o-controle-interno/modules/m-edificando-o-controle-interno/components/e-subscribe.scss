@@ -1,10 +1,7 @@
-:host {
-  background-color: #8abcd9;
-  width: 1024px;
-}
 
 .form-control{
   width: 100%;
+  background-color: whitesmoke;
 }
 
 .row{
@@ -13,30 +10,13 @@
 .form-group{
   padding-left:23%;
 }
-#p_id{
-  margin-left: 2rem;
+
+p{
   text-align: right;
-  font-size:1.5rem
-}
-#btn_1{
-  float: right;
-}
-#btn_2{
-  float: right
+  padding: 0%;
+  margin: 0%;
 }
 
-#div_eci{
-  margin-top: 7%;
-}
-#h3{
-  color: black;
-  font-weight: bold;
-  font-size: 2.0rem;
-
-}
-#d{
-  margin-top: 5%;
-}
-#ed{
-  margin-top: 3%;
+br{   
+  margin-bottom: 0.5rem;
 }

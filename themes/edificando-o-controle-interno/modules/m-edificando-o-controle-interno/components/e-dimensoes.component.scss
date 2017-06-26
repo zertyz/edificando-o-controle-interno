@@ -41,12 +41,6 @@
   border-bottom-color: #2e3a48;
 }
 
-.bordaEsquerda {
-  position: 50%;
-  border-left: 1px solid #000000;
-  padding-left: 2%;
-}
-
 td{
   padding-bottom: 2.5%;
   padding-left: 1%;
@@ -69,4 +63,8 @@ h4{
 
 table{
   width:100%;
+}
+
+@media(max-width:1199px){
+  div.borderedL{border-color: transparent;padding: inherit}
 }

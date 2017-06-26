@@ -8,9 +8,9 @@ p{
 }
 
 @media(max-width:1199px){
-  div.borderedL { border-color: transparent;}
-  div.borderedR { border-color: transparent;}
+  div.borderedL{border-color: transparent}
   img.img-responsive { width:80%;}
+  e-link.link{position: inherit;bottom: inherit;right: inherit}
   max-width: 100%;
 }
 

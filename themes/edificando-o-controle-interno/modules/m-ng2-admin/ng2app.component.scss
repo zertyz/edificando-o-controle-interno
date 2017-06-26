@@ -52,6 +52,13 @@ img{
   height: 70%;
 }
 
+@media (max-width: 40em) {
+img {
+  max-width: 1em;
+  visibility: hidden;
+}
+}
+
 hr{
   width: 1px;
   height: 30px;

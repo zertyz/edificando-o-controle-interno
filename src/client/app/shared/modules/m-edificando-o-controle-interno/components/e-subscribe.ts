@@ -47,9 +47,16 @@ import { GradacoesDeCores } from '../GradacoesDeCores';
 })
 export class ESubscribeContentComponent {
 
+  public subscribed: boolean = false;
+  public email:      string  = "";
+
   constructor(public activeModal: NgbActiveModal,
               private console: ConsoleService) {
     console.log("ESubscribeContentComponent construído");
+  }
+
+  subscribe() {
+    this.subscribed = true;
   }
 
 }

@@ -4,12 +4,12 @@
     <div class="container-fluid">
         <div class="row">
 
-          <div class="col-lg-3 hidden-xs" style="margin-top: 7%">
+          <div class="col-lg-3 hidden-xs hidden-sm hidden-lg " style="margin-top: 7%">
             <img src="./assets/img/ECI.png"  width="200%">
           </div>
 
           <div class="col-lg-9" style="margin-top: 5%">
-            
+
             <img class="img-envolvida" src="./assets/img/Predio Estagio 4 - Construção Adiantada.png" width="65%">
             <h3 style="text-align: right">Nós também estamos em obras...</h3>
 
@@ -24,15 +24,18 @@
             <p>abaixo que nós avisaremos</p>
             <p>quando o novo ranking estiver</p>
             <p>disponivel</p>
-      
+
 
             <form>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" >
+                <input *ngIf="!subscribed" [(ngModel)]="email" [placeholder]="'digite o seu email'" type="email" name="_email" class="form-control">
+                <span *ngIf="subscribed">{{email}}<br/></span>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="float:right">Ok, me avise</button><br><br>
-              <button type="submit" class="btn btn-primary" style="float:right">Ver ranking atual</button>
+              <a *ngIf="!subscribed" class="link" style="float: right" (click)="subscribe()">ok,  me avise</a>
+              <span *ngIf="subscribed" style="float:right">Ok! Você será avisado!</span>
+              <br><br>
+              <a class="link" style="float: right" (click)="activeModal.close('Close click')">quero ver o <br>ranking atual</a>
             </form>
           </div>
 

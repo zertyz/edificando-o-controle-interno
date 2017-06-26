@@ -1,7 +1,7 @@
 
 .form-control{
   width: 100%;
-  background-color: darkgray;
+  background-color:darkgray;
   color: #304051;
 }
 
@@ -10,6 +10,17 @@
 }
 .form-group{
   padding-left:23%;
+}
+.link {
+
+  bottom: 0%;
+  right: 2%;
+  font-family: 'Roboto-Condensed';
+  font-size: 150%;
+  line-height: 90%;
+  text-align: right;
+  color: rgb(5, 127, 178);
+  cursor: pointer;
 }
 
 p{
@@ -20,4 +31,7 @@ p{
 
 br{
   margin-bottom: 0.5rem;
+}
+a{
+  color: #057fb2;
 }

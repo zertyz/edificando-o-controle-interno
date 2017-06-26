@@ -20,6 +20,7 @@
 
 // libs
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Response, Http } from '@angular/http';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
@@ -38,6 +39,11 @@ import { IDadosMunicipio } from '../services/IDadosMunicipio';
 // module libs
 import { GradacoesDeCores } from '../GradacoesDeCores';
 
+interface SubscriptionHttpPostObject {
+  nome:     string;
+  email:    string;
+  mensagem: string;
+}
 
 @Component({
   moduleId: module.id,
@@ -47,16 +53,50 @@ import { GradacoesDeCores } from '../GradacoesDeCores';
 })
 export class ESubscribeContentComponent {
 
+  /* http */
+  private httpPostOptions: any             = {headers: {'Content-Type': 'application/json'}};
+  //private httpPostUrl: string              = 'http://apps.mprj.mp.br/eci/api/Aux/mailHLP';
+  private httpPostUrl: string              = '/eci/api/Aux/mailHLP';  // depende do proxy configurado em 'project.config.ts'
+  private subscriptionErrorMessage: string = null;
+
+  public isPosting:  boolean = false;
   public subscribed: boolean = false;
   public email:      string  = "";
 
   constructor(public activeModal: NgbActiveModal,
-              private console: ConsoleService) {
+              private console: ConsoleService,
+              private http: Http) {
     console.log("ESubscribeContentComponent construído");
   }
 
   subscribe() {
+    this.isPosting  = true;
+    let postData: SubscriptionHttpPostObject = {
+      nome:     'Visitante WEB anônimo',
+      email:    this.email,
+      mensagem: 'Favor inscrever-me na lista de esperar para a divulgação dos dados definitivos do projeto ECI, v 1.',
+    }
+    let p: Observable<SubscriptionHttpPostObject> = this.http.post(this.httpPostUrl, postData, this.httpPostOptions)
+      .map(this.handleHttpPost)
+      .catch(this.handleHttpError);
+    p.subscribe(
+      postResult => {                                                         this.isPosting = false; this.subscribed = true;},
+      error      => {this.subscriptionErrorMessage = <any>error;              this.isPosting = false; this.subscribed = false;}
+    );
+  }
+
+  public handleHttpPost(res: Response) {
+    this.isPosting  = false;
     this.subscribed = true;
+    let body = res.json();
+    return body.data || {};
+  }
+
+  public handleHttpError(error: Response | any) {
+    this.isPosting                = false;
+    this.subscribed               = false;
+    this.subscriptionErrorMessage = (error.message || error);
+    return Observable.throw(error.message || error);
   }
 
 }
@@ -68,13 +108,18 @@ export class ESubscribeContentComponent {
 })
 export class ESubscribeComponent implements OnInit {
 
+  static maxModalAutoShow: number = 1;
+
   constructor(private modalService: NgbModal,
               private console: ConsoleService) {
     console.log("ESubscribeComponent construído");
   }
 
   ngOnInit() {
-    const modalRef = this.modalService.open(ESubscribeContentComponent, {size: 'lg'});
+    if (ESubscribeComponent.maxModalAutoShow > 0) {
+      const modalRef = this.modalService.open(ESubscribeContentComponent, {size: 'lg'});
+      ESubscribeComponent.maxModalAutoShow--;
+    }
   }
 
 }

@@ -49,9 +49,10 @@ export class ProjectConfig extends SeedAdvancedConfig {
     // this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middleware */
-    // this.PROXY_MIDDLEWARE = [
-    //   require('http-proxy-middleware')({ ws: false, target: 'http://localhost:3003' })
-    // ];
+    this.PROXY_MIDDLEWARE = [
+      require('http-proxy-middleware')('/eci', { ws: false, target: 'http://apps.mprj.mp.br', changeOrigin: true })
+      //require('http-proxy-middleware')('/eci', { ws: true, target: 'http://localhost:1234' })
+    ];
 
     /* Add to or override NPM module configurations: */
     // this.PLUGIN_CONFIGS['browser-sync'] = { ghostMode: false };

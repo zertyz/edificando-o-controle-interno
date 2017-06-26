@@ -1,6 +1,8 @@
 html,body {
   position: relative;
   min-height: 100%;
+  padding-bottom: 70px;
+
 }
 
 .footer-align{
@@ -13,8 +15,12 @@ html,body {
 footer{
   background-color: #2e3a48;
   padding : 1%;
+  float: none;
 }
-
+#div_icon{
+  vertical-align: center;
+  height: 3.0rem;
+}
 .navbar{
   background: #2e3a48;
   height: 10%;
@@ -50,6 +56,13 @@ p{
 
 img{
   height: 70%;
+}
+
+@media (max-width: 40em) {
+img {
+  max-width: 1em;
+  visibility: hidden;
+}
 }
 
 hr{

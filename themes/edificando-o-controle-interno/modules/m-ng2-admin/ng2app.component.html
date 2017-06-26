@@ -1,6 +1,6 @@
 <div platform>
       <nav class="navbar">
-        <img style="margin-left:20%;" alt="MPRJ-image" src="./assets/img/logo_mprj2.png" width="18%" height="18%">
+        <a href="http://www.mprj.mp.br/home"> <img style="margin-left:20%;" alt="MPRJ-image" src="./assets/img/logo_mprj2.png" width="18%" height="18%"> </a>
         <a [routerLink]="['/']"                      [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Início</a>
         <a [routerLink]="['/mp-metodologia']"        [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Metodologia</a>
         <a [routerLink]="['/mp-ranking-completo']"   [routerLinkActive]="['router-link-active']"                                         >Ranking</a>
@@ -9,16 +9,16 @@
   <br/>
 
   <!-- Footer -->
-  <footer class="bd-footer text-muted footer-align">
+  <footer class="bd-footer text-muted footer-align- ">
     <div class="container-fluid">
-      <div class = "row">
+      <div class = "row ">
         <div  class="col-md-4 col-sm-5 footerleft">
           <p>© 2017 Ministério Público do Rio de Janeiro. Av. Marechal Câmara, n° 370
             Centro - Rio de Janeiro, RJ - Brasil - CEP 20020-080 - Telefone: (21) 2550-9050</p>
         </div>
 
 
-        <div align ="right" style="vertical-align: center;" class="col-md-8 col-sm-5">
+        <div align ="right" id="div_icon" class="col-md-8 col-sm-5">
           <a href="https://www.facebook.com/MPRJ.Oficial" target="_blank">
             <img src="http://www.mprj.mp.br/mprj-responsiveflat-theme/images/comum/rodape/icon_facebook.png" alt="Link para o facebook do MPRJ.">
           </a>
@@ -38,3 +38,4 @@
   </footer>
 
 </div>
+

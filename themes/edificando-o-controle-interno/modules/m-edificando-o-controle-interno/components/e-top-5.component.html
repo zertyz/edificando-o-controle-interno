@@ -7,7 +7,6 @@
   <b>Erro obtendo dados:</b> {{errorMessage}}
 </div>
 
-
 <table>
   <tr>
     <td class="posicao" width="5%">01</td>
@@ -18,7 +17,6 @@
     <td class="municipio" width="25%"> {{top5Cidades[1]}} </td>
     <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[1])"> {{(top5Notas[1] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
   </tr>
-
   <tr>
     <td class="posicao" width="5%">03</td>
     <td class="municipio" width="25%"> {{top5Cidades[2]}} </td>
@@ -37,3 +35,4 @@
     <td class="borda-esq sem-borda-bottom">&nbsp;</td>
   </tr>
 </table>
+

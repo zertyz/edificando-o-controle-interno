@@ -1,9 +1,23 @@
 <div platform>
       <nav class="navbar fixed-top">
-        <a href="http://www.mprj.mp.br/home"> <img style="margin-left:20%;" alt="MPRJ-image" src="./assets/img/logo_mprj2.png" width="18%" height="18%"> </a>
-        <a [routerLink]="['/']"                      [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Início</a>
-        <a [routerLink]="['/mp-metodologia']"        [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Metodologia</a>
-        <a [routerLink]="['/mp-ranking-completo']"   [routerLinkActive]="['router-link-active']"                                         >Ranking</a>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 col-md-5">
+              <a  class="navbar-brand" href="http://www.mprj.mp.br/home" >
+                <img class="img-responsive" width="100%" style="margin-left:17%;" alt="MPRJ-image" src="./assets/img/logo_mprj2.png">
+              </a>
+            </div>
+            <div class="col-lg-2 col-md-1">
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <div style="padding-top: 1%">
+              <a [routerLink]="['/']"                      [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Início</a>
+              <a [routerLink]="['/mp-metodologia']"        [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Metodologia</a>
+              <a [routerLink]="['/mp-ranking-completo']"   [routerLinkActive]="['router-link-active']"                                         >Ranking</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav> <br/> <br/> <br/>
       <router-outlet></router-outlet>
   <br/>

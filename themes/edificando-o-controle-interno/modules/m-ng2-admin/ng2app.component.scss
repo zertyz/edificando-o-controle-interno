@@ -6,15 +6,28 @@ html,body {
 }
 
 .footer-align{
-  width: 100%;
-  position:relative;
-  bottom: -5%;
+  width: 100% !important;
+  position:fixed;
+  bottom: 0;
   height: 5%;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 7px;
+  margin: 0 auto !important;
+
 }
+
+@media (max-width: 990px) {
+  .footer-align {
+    position: relative;
+  }
+}
+
 
 footer{
   background-color: #2e3a48;
-  padding : 1%;
+  padding : 2%;
   float: none;
 }
 #div_icon{
@@ -23,11 +36,11 @@ footer{
 }
 .navbar{
   background: #2e3a48;
-  height: 10%;
+  height: 8%;
   width: 100%;
   margin-left: 0;
-  margin-right: 0%;
-  padding : 1%;
+  margin-right: 0;
+  padding : 0.7%;
   display: block;
 }
 

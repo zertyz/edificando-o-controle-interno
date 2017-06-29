@@ -1,38 +1,49 @@
-<br/>
-
-<span class="titulo">Top 5 do Controle Interno<br/></span>
-<span class="sub-titulo">Ranking Geral</span>
-
-<div *ngIf="errorMessage != null" class="alert alert-danger">
-  <b>Erro obtendo dados:</b> {{errorMessage}}
-</div>
-
-<table>
-  <tr>
-    <td class="posicao" width="5%">01</td>
-    <td class="municipio" width="25%"> {{top5Cidades[0]}} </td>
-    <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[0])"> {{(top5Notas[0] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
-
-    <td class="posicao borda-esq" width="5%">02</td>
-    <td class="municipio" width="25%"> {{top5Cidades[1]}} </td>
-    <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[1])"> {{(top5Notas[1] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
-  </tr>
-  <tr>
+<div class="container-fluid">
+  <div class="row">
+    <br/>
+    <span class="titulo" style="padding-top:5%">Top 5 do Controle Interno<br/></span>
+  </div>
+  <div class="row">
+    <span class="sub-titulo">Ranking Geral</span>
+  </div>
+  <div class="row">
+    <div *ngIf="errorMessage != null" class="alert alert-danger">
+      <b>Erro obtendo dados:</b> {{errorMessage}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-xs-12" style="height:5rem">
+      <td class="posicao" width="5%">01</td>
+      <td class="municipio" width="25%"> {{top5Cidades[0]}} </td>
+      <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[0])"> {{(top5Notas[0] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
+      </div>
+    <div class="col-lg-6 col-xs-12" style="height:5rem">
+      <td class="posicao borda-esq" width="5%">02</td>
+      <td class="municipio" width="25%"> {{top5Cidades[1]}} </td>
+      <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[1])"> {{(top5Notas[1] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-xs-12" style="height:5rem">
     <td class="posicao" width="5%">03</td>
     <td class="municipio" width="25%"> {{top5Cidades[2]}} </td>
     <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[2])"> {{(top5Notas[2] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
-
+    </div>
+    <div class="col-lg-6 col-xs-12" style="height:5rem">
     <td class="posicao borda-esq" width="5%">04</td>
     <td class="municipio" width="25%"> {{top5Cidades[3]}} </td>
     <td width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[3])"> {{(top5Notas[3] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
-  </tr>
-
-  <tr>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-lg-6 col-xs-12" style="height:5rem">
     <td class="sem-borda-bottom posicao" width="5%">05</td>
     <td class="sem-borda-bottom municipio" width="25%"> {{top5Cidades[4]}} </td>
     <td class="sem-borda-bottom" width="15%"><h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(top5Notas[4])"> {{(top5Notas[4] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4></td>
-
+    </div>
+  <div class="col-lg-6 col-xs-12" style="height:5rem">
     <td class="borda-esq sem-borda-bottom">&nbsp;</td>
-  </tr>
-</table>
+  </div>
+</div>
 
+</div>

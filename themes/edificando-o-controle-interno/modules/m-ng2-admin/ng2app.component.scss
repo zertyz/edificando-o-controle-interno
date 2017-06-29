@@ -9,11 +9,11 @@ html,body {
   width: 100% !important;
   position:fixed;
   bottom: 0;
-  height: 5%;
+  height: 6%;
   left: 0;
   right: 0;
   box-sizing: border-box;
-  padding: 7px;
+  padding:0.3rem;
   margin: 0 auto !important;
 
 }
@@ -27,16 +27,12 @@ html,body {
 
 footer{
   background-color: #2e3a48;
-  padding : 2%;
   float: none;
 }
-#div_icon{
-  vertical-align: center;
-  height: 3.0rem;
-}
+
 .navbar{
   background: #2e3a48;
-  height: 8%;
+  height: 5rem;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -67,7 +63,7 @@ p{
   font-size: 85%;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 65em) {
 img {
   max-width: 1em;
   visibility: hidden;

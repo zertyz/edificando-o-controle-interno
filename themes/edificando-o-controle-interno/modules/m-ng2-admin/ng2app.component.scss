@@ -9,7 +9,7 @@ html,body {
   width: 100% !important;
   position:fixed;
   bottom: 0;
-  height: 6%;
+  height: 4em;
   left: 0;
   right: 0;
   box-sizing: border-box;
@@ -21,6 +21,7 @@ html,body {
 @media (max-width: 990px) {
   .footer-align {
     position: relative;
+    height: 6%;
   }
 }
 

@@ -43,7 +43,7 @@
 
 td{
   padding-bottom: 2.5%;
-  padding-left: 1%;
+  padding-left: 3%;
   padding-right: 2%;
 }
 
@@ -65,6 +65,15 @@ table{
   width:100%;
 }
 
+div.borderedL{
+    padding-left: 0!important;
+  }
+
 @media(max-width:991px){
-  div.borderedL{border-color: transparent;padding: 0}
+  div.borderedL{
+  border-color:transparent;
+  }
+  div.row{
+    padding-left: 2rem!important;
+  }
 }

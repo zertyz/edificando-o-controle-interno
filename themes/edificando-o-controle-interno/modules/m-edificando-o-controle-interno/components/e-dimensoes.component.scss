@@ -69,11 +69,44 @@ div.borderedL{
     padding-left: 0!important;
   }
 
-@media(max-width:991px){
+@media(max-width:1439px){
   div.borderedL{
   border-color:transparent;
   }
   div.row{
     padding-left: 2rem!important;
+  }
+}
+@media(min-width:1200px){
+  div.borderedL{
+  border-color:black;
+  padding-left: 0 !important;
+  }
+}
+@media(min-width:1200px) and (max-width:1439px){
+  div.borderedL{
+  border-color:black;
+  padding-left: 0 !important;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 768px){
+  div.row{
+    padding-top: 50px!important;
+}
+  div.borderedL{
+    border-color:black;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 990px){
+  div.row{
+    padding-top: 50px!important;
+}
+  div.borderedL{
+    border-color:transparent !important;
   }
 }

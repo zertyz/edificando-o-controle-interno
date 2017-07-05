@@ -52,13 +52,13 @@ a{
 }
 
 img.img-envolvida{
-  content:url("../assets/img/Predio Estagio 4 - Construção Adiantada.png");
+  content:url("./assets/img/Predio Estagio 4 - Construção Adiantada.png");
 }
 
-@media(max-width:991px){ 
+@media(max-width:991px){
   .img-envolvida {
-    shape-outside: url("../assets/img/Logo Edificando o Controle Interno.png");
-    content: url("../assets/img/ECI-logo.png")!important;
+    shape-outside: url("./assets/img/Logo Edificando o Controle Interno.png");
+    content: url("./assets/img/ECI-logo.png")!important;
     float: left;
     shape-margin: 7%;
     shape-image-threshold: 0.5;

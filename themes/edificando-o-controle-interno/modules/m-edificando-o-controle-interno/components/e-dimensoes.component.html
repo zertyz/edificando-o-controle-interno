@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <div class="row" >
+  <div class="row" *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
     <!--municipio: {{municipio}} / {{notas.municipio}}-->
     <div class="col-lg-6 col-xs-12" style=" resize:horizontal;padding:0">
-      <table style="height:45rem">
-        <tr class="bordas" *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
+      <table style="height:6rem">
+        <tr class="bordas">
           <td class="dimensao w-20"><div style="resize:horizontal"> {{quarteto[1]}}</div> </td>
           <td> <img src="./assets/img/Estabilizado.png"> </td>
           <td class="alinhamento-dir notasHeader w-3"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </td>
@@ -15,8 +15,8 @@
     </div>
     <div class="col-lg-6 col-xs-12" style="resize:horizontal;padding:0">
       <div class="borderedL">
-        <table style="height:45rem">
-          <tr class="bordas" *ngFor="let quarteto of mapaDeCamposParaTitulos; let i = index">
+        <table style="height:6rem">
+          <tr class="bordas">
             <td class="dimensao w-20"> {{quarteto[3]}} </td>
             <td> <img src="./assets/img/Estabilizado.png"> </td>
             <td class="alinhamento-dir notasHeader w-3"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </td>

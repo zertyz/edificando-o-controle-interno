@@ -1,17 +1,24 @@
-
-.barra-de-rolagem {
-  width:95%;
-  height:85%;
-  background-color: transparent;
-  overflow: auto;
+.alinhamento-dir{
+  text-align: right;
 }
 
-.posicao {
-  font-family: 'Roboto-Condensed';
-  font-size: 280%;
-  line-height: 90%;
-  vertical-align: top;
-  width: 5%;
+.barra-de-rolagem {
+  width:100%;
+  max-height:40rem;
+  background-color: transparent;
+  overflow-y: auto;
+}
+
+.bordas {
+  border-bottom: 1px dotted;
+  border-bottom-color: #2e3a48;
+  height: 9rem;
+  width: 100%;
+}
+
+.mapa{
+  width:20%;
+  float: right;
 }
 
 .municipio{
@@ -20,11 +27,14 @@
   line-height: 90%;
   padding-left: 3%;
   vertical-align: center;
+  width: 80%;
 }
-
-.mapa{
-  width:20%;
-  float: right;
+.notaAtual {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 280%;
+  vertical-align: bottom;
+  margin-top: 10%;
+  text-align: right;
 }
 
 .notasHeader {
@@ -34,8 +44,14 @@
   vertical-align: top;
   text-align: right;
   padding-top: 3%;
-  light: 20;
   color: black;
+}
+.posicao {
+  font-family: 'Roboto-Condensed';
+  font-size: 280%;
+  line-height: 90%;
+  vertical-align: top;
+  width: 5%;
 }
 
 .ultimaNota {
@@ -44,41 +60,6 @@
   vertical-align: bottom;
   text-align: right;
 }
-
-.notaAtual {
-  font-family: 'Roboto-Condensed-Light';
-  font-size: 280%;
-  vertical-align: bottom;
-  margin-top: 10%;
-  text-align: right;
-}
-
-.alinhamento-dir{
-  text-align: right;
-}
-
-.bordas {
-  border-bottom: 1px dotted;
-  border-bottom-color: #2e3a48;
-}
-
-
-small{
-  color:gray;
-  font-size: 180%;
-}
-
-h4{
-  font-size: 280%;
-  font-weight: normal;
-}
-
-strong{
-  font-size: 180%;
-  font-weight: bold;
-  width:5%;
-}
-
 a:active .notasHeader{
   background-color: #2e3a48;
   text-decoration: none;
@@ -89,6 +70,29 @@ a:active .notaAtual{
   background-color: #2e3a48;
   text-decoration: none;
   color: white;
+}
+
+h4{
+  font-size: 280%;
+  font-weight: normal;
+}
+
+hr {
+  border: 1px solid;
+  border-color: #2e3a48;
+  width: 90%;
+  margin-left: 0;
+}
+
+small{
+  color:gray;
+  font-size: 180%;
+}
+
+strong{
+  font-size: 180%;
+  font-weight: bold;
+  width:5%;
 }
 
 ul {
@@ -119,11 +123,21 @@ ul li a:active {
   color: white;
 }
 
-hr {
-  border: 1px solid;
-  border-color: #2e3a48;
-  width: 90%;
-  margin-left: 0;
+@media(max-width:1439px)and (min-width: 767px){
+  .municipio{
+    font-size: 140%;
+  }
+  .notaAtual {
+    font-size: 150%;
+  }
+  .notasHeader {
+    font-size: 70%;
+  }
+  .posicao {
+    font-size: 200%;
+  }
+  .ultimaNota {
+    font-size: 25%;
+    padding-right: 20%
+  }
 }
-
-

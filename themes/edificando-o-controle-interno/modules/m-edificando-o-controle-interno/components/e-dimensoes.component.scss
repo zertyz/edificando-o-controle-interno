@@ -25,12 +25,13 @@
 }
 
 
-.dimensao{
+td.dimensao{
   font-family: 'Roboto-Condensed';
   font-weight: bold;
   font-size: 140%;
   line-height: 90%;
   padding-left: 3%;
+  width:10rem!important;
 }
 
 .alinhamento-dir{
@@ -83,7 +84,7 @@ div.borderedL{
   }
 }
 
-@media (min-width: 600px) and (max-width: 767px){
+@media (max-width: 767px){
   div.row{
     padding-top: 50px!important;
 }
@@ -93,6 +94,5 @@ div.borderedL{
     padding-right: 0 !important;
   }
 }
-
 
 

@@ -27,7 +27,9 @@ import { IInstanceProjectsComponentActivationConfiguration,
  * 4) Search for 'Angular Seed' in ./tools/install.js
  * 5) nativescript/platforms/android/src/main/res/values/strings.xml
  * */
-export const appTitle: string = 'edificando-o-controle-interno';
+export const appTitle: string = 'Edificando o Controle Interno';
+
+export const appDescription: string = 'Projeto do Ministério Público do Rio de Janeiro com as métricas atuais da implantação do Controle Interno por cada município do estado, que visa ajudar no combate ao disperdício e à corrupção.';
 
 /** theme configuration */
 export const appTheme    : string = 'edificando-o-controle-interno'; /** One of the directories in 'themes/' NOTE: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too */
@@ -61,7 +63,7 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
 export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjectsModuleActivationConfiguration[] = [
   {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // Modules from ng2-admin project. Use it along with 'ng2-admin' theme
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},  // angular4 module. Required by 'PRIMENG_MODULES'
-  {moduleName: 'MHelloWorldModule',       htmlEnabled: false, mobileEnabled: false},   // sample module with some SaaS components
+  {moduleName: 'MHelloWorldModule',       htmlEnabled: false, mobileEnabled: false},  // sample module with some SaaS components
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},  // bootstrap for angular
   {moduleName: 'PRIMENG_MODULES',         htmlEnabled: false, mobileEnabled: false},  // form components. depends on 'BrowserAnimationsModule'
 

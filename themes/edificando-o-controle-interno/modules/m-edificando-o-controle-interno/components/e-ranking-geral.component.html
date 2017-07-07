@@ -16,20 +16,20 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-2 col-sm-2">
-              <img class="img-responsive" src="./assets/img/Estabilizado.png">
+          <div class="row" style="padding-top:10%">
+            <div class="col-lg-2 col-sm-1">
+              <img class="img-fluid" src="./assets/img/Estabilizado.png">
             </div>
             <div class="col-lg-4 col-sm-3">
-              <img class="img-responsive" src="./assets/img/grafico-linha.png">
+              <img class="img-fluid" src="./assets/img/grafico-linha.png">
             </div>
             <div class="col-lg-2 col-sm-3">
               <div class="alinhamento-dir notasHeader" width="5%"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </div>
             </div>
             <div class="col-lg-2 col-sm-3">
-              <td class="notasHeader" width="20%"> NOTA <br/>ATUAL
+              <div class="notasHeader" width="20%"> NOTA <br/>ATUAL
                 <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[dimensao])"> {{(notas[dimensao] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4>
-              </td>
+              </div>
             </div>
           </div>
         </div>

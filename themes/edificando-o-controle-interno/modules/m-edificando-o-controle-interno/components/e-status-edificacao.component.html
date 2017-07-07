@@ -1,9 +1,33 @@
-<p>
-  e-status-edificacao.component
-  --
-  ##município: {{municipio}}##
-  ##POSICAO##
-  ##RESUMO##
-  <e-link href="/mp-informacoes-gerais">informações gerais</e-link>
-  ##IMG STATUS DA EDIFICAÇÃO##
-</p>
+<div class="row">
+  <img class="align-center img-responsive backImg" [src]="gradacoes.getImagemConstrucao(nota)" width="80%">
+  <div class="col-md-6"></div>
+  <div class="col-md-6">
+
+    <div class="borderedL">
+      <h2 class="title">{{nomeMunicipio}}</h2>
+      <p></p>
+      <table width="80%">
+        <tr>
+          <td class="subtitle" width="40%" style="padding-right: 5%;vertical-align: top;">Posição <br/><span class="dimensao">Geral</span></td>
+          <td *ngIf="dimensao != 'geral'" style="vertical-align: top;" class="subtitle bordaEsquerda">Posição <br/><span class="dimensao">{{gradacoes.mapaDeDimensoesParaTitulos[dimensao]}}</span></td>
+        </tr>
+        <tr>
+          <td style="padding-top: 5%;padding-right: 5%;" width="40%"><span class="posicao">{{posicaoGeral}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(notaGeral)">{{(notaGeral | number: '1.2-2').replace(".",",").replace("10,00", "10")}}</span></td>
+          <td *ngIf="dimensao != 'geral'" style="padding-top: 5%;" class="bordaEsquerda"><span class="posicao">{{posicao}} |</span> <span class="nota" [ngClass]="gradacoes.getCSSClass(nota)">{{(nota | number: '1.2-2').replace(".",",").replace("10,00", "10")}}</span></td>
+        </tr>
+      </table>
+
+      <div *ngIf="dadosMunicipiosErrorMessage != null" class="alert alert-danger">
+        <b>Erro obtendo dados:</b> {{dadosMunicipiosErrorMessage}}
+      </div>
+      <br/>
+      <p class="info">
+        População: <strong>{{dadosDoMunicipio.populacaoProjetada2016}}</strong><br/>
+        Orçamento: <strong>{{dadosDoMunicipio.orcamento2015}}</strong><br/>
+      </p>
+      <row>
+        <!--<e-link href="/mp-informacoes-gerais">mais informações</e-link>-->
+      </row>
+    </div>
+  </div>
+</div>

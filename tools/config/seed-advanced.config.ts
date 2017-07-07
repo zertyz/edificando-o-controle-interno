@@ -65,7 +65,7 @@ export class SeedAdvancedConfig extends SeedConfig {
 
     this.APP_TITLE = 'Edificando o Controle Interno';
     this.APP_BASE = this.TARGET_DESKTOP ? '' // paths must remain relative for desktop build
-      : '/';
+      : this.APP_BASE;
 
     // Advanced seed packages
     let additionalPackages: ExtendPackages[] = [

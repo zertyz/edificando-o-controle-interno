@@ -1,0 +1,142 @@
+.alinhamento-dir{
+  text-align: right;
+}
+
+.barra-de-rolagem {
+  width:100%;
+  max-height:40rem;
+  background-color: transparent;
+  overflow-y: auto;
+}
+
+.bordas {
+  border-bottom: 1px dotted;
+  border-bottom-color: #2e3a48;
+  height: 9rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.mapa{
+  width:20%;
+  float: right;
+}
+
+.municipio{
+  font-family: 'Roboto-Condensed';
+  font-size: 160%;
+  line-height: 90%;
+  padding-left: 3%;
+  width: 80%;
+}
+.notaAtual {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 280%;
+  margin-top: 10%;
+  text-align: right;
+}
+
+.notasHeader {
+  font-family: 'Roboto-Condensed';
+  font-size: 70%;
+  line-height: 90%;
+  text-align: right;
+  padding-top: 3%;
+  color: black;
+}
+.posicao {
+  font-family: 'Roboto-Condensed';
+  font-size: 280%;
+  line-height: 90%;
+  width: 5%;
+}
+
+.ultimaNota {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 200%;
+}
+a:active .notasHeader{
+  background-color: #2e3a48;
+  text-decoration: none;
+  color: white;
+}
+
+a:active .notaAtual{
+  background-color: #2e3a48;
+  text-decoration: none;
+  color: white;
+}
+
+h4{
+  font-size: 280%;
+  font-weight: normal;
+}
+
+hr {
+  border: 1px solid;
+  border-color: #2e3a48;
+  width: 90%;
+  margin-left: 0;
+}
+
+small{
+  color:gray;
+  font-size: 180%;
+}
+
+strong{
+  font-size: 180%;
+  font-weight: bold;
+  width:5%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+
+  text-align: left;
+}
+
+ul li a{
+  padding: 5%;
+  text-decoration: none;
+  color:black;
+  display: block;
+
+}
+ul li a:hover {
+  background-color: #e7ebee;
+  text-decoration: none;
+}
+
+ul li a:active {
+  background-color: #2e3a48;
+  text-decoration: none;
+  color: white;
+}
+
+@media(max-width:1439px)and (min-width: 767px){
+  .municipio{
+    font-size: 140%;
+  }
+  .notaAtual {
+    font-size: 150%;
+  }
+  .notasHeader {
+    font-size: 70%;
+  }
+  .posicao {
+    font-size: 200%;
+  }
+  .ultimaNota {
+    font-size: 150%;
+    padding-right: 25%
+  }
+}
+
+@media(max-width: 767px){
+  
+}

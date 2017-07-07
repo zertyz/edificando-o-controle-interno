@@ -1,25 +1,55 @@
 <div platform>
-  <!--<ba-sidebar></ba-sidebar>-->
-  <!--<ba-page-top></ba-page-top>-->
-  <div class="al-main">
-    <div class="al-content">
-      <!--<ba-content-top></ba-content-top>-->
+      <nav class="navbar fixed-top">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 col-md-5">
+              <a  class="navbar-brand" href="http://www.mprj.mp.br/home" >
+                <img class="img-responsive" width="100%" style="margin-left:17%;" alt="MPRJ-image" src="./assets/img/logo_mprj2.png">
+              </a>
+            </div>
+            <div class="col-lg-2 col-md-1">
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <div style="padding-top: 1%">
+              <a [routerLink]="['/']"                      [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Início</a>
+              <a [routerLink]="['/mp-metodologia']"        [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Metodologia</a>
+              <a [routerLink]="['/mp-ranking-completo']"   [routerLinkActive]="['router-link-active']"                                         >Ranking</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav> <br/> <br/> <br/>
       <router-outlet></router-outlet>
-    </div>
-  </div>
-<!--
-  <footer class="al-footer clearfix">
-    <div class="al-footer-right" translate>{{'general.created_with'}} <i class="ion-heart"></i></div>
-    <div class="al-footer-main clearfix">
-      <div class="al-copy">&copy; <a href="http://akveo.com" translate>{{'general.akveo'}}</a> 2016</div>
-      <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook"></i></li>
-        <li><i class="socicon socicon-twitter"></i></li>
-        <li><i class="socicon socicon-google"></i></li>
-        <li><i class="socicon socicon-github"></i></li>
-      </ul>
+  <br/><br/><br/>
+
+  <!-- Footer -->
+  <footer class="bd-footer text-muted footer-align ">
+    <div class="container-fluid">
+      <div class = "row">
+        <div  class="col-lg-4 col-md-8 col-sm-8 footerleft">
+          <p>© 2017 Ministério Público do Rio de Janeiro. Av. Marechal Câmara, n° 370
+            Centro - Rio de Janeiro, RJ - Brasil - CEP 20020-080 - Telefone: (21) 2550-9050</p>
+        </div>
+
+
+        <div align ="right" class="col-lg-8 col-md-4 col-sm-4">
+          <a href="https://www.facebook.com/MPRJ.Oficial" target="_blank">
+            <img width="3.5%"src="http://www.mprj.mp.br/mprj-responsiveflat-theme/images/comum/rodape/icon_facebook.png" alt="Link para o facebook do MPRJ.">
+          </a>
+          <a href="https://twitter.com/mp_rj" target="_blank">
+            <img width="3.5%" src="http://www.mprj.mp.br/mprj-responsiveflat-theme/images/comum/rodape/icon_twitter.png" alt="Link para o twitter do MPRJ.">
+          </a>
+          <a href="https://www.youtube.com/user/MinisterioPublicoRJ" target="_blank">
+            <img width="3.5%" src="http://www.mprj.mp.br/mprj-responsiveflat-theme/images/comum/rodape/icon_youtube.png" alt="Link para o youtube do MPRJ.">
+          </a>
+          <a href="https://www.flickr.com/photos/mprj_mp/" target="_blank">
+            <img width="3.5%" src="http://www.mprj.mp.br/mprj-responsiveflat-theme/images/comum/rodape/icon_flickr.png" alt="Link para o flickr do MPRJ.">
+          </a>
+
+        </div>
+      </div>
     </div>
   </footer>
--->
-  <ba-back-top position="200"></ba-back-top>
+
 </div>
+

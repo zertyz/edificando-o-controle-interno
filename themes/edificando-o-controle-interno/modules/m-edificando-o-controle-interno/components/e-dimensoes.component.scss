@@ -1,0 +1,98 @@
+.notasHeader {
+  font-family: 'Roboto-Condensed';
+  font-size: 70%;
+  line-height: 90%;
+  vertical-align: top;
+  text-align: right;
+  padding-top: 3%;
+  color: black;
+}
+
+.ultimaNota {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 200%;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.notaAtual {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 280%;
+  vertical-align: bottom;
+  margin-top: 10%;
+  text-align: right;
+  padding-right: 5%;
+}
+
+
+td.dimensao{
+  font-family: 'Roboto-Condensed';
+  font-weight: bold;
+  font-size: 140%;
+  line-height: 90%;
+  padding-left: 3%;
+  width:10rem!important;
+}
+
+.alinhamento-dir{
+  text-align: right;
+}
+
+.bordas {
+  border-bottom: 1px dotted;
+  border-bottom-color: #2e3a48;
+}
+
+td{
+  padding-bottom: 2.5%;
+}
+
+img{
+  float: right;
+}
+
+small{
+  color:gray;
+  font-size: 180%;
+}
+
+h4{
+  font-size: 280%;
+  font-weight: normal;
+}
+
+table{
+  width:100%;
+}
+
+div.borderedL{
+    padding-left: 0!important;
+  }
+
+@media(max-width:1439px){
+  div.borderedL{
+  border-color:transparent;
+  }
+  div.row{
+    padding-left: 2rem!important;
+  }
+}
+@media(min-width:1200px){
+  div.borderedL{
+  border-color:black;
+  padding-left: 0 !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px){
+  div.row{
+    padding-top: 50px!important;
+}
+  div.borderedL{
+    border-color:black;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+

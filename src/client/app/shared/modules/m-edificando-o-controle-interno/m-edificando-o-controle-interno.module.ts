@@ -14,7 +14,20 @@ import { EStatusEdificacaoComponent,
          ELinkComponent,
          EMapaInterativoComponent,
          ERankingGeralComponent,
-         ETop5Component } from './components/index';
+         ETop5Component,
+         ESubscribeComponent, ESubscribeContentComponent } from './components/index';
+
+// services
+import { RankingsService } from './services/rankings.service';
+import { IRankings }       from './services/IRankings';
+
+// bootstrap?
+import { NgbModule,
+         NgbDropdown, NgbDropdownModule,
+         NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
+// injectable libs
+import { GradacoesDeCores } from './GradacoesDeCores';
 
 @NgModule({
   imports: [
@@ -22,6 +35,8 @@ import { EStatusEdificacaoComponent,
     RouterModule,
     FormsModule,
     HttpModule,
+    NgbModule,
+    NgbDropdownModule,
   ],
   declarations: [
     EStatusEdificacaoComponent,
@@ -30,6 +45,7 @@ import { EStatusEdificacaoComponent,
     EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
+    ESubscribeComponent, ESubscribeContentComponent,
   ],
   exports: [
     EStatusEdificacaoComponent,
@@ -38,8 +54,18 @@ import { EStatusEdificacaoComponent,
     EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
+    ESubscribeComponent, ESubscribeContentComponent,
   ],
-  providers: [],
+  entryComponents: [
+    ESubscribeContentComponent,
+  ],
+  providers: [
+    RankingsService,
+    GradacoesDeCores,
+    NgbModule,
+    NgbDropdown,
+    NgbActiveModal,
+  ],
   schemas: [
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA
@@ -50,7 +76,7 @@ export class MEdificandoOControleInternoModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: MEdificandoOControleInternoModule,
-      providers: []
+      providers: [RankingsService, GradacoesDeCores, NgbModule, NgbDropdown]
     };
   }
 

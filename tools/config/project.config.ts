@@ -1,7 +1,8 @@
 import { join } from 'path';
 import { SeedAdvancedConfig } from './seed-advanced.config';
 
-import { appTitle }         from './mutua.instance-project.config';
+import { appTitle,
+         appDescription }   from './mutua.instance-project.config';
 import { DataManipulation } from './mutua.available.modules.and.components.config';
 
 /**
@@ -11,6 +12,8 @@ import { DataManipulation } from './mutua.available.modules.and.components.confi
 export class ProjectConfig extends SeedAdvancedConfig {
 
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
+
+  APP_DESCRIPTION = appDescription;
 
   constructor() {
     super();
@@ -49,9 +52,10 @@ export class ProjectConfig extends SeedAdvancedConfig {
     // this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middleware */
-    // this.PROXY_MIDDLEWARE = [
-    //   require('http-proxy-middleware')({ ws: false, target: 'http://localhost:3003' })
-    // ];
+    this.PROXY_MIDDLEWARE = [
+      require('http-proxy-middleware')('/eci', { ws: false, target: 'http://apps.mprj.mp.br', changeOrigin: true })
+      //require('http-proxy-middleware')('/eci', { ws: true, target: 'http://localhost:1234' })
+    ];
 
     /* Add to or override NPM module configurations: */
     // this.PLUGIN_CONFIGS['browser-sync'] = { ghostMode: false };

@@ -1,0 +1,96 @@
+html,body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 70px;
+
+}
+
+.footer-align{
+  width: 100% !important;
+  position:fixed;
+  bottom: 0;
+  height: 4rem;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding:0.3rem;
+  margin: 0 auto !important;
+
+}
+
+@media (max-width: 990px) {
+  .footer-align {
+    position: relative;
+    height: 6%;
+  }
+}
+
+
+footer{
+  background-color: #2e3a48;
+  float: none;
+}
+
+.navbar{
+  background: #2e3a48;
+  height: 5rem;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding : 0.7%;
+  display: block;
+}
+
+nav a {
+  color: #ffffff;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 120%;
+  line-height: 100%;
+  margin-left: 3%;
+  text-decoration: none;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+
+nav a.router-link-active {
+  color: #106cc8;
+  display: none;
+}
+
+p{
+  color: white;
+  font-size: 85%;
+}
+
+@media (max-width: 65em) {
+img {
+  max-width: 1em;
+  visibility: hidden;
+}
+}
+
+hr{
+  width: 1px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+.logo-texto{
+  font-family: Roboto-Condensed;
+  font-weight: 100;
+  color: white;
+}
+.texto-mp{
+  font-size: 16px;
+
+}
+.texto-rj{
+  font-size:9.5px;
+  line-height: 15px;
+}
+
+.logo-mprj{
+  padding-left: 20%;
+}

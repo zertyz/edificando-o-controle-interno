@@ -1,13 +1,41 @@
-<h2>
-  Ranking Completo
-</h2>
+<div class="container-fluid full">
+  <div class="row">
+    <p></p>
+  </div>
+  <div class="row">
+    <div class="col-xlg-3 col-xl-3 col-lg-3 col-md-6 col-xs-12 "style="max-height: 45rem">
+      <table>
+        <tr>
+          <td><a [routerLink]="['/']">
+            <img src="assets/img/Logo Edificando o Controle Interno.png" height="150px">
+          </a></td>
+          <td style="padding-left: 10%;"><span class="title">Ranking </span> <br/>
+            <span class="dimensao">{{gradacoes.mapaDeDimensoesParaTitulos[dimensao]}}</span>
+            <br/><br/>
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary outrosRankings" id="dropdownBasic1" ngbDropdownToggle>Outros rankings</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item outrosRankings" *ngFor="let campo of gradacoes.listaDeDimensoesETitulos" (click)="trocaRanking(campo[0])">{{campo[1]}}</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
 
-<p>##LOGO##</p>
+      <!-- Outros Rankings -->
+      <e-ranking-geral dimensao="{{dimensao}}"> </e-ranking-geral>
+    </div>
 
-<e-link href="/mp-outros-rankings">outros rankings</e-link>
+    <div class="col-xlg-5 col-xl-4 col-lg-4 col-md-6 col-xs-12">
+      <e-status-edificacao municipio="{{municipio}}" dimensao="{{dimensao}}"></e-status-edificacao>
+    </div>
 
-<e-ranking-geral></e-ranking-geral>
+    <div class="col-xlg-4 col-xl-5 col-lg-5 col-md-8 col-xs-12 ">
+    <e-dimensoes municipio="{{municipio}}" dimensao="{{dimensao}}" ordenacao="titulo"></e-dimensoes>
+    </div>
+  </div>
 
-<e-status-edificacao municipio="Rio de Janeiro"></e-status-edificacao>
-
-<e-dimensoes municipio="Rio de Janeiro" ordenacao="titulo"></e-dimensoes>
+  <div class="row">
+    <br/><br/><br/><br/>
+  </div>
+</div>

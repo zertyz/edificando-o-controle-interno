@@ -1,0 +1,39 @@
+h1{
+  text-align:right;
+}
+
+p{
+  font-size: 95%;
+  text-align: right;
+}
+
+@media(max-width:1199px){
+  div.borderedL{border-color: transparent}
+  img.img-responsive { width:80%;}
+  e-link.link{position: inherit;bottom: inherit;right: inherit}
+  max-width: 100%;
+}
+
+.titulo {
+  font-family: 'Roboto-Condensed';
+  font-size: 210%;
+  font-weight: bold;
+  line-height: 90%;
+}
+.texto {
+  font-family: 'Roboto-Condensed-Light';
+  font-size: 120%;
+  line-height: 90%;
+}
+
+.link {
+  position: absolute;
+  bottom: 0%;
+  right: 2%;
+  font-family: 'Roboto-Condensed';
+  font-size: 150%;
+  line-height: 90%;
+  text-align: right;
+  color: rgb(5, 127, 178);
+  cursor: pointer;
+}

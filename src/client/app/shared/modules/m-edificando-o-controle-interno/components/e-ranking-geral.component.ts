@@ -3,31 +3,16 @@
  * =========================
  * (created by luiz on Qui, jun, 01, 2017)
  *
- * Apresenta a lista de municípios, ordenado
+ * Apresenta o ranking, ou seja, a lista de municípios, ordenado pela nota da dimensao escolhida
  *
  * Recebe as seguintes propriedades:
- *  sectionTitle:         the title, if any, to be present in the beginning of the component. Something like "PORTFOLIO" or "APPS LIST"
- *  sectionImg:           the same as above, but specifying an image
- *  sectionImgAlt:        the specification of the image above -- the briefing you'd give to a designer when creating the image. Great SEO opportunity.
- *  markupData:           an array containing all entries to be shown, as described bellow.
- *
- * Each element of 'markupData' is an object containing one of the following keys:
- *  p      : accepts, as value, a string, another object or an array of strings / objects
- *  list   : idem
- *  link   : only accepts one string or one 'img' object. Also, there must be another key named 'url', which only accepts a string
- *  img    : only accepts a string and requires another key named 'alt', which also only accepts a string.
+ *  dimensao:         o nome de uma variável numérica da interface 'IRankings'
  *
  * Exemplo de uso:
  *
- *  <m-about
- *           sectionTitle  = "Meet the Team"
- *           sectionImg    = "sectionImg#not used"
- *           sectionImgAlt = "sectionImgAlt#not used"
- *           [markupData]  = "[{p: ['Our team is made of, bla bla, the following people:', {list: ['mf 1', {link: 'mf 2', url: 'mf2resume.pdf'}]}]}, {p: '... and that is all we have.'}]"
- *           [styles]      = "{0: 'class for everyone', list: ['evenListClass', 'oddListClass']}">
- *  </m-about>
+ *  <e-ranking-geral dimensao="geral"></e-ranking-geral>
  *
- * @see RelatedClass(es)
+ * @see IRankings
  * @author luiz
  */
 
@@ -39,6 +24,14 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../core/index';
 import { Input } from '@angular/core';
 
+// services
+import { RankingsService } from '../services/rankings.service';
+import { IRankings }       from '../services/IRankings';
+
+// module libs
+import { GradacoesDeCores } from '../GradacoesDeCores';
+
+
 @Component({
   moduleId: module.id,
   selector: 'e-ranking-geral',
@@ -47,10 +40,30 @@ import { Input } from '@angular/core';
 })
 export class ERankingGeralComponent {
 
-  @Input() sectionTitle:   string = '§§ ABOUT §§';
-  @Input() sectionImg:     string = 'sectionImg#not used';
-  @Input() sectionImgAlt:  string = 'sectionImgAlt#not used';
-  @Input() markupData:     any[]  = [];
-  @Input() styles:         any[]  = [];
+  @Input() dimensao:   string;
+
+  // dados do JSON
+  public ranking: IRankings[];
+
+  // a lista de municípios, ordenada pela dimensão escolhida
+  public rankingOrdenado: IRankings[];
+
+  public errorMessage: string = null;
+
+  // constroi a estrutura 'top5Cidades'
+  constructor(private rankingsService: RankingsService,
+              private gradacoes: GradacoesDeCores) {
+    rankingsService.fetchRankings().subscribe(response => {
+      this.ranking = response;
+      this.ngOnChanges();
+    }, error => this.errorMessage = < any > error);
+  };
+
+  ngOnChanges() {
+    if (this.ranking) {
+      this.rankingOrdenado = this.ranking.sort((e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2.geral) - (e1[this.dimensao]*e1[this.dimensao]+e1.geral));
+    }
+  }
+
 
 }

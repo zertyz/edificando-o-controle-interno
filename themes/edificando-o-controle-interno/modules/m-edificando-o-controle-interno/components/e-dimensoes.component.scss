@@ -84,7 +84,7 @@ div.borderedL{
   }
 }
 
-@media (max-width: 767px){
+@media (min-width: 600px) and (max-width: 767px){
   div.row{
     padding-top: 50px!important;
 }

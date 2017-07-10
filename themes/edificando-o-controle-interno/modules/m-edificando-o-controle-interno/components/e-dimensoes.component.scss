@@ -69,30 +69,24 @@ div.borderedL{
     padding-left: 0!important;
   }
 
-@media(max-width:1439px){
+@media(max-width:992px){
   div.borderedL{
-  border-color:transparent;
+    border-color:transparent;
+    padding-right: 0 !important;
   }
   div.row{
     padding-left: 2rem!important;
   }
 }
-@media(min-width:1200px){
+@media(min-width:992px){
   div.borderedL{
   border-color:black;
   padding-left: 0 !important;
   }
 }
 
-@media (min-width: 600px) and (max-width: 767px){
-  div.row{
-    padding-top: 50px!important;
-}
-  div.borderedL{
-    border-color:black;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+@media (min-width: 600px) and (max-width: 991px){
+  div.container-fluid{
+    padding-top: 100px!important;
   }
 }
-
-

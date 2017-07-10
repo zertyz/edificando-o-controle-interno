@@ -18,14 +18,6 @@ html,body {
 
 }
 
-@media (max-width: 990px) {
-  .footer-align {
-    position: relative;
-    height: 6%;
-  }
-}
-
-
 footer{
   background-color: #2e3a48;
   float: none;
@@ -64,13 +56,6 @@ p{
   font-size: 85%;
 }
 
-@media (max-width: 65em) {
-img {
-  max-width: 1em;
-  visibility: hidden;
-}
-}
-
 hr{
   width: 1px;
   height: 30px;
@@ -93,4 +78,24 @@ hr{
 
 .logo-mprj{
   padding-left: 20%;
+}
+@media (max-width: 990px) {
+  .footer-align {
+    position: relative;
+    height: 6%;
+  }
+}
+@media (max-width: 65em) {
+img {
+  max-width: 1em;
+  visibility: hidden;
+}
+}
+@media screen and(min-width: 998px) and (max-width:1500px){
+  .footer-align{
+    height: 3rem;
+  }
+  p{
+  font-size: 74%;
+}
 }

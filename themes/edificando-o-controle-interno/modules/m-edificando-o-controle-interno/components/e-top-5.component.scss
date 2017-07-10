@@ -45,10 +45,13 @@
   line-height: 90%;
   padding-left: 1%;
   vertical-align: center;
-  width:50%;
+  min-width:9.4rem;
   max-height: 5rem;
 }
-
+.alt-top{
+height: 5rem;
+padding: 0;
+}
 .notaAtual {
   font-family: 'Roboto-Condensed-Light';
   font-size: 240%;
@@ -59,7 +62,7 @@
 }
 
 .margem{
-  padding-top: 10px;
+  padding-top: 2px;
 }
 
 .sem-borda-bottom{
@@ -88,4 +91,20 @@ strong{
   .borda-esq{
     padding-left: 0!important;
   }
+}
+@media screen and(min-width: 998px) and (max-width:1500px){
+  .municipio{
+  font-size: 120%!important;
+  min-width: 6rem;
+}
+.notaAtual{
+  font-size: 1.6rem;
+
+}
+.posicao{
+  font-size: 1.9rem;
+}
+.alt-top{
+height: 4.3rem;
+}
 }

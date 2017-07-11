@@ -92,17 +92,33 @@ strong{
     padding-left: 0!important;
   }
 }
-@media screen and(min-width: 998px) and (max-width:1500px){
+@media screen and(min-width: 991px) and (max-width:1400px){
   .municipio{
-  font-size: 120%!important;
-  min-width: 6rem;
+  font-size: 121%!important;
+  min-width: 6.9rem;
 }
 .notaAtual{
-  font-size: 1.6rem;
+  font-size: 150%;
 
 }
 .posicao{
-  font-size: 1.9rem;
+  font-size: 160%;
+}
+.alt-top{
+height: 4.3rem;
+}
+}
+@media screen and(min-width: 1399px) and (max-width:1650px){
+  .municipio{
+  font-size: 140%!important;
+  min-width: 6rem;
+}
+.notaAtual{
+  font-size: 1.8rem;
+
+}
+.posicao{
+  font-size: 2.1rem;
 }
 .alt-top{
 height: 4.3rem;

@@ -89,4 +89,20 @@ div.borderedL{
   div.container-fluid{
     padding-top: 100px!important;
   }
+
+
 }
+@media (min-width: 991px) and (max-width: 1230px){
+  td.dimensao{
+  font-size: 120%;
+  min-width:5rem!important;
+}
+.notaAtual {
+  font-size: 210%;
+
+}
+td{
+  min-width:1rem; 
+}
+}
+

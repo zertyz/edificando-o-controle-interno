@@ -5,28 +5,28 @@
       <div class="container">
         <div class="bordas">
           <div class="row">
-            <div class="col-lg-2 col-sm-2">
+            <div class="col-lg-2 col-sm-2 col-2">
               <div class="posicao">{{posicao+1 | number: '2.0-0'}}</div>
             </div>
-            <div class="col-lg-5 col-sm-6">
+            <div class="col-lg-5 col-sm-4 col-7">
               <div class="municipio"> {{notas.municipio}} </div>
             </div>
-            <div class="col-lg-2 col-sm-2">
+            <div class="col-lg-3 col-sm-3 col-1">
               <div class="mapa" colspan="2"> <img class="img-responsive" style="height: auto;width: auto;max-width: 57px;max-height: 39px;" [src]="'./assets/img/municipios/'+notas.municipio+'.png'">                </div>
             </div>
           </div>
 
-          <div class="row" style="padding-top:10%">
-            <div class="col-lg-2 col-sm-2">
+          <div class="row div-padding" >
+            <div class="col-lg-2 col-sm-2 col-3">
               <img class="img-fluid" src="./assets/img/Estabilizado.png">
             </div>
-            <div class="col-lg-4 col-sm-3">
+            <div class="col-lg-4 col-sm-4 col-3">
               <img class="img-fluid" src="./assets/img/grafico-linha.png">
             </div>
-            <div class="col-lg-2 col-sm-3">
+            <div class="col-lg-3 col-sm-3 col-3">
               <div class="alinhamento-dir notasHeader" width="5%"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </div>
             </div>
-            <div class="col-lg-2 col-sm-3">
+            <div class="col-lg-2 col-sm-1 col-2">
               <div class="notasHeader" width="20%"> NOTA <br/>ATUAL
                 <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[dimensao])"> {{(notas[dimensao] | number: '1.2-2').replace(".",",").replace("10,00", "10")}} </h4>
               </div>

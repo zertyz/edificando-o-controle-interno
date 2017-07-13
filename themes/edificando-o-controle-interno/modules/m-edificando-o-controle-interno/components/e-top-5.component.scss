@@ -9,11 +9,13 @@
   text-align: right;
   color: rgb(5, 127, 178);
 }
+
 .borda-tab{
   height:5rem ;
   border-right:1px solid !important;
   padding:0!important;
 }
+
 .titulo{
   font-family: 'Roboto-Condensed-Bold';
   font-size: 240%;
@@ -46,10 +48,12 @@
   min-width:9.4rem;
   max-height: 5rem;
 }
+
 .alt-top{
 height: 5rem;
 padding: 0;
 }
+
 .notaAtual {
   font-family: 'Roboto-Condensed-Light';
   font-size: 240%;
@@ -66,7 +70,6 @@ padding: 0;
 .sem-borda-bottom{
   border-bottom: none;
 }
-
 
 td{
   border-bottom: 1px dotted;
@@ -85,40 +88,43 @@ strong{
     border-right:none !important;
   }
 }
+
 @media(max-width:999px){
   .borda-esq{
     padding-left: 0!important;
   }
 }
+
 @media screen and(min-width: 991px) and (max-width:1400px){
   .municipio{
-  font-size: 121%!important;
-  min-width: 6.9rem;
-}
-.notaAtual{
-  font-size: 150%;
+    font-size: 121%!important;
+    min-width: 6.9rem;
+  }
+  .notaAtual{
+    font-size: 150%;
 
+  }
+  .posicao{
+    font-size: 160%;
+  }
+  .alt-top{
+  height: 4.3rem;
+  }
 }
-.posicao{
-  font-size: 160%;
-}
-.alt-top{
-height: 4.3rem;
-}
-}
+
 @media screen and(min-width: 1399px) and (max-width:1650px){
   .municipio{
-  font-size: 140%!important;
-  min-width: 6rem;
-}
-.notaAtual{
-  font-size: 1.8rem;
+    font-size: 140%!important;
+    min-width: 6rem;
+  }
+  .notaAtual{
+    font-size: 1.8rem;
 
-}
-.posicao{
-  font-size: 2.1rem;
-}
-.alt-top{
-height: 4.3rem;
-}
+  }
+  .posicao{
+    font-size: 2.1rem;
+  }
+  .alt-top{
+  height: 4.3rem;
+  }
 }

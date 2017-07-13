@@ -3,26 +3,26 @@
     <!--municipio: {{municipio}} / {{notas.municipio}}-->
     <div class="col-xs-12 col-lg-6 " style=" resize:horizontal;padding:0">
       <table style="height:6rem">
-        <tr class="bordas">
-          <td class="dimensao w-20"><div style="resize:horizontal"> {{quarteto[1]}}</div> </td>
-          <td> <img src="./assets/img/Estabilizado.png"> </td>
+        <tr class="bordas"><div style="resize:horizontal col-md-6">
+          <td class="dimensao w-40"> {{quarteto[1]}} </td>
+          <td> <img  class="img-fluid" src="./assets/img/Estabilizado.png"> </td>
           <td class="alinhamento-dir notasHeader w-3"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </td>
           <td class="notasHeader w-3"> NOTA <br/>ATUAL
             <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[quarteto[0]])"> {{(notas[quarteto[0]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4>
-          </td>
+          </td></div>
         </tr>
       </table>
     </div>
     <div class="col-xs-12 col-lg-6 " style="resize:horizontal;padding:0">
       <div class="borderedL">
         <table style="height:6rem">
-          <tr class="bordas">
-            <td class="dimensao w-20"> {{quarteto[3]}} </td>
-            <td> <img src="./assets/img/Estabilizado.png"> </td>
+          <tr class="bordas"><div style="resize:horizontal col-md-6">
+            <td class="dimensao w-30"> {{quarteto[3]}} </td>
+            <td> <img  class="img-fluid" src="./assets/img/Estabilizado.png" > </td>
             <td class="alinhamento-dir notasHeader w-3"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </td>
             <td class="notasHeader w-3"> NOTA <br/>ATUAL
               <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[quarteto[2]])"> {{(notas[quarteto[2]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4>
-            </td>
+            </td></div>
           </tr>
         </table>
       </div>

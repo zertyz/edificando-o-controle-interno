@@ -25,6 +25,11 @@ p{
   font-size: 120%;
   line-height: 90%;
 }
+@media (min-width:992) {
+.col-lg-2{
+  max-width: 35%!important;
+}
+}
 
 .link {
   position: absolute;

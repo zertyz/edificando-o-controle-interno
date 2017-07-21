@@ -15,6 +15,9 @@
   border-right:1px solid !important;
   padding:0!important;
 }
+.container{
+  min-width: 100%;
+}
 
 .titulo{
   font-family: 'Roboto-Condensed-Bold';
@@ -83,13 +86,11 @@ strong{
   width:5px;
 }
 
-@media(max-width:999px){
+
+ @media(max-width:991px){ 
   .borda-tab{
     border-right:none !important;
   }
-}
-
-@media(max-width:999px){
   .borda-esq{
     padding-left: 0!important;
   }
@@ -111,7 +112,11 @@ strong{
   height: 4.3rem;
   }
 }
-
+@media screen and(min-width: 992px) and (max-width:1180px){
+.container-fluid{
+  width: 22.8rem!important;
+  }
+}
 @media screen and(min-width: 1399px) and (max-width:1650px){
   .municipio{
     font-size: 140%!important;

@@ -7,13 +7,6 @@ p{
   text-align: right;
 }
 
-@media(max-width:1199px){
-  div.borderedL{border-color: transparent}
-  img.img-responsive { width:90%;}
-  e-link.link{position: inherit;bottom: inherit;right: inherit}
-  max-width: 100%;
-}
-
 .titulo {
   font-family: 'Roboto-Condensed';
   font-size: 210%;
@@ -24,11 +17,6 @@ p{
   font-family: 'Roboto-Condensed-Light';
   font-size: 120%;
   line-height: 90%;
-}
-@media (min-width:992) {
-.col-lg-2{
-  max-width: 35%!important;
-}
 }
 
 .link {
@@ -41,4 +29,20 @@ p{
   text-align: right;
   color: rgb(5, 127, 178);
   cursor: pointer;
+}
+
+@media (min-width:992) {
+  .col-lg-2{
+    max-width: 35%!important;
+  }
+}
+
+@media(max-width:991px){
+  div.borderedL{border-color: transparent}
+}
+
+@media(max-width:1199px){
+  img.img-responsive { width:90%;}
+  e-link.link{position: inherit;bottom: inherit;right: inherit}
+  max-width: 100%;
 }

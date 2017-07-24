@@ -87,29 +87,34 @@ hr{
 }
 @media (min-width: 320px) and (max-width: 575px){
 img {
-  min-width: 90px !important;
+  min-width: 30px !important;
   max-width: 95px !important;
   margin-left: 0% !important;
 }
 }
 @media (min-width: 576px) and (max-width: 768px){
 img {
-  min-width: 285px !important;
-  max-width: 300px !important;
-  margin-left: 5% !important;
+  min-width: 32px !important;
+  max-width: 250px !important;
+  margin-left: 2% !important;
+}
+}
+@media (min-width: 769px) {
+  img {
+    min-width: 36px;
+  }
+}
+
+@media (min-width: 900px){
+img {
+  max-width: 322px !important;
 }
 }
 
-@media (min-width: 900px) and (max-width: 1870px){
-img {
-  min-width: 349px !important;
-  max-width: 402px !important;
-}
-}
 
 @media (max-width: 575px) {
   img {
-    max-width: 98px;
+    min-width: 28px;
   }
 .logo-completo {
   display: none;

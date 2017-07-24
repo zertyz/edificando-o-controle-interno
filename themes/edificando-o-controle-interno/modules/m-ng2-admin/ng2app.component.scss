@@ -84,18 +84,21 @@ hr{
     position: relative;
     height: 6%;
   }
+  .links-footer{
+    display: none;
+  }
 }
 @media (min-width: 320px) and (max-width: 575px){
-img {
-  min-width: 30px !important;
+.img-fluid {
+  min-width: 90px !important;
   max-width: 95px !important;
   margin-left: 0% !important;
 }
 }
 @media (min-width: 576px) and (max-width: 768px){
-img {
-  min-width: 32px !important;
-  max-width: 250px !important;
+.img-fluid {
+  min-width: 270px !important;
+  max-width: 280px !important;
   margin-left: 2% !important;
 }
 }
@@ -106,15 +109,15 @@ img {
 }
 
 @media (min-width: 900px){
-img {
-  max-width: 322px !important;
+.img-fluid {
+  min-width: 330px !important;
+  max-width: 349px !important;
 }
 }
-
 
 @media (max-width: 575px) {
-  img {
-    min-width: 28px;
+  .img-fluid {
+    max-width: 98px;
   }
 .logo-completo {
   display: none;

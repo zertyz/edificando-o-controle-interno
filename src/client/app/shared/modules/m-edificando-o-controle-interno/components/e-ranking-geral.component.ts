@@ -44,8 +44,9 @@ export class ERankingGeralComponent {
 
   // dados do JSON
   public ranking: IRankings[];
-
-  public selectRanking : IRankings[];
+  
+  // seleção de elemento
+  private selectRanking : IRankings;
 
   // a lista de municípios, ordenada pela dimensão escolhida
   public rankingOrdenado: IRankings[];
@@ -68,7 +69,7 @@ export class ERankingGeralComponent {
       this.rankingOrdenado = this.ranking.sort((e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2.geral) - (e1[this.dimensao]*e1[this.dimensao]+e1.geral));
     }
   }
-  onSelect(ranking:IRankings[]){
+  onSelect(ranking:IRankings):void{
     this.selectRanking = ranking;
   }
 

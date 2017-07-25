@@ -113,7 +113,6 @@ ul li a:hover {
   .municipio{
     font-size: 130%;
     width: 140%;
-
   }
   .notaAtual {
     font-size: 150%;
@@ -129,17 +128,17 @@ ul li a:hover {
     padding-right: 25%
   }
   .bordas {
-  height: 7.3rem;
+    height: 7.3rem;
+  }
+  .div-padding{
+    padding-top: 7%;
+  }
 }
-.div-padding{
-  padding-top: 7%;
-}
-}
+
 @media (max-width:767px) {
   .municipio{
     font-size:120%;
     width: 120%;
-
   }
   .notaAtual {
     font-size: 160%;
@@ -155,8 +154,8 @@ ul li a:hover {
     padding-right: 25%
   }
   .bordas {
-  height: 7.3rem;
-}
+    height: 7.3rem;
+  }
   div.row{
     width: 100%;
   }

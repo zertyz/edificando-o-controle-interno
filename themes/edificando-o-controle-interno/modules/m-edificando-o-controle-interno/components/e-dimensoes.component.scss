@@ -66,8 +66,8 @@ table{
 }
 
 div.borderedL{
-    padding-left: 0!important;
-  }
+  padding-left: 0!important;
+}
 
 @media(max-width:992px){
   div.borderedL{
@@ -79,6 +79,7 @@ div.borderedL{
 
   }
 }
+
 @media(min-width:992px){
   div.borderedL{
   border-color:black;
@@ -92,21 +93,25 @@ div.borderedL{
   }
 
 }
+
 @media (min-width: 991px) and (max-width: 1380px){
   td.dimensao{
   font-size: 110%;
   min-width:4rem!important;
 }
+
 .notaAtual {
   font-size: 190%;
 
 }
+
 td{
   min-width:1.2rem;
 }
+
 .notasHeader{
-  font-size: 65%;
-  padding: 1%;
-}
+    font-size: 65%;
+    padding: 1%;
+  }
 }
 

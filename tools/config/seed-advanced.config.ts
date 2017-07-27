@@ -33,15 +33,13 @@ export class SeedAdvancedConfig extends SeedConfig {
 
     this.ENABLE_SCSS = true;
 
-    let arg: string;
     if (argv && argv._) {
-      arg = argv._[0];
-      if (arg.indexOf('desktop') > -1) {
+      if (argv['desktop']) {
         this.TARGET_DESKTOP = true;
-        if (arg.indexOf('.mac') > -1 || arg.indexOf('.windows') > -1 || arg.indexOf('.linux') > -1) {
+        if (argv['desktopBuild']) {
           this.TARGET_DESKTOP_BUILD = true;
         }
-      } else if (arg.indexOf('hybrid') > -1) {
+      } else if (argv['hybrid']) {
         this.TARGET_MOBILE_HYBRID = true;
       }
     }
@@ -126,14 +124,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       {
         name: 'angulartics2',
         packageMeta: {
-          main: 'dist/index.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: 'angulartics2/dist/providers',
-        packageMeta: {
-          main: 'index.js',
+          main: 'dist/core.umd.js',
           defaultExtension: 'js'
         }
       },

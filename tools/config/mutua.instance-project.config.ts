@@ -29,6 +29,8 @@ import { IInstanceProjectsComponentActivationConfiguration,
  * */
 export const appTitle: string = 'angular-seed-advanced-mutuatech';
 
+export const appDescription: string = 'Advanced Seed for Angular with MutuaTech Patches for enhanced development productivity & funcionalities';
+
 /** theme configuration */
 export const appTheme    : string = 'bad-seed-theme'; /** One of the directories in 'themes/' NOTE: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too */
 export const primeNGTheme: string = 'trontastic';     /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */

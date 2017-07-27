@@ -1,6 +1,6 @@
 .backImg {
   position: absolute;
-  z-index: 1;
+  z-index: 1; 
   top: 0;
   left: 0;
   max-width: 80% !important;
@@ -51,5 +51,12 @@
     width: 90%;
     height: 90%;
     padding-left: 5%;
+  }
+}
+@media(max-width:767px){
+.backImg {
+  position: relative!important;
+  max-width: 50% !important;
+  padding-left: 5%;
   }
 }

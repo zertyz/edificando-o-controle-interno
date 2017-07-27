@@ -37,7 +37,7 @@
 
 .posicao {
   font-family: 'Roboto-Condensed';
-  font-size: 280%;
+  font-size: 2.1rem;
   line-height: 90%;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -45,21 +45,21 @@
 
 .municipio{
   font-family: 'Roboto-Condensed-Light';
-  font-size: 160%;
   line-height: 90%;
   padding-left: 1%;
-  min-width:9.4rem;
   max-height: 5rem;
+  font-size: 140%!important;
+  min-width: 6.4rem;
 }
 
 .alt-top{
-  height: 5rem;
+  height: 4.3rem;
   padding: 0;
 }
 
 .notaAtual {
   font-family: 'Roboto-Condensed-Light';
-  font-size: 240%;
+  font-size: 1.8rem;
   vertical-align: bottom;
   margin-top: 10%;
   text-align: right;
@@ -99,7 +99,7 @@ strong{
 @media screen and(min-width: 991px) and (max-width:1400px){
   .municipio{
     font-size: 121%!important;
-    min-width: 6.9rem;
+    min-width: 6.4rem;
   }
   .notaAtual{
     font-size: 150%;
@@ -108,28 +108,11 @@ strong{
   .posicao{
     font-size: 160%;
   }
-  .alt-top{
-    height: 4.3rem;
-  }
+  
 }
 @media screen and(min-width: 992px) and (max-width:1180px){
 .container-fluid{
   width: 22.8rem!important;
   }
 }
-@media screen and(min-width: 1399px) and (max-width:1650px){
-  .municipio{
-    font-size: 140%!important;
-    min-width: 6rem;
-  }
-  .notaAtual{
-    font-size: 1.8rem;
 
-  }
-  .posicao{
-    font-size: 2.1rem;
-  }
-  .alt-top{
-  height: 4.3rem;
-  }
-}

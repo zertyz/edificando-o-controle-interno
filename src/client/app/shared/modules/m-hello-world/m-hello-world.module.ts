@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule, Http } from '@angular/http';
 
 // app
-import { Config } from '../../core/index';
+import { Config } from '../../../modules/core/index';
 
 // components
 import { MHelloWorldComponent,

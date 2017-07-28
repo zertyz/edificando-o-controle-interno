@@ -21,12 +21,13 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // Mutua Modules and Components Loading Configuration
 import { MutuaExportedComponents, MutuaExportedRoutes, MutuaExportedModules, MutuaAppComponent } from './app/shared/mutua/mutua.mobile.loading.config';
 
+
 // feature modules
-import { CoreModule } from './app/shared/core/core.module';
-import { AnalyticsModule } from './app/shared/analytics/analytics.module';
-import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
-import { SampleModule } from './app/shared/sample/sample.module';
-import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index";
+import { CoreModule } from './app/modules/core/core.module';
+import { AnalyticsModule } from './app/modules/analytics/analytics.module';
+import { MultilingualModule, translateLoaderFactory } from './app/modules/i18n/multilingual.module';
+import { SampleModule } from './app/modules/sample/sample.module';
+import { ConsoleService, ConsoleTarget, LogLevel } from './app/modules/core/index';
 
 // intermediate component module
 // helps encapsulate custom native modules in with the components
@@ -36,10 +37,6 @@ import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index
 
     ...MutuaExportedModules,
 
-    NativeScriptModule,
-    NativeScriptFormsModule,
-    NativeScriptHttpModule,
-    NativeScriptRouterModule,
     AnalyticsModule,
     CoreModule,
     MultilingualModule.forRoot([{
@@ -47,7 +44,11 @@ import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index
       deps: [Http],
       useFactory: (translateLoaderFactory)
     }]),
-    SampleModule
+    SampleModule,
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule,
+    NativeScriptRouterModule,
   ],
   declarations: [
     ...MutuaExportedComponents,
@@ -57,15 +58,15 @@ import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index
     CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
-    NativeScriptModule,
-    NativeScriptFormsModule,
-    NativeScriptHttpModule,
-    NativeScriptRouterModule,
     MultilingualModule,
     MutuaAppComponent,
     AnalyticsModule,
     CoreModule,
-    SampleModule
+    SampleModule,
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule,
+    NativeScriptRouterModule,
   ]
 })
 export class ComponentsModule { }

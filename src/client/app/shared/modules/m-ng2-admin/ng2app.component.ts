@@ -15,8 +15,8 @@ import '../../../components/operators';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 // app
-import { AnalyticsService }               from '../../analytics/index';
-import { Config, LogService, AppService } from '../../core/index';
+import { AnalyticsService }               from '../../../modules/analytics/index';
+import { Config, LogService, AppService } from '../../../modules/core/index';
 import { GlobalState }                    from './global.state';
 import { BaImageLoaderService,
          BaThemePreloader,

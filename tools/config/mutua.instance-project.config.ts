@@ -29,7 +29,7 @@ import { IInstanceProjectsComponentActivationConfiguration,
  * */
 export const appTitle: string = 'Edificando o Controle Interno';
 
-export const appDescription: string = 'Projeto do Ministério Público do Rio de Janeiro com as métricas atuais da implantação do Controle Interno por cada município do estado, que visa ajudar no combate ao disperdício e à corrupção.';
+export const appDescription: string = 'Advanced Seed for Angular with MutuaTech Patches for enhanced development productivity & funcionalities';
 
 /** theme configuration */
 export const appTheme    : string = 'edificando-o-controle-interno'; /** One of the directories in 'themes/' NOTE: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too */

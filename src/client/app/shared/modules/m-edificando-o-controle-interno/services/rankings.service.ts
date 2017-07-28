@@ -23,8 +23,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 // app
-import { Config } from '../../../core/index';
-import { Analytics, AnalyticsService } from '../../../analytics/index';
+import { Config } from '../../../../modules/core/index';
+import { Analytics, AnalyticsService } from '../../../../modules/analytics/index';
 
 // module
 import { IRankings }       from './IRankings';

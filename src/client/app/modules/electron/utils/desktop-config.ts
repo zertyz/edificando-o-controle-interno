@@ -5,11 +5,12 @@ export class DesktopConfig {
 
   public static GET_SUPPORTED_LANGUAGES(): Array<ILang> {
     return [
-      { code: 'en', title: 'English' },
-      { code: 'es', title: 'Spanish' },
-      { code: 'fr', title: 'French' },
-      { code: 'ru', title: 'Russian' },
-      { code: 'bg', title: 'Bulgarian' }
+      { code: 'en', flag: 'us', title: 'English' },
+      { code: 'es', flag: 'mx', title: 'Spanish' },
+      { code: 'fr', flag: 'fr', title: 'French' },
+      { code: 'ru', flag: 'ru', title: 'Russian' },
+      { code: 'bg', flag: 'bg', title: 'Bulgarian' },
+      { code: 'pt', flag: 'br', title: 'Portuguese' }
     ];
   }
 

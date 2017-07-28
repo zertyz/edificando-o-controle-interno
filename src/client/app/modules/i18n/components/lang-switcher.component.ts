@@ -30,6 +30,7 @@ export class LangSwitcherComponent {
     store.take(1).subscribe((s: any) => {
       // s && s.18n - ensures testing works in all cases (since some tests dont use i18n state)
       this.lang = s && s.i18n ? s.i18n.lang : '';
+      this.supportedLanguages = languages;
       this.language = this.getLanguageFromLangCode(this.lang);
     });
 
@@ -57,7 +58,6 @@ export class LangSwitcherComponent {
   }
 
   ngOnInit() {
-    this.supportedLanguages = this.languages;
     if (Config.IS_MOBILE_NATIVE() && this.viewHelper) {
       // {N} 3.0 requires SegmentedBarItem class for items
       // when binding to SegmentedBar

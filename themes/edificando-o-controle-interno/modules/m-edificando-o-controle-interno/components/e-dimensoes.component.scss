@@ -66,33 +66,52 @@ table{
 }
 
 div.borderedL{
-    padding-left: 0!important;
-  }
+  padding-left: 0!important;
+}
 
-@media(max-width:1439px){
+@media(max-width:767px){
   div.borderedL{
-  border-color:transparent;
+    border-color:transparent;
+    padding-right: 0 !important;
   }
   div.row{
     padding-left: 2rem!important;
+
   }
 }
-@media(min-width:1200px){
+
+@media(min-width:768px){
   div.borderedL{
   border-color:black;
   padding-left: 0 !important;
   }
 }
 
-@media (min-width: 600px) and (max-width: 767px){
-  div.row{
+@media (min-width: 600px) and (max-width: 991px){
+  div.container-fluid{
     padding-top: 50px!important;
-}
-  div.borderedL{
-    border-color:black;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
   }
+
 }
 
+@media (min-width: 991px) and (max-width: 1380px){
+  td.dimensao{
+  font-size: 110%;
+  min-width:4rem!important;
+}
+
+.notaAtual {
+  font-size: 190%;
+
+}
+
+td{
+  min-width:1.2rem;
+}
+
+.notasHeader{
+    font-size: 65%;
+    padding: 1%;
+  }
+}
 

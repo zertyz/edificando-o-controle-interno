@@ -3,12 +3,13 @@
     <p></p>
   </div>
   <div class="row">
-    <div class="col-xlg-3 col-xl-3 col-lg-3 col-md-6 col-xs-12 "style="max-height: 45rem">
+    <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12 "style="max-height: 49rem">
       <table>
         <tr>
           <td><a [routerLink]="['/']">
             <img src="assets/img/Logo Edificando o Controle Interno.png" height="150px">
-          </a></td>
+          </a>
+          </td>
           <td style="padding-left: 10%;"><span class="title">Ranking </span> <br/>
             <span class="dimensao">{{gradacoes.mapaDeDimensoesParaTitulos[dimensao]}}</span>
             <br/><br/>
@@ -26,11 +27,11 @@
       <e-ranking-geral dimensao="{{dimensao}}"> </e-ranking-geral>
     </div>
 
-    <div class="col-xlg-5 col-xl-4 col-lg-4 col-md-6 col-xs-12">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12">
       <e-status-edificacao municipio="{{municipio}}" dimensao="{{dimensao}}"></e-status-edificacao>
     </div>
 
-    <div class="col-xlg-4 col-xl-5 col-lg-5 col-md-8 col-xs-12 ">
+    <div class="col-xl-5 col-lg-5 col-md-8 col-xs-12">
     <e-dimensoes municipio="{{municipio}}" dimensao="{{dimensao}}" ordenacao="titulo"></e-dimensoes>
     </div>
   </div>

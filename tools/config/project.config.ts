@@ -1,5 +1,6 @@
 import { join } from 'path';
 import { SeedAdvancedConfig } from './seed-advanced.config';
+// import { ExtendPackages } from './seed.config.interfaces';
 
 import { appTitle,
          appDescription }   from './mutua.instance-project.config';
@@ -39,7 +40,27 @@ export class ProjectConfig extends SeedAdvancedConfig {
       // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},
     ];
 
+    this.ROLLUP_INCLUDE_DIR = [
+      ...this.ROLLUP_INCLUDE_DIR,
+      //'node_modules/moment/**'
+    ];
+
+    this.ROLLUP_NAMED_EXPORTS = [
+      ...this.ROLLUP_NAMED_EXPORTS,
+      //{'node_modules/immutable/dist/immutable.js': [ 'Map' ]},
+    ];
+
     this.addPackagesBundles(DataManipulation.getActivatedModulesAndComponentsHTMLnpmDependencies());
+
+    this.ROLLUP_INCLUDE_DIR = [
+      ...this.ROLLUP_INCLUDE_DIR,
+      //'node_modules/moment/**'
+    ];
+
+    this.ROLLUP_NAMED_EXPORTS = [
+      ...this.ROLLUP_NAMED_EXPORTS,
+      //{'node_modules/immutable/dist/immutable.js': [ 'Map' ]},
+    ];
 
     // Add packages (e.g. ng2-translate)
     // ng2-translate is already added with the advanced seed - here for example only
@@ -51,7 +72,6 @@ export class ProjectConfig extends SeedAdvancedConfig {
     //
     // this.addPackagesBundles(additionalPackages);
 
-    /* Add proxy middleware */
     this.PROXY_MIDDLEWARE = [
       require('http-proxy-middleware')('/eci', { ws: false, target: 'http://apps.mprj.mp.br', changeOrigin: true })
       //require('http-proxy-middleware')('/eci', { ws: true, target: 'http://localhost:1234' })

@@ -18,7 +18,7 @@ import * as gulp from 'gulp';
 import { relative, join } from 'path';
 import BuildConfig from '../../config';
 
-import { Config } from '../../../src/client/app/shared/core/utils/config';
+import { Config } from '../../../src/client/app/modules/core/utils/config';
 import { DataManipulation } from '../../config/mutua.available.modules.and.components.config';
 import { appTheme }         from '../../config/mutua.instance-project.config';
 
@@ -66,13 +66,13 @@ export = () => {
     gulp.src([`themes/${appTheme}/components/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join('src/client/app'))),
 
-    // theme modules *.html and *.scss files
-    gulp.src([`themes/${appTheme}/modules/**/*`, `!themes/${appTheme}/modules/i18n/**/*`, `!themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}`})
+    // custom modules *.html and *.scss files
+    gulp.src([`themes/${appTheme}/modules/**/*`, `!themes/${appTheme}/modules/i18n/**/*`, `!themes/${appTheme}/modules/shared/**/*`], { base: `themes/${appTheme}`})
         .pipe(gulp.dest(join('src/client/app/shared'))),
 
-    // default 'i18n' and 'sample' modules *.html and *.scss files
-    gulp.src([`themes/${appTheme}/modules/i18n/**/*`, `themes/${appTheme}/modules/sample/**/*`], { base: `themes/${appTheme}/modules`})
-        .pipe(gulp.dest(join('src/client/app/shared'))),
+    // default 'i18n' and 'shared' modules *.html and *.scss files
+    gulp.src([`themes/${appTheme}/modules/i18n/**/*`, `themes/${appTheme}/modules/shared/**/*`], { base: `themes/${appTheme}/modules`})
+        .pipe(gulp.dest(join('src/client/app/modules'))),
 
     // default 'css', 'scss' directories and 'index.html'
     gulp.src([`themes/${appTheme}/css/**/*`, `themes/${appTheme}/scss/**/*`, `themes/${appTheme}/index.html`], { base: `themes/${appTheme}`})

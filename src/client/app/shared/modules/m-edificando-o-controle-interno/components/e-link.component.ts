@@ -21,7 +21,7 @@ import { Component, Injector, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { Config, RouterExtensions, LogService, ILang } from '../../../core/index';
+import { Config, RouterExtensions, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 @Component({

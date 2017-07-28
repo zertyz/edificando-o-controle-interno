@@ -1,4 +1,10 @@
-.backImg {position: absolute; z-index: 1; top: 0; left: 0; max-width: 80% !important;}
+.backImg {
+  position: absolute;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  max-width: 80% !important;
+}
 
 .title {
   font-family: 'Roboto-Condensed-Bold';
@@ -36,6 +42,7 @@
 }
 
 @media(max-width:1199px){
+  max-width: 100%;
   .backImg{
     position: inherit;
     z-index: inherit;
@@ -45,5 +52,11 @@
     height: 90%;
     padding-left: 5%;
   }
-  max-width: 100%;
+}
+@media(max-width:767px){
+.backImg {
+  position: relative!important;
+  max-width: 50% !important;
+  padding-left: 5%;
+  }
 }

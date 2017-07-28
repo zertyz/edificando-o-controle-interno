@@ -8,11 +8,15 @@
   background-color: transparent;
   overflow-y: auto;
 }
+.select{
+  background-color:#bec1c4;
+
+}
 
 .bordas {
   border-bottom: 1px dotted;
   border-bottom-color: #2e3a48;
-  height: 9rem;
+  height: 8.8rem;
   width: 100%;
   max-width: 100%;
 }
@@ -27,7 +31,7 @@
   font-size: 160%;
   line-height: 90%;
   padding-left: 3%;
-  width: 80%;
+  width: 150%;
 }
 .notaAtual {
   font-family: 'Roboto-Condensed-Light';
@@ -54,17 +58,6 @@
 .ultimaNota {
   font-family: 'Roboto-Condensed-Light';
   font-size: 200%;
-}
-a:active .notasHeader{
-  background-color: #2e3a48;
-  text-decoration: none;
-  color: white;
-}
-
-a:active .notaAtual{
-  background-color: #2e3a48;
-  text-decoration: none;
-  color: white;
 }
 
 h4{
@@ -112,15 +105,14 @@ ul li a:hover {
   text-decoration: none;
 }
 
-ul li a:active {
-  background-color: #2e3a48;
-  text-decoration: none;
-  color: white;
-}
 
-@media(max-width:1439px)and (min-width: 767px){
+.div-padding{
+  padding-top: 9%;
+}
+@media(min-width: 767px) and (max-width:1489px) {
   .municipio{
-    font-size: 140%;
+    font-size: 130%;
+    width: 140%;
   }
   .notaAtual {
     font-size: 150%;
@@ -129,14 +121,45 @@ ul li a:active {
     font-size: 70%;
   }
   .posicao {
-    font-size: 200%;
+    font-size: 180%;
   }
   .ultimaNota {
     font-size: 150%;
     padding-right: 25%
   }
+  .bordas {
+    height: 7.3rem;
+  }
+  .div-padding{
+    padding-top: 7%;
+  }
 }
 
-@media(max-width: 767px){
-  
+@media (max-width:767px) {
+  .municipio{
+    font-size:120%;
+    width: 120%;
+  }
+  .notaAtual {
+    font-size: 160%;
+  }
+  .notasHeader {
+    font-size: 70%;
+  }
+  .posicao {
+    font-size: 155%;
+  }
+  .ultimaNota {
+    font-size: 110%;
+    padding-right: 25%
+  }
+  .bordas {
+    height: 7.3rem;
+  }
+  div.row{
+    width: 100%;
+  }
+  .div-padding{
+    padding-top: 4%;
+  }
 }

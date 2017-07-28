@@ -3,7 +3,7 @@ import { CommonModule }  from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
-import { MultilingualModule } from '../../i18n/multilingual.module';
+import { MultilingualModule } from '../../../modules/i18n/multilingual.module';
 
 import {
   BaThemeConfig

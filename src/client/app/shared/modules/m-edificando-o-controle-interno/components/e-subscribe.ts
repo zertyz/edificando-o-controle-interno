@@ -24,12 +24,12 @@ import { Response, Http } from '@angular/http';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { Config, LogService, ILang } from '../../../core/index';
+import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 import {NgbModal, NgbActiveModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
-import { ConsoleService } from '../../../core/index';
+import { ConsoleService } from '../../../../modules/core/index';
 
 // services
 import { RankingsService } from '../services/rankings.service';

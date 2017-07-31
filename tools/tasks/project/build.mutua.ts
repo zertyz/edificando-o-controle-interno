@@ -17,6 +17,7 @@
 import * as gulp from 'gulp';
 import { relative, join } from 'path';
 import BuildConfig from '../../config';
+import { clean } from '../../utils';
 
 import { Config } from '../../../src/client/app/modules/core/utils/config';
 import { DataManipulation } from '../../config/mutua.available.modules.and.components.config';
@@ -42,16 +43,19 @@ export = () => {
     src.push(...DataManipulation.getActivatedModulesAndComponentsHTMLFiles(Config.IS_WEB(), Config.IS_DESKTOP()));
   }
 
+  // TODO: NOTE 2, from 'mutua.instance-project.config.ts', should be implemented here: we must clean all target .html, .scss and .css files
+
   // copies modules and components declared files as well as theme files
   // please note this is not an elegant solution for themes, but it will do for now: we are copying themes/components/**/*.html and *.scss files back to the source tree, where
   // they used to belong to on the angular-seed-* projects (and the same for modules). For this reason, we had to add to .gitignore all *.html and *.scss files under
   // src/client/app/components and src/client/app/shared/modules. This way, we didn't have to mess with the original 'build.html_css.ts', that would elegantly solve the metter.
   return merge(
 
-    // copying of modules and components files
-    //////////////////////////////////////////
+    // copying of modules and components custom files
+    /////////////////////////////////////////////////
 
-    // copy the files modules and components declare they want to copy
+    // copy the custom files (defined in 'mutua.available.modules.and.components.config.ts')
+    // from modules and components activated on 'mutua.instance-project.config.ts'
     gulp.src(src, { base: './' } )
       .pipe(gulp.dest(join(BuildConfig.APP_DEST))),
 

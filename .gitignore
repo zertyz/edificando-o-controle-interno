@@ -77,10 +77,10 @@ src/client/app/shared/modules/**/*.html
 src/client/app/shared/modules/**/*.scss
 src/client/app/shared/modules/i18n/
 src/client/app/shared/modules/sample/
-#src/client/app/modules/i18n/**/*.html
-#src/client/app/modules/i18n/**/*.scss
-src/client/app/modules/shared/components/**/*.html
-src/client/app/modules/shared/components/**/*.scss
+src/client/app/modules/i18n/**/*.html
+src/client/app/modules/i18n/**/*.scss
+#src/client/app/modules/shared/components/**/*.html
+#src/client/app/modules/shared/components/**/*.scss
 src/client/css/**/*.*
 src/client/scss/**/*.*
 src/client/index.html

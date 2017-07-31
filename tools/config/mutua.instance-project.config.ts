@@ -31,8 +31,15 @@ export const appTitle: string = 'Edificando o Controle Interno';
 
 export const appDescription: string = 'Advanced Seed for Angular with MutuaTech Patches for enhanced development productivity & funcionalities';
 
-/** theme configuration */
-export const appTheme    : string = 'edificando-o-controle-interno'; /** One of the directories in 'themes/' NOTE: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too */
+/** theme configuration
+ *  NOTE 1: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too.
+ *  NOTE 2: for now, when switching themes, you'll need to manually remove all .html, .scss and .css files under the following directories:
+ *          - src/client/app/{components,shared,modules}
+ *          - src/client/{css,scss}
+ *          - nativescript/src
+ *          - src/client/index.html */
+
+export const appTheme    : string = 'edificando-o-controle-interno'; /** One of the directories in 'themes/' */
 export const primeNGTheme: string = 'trontastic';                    /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
 
 /** Defines the components this application should bundle and load, for html (web and desktop) and mobile platforms.

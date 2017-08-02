@@ -11,26 +11,16 @@
 /////////////
 
 import { NG2AppComponent } from '../../shared/modules/m-ng2-admin/ng2app.component';
-import { MPEdificandoOControleInternoHomeComponent } from '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.component';
-import { MPFaleComOMPRJComponent } from '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.component';
-import { MPInformacoesGeraisComponent } from '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.component';
-import { MPMetodologiaComponent } from '../../components/pages/mp-metodologia/mp-metodologia.component';
-import { MPOutrosRankingsComponent } from '../../components/pages/mp-outros-rankings/mp-outros-rankings.component';
-import { MPRankingCompletoComponent } from '../../components/pages/mp-ranking-completo/mp-ranking-completo.component';
+import { HomeComponent } from '../../components/pages/home/home.component';
 
-export const MutuaExportedComponents: any[] = [NG2AppComponent,MPEdificandoOControleInternoHomeComponent,MPFaleComOMPRJComponent,MPInformacoesGeraisComponent,MPMetodologiaComponent,MPOutrosRankingsComponent,MPRankingCompletoComponent];
+export const MutuaExportedComponents: any[] = [NG2AppComponent,HomeComponent];
 
 // routes
 /////////
 
-import { MPEdificandoOControleInternoHomeRoutes } from '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.routes';
-import { MPFaleComOMPRJRoutes } from '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.routes';
-import { MPInformacoesGeraisRoutes } from '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.routes';
-import { MPMetodologiaRoutes } from '../../components/pages/mp-metodologia/mp-metodologia.routes';
-import { MPOutrosRankingsRoutes } from '../../components/pages/mp-outros-rankings/mp-outros-rankings.routes';
-import { MPRankingCompletoRoutes } from '../../components/pages/mp-ranking-completo/mp-ranking-completo.routes';
+import { HomeRoutes } from '../../components/pages/home/home.routes';
 
-export const MutuaExportedRoutes: any[] = [...MPEdificandoOControleInternoHomeRoutes,...MPFaleComOMPRJRoutes,...MPInformacoesGeraisRoutes,...MPMetodologiaRoutes,...MPOutrosRankingsRoutes,...MPRankingCompletoRoutes];
+export const MutuaExportedRoutes: any[] = [...HomeRoutes];
 
 // modules
 //////////
@@ -41,9 +31,9 @@ import { MNg2AdminModule } from '../modules/m-ng2-admin/m-ng2-admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // NgbModule
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// MEdificandoOControleInternoModule
-import { MEdificandoOControleInternoModule } from '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module';
+// MPRJModule
+import { MPRJModule } from '../modules/m-mprj/m-mprj.module';
 
-export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MEdificandoOControleInternoModule.forRoot()];
+export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MPRJModule.forRoot()];
 
 export const MutuaAppComponent: any = NG2AppComponent;

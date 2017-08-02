@@ -143,7 +143,7 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
   NG2AppComponent: {
     source: '../../shared/modules/m-ng2-admin/ng2app.component',
   },
-
+/*
   // app component
   AppComponent: {
     source: '../../components/app.component',
@@ -166,43 +166,12 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
     source: '../../components/pages/gv-home/gv-home.component',
     routes: '../../components/pages/gv-home/gv-home.routes',
   },
-
+*/
   // home page
-  MPEdificandoOControleInternoHomeComponent: {
-    source: '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.component',
-    routes: '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.routes',
+  HomeComponent: {
+    source: '../../components/pages/home/home.component',
+    routes: '../../components/pages/home/home.routes',
   },
-
-  // fale-com-o-mprj
-  MPFaleComOMPRJComponent: {
-    source: '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.component',
-    routes: '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.routes',
-  },
-
-  // informacoes-gerais
-  MPInformacoesGeraisComponent: {
-    source: '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.component',
-    routes: '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.routes',
-  },
-
-  // metodologia
-  MPMetodologiaComponent: {
-    source: '../../components/pages/mp-metodologia/mp-metodologia.component',
-    routes: '../../components/pages/mp-metodologia/mp-metodologia.routes',
-  },
-
-  // outros-rankings
-  MPOutrosRankingsComponent: {
-    source: '../../components/pages/mp-outros-rankings/mp-outros-rankings.component',
-    routes: '../../components/pages/mp-outros-rankings/mp-outros-rankings.routes',
-  },
-
-  // ranking-completo
-  MPRankingCompletoComponent: {
-    source: '../../components/pages/mp-ranking-completo/mp-ranking-completo.component',
-    routes: '../../components/pages/mp-ranking-completo/mp-ranking-completo.routes',
-  },
-
 
 };
 
@@ -214,16 +183,16 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     source:  '@angular/platform-browser/animations',
     forRoot: false,
   },
-
+/*
   // m-hello-world module
   MHelloWorldModule: {
                       source: '../modules/m-hello-world/m-hello-world.module',
                       htmlLocalInjections: null,
   },
-
-  // m-edificando-o-controle-interno module
-  MEdificandoOControleInternoModule: {
-    source: '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module',
+*/
+  // m-mprj module
+  MPRJModule: {
+    source: '../modules/m-mprj/m-mprj.module',
     htmlLocalInjections: null,
   },
 

@@ -8,11 +8,11 @@ import { Config, RouterExtensions } from '../../../modules/core/index';
 
 @Component({
   moduleId: module.id,
-  selector: 'home',
-  templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css']
+  selector: 'mp-home',
+  templateUrl: 'mp-home.component.html',
+  styleUrls: ['mp-home.component.css']
 })
-export class HomeComponent {
+export class MPHomeComponent {
 
   constructor(private injector: Injector, public routerext: RouterExtensions) {}
 

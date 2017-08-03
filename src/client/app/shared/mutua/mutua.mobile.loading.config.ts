@@ -10,16 +10,16 @@
 // components
 /////////////
 
-import { HomeComponent } from '../../components/pages/home/home.component';
+import { MPHomeComponent } from '../../components/pages/mp-home/mp-home.component';
 
-export const MutuaExportedComponents: any[] = [HomeComponent];
+export const MutuaExportedComponents: any[] = [MPHomeComponent];
 
 // routes
 /////////
 
-import { HomeRoutes } from '../../components/pages/home/home.routes';
+import { MPHomeRoutes } from '../../components/pages/mp-home/mp-home.routes';
 
-export const MutuaExportedRoutes: any[] = [...HomeRoutes];
+export const MutuaExportedRoutes: any[] = [...MPHomeRoutes];
 
 // modules
 //////////

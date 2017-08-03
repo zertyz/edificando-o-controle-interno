@@ -168,9 +168,9 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
   },
 */
   // home page
-  HomeComponent: {
-    source: '../../components/pages/home/home.component',
-    routes: '../../components/pages/home/home.routes',
+  MPHomeComponent: {
+    source: '../../components/pages/mp-home/mp-home.component',
+    routes: '../../components/pages/mp-home/mp-home.routes',
   },
 
 };

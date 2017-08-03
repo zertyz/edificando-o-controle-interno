@@ -56,7 +56,7 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
 
 
   // componentes do projeto angular-seed-advanced-MPRJ
-  {componentName: 'HomeComponent',    htmlEnabled: true,  mobileEnabled: true},
+  {componentName: 'MPHomeComponent',    htmlEnabled: true,  mobileEnabled: true},
 ];
 
 /** Defines the modules this application should bundle and load, for html (web and desktop) and mobile platforms.

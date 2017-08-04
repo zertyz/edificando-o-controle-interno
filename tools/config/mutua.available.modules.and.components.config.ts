@@ -143,12 +143,12 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
   NG2AppComponent: {
     source: '../../shared/modules/m-ng2-admin/ng2app.component',
   },
-/*
+
   // app component
   AppComponent: {
     source: '../../components/app.component',
   },
-
+/*
   // home page
   HomeComponent: {
     source: '../../components/home/home.component',

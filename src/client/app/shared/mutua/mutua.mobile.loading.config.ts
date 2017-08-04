@@ -10,9 +10,10 @@
 // components
 /////////////
 
+import { AppComponent } from '../../components/app.component';
 import { MPHomeComponent } from '../../components/pages/mp-home/mp-home.component';
 
-export const MutuaExportedComponents: any[] = [MPHomeComponent];
+export const MutuaExportedComponents: any[] = [AppComponent,MPHomeComponent];
 
 // routes
 /////////
@@ -24,9 +25,7 @@ export const MutuaExportedRoutes: any[] = [...MPHomeRoutes];
 // modules
 //////////
 
-// MPRJModule
-import { MPRJModule } from '../modules/m-mprj/m-mprj.module';
 
-export const MutuaExportedModules: any[] = [MPRJModule.forRoot()];
+export const MutuaExportedModules: any[] = [];
 
 export const MutuaAppComponent: any = AppComponent;

@@ -1,8 +1,8 @@
 {
-  "name": "edificando-o-controle-interno",
+  "name": "angular-seed-advanced-mprj",
   "version": "0.1.0",
   "nativescript": {
-    "id": "br.mp.mprj.EdificandoOControleInterno",
+    "id": "br.mp.mprj.AngularSeedAdvancedMPRJ",
     "tns-ios": {
       "version": "3.1.0"
     },

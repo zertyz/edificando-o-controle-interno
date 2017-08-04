@@ -61,7 +61,7 @@ export class SeedAdvancedConfig extends SeedConfig {
     this.BOOTSTRAP_PROD_MODULE = `${this.BOOTSTRAP_DIR}${bootstrap}`;
     this.BOOTSTRAP_FACTORY_PROD_MODULE = `${this.BOOTSTRAP_DIR}${bootstrap}.prod`;
 
-    this.APP_TITLE = 'Edificando o Controle Interno';
+    this.APP_TITLE = 'Angular Seed para o Ministério Público do Rio de Janeiro - MPRJ';
     this.APP_BASE = this.TARGET_DESKTOP ? '' // paths must remain relative for desktop build
       : this.APP_BASE;
 

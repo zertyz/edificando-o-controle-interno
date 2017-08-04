@@ -47,8 +47,8 @@ export const primeNGTheme: string = 'trontastic';   /** One of the directories i
  *  'mutua.available.modules.and.components.config.ts' */
 export const MutuaInstanceProjectComponentsActivationConfiguration: IInstanceProjectsComponentActivationConfiguration[] = [
   {componentName: 'NG2AppComponent', htmlEnabled: true,  mobileEnabled: false},
-/*
   {componentName: 'AppComponent',    htmlEnabled: false, mobileEnabled: true},
+/*
   {componentName: 'AboutComponent',  htmlEnabled: true,  mobileEnabled: true},
   {componentName: 'HomeComponent',   htmlEnabled: true,  mobileEnabled: true},
   {componentName: 'GvHomeComponent', htmlEnabled: true,  mobileEnabled: true},
@@ -70,7 +70,7 @@ export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjec
   {moduleName: 'PRIMENG_MODULES',         htmlEnabled: false, mobileEnabled: false},  // form components. depends on 'BrowserAnimationsModule'
 
   // módulos do projeto Edificando o Controle Interno
-  {moduleName: 'MPRJModule', htmlEnabled: true, mobileEnabled: true},
+  {moduleName: 'MPRJModule', htmlEnabled: true, mobileEnabled: false},
 
 ];
 

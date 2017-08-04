@@ -148,7 +148,7 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
   AppComponent: {
     source: '../../components/app.component',
   },
-
+/*
   // home page
   HomeComponent: {
     source: '../../components/home/home.component',
@@ -166,8 +166,13 @@ const MutuaAvailableComponentsConfiguration: IMutuaAvailableComponentsConfigurat
     source: '../../components/pages/gv-home/gv-home.component',
     routes: '../../components/pages/gv-home/gv-home.routes',
   },
-
+*/
   // home page
+/*  MPHomeComponent: {
+    source: '../../components/pages/mp-home/mp-home.component',
+    routes: '../../components/pages/mp-home/mp-home.routes',
+  },
+*/
   MPEdificandoOControleInternoHomeComponent: {
     source: '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.component',
     routes: '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.routes',
@@ -214,11 +219,17 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     source:  '@angular/platform-browser/animations',
     forRoot: false,
   },
-
+/*
   // m-hello-world module
   MHelloWorldModule: {
                       source: '../modules/m-hello-world/m-hello-world.module',
                       htmlLocalInjections: null,
+  },
+*/
+  // m-mprj module
+  MPRJModule: {
+    source: '../modules/m-mprj/m-mprj.module',
+    htmlLocalInjections: null,
   },
 
   // m-edificando-o-controle-interno module

@@ -41,9 +41,11 @@ import { MNg2AdminModule } from '../modules/m-ng2-admin/m-ng2-admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // NgbModule
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// MPRJModule
+import { MPRJModule } from '../modules/m-mprj/m-mprj.module';
 // MEdificandoOControleInternoModule
 import { MEdificandoOControleInternoModule } from '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module';
 
-export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MEdificandoOControleInternoModule.forRoot()];
+export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MPRJModule.forRoot(),MEdificandoOControleInternoModule.forRoot()];
 
 export const MutuaAppComponent: any = NG2AppComponent;

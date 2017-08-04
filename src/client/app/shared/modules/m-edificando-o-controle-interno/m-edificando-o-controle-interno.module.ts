@@ -11,11 +11,8 @@ import { Config } from '../../../modules/core/index';
 // components
 import { EStatusEdificacaoComponent,
          EDimensoesComponent,
-         ELinkComponent,
-         EMapaInterativoComponent,
          ERankingGeralComponent,
-         ETop5Component,
-         ESubscribeComponent, ESubscribeContentComponent } from './components/index';
+         ETop5Component                } from './components/index';
 
 // services
 import { RankingsService } from './services/rankings.service';
@@ -41,23 +38,16 @@ import { GradacoesDeCores } from './GradacoesDeCores';
   declarations: [
     EStatusEdificacaoComponent,
     EDimensoesComponent,
-    ELinkComponent,
-    EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
-    ESubscribeComponent, ESubscribeContentComponent,
   ],
   exports: [
     EStatusEdificacaoComponent,
     EDimensoesComponent,
-    ELinkComponent,
-    EMapaInterativoComponent,
     ERankingGeralComponent,
     ETop5Component,
-    ESubscribeComponent, ESubscribeContentComponent,
   ],
   entryComponents: [
-    ESubscribeContentComponent,
   ],
   providers: [
     RankingsService,

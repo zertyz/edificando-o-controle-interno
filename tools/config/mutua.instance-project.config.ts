@@ -27,9 +27,9 @@ import { IInstanceProjectsComponentActivationConfiguration,
  * 4) Search for 'Angular Seed' in ./tools/install.js
  * 5) nativescript/platforms/android/src/main/res/values/strings.xml
  * */
-export const appTitle: string = 'Edificando o Controle Interno';
+export const appTitle: string = 'Angular Seed para o Ministério Público do Rio de Janeiro - MPRJ';
 
-export const appDescription: string = 'Advanced Seed for Angular with MutuaTech Patches for enhanced development productivity & funcionalities';
+export const appDescription: string = 'Advanced Seed with Mutuatech Patches for Angular -- Seed para os projetos Frontend do Ministério Público do Rio de Janeiro - MPRJ';
 
 /** theme configuration
  *  NOTE 1: currently, when changing themes and testing on the mobile, you must manually clean things by 'rm -fr nativescript/platforms/android/build' -- maybe you'll need that for iPhone too.
@@ -39,8 +39,8 @@ export const appDescription: string = 'Advanced Seed for Angular with MutuaTech 
  *          - nativescript/src
  *          - src/client/index.html */
 
-export const appTheme    : string = 'edificando-o-controle-interno'; /** One of the directories in 'themes/' */
-export const primeNGTheme: string = 'trontastic';                    /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
+export const appTheme    : string = 'mprj-clean';   /** One of the directories in 'themes/' */
+export const primeNGTheme: string = 'trontastic';   /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
 
 /** Defines the components this application should bundle and load, for html (web and desktop) and mobile platforms.
  *  All 'component' entries must have been previously defined by 'MutuaAvailableComponentsConfiguration', from
@@ -55,13 +55,8 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
  */
 
 
-  // componentes do projeto Edificando o Controle Interno
-  {componentName: 'MPEdificandoOControleInternoHomeComponent', htmlEnabled: true,  mobileEnabled: true},
-  {componentName: 'MPFaleComOMPRJComponent',                   htmlEnabled: true,  mobileEnabled: true},
-  {componentName: 'MPInformacoesGeraisComponent',              htmlEnabled: true,  mobileEnabled: true},
-  {componentName: 'MPMetodologiaComponent',                    htmlEnabled: true,  mobileEnabled: true},
-  {componentName: 'MPOutrosRankingsComponent',                 htmlEnabled: true,  mobileEnabled: true},
-  {componentName: 'MPRankingCompletoComponent',                htmlEnabled: true,  mobileEnabled: true},
+  // componentes do projeto angular-seed-advanced-MPRJ
+  {componentName: 'MPHomeComponent',    htmlEnabled: true,  mobileEnabled: true},
 ];
 
 /** Defines the modules this application should bundle and load, for html (web and desktop) and mobile platforms.
@@ -70,12 +65,12 @@ export const MutuaInstanceProjectComponentsActivationConfiguration: IInstancePro
 export const MutuaInstanceProjectModulesActivationConfiguration: IInstanceProjectsModuleActivationConfiguration[] = [
   {moduleName: 'MNg2AdminModule',         htmlEnabled: true,  mobileEnabled: false},  // Modules from ng2-admin project. Use it along with 'ng2-admin' theme
   {moduleName: 'BrowserAnimationsModule', htmlEnabled: true,  mobileEnabled: false},  // angular4 module. Required by 'PRIMENG_MODULES'
-  {moduleName: 'MHelloWorldModule',       htmlEnabled: false, mobileEnabled: false},  // sample module with some SaaS components
+//  {moduleName: 'MHelloWorldModule',       htmlEnabled: false, mobileEnabled: false},  // sample module with some SaaS components
   {moduleName: 'NgbModule',               htmlEnabled: true,  mobileEnabled: false},  // bootstrap for angular
   {moduleName: 'PRIMENG_MODULES',         htmlEnabled: false, mobileEnabled: false},  // form components. depends on 'BrowserAnimationsModule'
 
   // módulos do projeto Edificando o Controle Interno
-  {moduleName: 'MEdificandoOControleInternoModule', htmlEnabled: true, mobileEnabled: true},
+  {moduleName: 'MPRJModule', htmlEnabled: true, mobileEnabled: false},
 
 ];
 

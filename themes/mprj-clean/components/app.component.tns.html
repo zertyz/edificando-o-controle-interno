@@ -1,0 +1,15 @@
+<ActionBar title="Angular Seed para o Ministério Público do Rio de Janeiro - MPRJ" class="action-bar">
+  <ActionItem nsRouterLink="/" ios.position="right" android.position="popup">
+    <Button [text]="'APP_NAME' | translate" class="action-item"></Button>
+  </ActionItem>
+</ActionBar>
+<StackLayout class="p-0 m-0">
+  <lang-switcher></lang-switcher>
+  <ScrollView>
+    <GridLayout>
+      <page-router-outlet></page-router-outlet>
+      <!--<sd-about></sd-about>
+      <gv-home></gv-home>-->
+    </GridLayout>
+  </ScrollView>
+</StackLayout>

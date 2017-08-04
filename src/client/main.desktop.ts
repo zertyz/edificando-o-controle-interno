@@ -51,7 +51,7 @@ app.on('ready', () => {
     console.log(`Page navigated: ${url}`);
   });
 
-  let appTitle: string = `edificando o Controle Interno`;
+  let appTitle: string = `Angular Seed para o Ministério Público do Rio de Janeiro - MPRJ`;
 
   let langMenu: any = {
     label: 'Language',

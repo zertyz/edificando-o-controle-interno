@@ -11,33 +11,21 @@
 /////////////
 
 import { AppComponent } from '../../components/app.component';
-import { MPEdificandoOControleInternoHomeComponent } from '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.component';
-import { MPFaleComOMPRJComponent } from '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.component';
-import { MPInformacoesGeraisComponent } from '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.component';
-import { MPMetodologiaComponent } from '../../components/pages/mp-metodologia/mp-metodologia.component';
-import { MPOutrosRankingsComponent } from '../../components/pages/mp-outros-rankings/mp-outros-rankings.component';
-import { MPRankingCompletoComponent } from '../../components/pages/mp-ranking-completo/mp-ranking-completo.component';
+import { MPHomeComponent } from '../../components/pages/mp-home/mp-home.component';
 
-export const MutuaExportedComponents: any[] = [AppComponent,MPEdificandoOControleInternoHomeComponent,MPFaleComOMPRJComponent,MPInformacoesGeraisComponent,MPMetodologiaComponent,MPOutrosRankingsComponent,MPRankingCompletoComponent];
+export const MutuaExportedComponents: any[] = [AppComponent,MPHomeComponent];
 
 // routes
 /////////
 
-import { MPEdificandoOControleInternoHomeRoutes } from '../../components/pages/mp-edificando-o-controle-interno-home/mp-edificando-o-controle-interno-home.routes';
-import { MPFaleComOMPRJRoutes } from '../../components/pages/mp-fale-com-o-mprj/mp-fale-com-o-mprj.routes';
-import { MPInformacoesGeraisRoutes } from '../../components/pages/mp-informacoes-gerais/mp-informacoes-gerais.routes';
-import { MPMetodologiaRoutes } from '../../components/pages/mp-metodologia/mp-metodologia.routes';
-import { MPOutrosRankingsRoutes } from '../../components/pages/mp-outros-rankings/mp-outros-rankings.routes';
-import { MPRankingCompletoRoutes } from '../../components/pages/mp-ranking-completo/mp-ranking-completo.routes';
+import { MPHomeRoutes } from '../../components/pages/mp-home/mp-home.routes';
 
-export const MutuaExportedRoutes: any[] = [...MPEdificandoOControleInternoHomeRoutes,...MPFaleComOMPRJRoutes,...MPInformacoesGeraisRoutes,...MPMetodologiaRoutes,...MPOutrosRankingsRoutes,...MPRankingCompletoRoutes];
+export const MutuaExportedRoutes: any[] = [...MPHomeRoutes];
 
 // modules
 //////////
 
-// MEdificandoOControleInternoModule
-import { MEdificandoOControleInternoModule } from '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module';
 
-export const MutuaExportedModules: any[] = [MEdificandoOControleInternoModule.forRoot()];
+export const MutuaExportedModules: any[] = [];
 
 export const MutuaAppComponent: any = AppComponent;

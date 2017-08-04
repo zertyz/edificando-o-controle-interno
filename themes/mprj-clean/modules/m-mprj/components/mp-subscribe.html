@@ -1,0 +1,47 @@
+<div class="modal-header">
+
+  <div class="modal-body">
+    <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-3 hidden-md-down" style="margin-top: 7%">
+            Exemplo de componente para inscrição
+          </div>
+
+          <div class="col-lg-9" style="margin-top: 5%">
+
+            <h3 style="text-align: right">mp-subscribe</h3>
+
+
+
+            <p><br/><br/></p>
+            <p>* Este componente pode ser usado em modo <b>modal</b> e <b>embedded</b></p>
+            <p>* O backend que recebe as requisições, bem como os parâmetros dele, podem ser especificados</p>
+            <p><br/><br/></p>
+            <p>Quer se inscrever??</p>
+            <p><br/><br/></p>
+
+
+            <form>
+              <div class="form-group">
+                <input *ngIf="!subscribed" [(ngModel)]="email" [placeholder]="'digite o seu email'" type="email" name="_email" class="form-control">
+                <span *ngIf="subscribed">{{email}}<br/></span>
+              </div>
+
+              <button *ngIf="!subscribed && !isPosting" type="submit" class="link btn btn-primary-outline" style="float: right" (click)="subscribe()">ok, me avise</button>
+              <span *ngIf="isPosting" style="float: right">Inscrevendo...</span>
+              <span *ngIf="subscribed" style="float: right">Ok! Você será avisado!</span>
+              <div *ngIf="subscriptionErrorMessage != null" class="alert alert-danger">
+                <b>Erro ao realizar pedido de inscrição:</b> {{subscriptionErrorMessage}}
+              </div>
+              <br><br>
+              <button class="link btn btn-primary-outline" style="float: right" (click)="activeModal.close('Close click')">só quero<br/>visitar</button>
+            </form>
+          </div>
+
+      </div>
+    </div>
+    <br>
+  </div>
+
+</div>

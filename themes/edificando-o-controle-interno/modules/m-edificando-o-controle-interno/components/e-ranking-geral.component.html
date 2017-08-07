@@ -1,7 +1,7 @@
 <ul class="barra-de-rolagem">
 
   <li *ngFor="let notas of rankingOrdenado; let posicao = index" [class.select]=" posicao === selectRanking"(click)="onSelect(posicao)">
-    <a [routerLink]="['/mp-ranking-completo', notas.municipio, dimensao]" style="padding:2%;">
+    <a [routerLink]="['/ranking-completo', notas.municipio, dimensao]" style="padding:2%;">
       <div class="container">
         <div class="bordas">
           <div class="row">

@@ -50,10 +50,11 @@ export class GradacoesDeCores {
   private notaMinima: number = 0;
 
   // gradações -- os valores em 'faixas' denotam o limite superior da nota
-  private gradacoes:       number = 6;
+  private gradacoes:       number   = 6;
   private faixas:          number[] = [2,                                   4,                                    6,                                            7.5,                                           9,                                      10];
   private classesCSSCores: string[] = ['notaEmProjeto',                     'notaEmAlicerce',                     'notaConstrucaoIniciada',                     'notaConstrucaoAdiantada',                     'notaEmAcabamento',                     'notaConstruido'];
   private imgsConstrucao:  string[] = ['Predio Estagio 1 - Em Projeto.png', 'Predio Estagio 2 - Em Alicerce.png', 'Predio Estagio 3 - Construção Iniciada.png', 'Predio Estagio 4 - Construção Adiantada.png', 'Predio Estagio 5 - Em Acabamento.png', 'Predio Estagio 6 - Construído.png'];
+  private animaConstrucao: string[] = ['bounceInDown', 'fadeInDown', 'flipInY', 'rotateInDownRight', 'rotateInDownLeft', 'zoomInDown']
 
   constructor() {
     for (let campo of this.listaDeDimensoesETitulos) {
@@ -71,6 +72,15 @@ export class GradacoesDeCores {
     return this.classesCSSCores[this.classesCSSCores.length-1];
   }
 
+  /** Faz a mesma coisa que 'getCSSClass(nota), porém adiciona animações baseadas em delay'.
+   *  Usada pelo componente 'e-dimensoes' para mostrar várias notas. */
+  public getAnimacaoCSSClass(nota: number, delay: number): any {
+    let ngClass = {'animated': true, 'bounceIn': true};
+    ngClass['anim'+delay]      = true;
+    ngClass[this.getCSSClass(nota)] = true;
+    return ngClass;
+  }
+
   /** Retorna a imagem representando o estágio da construção atual */
   public getImagemConstrucao(nota: number): string {
     let img: string = this.imgsConstrucao[this.imgsConstrucao.length-1];
@@ -81,6 +91,21 @@ export class GradacoesDeCores {
       }
     }
     return `./assets/img/${img}`;
+  }
+
+  /** Retorna as classes CSS descrevendo a animação (de animate.css) a usar na apresentação do prédio.
+   *  Pela forma com que o animate.css é construído, a animação só rodará quando o valor desta função mudar */
+  public getAnimacaoImagemConstrucao(nota: number): any {
+    let ngClass = {'animated': true};
+    let animacao: string = this.animaConstrucao[this.animaConstrucao.length-1];
+    for (let i: number = 0; i<this.gradacoes; i++) {
+      if (nota < this.faixas[i]) {
+        animacao = this.animaConstrucao[i];
+        break;
+      }
+    }
+    ngClass[animacao] = true;
+    return ngClass;
   }
 
 }

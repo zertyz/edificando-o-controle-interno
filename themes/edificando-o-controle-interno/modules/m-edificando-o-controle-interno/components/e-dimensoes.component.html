@@ -8,7 +8,7 @@
           <td> <img  class="img-fluid" src="./assets/img/Estabilizado.png"> </td>
           <td class="alinhamento-dir notasHeader w-3"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </td>
           <td class="notasHeader w-3"> NOTA <br/>ATUAL
-            <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[quarteto[0]])"> {{(notas[quarteto[0]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4>
+            <h4 class="notaAtual" [ngClass]="gradacoes.getAnimacaoCSSClass(notas[quarteto[0]], i)"> {{(notas[quarteto[0]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4>
           </td></div>
         </tr>
       </table>
@@ -21,7 +21,7 @@
             <td> <img  class="img-fluid" src="./assets/img/Estabilizado.png" > </td>
             <td class="alinhamento-dir notasHeader w-3"> ÚLTIMA <br/>NOTA <br/><br/><span class="ultimaNota"> - </span> </td>
             <td class="notasHeader w-3"> NOTA <br/>ATUAL
-              <h4 class="notaAtual" [ngClass]="gradacoes.getCSSClass(notas[quarteto[2]])"> {{(notas[quarteto[2]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4>
+              <h4 class="notaAtual" [ngClass]="gradacoes.getAnimacaoCSSClass(notas[quarteto[2]], i+9)"> {{(notas[quarteto[2]] || 0 | number: '1.1-1').replace(".",",").replace("10,0", "10")}} </h4>
             </td></div>
           </tr>
         </table>

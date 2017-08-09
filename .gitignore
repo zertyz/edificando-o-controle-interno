@@ -43,7 +43,7 @@ ts-node
 dist/
 dev/
 docs/
-lib/
+/nativescript/lib
 test/
 tmp/
 
@@ -68,6 +68,9 @@ ChromeDebugger-UserData
 
 # OS X trash files
 .DS_Store
+
+# temporary files
+package-lock.json
 
 # MutuaTech patches: themes: *.html and *.scss files now belongs to the themes/ directory, and they
 # are ignored when placed on the following locations by the (not so elegant) solution implemented in 'build.mutua.ts'

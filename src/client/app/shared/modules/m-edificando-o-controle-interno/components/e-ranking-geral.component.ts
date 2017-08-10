@@ -21,7 +21,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { Config, LogService, ILang } from '../../../core/index';
+import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 // services
@@ -44,7 +44,7 @@ export class ERankingGeralComponent {
 
   // dados do JSON
   public ranking: IRankings[];
-  
+
   // seleção de elemento
   private selectRanking : IRankings;
 
@@ -53,7 +53,7 @@ export class ERankingGeralComponent {
 
   public errorMessage: string = null;
 
-  
+
 
   // constroi a estrutura 'top5Cidades'
   constructor(private rankingsService: RankingsService,

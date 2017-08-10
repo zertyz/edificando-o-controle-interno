@@ -2,6 +2,9 @@
 logs
 *.log
 
+# newer npm versions
+package-lock.json
+
 # Runtime data
 pids
 *.pid
@@ -43,7 +46,7 @@ ts-node
 dist/
 dev/
 docs/
-lib/
+/nativescript/lib/
 test/
 tmp/
 

@@ -188,11 +188,12 @@
     "@angular/platform-browser-dynamic": "~4.1.0",
     "@angular/router": "~4.1.0",
     "@angular/service-worker": "~1.0.0-beta.13",
-
     "bootstrap": "^4.0.0-alpha.6",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.30",
     "font-awesome": "^4.7.0",
     "primeng": "4.1.2",
+    "@angular/material": "2.0.0-beta.8",
+    "@angular/cdk": "2.0.0-beta.8",
 
     "ionicons": "2.0.1",
     "jquery": "3.2.1",

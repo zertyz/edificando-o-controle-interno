@@ -51,7 +51,7 @@ app.on('ready', () => {
     console.log(`Page navigated: ${url}`);
   });
 
-  let appTitle: string = `Angular Seed Advanced`;
+  let appTitle: string = `Angular Seed Advanced MutuaTech`;
 
   let langMenu: any = {
     label: 'Language',

@@ -178,6 +178,14 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     forRoot: false,
   },
 
+/*
+  // google maps API, optional dependency for 'PRIMENG_MODULES'
+  GoogleMapsModule: {
+    source: '@google/maps/lib',
+    forRoot: false,
+  },
+*/
+
   // m-hello-world module
   MHelloWorldModule: {
                       source: '../modules/m-hello-world/m-hello-world.module',
@@ -232,6 +240,7 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
   },
 
   // PrimeNG module (depends on 'BrowserAnimationsModule' module)
+  // please add '<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_GOES_HERE"></script>' to index.html if you want Google Maps support
   PRIMENG_MODULES: {
                     source: 'primeng/primeng',
                     forRoot: false,
@@ -248,12 +257,14 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
                                     'SlideMenuModule',     'SliderModule',       'SpinnerModule',     'SplitButtonModule',   'StepsModule',
                                     'TabMenuModule',       'TabViewModule',      'TerminalModule',    'TieredMenuModule',    'ToggleButtonModule',
                                     'ToolbarModule',       'TooltipModule',      'TreeModule',        'TreeTableModule',     'TriStateCheckboxModule'],
-                    npmDependencies:   [{name: 'primeng', path: 'node_modules/primeng'}],
+                    npmDependencies:   [{name: 'primeng',  path: 'node_modules/primeng'},
+                                        {name: 'chart.js', path: 'node_modules/chart.js/dist/Chart.bundle.js'}],
                     webFiles:          ['./node_modules/font-awesome/fonts/**/*'],
                     desktopFiles:      [sameAsWeb],
                     htmlNPMInjections: [{src: 'primeng/resources/primeng.css',                      inject: true},
                                         {src: `primeng/resources/themes/${primeNGTheme}/theme.css`, inject: true},
-                                        {src: 'font-awesome/css/font-awesome.css',                  inject: true}],
+                                        {src: 'font-awesome/css/font-awesome.css',                  inject: true},
+                                        {src: 'chart.js/dist/Chart.bundle.js',                      inject: true}],
                     packageDefinition: ['font-awesome', '^4.7.0',
                                         'primeng',      '^4.0.0-rc.2'],
   },

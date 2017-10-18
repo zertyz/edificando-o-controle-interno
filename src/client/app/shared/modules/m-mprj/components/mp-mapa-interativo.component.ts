@@ -8,18 +8,23 @@
  * com a legenda de valores recebidos.
  *
  * Recebe as seguintes propriedades:
- *  estado:              a sigla, em letras minúsculas, do estado da federação a apresentar
+ *  estado:              O texto a apresentar no dropdown ao se selecionar todo o estado.
+ *                       (antigamente era: a sigla, em letras minúsculas, do estado da federação a apresentar).
  *  cores:               objeto com entradas do tipo: {'nome_do_municipio': '#FFAACC'}
  *  preSelecionados:     lista de municípios que devem vir selecionados ao carregar o componente
  *  selectedRedirection: caso definido, desliga a múltipla seleção de municípios e, ao clicar, redireciona a navegação para o link interno especificado.
- *                       o placeholder #{nomeMunicipio} será substituído pelo nome do município selecionado.
+ *                       o placeholder #{nomeElemento} será substituído pelo nome do município selecionado.
+ *  dropdown:            boolean. Indica se deve ser apresentado um dropdown com as opções disponíveis, para complementar os cliques no mapa.
+ *  debug:               boolean. Quando true, apresenta informações adicionais sobre os eventos.
  *
- *  <mp-mapa-interativo>
- *           estado              = "rj"
+ *  <mp-mapa-interativo
+ *           estado              = "Rio de Janeiro - RJ"
  *           [cores]             = "{'Rio de Janeiro': '#fafafa'}"
  *           [preSelecionados]   = "['Angra dos Reis', 'Rio de Janeiro']"
- *           selectedRedirection = "myPath/#{nomeMunicipio}/kaka"
- *  </mp-mapa-interativo>
+ *           selectedRedirection = "myPath/#{nomeElemento}/kaka"
+ *           dropdown            = "true"
+ *           debug               = "true"
+ *  >
  *
  * @see RelatedClass(es)
  * @author luiz
@@ -30,7 +35,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { Config, RouterExtensions, LogService, ILang } from '../../../../modules/core/index';
+import { Config, RouterExtensions, LogService, ConsoleService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 @Component({
@@ -46,35 +51,50 @@ export class MPMapaInterativoComponent {
   @Input() preSelecionados:     string[] = [];
   @Input() selectedRedirection: string   = '';
   @Input() debug:               boolean  = false;
+  @Input() dropdown:            boolean  = false;
 
-  //municipios    = [];
-  selecionados = [];
-  municipioHover   = '';
-  municipioClicado = '';
+  elementosSelecionados: number[] = [];
+  elementoHover:         string   = '';
+  elementoClicado:       string   = '';
+  elementosOrdenados:    any[];
 
   //constructor(private geoService: WorldMapService) {}
   //municipios = this.geoService.getCountries();
 
-  constructor(public routerext: RouterExtensions) {}
+  constructor(public routerext: RouterExtensions,
+              private console: ConsoleService) {}
 
   ngOnChanges() {
+
+    // sorted array for the select
+    this.elementosOrdenados = this.municipios.sort((e1, e2) => e1.nome > e2.nome ? 1 : -1);
+    this.elementosOrdenados.unshift({
+      nome: this.estado,
+      path: ''
+    });
+    this.debug && console.log('Calculados os "elementosOrdenados"');
+
     // marca os municípios pré-selecionados
-    this.selecionados = [];
-    for (let nomeMunicipioPreSelecionado of this.preSelecionados) {
+    this.elementosSelecionados = [];
+    for (let nomeElementoPreSelecionado of this.preSelecionados) {
       for (let i: number = 0; i<this.municipios.length; i++) {
-        if (this.municipios[i].nome == nomeMunicipioPreSelecionado) {
-          this.selecionados.push(i);
+        if (this.municipios[i].nome == nomeElementoPreSelecionado) {
+          this.elementosSelecionados.push(i);
         }
       }
+    }
+    // single-select ?
+    if (this.elementosSelecionados.length == 1) {
+      this.elementoClicado = this.municipios[this.elementosSelecionados[0]].nome;
     }
   }
 
   clicked(i: number) {
-    this.municipioClicado = this.municipios[i].nome;
+    this.elementoClicado = this.municipios[i].nome;
 
     // single-select behaviour
     if (this.selectedRedirection != '') {
-      this.routerext.navigate([this.selectedRedirection.replace('#{nomeMunicipio}', this.municipioClicado)]);
+      this.singleSelect(this.elementoClicado);
       return ;
     }
 
@@ -82,20 +102,25 @@ export class MPMapaInterativoComponent {
     if (this.estaSelecionado(i)) {
       this.removeMunicipio(i);
     } else {
-      this.selecionados.push(i);
+      this.elementosSelecionados.push(i);
     }
   }
   removeMunicipio(i: number) {
     if (this.estaSelecionado(i)) {
-      this.selecionados.splice(this.selecionados.indexOf(i), 1);
+      this.elementosSelecionados.splice(this.elementosSelecionados.indexOf(i), 1);
       //this.setSelectCountry();
     }
   }
   estaSelecionado(i: number) {
-    return this.selecionados.indexOf(i) >= 0;
+    return this.elementosSelecionados.indexOf(i) >= 0;
   }
 
-  municipios = [
+  singleSelect(nomeElemento: string):void {
+    this.elementoClicado = nomeElemento;
+    this.routerext.navigate([this.selectedRedirection.replace('#{nomeElemento}', nomeElemento)]);
+  }
+
+  municipios: any[] = [
     {
       nome: 'Itatiaia',
       path: 'M19971 119812l105 -349 838 -664 210 -803 943 -559 139 -698 594 -280 1921 -733 419 419 629 -244 488 593 1188 -629 174 559 70 280 -384 209 -140 350 35 942 -419 559 -628 0 -699 -524 -1641 1083 -803 1013 698 384 210 384 419 0 7019 2759 -35 419 489 628 -35 420 -524 209 -70 279 210 140 -1641 349 -245 175 -35 768 -978 70 -384 594 -978 174 -1222 943 -454 524 -35 559 699 209 105 315 -1153 803 -245 1012 -628 455 -629 -140 -803 -734 -594 -1257 -69 -1257 558 -629 210 -1082 -2899 -7997z'},
@@ -151,7 +176,7 @@ export class MPMapaInterativoComponent {
       nome: 'Nilópolis',
       path: 'M97638 152289l1397 -1117 733 -1153 803 -524 908 -628 1362 1536 -1606 489 -699 943 -2130 1048 -768 -594z'},
     {
-      nome: 'Nova Iguaçú',
+      nome: 'Nova Iguaçu',
       path: 'M84298 153965l174 -838 1118 -314 1955 -1536 105 -420 -419 -663 140 -314 -489 -1677 733 -35 70 -524 -314 -209 663 -629 279 -1047 699 -70 594 489 1536 -105 629 384 1606 -454 175 -908 -664 -209 280 -1292 -245 -175 454 -489 -70 -314 978 -629 454 -35 35 -244 -1327 -140 -524 -594 -943 -139 384 -559 455 -105 593 -1012 -838 34 -454 -314 70 -279 -384 -734 -908 -314 314 -559 -35 -1012 -1711 803 -1781 1536 -35 -1676 175 -279 2060 -1572 349 -803 1188 -314 139 209 245 -209 70 -664 523 419 350 -139 139 -384 419 314 210 -280 733 70 524 384 245 -104 1187 -1467 384 -70 838 -628 314 279 210 -419 1152 -803 1851 803 978 -245 -35 489 -314 245 1117 768 280 1118 -1013 1117 -733 384 -35 524 279 733 629 -35 1187 804 35 628 -629 769 -593 1012 384 559 1327 559 594 524 34 419 -314 558 -768 -349 -140 210 -175 -140 -1326 314 -245 419 -803 280 -489 -35 140 908 -384 419 768 1955 524 315 -105 698 -733 210 -315 -105 -768 594 -279 454 139 209 -1362 1118 -1641 209 -140 978 -4749 1013 -1362 524 -349 1536 -245 -175 -1781 350 -1292 -454 -1187 593 -768 0z'},
     {
       nome: 'Queimados',

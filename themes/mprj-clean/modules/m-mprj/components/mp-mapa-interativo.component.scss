@@ -2,6 +2,15 @@
   fill:#FFFFFF;
 }
 
+.oceano:hover {
+  fill: #0680b2;
+  fill-opacity: 0.2;
+}
+
+.middle-text{
+  margin-bottom: 1em;
+}
+
 .contornoEstado {
   fill: #1e2a37;
   stroke:#1e2a37;
@@ -20,4 +29,48 @@
 
 .municipios:hover {
   color: #0680b2;
+}
+
+.selectdiv {
+  position: relative;
+  line-height: 3em;
+}
+
+//Opções do Select
+option{
+  width: 1em!important;
+  font-size: 0.683em;
+}
+
+//Icone do Select
+.selectdiv:after {
+  content: "\f0c9";
+  font: normal normal normal 17px/1 FontAwesome;
+  right: 11px;
+  top: 6px;
+  height: 34px;
+  padding-top: 3px;
+  position: absolute;
+  pointer-events: none;
+}
+
+//Resolve problema no IE9
+select::-ms-expand {
+  display: none;
+}
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  font-size: 1.683em;
+  font-family: Roboto-Condensed;
+  font-weight: bold;
+  line-height: 1.4em;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  height: 2.3rem;
 }

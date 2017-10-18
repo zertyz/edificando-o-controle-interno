@@ -13,7 +13,7 @@
  *  cores:               objeto com entradas do tipo: {'nome_do_municipio': '#FFAACC'}
  *  preSelecionados:     lista de municípios que devem vir selecionados ao carregar o componente
  *  selectedRedirection: caso definido, desliga a múltipla seleção de municípios e, ao clicar, redireciona a navegação para o link interno especificado.
- *                       o placeholder #{nomeMunicipio} será substituído pelo nome do município selecionado.
+ *                       o placeholder #{nomeElemento} será substituído pelo nome do município selecionado.
  *  dropdown:            boolean. Indica se deve ser apresentado um dropdown com as opções disponíveis, para complementar os cliques no mapa.
  *  debug:               boolean. Quando true, apresenta informações adicionais sobre os eventos.
  *
@@ -21,7 +21,7 @@
  *           estado              = "Rio de Janeiro - RJ"
  *           [cores]             = "{'Rio de Janeiro': '#fafafa'}"
  *           [preSelecionados]   = "['Angra dos Reis', 'Rio de Janeiro']"
- *           selectedRedirection = "myPath/#{nomeMunicipio}/kaka"
+ *           selectedRedirection = "myPath/#{nomeElemento}/kaka"
  *           dropdown            = "true"
  *           debug               = "true"
  *  >
@@ -76,9 +76,9 @@ export class MPMapaInterativoComponent {
 
     // marca os municípios pré-selecionados
     this.elementosSelecionados = [];
-    for (let nomeMunicipioPreSelecionado of this.preSelecionados) {
+    for (let nomeElementoPreSelecionado of this.preSelecionados) {
       for (let i: number = 0; i<this.municipios.length; i++) {
-        if (this.municipios[i].nome == nomeMunicipioPreSelecionado) {
+        if (this.municipios[i].nome == nomeElementoPreSelecionado) {
           this.elementosSelecionados.push(i);
         }
       }
@@ -117,7 +117,7 @@ export class MPMapaInterativoComponent {
 
   singleSelect(nomeElemento: string):void {
     this.elementoClicado = nomeElemento;
-    this.routerext.navigate([this.selectedRedirection.replace('#{nomeMunicipio}', nomeElemento)]);
+    this.routerext.navigate([this.selectedRedirection.replace('#{nomeElemento}', nomeElemento)]);
   }
 
   municipios: any[] = [

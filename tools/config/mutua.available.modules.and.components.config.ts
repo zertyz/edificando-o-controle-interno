@@ -219,6 +219,14 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     source:  '@angular/platform-browser/animations',
     forRoot: false,
   },
+
+/*
+  // google maps API, optional dependency for 'PRIMENG_MODULES'
+  GoogleMapsModule: {
+    source: '@google/maps/lib',
+    forRoot: false,
+  },
+*/
 /*
   // m-hello-world module
   MHelloWorldModule: {
@@ -286,6 +294,7 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
   },
 
   // PrimeNG module (depends on 'BrowserAnimationsModule' module)
+  // please add '<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_GOES_HERE"></script>' to index.html if you want Google Maps support
   PRIMENG_MODULES: {
                     source: 'primeng/primeng',
                     forRoot: false,

@@ -204,6 +204,12 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     htmlLocalInjections: null,
   },
 
+  // m-ranking module
+  MRankingModule: {
+    source: '../modules/m-ranking/m-ranking.module',
+    htmlLocalInjections: null,
+  },
+
   // m-ng2-admin module
   MNg2AdminModule: {
                     source: '../modules/m-ng2-admin/m-ng2-admin.module',

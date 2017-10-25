@@ -28,7 +28,7 @@ import { Analytics, AnalyticsService } from '../../../../modules/analytics/index
 
 // module
 import { IRankings }       from './IRankings';
-import { IDadosMunicipio } from './IDadosMunicipio';
+import { IDadosConcorrente } from './IDadosConcorrente';
 
 @Injectable()
 export class RankingsService {
@@ -45,10 +45,10 @@ export class RankingsService {
                     }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor ao resgatar rankings'));
   }
 
-  public fetchDadosMunicipios(): Observable < IDadosMunicipio[] > {
+  public fetchDadosMunicipios(): Observable < IDadosConcorrente[] > {
     return this.http.get(this.dadosMunicipiosJsonFileURL)
       .map((response: Response) => {
-        return < IDadosMunicipio[] > response.json();
+        return < IDadosConcorrente[] > response.json();
       }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor ao resgatar dados dos municípios'));
   }
 

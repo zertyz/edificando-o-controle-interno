@@ -550,7 +550,7 @@ export class DataManipulation {
 
   }
 
-};
+}
 
 // write the files (test)
 //DataManipulation.generateSourceFiles('src');

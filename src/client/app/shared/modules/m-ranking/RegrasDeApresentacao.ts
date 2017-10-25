@@ -51,7 +51,7 @@ export class RegrasDeApresentacao {
   private faixas:          number[] = [2,                                   4,                                    6,                                            7.5,                                           9,                                      10];
   private classesCSSCores: string[] = ['notaEmProjeto',                     'notaEmAlicerce',                     'notaConstrucaoIniciada',                     'notaConstrucaoAdiantada',                     'notaEmAcabamento',                     'notaConstruido'];
   private imgsConstrucao:  string[] = ['Predio Estagio 1 - Em Projeto.png', 'Predio Estagio 2 - Em Alicerce.png', 'Predio Estagio 3 - Construção Iniciada.png', 'Predio Estagio 4 - Construção Adiantada.png', 'Predio Estagio 5 - Em Acabamento.png', 'Predio Estagio 6 - Construído.png'];
-  private animaConstrucao: string[] = ['bounceInDown', 'fadeInDown', 'flipInY', 'rotateInDownRight', 'rotateInDownLeft', 'zoomInDown']
+  private animaConstrucao: string[] = ['bounceInDown', 'fadeInDown', 'flipInY', 'rotateInDownRight', 'rotateInDownLeft', 'zoomInDown'];
 
   constructor() {
     for (let campo of this.listaDeDimensoesETitulos) {

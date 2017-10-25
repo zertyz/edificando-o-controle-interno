@@ -59,6 +59,6 @@ export class RTop5Component {
         this.top5Notas[i]        = rankings[i][this.dimensao];
       }
     }, error => this.errorMessage = < any > error);
-  };
+  }
 
 }

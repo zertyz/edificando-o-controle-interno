@@ -33,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // MPRJModule
 import { MPRJModule } from '../modules/m-mprj/m-mprj.module';
+// MRankingModule
+import { MRankingModule } from '../modules/m-ranking/m-ranking.module';
 
-export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MPRJModule.forRoot()];
+export const MutuaExportedModules: any[] = [MNg2AdminModule.forRoot(),BrowserAnimationsModule,NgbModule.forRoot(),MPRJModule.forRoot(),MRankingModule.forRoot()];
 
 export const MutuaAppComponent: any = NG2AppComponent;

@@ -44,11 +44,15 @@ interface SubscriptionHttpPostObject {
 
 @Component({
   moduleId: module.id,
-  selector: 'mp-subscribe-content',
+  selector:    'mp-subscribe-content',
   templateUrl: 'mp-subscribe.html',
-  styleUrls: ['mp-subscribe.css']
+  styleUrls:  ['mp-subscribe.css']
 })
 export class MPSubscribeContentComponent {
+
+  public isPosting:  boolean = false;
+  public subscribed: boolean = false;
+  public email:      string  = '';
 
   /* http */
   private httpPostOptions: any             = {headers: {'Content-Type': 'application/json'}};
@@ -56,14 +60,10 @@ export class MPSubscribeContentComponent {
   private httpPostUrl: string              = '/eci/api/Aux/mailHLP';  // depende do proxy configurado em 'project.config.ts'
   private subscriptionErrorMessage: string = null;
 
-  public isPosting:  boolean = false;
-  public subscribed: boolean = false;
-  public email:      string  = "";
-
   constructor(public activeModal: NgbActiveModal,
               private console: ConsoleService,
               private http: Http) {
-    console.log("MPSubscribeContentComponent construído");
+    console.log('MPSubscribeContentComponent construído');
   }
 
   subscribe() {
@@ -72,7 +72,7 @@ export class MPSubscribeContentComponent {
       nome:     'Visitante WEB anônimo',
       email:    this.email,
       mensagem: 'Favor inscrever-me na lista de esperar para a divulgação dos dados definitivos do projeto ECI, v 1.',
-    }
+    };
     let p: Observable<SubscriptionHttpPostObject> = this.http.post(this.httpPostUrl, postData, this.httpPostOptions)
       .map(this.handleHttpPost)
       .catch(this.handleHttpError);
@@ -100,7 +100,7 @@ export class MPSubscribeContentComponent {
 
 @Component({
   selector: 'mp-subscribe',
-  template: `<e-subscribe-content></e-subscribe-content>`,
+  template: `<mp-subscribe-content></mp-subscribe-content>`,
   styles: [':host {display: none}'],
 })
 export class MPSubscribeComponent implements OnInit {
@@ -109,7 +109,7 @@ export class MPSubscribeComponent implements OnInit {
 
   constructor(private modalService: NgbModal,
               private console: ConsoleService) {
-    console.log("MPSubscribeComponent construído");
+    console.log('MPSubscribeComponent construído');
   }
 
   ngOnInit() {

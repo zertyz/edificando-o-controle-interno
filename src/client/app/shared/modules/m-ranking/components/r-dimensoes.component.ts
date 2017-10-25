@@ -107,7 +107,7 @@ export class RDimensoesComponent implements OnInit {
   }
 
   ngOnInit() {
-  };
+  }
 
   // a cada mudança nos parâmetros, 'notas' é repopulado
   ngOnChanges() {

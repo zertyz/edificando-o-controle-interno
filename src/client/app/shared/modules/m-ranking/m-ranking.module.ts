@@ -23,10 +23,10 @@ import { HttpModule, Http } from '@angular/http';
 import { Config } from '../../../modules/core/index';
 
 // components
-import { EStatusEdificacaoComponent,
-         EDimensoesComponent,
-         ERankingGeralComponent,
-         ETop5Component                } from './components/index';
+import { RStatusFaseComponent,
+         RDimensoesComponent,
+         RClassificacaoComponent,
+         RTop5Component                } from './components/index';
 
 // services
 import { RankingsService } from './services/rankings.service';
@@ -50,16 +50,16 @@ import { RegrasDeApresentacao } from './RegrasDeApresentacao';
     NgbDropdownModule,
   ],
   declarations: [
-    EStatusEdificacaoComponent,
-    EDimensoesComponent,
-    ERankingGeralComponent,
-    ETop5Component,
+    RStatusFaseComponent,
+    RDimensoesComponent,
+    RClassificacaoComponent,
+    RTop5Component,
   ],
   exports: [
-    EStatusEdificacaoComponent,
-    EDimensoesComponent,
-    ERankingGeralComponent,
-    ETop5Component,
+    RStatusFaseComponent,
+    RDimensoesComponent,
+    RClassificacaoComponent,
+    RTop5Component,
   ],
   entryComponents: [
   ],

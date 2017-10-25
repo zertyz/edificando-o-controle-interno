@@ -49,15 +49,13 @@ export class RClassificacaoComponent {
   // dados do JSON
   public ranking: IRankings[];
 
-  // seleção de elemento
-  private selectedElement : number;
-
   // a lista de concorrentes, ordenada pela dimensão escolhida
   public rankingOrdenado: IRankings[];
 
   public errorMessage: string = null;
 
-
+  // seleção de elemento
+  private selectedElement : number;
 
   // constroi a estrutura 'top5Cidades'
   constructor(private rankingsService: RankingsService,
@@ -66,7 +64,7 @@ export class RClassificacaoComponent {
       this.ranking = response;
       this.ngOnChanges();
     }, error => this.errorMessage = < any > error);
-  };
+  }
 
   ngOnChanges() {
     if (this.ranking) {
@@ -74,9 +72,8 @@ export class RClassificacaoComponent {
     }
   }
 
-  onSelect(element: number):void{
+  onSelect(element: number): void {
     this.selectedElement = element;
   }
-
 
 }

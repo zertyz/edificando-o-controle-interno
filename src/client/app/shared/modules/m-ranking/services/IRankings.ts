@@ -30,4 +30,4 @@ export interface IRankings {
   resolutividade: number;
   iniciativaLouvavel: number;
   evolucao: number;
-};
+}

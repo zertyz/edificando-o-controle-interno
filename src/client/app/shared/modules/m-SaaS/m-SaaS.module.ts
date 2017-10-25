@@ -9,8 +9,7 @@ import { HttpModule, Http } from '@angular/http';
 import { Config } from '../../../modules/core/index';
 
 // components
-import { MHelloWorldComponent,
-         MWelcomeComponent,
+import { MWelcomeComponent,
          MPortfolioComponent,
          MMarkupComponent,
          MAboutComponent,
@@ -25,7 +24,6 @@ import { MHelloWorldComponent,
     HttpModule,
   ],
   declarations: [
-    MHelloWorldComponent,
     MWelcomeComponent,
     MPortfolioComponent,
     MMarkupComponent,
@@ -33,7 +31,6 @@ import { MHelloWorldComponent,
     MFormComponent,
   ],
   exports: [
-    MHelloWorldComponent,
     MWelcomeComponent,
     MPortfolioComponent,
     MMarkupComponent,
@@ -46,18 +43,18 @@ import { MHelloWorldComponent,
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class MHelloWorldModule {
+export class MSaaSModule {
 
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: MHelloWorldModule,
+      ngModule: MSaaSModule,
       providers: []
     };
   }
 
-  constructor(@Optional() @SkipSelf() parentModule: MHelloWorldModule) {
+  constructor(@Optional() @SkipSelf() parentModule: MSaaSModule) {
     if (parentModule) {
-      throw new Error('MHelloWorldModule already loaded; Import in root module only.');
+      throw new Error('MSaaSModule already loaded; Import in root module only.');
     }
   }
 }

@@ -10,11 +10,6 @@ import { Config } from '../../../modules/core/index';
 
 // components
 import { MHelloWorldComponent,
-         MWelcomeComponent,
-         MPortfolioComponent,
-         MMarkupComponent,
-         MAboutComponent,
-         MFormComponent,
                                   } from './components/index';
 
 @NgModule({
@@ -26,19 +21,9 @@ import { MHelloWorldComponent,
   ],
   declarations: [
     MHelloWorldComponent,
-    MWelcomeComponent,
-    MPortfolioComponent,
-    MMarkupComponent,
-    MAboutComponent,
-    MFormComponent,
   ],
   exports: [
     MHelloWorldComponent,
-    MWelcomeComponent,
-    MPortfolioComponent,
-    MMarkupComponent,
-    MAboutComponent,
-    MFormComponent,
   ],
   providers: [],
   schemas: [

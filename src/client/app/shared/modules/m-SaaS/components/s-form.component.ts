@@ -71,8 +71,8 @@ export class SFormComponent {
 
 }
 
-enum EBackendMethods { GET, POST };
-enum EFieldTypes     { Text, RadioBox, CheckBox, ComboBox, ListBox, TextArea, Date, DateTime };
+enum EBackendMethods { GET, POST }
+enum EFieldTypes     { Text, RadioBox, CheckBox, ComboBox, ListBox, TextArea, Date, DateTime }
 
 interface FormField {
   label: string;

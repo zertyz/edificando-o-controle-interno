@@ -82,7 +82,7 @@ export class SMarkupComponent {
       let style: any = this.styles[stylesIndex];
       if (!isNaN(parseInt(stylesIndex))) {
 
-        console.log(`## styles: found one more item #${stylesIndex} and length is now ${arrayLength}`)
+        console.log(`## styles: found one more item #${stylesIndex} and length is now ${arrayLength}`);
         arrayLength++;
         // type number indices correctly, in case it is not
         // if n is string, styles[tonumber(n)]=styles[n] and styles[n]=null

@@ -39,7 +39,7 @@ export const appDescription: string = 'Advanced Seed for Angular with MutuaTech 
  *          - nativescript/src
  *          - src/client/index.html */
 
-export const appTheme    : string = 'bad-seed-theme'; /** One of the directories in 'themes/' */
+export const appTheme    : string = 'freelancer';     /** One of the directories in 'themes/' */
 export const primeNGTheme: string = 'trontastic';     /** One of the directories in 'node-modules/primeng/resources/themes/' -- If you have 'PRIMENG_MODULES' enabled */
 
 /** Defines the components this application should bundle and load, for html (web and desktop) and mobile platforms.

@@ -3,6 +3,7 @@ import { ILang } from '../../core/index';
 
 export class DesktopConfig {
 
+  // also check src/client/app/modules/core/utils/config.ts
   public static GET_SUPPORTED_LANGUAGES(): Array<ILang> {
     return [
       { code: 'en', flag: 'us', title: 'English' },

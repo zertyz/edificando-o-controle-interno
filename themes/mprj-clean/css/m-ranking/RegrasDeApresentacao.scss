@@ -1,5 +1,12 @@
 // este arquivo foi construído de acordo com a especificação de src/client/app/shared/modules/m-ranking/RegrasDeApresentacao.ts
 
+// classe para permitir texto fluindo ao redor da imagem, na página principal -- TODO: mover para o SCSS da página principal
+.img-envolvida {
+  float: left;
+  shape-outside: url("../assets/img/m-ranking/Predio Estagio 4 - Construção Adiantada.png");
+  shape-margin: 5%;
+  shape-image-threshold: 0.5;
+}
 
 // cores das notas
 .notaEmProjeto {

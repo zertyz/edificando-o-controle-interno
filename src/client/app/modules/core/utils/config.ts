@@ -1,3 +1,5 @@
+import { ILang } from '../interfaces/ilang';
+
 // Feel free to extend this interface
 // depending on your app specific config.
 export interface EnvConfig {
@@ -61,14 +63,15 @@ export class Config {
   }
 
   // supported languages
-  public static GET_SUPPORTED_LANGUAGES() {
+  // also check src/client/app/modules/electron/utils/desktop-config.ts
+  public static GET_SUPPORTED_LANGUAGES(): Array<ILang> {
     return [
-      { code: 'en', title: 'English' },
-      { code: 'es', title: 'Spanish' },
-      { code: 'fr', title: 'French' },
-      { code: 'ru', title: 'Russian' },
-      { code: 'bg', title: 'Bulgarian' },
-      { code: 'pt', title: 'Portuguese' }
+      { code: 'en', flag: 'us', title: 'English' },
+      { code: 'es', flag: 'mx', title: 'Spanish' },
+      { code: 'fr', flag: 'fr', title: 'French' },
+      { code: 'ru', flag: 'ru', title: 'Russian' },
+      { code: 'bg', flag: 'bg', title: 'Bulgarian' },
+      { code: 'pt', flag: 'br', title: 'Portuguese' }
     ];
   }
 

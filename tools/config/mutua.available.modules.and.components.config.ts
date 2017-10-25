@@ -210,6 +210,12 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     htmlLocalInjections: null,
   },
 
+  // m-SaaS module
+  MSaaSModule: {
+                source: '../modules/m-SaaS/m-SaaS.module',
+                htmlLocalInjections: null,
+  },
+
   // m-ng2-admin module
   MNg2AdminModule: {
                     source: '../modules/m-ng2-admin/m-ng2-admin.module',

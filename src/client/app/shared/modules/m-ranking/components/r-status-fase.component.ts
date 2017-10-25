@@ -31,8 +31,8 @@ import { Input } from '@angular/core';
 
 // services
 import { RankingsService }   from '../services/rankings.service';
-import { IRankings }         from '../services/IRankings';
-import { IDadosConcorrente } from '../services/IDadosConcorrente';
+import { IRankings }         from '../model/IRankings';
+import { IDadosConcorrente } from '../model/IDadosConcorrente';
 
 // module libs
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';

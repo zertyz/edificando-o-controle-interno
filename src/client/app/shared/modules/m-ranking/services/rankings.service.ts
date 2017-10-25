@@ -27,8 +27,8 @@ import { Config } from '../../../../modules/core/index';
 import { Analytics, AnalyticsService } from '../../../../modules/analytics/index';
 
 // module
-import { IRankings }       from './IRankings';
-import { IDadosConcorrente } from './IDadosConcorrente';
+import { IRankings }       from '../model/IRankings';
+import { IDadosConcorrente } from '../model/IDadosConcorrente';
 
 @Injectable()
 export class RankingsService {

@@ -30,7 +30,7 @@ import { RStatusFaseComponent,
 
 // services
 import { RankingsService } from './services/rankings.service';
-import { IRankings }       from './services/IRankings';
+import { IRankings }       from './model/IRankings';
 
 // bootstrap?
 import { NgbModule,

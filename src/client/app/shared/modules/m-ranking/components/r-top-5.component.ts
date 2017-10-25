@@ -26,7 +26,7 @@ import { Input } from '@angular/core';
 
 // services
 import { RankingsService } from '../services/rankings.service';
-import { IRankings }       from '../services/IRankings';
+import { IRankings }       from '../model/IRankings';
 
 // module libs
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';

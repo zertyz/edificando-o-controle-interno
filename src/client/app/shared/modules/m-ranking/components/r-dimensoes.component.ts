@@ -31,7 +31,7 @@ import { Input } from '@angular/core';
 
 // services
 import { RankingsService } from '../services/rankings.service';
-import { IRankings }       from '../services/IRankings';
+import { IRankings }       from '../model/IRankings';
 
 // module libs
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
@@ -53,7 +53,7 @@ export class RDimensoesComponent implements OnInit {
   public rankings: IRankings[];
   // a lista de municípios, ordenada pela dimensão escolhida
   public notas: IRankings;
-  // transformações do nome do campo para o título, na ordem em que devem aparecer.
+  // transformações do nome do campo para o título, na ordem em que devem aparecer. TODO: substituir por config.CAMPOS_E_TITULOS_DAS_DIMENSOES
   public mapaDeCamposParaTitulos: string[][] = [
     //['geral',                    'Classificação Geral'],
     ['auditoria',                'Auditoria' ,

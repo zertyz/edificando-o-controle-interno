@@ -30,13 +30,13 @@ import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 // config
-import { CAMPOS_E_TITULOS_DAS_DIMENSOES,
+import { ICustomRankingData,
+         CAMPOS_E_TITULOS_DAS_DIMENSOES,
          NOME_DO_CAMPO_DO_CONCORRENTE,
          DEFAULT_CUSTOM_RANKING_DATA     } from '../RankingConfig';
 
 // services
 import { RankingsService } from '../services/rankings.service';
-import { IRankings }       from '../model/IRankings';
 
 // business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
@@ -56,9 +56,9 @@ export class RDimensoesComponent implements OnInit {
   @Input() ordenacao:   string;
 
   // dados do JSON
-  public rankings: IRankings[];
+  public rankings: ICustomRankingData[];
   // a lista de candidatos, ordenada pela dimensão escolhida
-  public notas: IRankings;
+  public notas: ICustomRankingData;
   // transformações do nome do campo para o título, na ordem em que devem aparecer. TODO: substituir por config.CAMPOS_E_TITULOS_DAS_DIMENSOES
   public linhasDeTitulosECamposDeDimensoes: IDimension[][] = [];
 
@@ -106,7 +106,7 @@ export class RDimensoesComponent implements OnInit {
   // a cada mudança nos parâmetros, 'notas' é repopulado
   ngOnChanges() {
     if (this.rankings != null) {
-      let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
+      let rankingOrdenadoPorDimensao: ICustomRankingData[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
 
       // encontra 'notas' baseado no índice (se 'candidato' for um número) ou no nome do candidato (se for uma string)
       if (isNaN(Number(this.concorrente))) {

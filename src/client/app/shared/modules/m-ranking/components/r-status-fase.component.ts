@@ -29,13 +29,13 @@ import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 // config
-import { NOME_DO_CAMPO_DO_CONCORRENTE,
+import { ICustomRankingData,
+         IConcurrentAdditionalData,
+         NOME_DO_CAMPO_DO_CONCORRENTE,
          DIMENSAO_PRINCIPAL            } from '../RankingConfig';
 
 // services
 import { RankingsService }   from '../services/rankings.service';
-import { IRankings }         from '../model/IRankings';
-import { IDadosConcorrente } from '../model/IDadosConcorrente';
 
 // business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
@@ -55,15 +55,15 @@ export class RStatusFaseComponent {
   public   nomeConcorrente:   string = '§§ CONCORRENTE §§';
 
   // dados dos JSONs
-  public rankings:             IRankings[];
-  public dadosDosConcorrentes: IDadosConcorrente[];
+  public rankings:             ICustomRankingData[];
+  public dadosDosConcorrentes: IConcurrentAdditionalData[];
 
   // dados consolidados
   public notaPrincipal:      number = -1;
   public posicaoPrincipal:   number = -1;
   public nota:               number = -1;
   public posicao:            number = -1;
-  public dadosDoConcorrente: IDadosConcorrente;
+  public dadosDoConcorrente: IConcurrentAdditionalData;
 
   // mensagens de erro
   public rankingsErrorMessage:             string = null;
@@ -101,10 +101,10 @@ export class RStatusFaseComponent {
     this.posicao = -1;
     this.nota    = -1;
     if (this.rankings != null) {
-      let rankingOrdenadoPorDimensao:      IRankings[] = this.rankings.sort( (e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2[DIMENSAO_PRINCIPAL]) - (e1[this.dimensao]*e1[this.dimensao]+e1[DIMENSAO_PRINCIPAL]));
+      let rankingOrdenadoPorDimensao: ICustomRankingData[] = this.rankings.sort( (e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2[DIMENSAO_PRINCIPAL]) - (e1[this.dimensao]*e1[this.dimensao]+e1[DIMENSAO_PRINCIPAL]));
 
       // encontra 'elemento' baseado no índice (se 'concorrente' for um número) ou no nome do concorrente (se for uma string)
-      let elemento: IRankings;
+      let elemento: ICustomRankingData;
       if (isNaN(Number(this.concorrente))) {
         elemento = rankingOrdenadoPorDimensao.find(e => e[NOME_DO_CAMPO_DO_CONCORRENTE] == this.concorrente);
       } else {
@@ -119,7 +119,7 @@ export class RStatusFaseComponent {
         }
 
         // computa dados da dimensão principal
-        let rankingOrdenadoPorDimensaoPrincipal: IRankings[] = this.rankings.sort( (e1, e2) => e2[DIMENSAO_PRINCIPAL] - e1[DIMENSAO_PRINCIPAL]);
+        let rankingOrdenadoPorDimensaoPrincipal: ICustomRankingData[] = this.rankings.sort( (e1, e2) => e2[DIMENSAO_PRINCIPAL] - e1[DIMENSAO_PRINCIPAL]);
         this.posicaoPrincipal = 1 + rankingOrdenadoPorDimensaoPrincipal.indexOf(elemento);
         this.notaPrincipal    = elemento[DIMENSAO_PRINCIPAL];
 

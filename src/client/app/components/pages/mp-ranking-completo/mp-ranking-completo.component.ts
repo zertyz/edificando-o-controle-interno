@@ -9,14 +9,14 @@ import { Config, RouterExtensions} from '../../../modules/core/index';
 import { ActivatedRoute } from '@angular/router';
 
 // module libs
-import { GradacoesDeCores } from '../../../shared/modules/m-edificando-o-controle-interno/GradacoesDeCores';
+import { RegrasDeApresentacao } from '../../../shared/modules/m-ranking/RegrasDeApresentacao';
 
 
 @Component({
   moduleId: module.id,
-  selector: 'mp-ranking-completo',
+  selector:    'mp-ranking-completo',
   templateUrl: 'mp-ranking-completo.component.html',
-  styleUrls: ['mp-ranking-completo.component.css']
+  styleUrls:  ['mp-ranking-completo.component.css']
 })
 export class MPRankingCompletoComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class MPRankingCompletoComponent implements OnInit {
   constructor(private injector: Injector,
               private route:ActivatedRoute,
               public routerext: RouterExtensions,
-              private gradacoes: GradacoesDeCores) {
+              private regras: RegrasDeApresentacao) {
   }
 
   ngOnInit() {

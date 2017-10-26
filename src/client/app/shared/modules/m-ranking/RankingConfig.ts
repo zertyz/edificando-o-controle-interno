@@ -64,10 +64,10 @@ export interface IConcurrentAdditionalData {
 export const DEFAULT_CONCURRENT_ADDITIONAL_DATA: IConcurrentAdditionalData = {municipio: 'desconhecido', populacaoProjetada2016: 'desconhecida', orcamento2015: 'desconhecido'};
 
 /** Fonte dos dados do Ranking, no formato JSON, em modelo natural, tal como especificado por 'ICustomRankingData' */
-export const CUSTOM_RANKING_DATA_URL:       string = 'assets/dados/m-ranking/ranking_exemplo.json';
+export const CUSTOM_RANKING_DATA_URL:       string = 'assets/dados/m-ranking/ranking_20170614.json';
 
 /** Fonte de dados adicionais sobre cada um dos candidatos do ranking, em formato JSON, tal como especificado por 'ICandidateAdditionalData' */
-export const CONCURRENT_ADDITIONAL_DATA_URL: string = 'assets/dados/m-ranking/dados_adicionais_exemplo.json';
+export const CONCURRENT_ADDITIONAL_DATA_URL: string = 'assets/dados/m-ranking/orcamento_e_populacao_20170614.json';
 
 /** Define o nome do campo da estrutura 'ICustomRankingData' que especifica o "Concorrente". Exemplo: municipio */
 export const NOME_DO_CAMPO_DO_CONCORRENTE: string = 'municipio';
@@ -78,6 +78,7 @@ export const DIMENSAO_PRINCIPAL: string           = 'geral';
 /** Relação de "nomes de campos" para "títulos" das demais dimensões (excluindo a principal), bem como a ordem de
  *  exibição delas. Em 'nomeCampo' devem ser usados os mesmos nomes de campos definidos na estrutura 'ICustomRankingData'  */
 export const CAMPOS_E_TITULOS_DAS_DIMENSOES: IDimension[] = [
+  {nomeCampo: 'geral',                    tituloDimensao: 'Geral'},
   {nomeCampo: 'auditoria',                tituloDimensao: 'Auditoria'},
   {nomeCampo: 'ouvidoria',                tituloDimensao: 'Ouvidoria'},
   {nomeCampo: 'correicao',                tituloDimensao: 'Correição'},

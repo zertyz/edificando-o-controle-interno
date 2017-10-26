@@ -17,6 +17,9 @@
 // angular
 import { Injectable } from '@angular/core';
 
+// config
+import { CAMPOS_E_TITULOS_DAS_DIMENSOES } from './RankingConfig';
+
 @Injectable()
 export class RegrasDeApresentacao {
 
@@ -54,8 +57,8 @@ export class RegrasDeApresentacao {
   private animaConstrucao: string[] = ['bounceInDown', 'fadeInDown', 'flipInY', 'rotateInDownRight', 'rotateInDownLeft', 'zoomInDown'];
 
   constructor() {
-    for (let campo of this.listaDeDimensoesETitulos) {
-      this.mapaDeDimensoesParaTitulos[campo[0]] = campo[1];
+    for (let dimensao of CAMPOS_E_TITULOS_DAS_DIMENSOES) {
+      this.mapaDeDimensoesParaTitulos[dimensao.nomeCampo] = dimensao.tituloDimensao;
     }
   }
 

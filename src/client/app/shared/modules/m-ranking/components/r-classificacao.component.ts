@@ -25,11 +25,11 @@ import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
 // config
-import { DIMENSAO_PRINCIPAL } from '../RankingConfig';
+import { ICustomRankingData,
+         DIMENSAO_PRINCIPAL  } from '../RankingConfig';
 
 // services
 import { RankingsService } from '../services/rankings.service';
-import { IRankings }       from '../model/IRankings';
 
 // business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
@@ -47,10 +47,10 @@ export class RClassificacaoComponent {
   @Input() dimensao:          string;
 
   // dados do JSON
-  public ranking: IRankings[];
+  public ranking: ICustomRankingData[];
 
   // a lista de concorrentes, ordenada pela dimensão escolhida
-  public rankingOrdenado: IRankings[];
+  public rankingOrdenado: ICustomRankingData[];
 
   public errorMessage: string = null;
 

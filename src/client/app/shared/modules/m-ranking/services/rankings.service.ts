@@ -26,30 +26,32 @@ import { Observable } from 'rxjs/Observable';
 import { Config } from '../../../../modules/core/index';
 import { Analytics, AnalyticsService } from '../../../../modules/analytics/index';
 
-// module
-import { IRankings }       from '../model/IRankings';
-import { IDadosConcorrente } from '../model/IDadosConcorrente';
+// config
+import { ICustomRankingData,
+         IConcurrentAdditionalData,
+         CUSTOM_RANKING_DATA_URL,
+         CONCURRENT_ADDITIONAL_DATA_URL, } from '../RankingConfig';
 
 @Injectable()
 export class RankingsService {
 
-  private rankingsJsonFileURL: string = `${Config.IS_MOBILE_NATIVE() ? '/' : ''}assets/dados/rankings_20170614.json`;
-  private dadosMunicipiosJsonFileURL: string = `${Config.IS_MOBILE_NATIVE() ? '/' : ''}assets/dados/dados_municipios_20170614.json`;
+  private rankingsJsonFileURL: string        = `${Config.IS_MOBILE_NATIVE() ? '/' : './'}${CUSTOM_RANKING_DATA_URL}`;
+  private dadosAdicionaisJsonFileURL: string = `${Config.IS_MOBILE_NATIVE() ? '/' : './'}${CONCURRENT_ADDITIONAL_DATA_URL}`;
 
   constructor(private http: Http) {}
 
-  public fetchRankings(): Observable < IRankings[] > {
+  public fetchRankings(): Observable < ICustomRankingData[] > {
     return this.http.get(this.rankingsJsonFileURL)
                     .map((response: Response) => {
-                      return < IRankings[] > response.json();
+                      return < ICustomRankingData[] > response.json();
                     }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor ao resgatar rankings'));
   }
 
-  public fetchDadosDosConcorrentes(): Observable < IDadosConcorrente[] > {
-    return this.http.get(this.dadosMunicipiosJsonFileURL)
+  public fetchDadosAdicionaisDosConcorrentes(): Observable < IConcurrentAdditionalData[] > {
+    return this.http.get(this.dadosAdicionaisJsonFileURL)
       .map((response: Response) => {
-        return < IDadosConcorrente[] > response.json();
-      }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor ao resgatar dados dos municípios'));
+        return < IConcurrentAdditionalData[] > response.json();
+      }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor ao resgatar dados adicionais dos concorrentes'));
   }
 
 }

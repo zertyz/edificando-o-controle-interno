@@ -82,7 +82,7 @@ export class RStatusFaseComponent {
     }, error => this.rankingsErrorMessage = < any > error);
 
     // dados dos concorrentes
-    rankingsService.fetchDadosDosConcorrentes().subscribe(response => {
+    rankingsService.fetchDadosAdicionaisDosConcorrentes().subscribe(response => {
       this.dadosDosConcorrentes = response;
       this.ngOnChanges();
     }, error => this.dadosDosConcorrentesErrorMessage = < any > error);

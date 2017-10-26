@@ -11,11 +11,14 @@
  * @author luiz
  */
 
-import { IDimension } from 'model/IDimension';
+import { IDimension } from './model/IDimension';
 
 /** Esta interface modela os dados brutos (em modelo natural), tipicamente oriundos de uma planilha ou backend, que
  *  serão carregados através do JSON especificado por 'CUSTOM_RANKING_DATA_URL'.
- *  Os dados serão convertidos para as estruturas de dados definidas neste módulo nas funções seguintes. */
+ *  Os dados são customizáveis mas exigem que se configure os nomes dos campos para:
+ *   - concorrente:                                                                   ver 'NOME_DO_CAMPO_DO_CONCORRENTE';
+ *   - dimensão principal:                                                            ver 'DIMENSAO_PRINCIPAL';
+ *   - titulos das dimensões, nomes dos campos das dimensões e ordem de apresentação: ver 'CAMPOS_E_TITULOS_DAS_DIMENSOES'. */
 export interface ICustomRankingData {
   // concorrente
   municipio:                string;
@@ -38,6 +41,8 @@ export interface ICustomRankingData {
   resolutividade:           number;
   iniciativaLouvavel:       number;
   evolucao:                 number;
+  // obs: formato do registro desta estrutura no arquivo JSON:
+  // {municipio:, geral:, auditoria:, ouvidoria:, correicao:, controladoria:, estrutura:, planejamento:, transparencia:, auxilioAoControleExterno:, orcamento:, regulamentacao:, autonomia:, concretizacao:, abrangencia:, resolutividade:, iniciativaLouvavel:}
 }
 
 /** Valores default para um registro de 'ICustomRankingData' não encontrado ou não preenchido, de modo a permitir exibição sem quebrar a interface */
@@ -45,8 +50,24 @@ export const DEFAULT_CUSTOM_RANKING_DATA: ICustomRankingData = {municipio: 'desc
                                                                 estrutura: -1, evolucao: -1, planejamento: -1, transparencia: -1, auxilioAoControleExterno: -1, orcamento: -1,
                                                                 regulamentacao: -1, autonomia: -1, concretizacao: -1, abrangencia: -1, resolutividade: -1, iniciativaLouvavel: -1};
 
-/** Fonte dos dados no formato JSON, em modelo natural, tal como especificado por 'ICustomRankingData' */
-export const CUSTOM_RANKING_DATA_URL: string = 'assets/dados/m-ranking/ranking_exemplo.json';
+/** Esta interface modela os dados adicionais do concorrente que não estão no Ranking e que são úteis para o componente 'r-status-fase' ao exibir detalhes da fase atual do progresso de cada concorrente.
+ *  São carregados por um arquivo JSON retornado pela chamada a 'CONCURRENT_ADDITIONAL_DATA_URL'. */
+export interface IConcurrentAdditionalData {
+  municipio:                      string;
+  populacaoProjetada2016:         string;
+  orcamento2015:                  string;
+  // obs: formato do registro desta estrutura no arquivo JSON:
+  // {municipio:, populacaoProjetada2016:, orcamento2015:}
+}
+
+/** Valores default para um registro de 'IConcurrentAdditionalData' não encontrado ou não preenchido, de modo a permitir exibição sem quebrar a interface */
+export const DEFAULT_CONCURRENT_ADDITIONAL_DATA: IConcurrentAdditionalData = {municipio: 'desconhecido', populacaoProjetada2016: 'desconhecida', orcamento2015: 'desconhecido'};
+
+/** Fonte dos dados do Ranking, no formato JSON, em modelo natural, tal como especificado por 'ICustomRankingData' */
+export const CUSTOM_RANKING_DATA_URL:       string = 'assets/dados/m-ranking/ranking_exemplo.json';
+
+/** Fonte de dados adicionais sobre cada um dos candidatos do ranking, em formato JSON, tal como especificado por 'ICandidateAdditionalData' */
+export const CONCURRENT_ADDITIONAL_DATA_URL: string = 'assets/dados/m-ranking/dados_adicionais_exemplo.json';
 
 /** Define o nome do campo da estrutura 'ICustomRankingData' que especifica o "Concorrente". Exemplo: municipio */
 export const NOME_DO_CAMPO_DO_CONCORRENTE: string = 'municipio';

@@ -1,14 +1,9 @@
 //@import "/node_modules/normalize.css/normalize.css";
 @import "../scss/theme";
 @import "../scss/initial";
-@import "GradacoesDeCores";
 
-.img-envolvida {
-  float: left;
-  shape-outside: url("../assets/img/Predio Estagio 4 - Construção Adiantada.png");
-  shape-margin: 5%;
-  shape-image-threshold: 0.5;
-}
+// import dependente da habilitação do módulo "m-ranking" em "tools/config/mutua.instance-project.config.ts"
+@import "m-ranking/RegrasDeApresentacao";
 
 div.borderedR{
   border-right: 0.05rem solid #000000;

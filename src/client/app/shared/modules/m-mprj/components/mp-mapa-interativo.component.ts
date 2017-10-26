@@ -39,10 +39,10 @@ import { Config, RouterExtensions, LogService, ConsoleService, ILang } from '../
 import { Input } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
-  selector: 'mp-mapa-interativo',
+  moduleId:     module.id,
+  selector:    'mp-mapa-interativo',
   templateUrl: 'mp-mapa-interativo.component.html',
-  styleUrls: ['mp-mapa-interativo.component.css']
+  styleUrls:  ['mp-mapa-interativo.component.css']
 })
 export class MPMapaInterativoComponent {
 

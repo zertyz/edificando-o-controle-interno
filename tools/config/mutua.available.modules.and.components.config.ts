@@ -240,10 +240,16 @@ const MutuaAvailableModulesConfiguration: IMutuaAvailableModulesConfiguration = 
     htmlLocalInjections: null,
   },
 
-  // m-edificando-o-controle-interno module
-  MEdificandoOControleInternoModule: {
-    source: '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module',
+  // m-ranking module
+  MRankingModule: {
+    source: '../modules/m-ranking/m-ranking.module',
     htmlLocalInjections: null,
+  },
+
+  // m-SaaS module
+  MSaaSModule: {
+                source: '../modules/m-SaaS/m-SaaS.module',
+                htmlLocalInjections: null,
   },
 
   // m-ng2-admin module
@@ -580,7 +586,7 @@ export class DataManipulation {
 
   }
 
-};
+}
 
 // write the files (test)
 //DataManipulation.generateSourceFiles('src');

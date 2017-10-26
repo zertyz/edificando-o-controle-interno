@@ -5,7 +5,7 @@
     <template ngFor let-pEntry [ngForOf]="markup.p || []" let-pStyleIndex="index">
       <div [ngClass]="styles[rootStyleIndex % styles.length]">
         <p *ngIf = "isString(pEntry)">{{pEntry}}</p>
-        <m-markup *ngIf = "isObject(pEntry)" [markupData] = "[pEntry]"></m-markup>
+        <s-markup *ngIf = "isObject(pEntry)" [markupData] = "[pEntry]"></s-markup>
       </div>
     </template>
 
@@ -13,7 +13,7 @@
       <div [ngClass]="styles[rootStyleIndex % styles.length]">
         <a [href] = "markup.url" [ngClass]="(styles.a || [''])[0]">
           <template [ngIf]="isString(markup.link)">{{markup.link}}</template>
-          <m-markup *ngIf = "isObject(markup.link)" [markupData] = "[markup.link]"></m-markup>
+          <s-markup *ngIf = "isObject(markup.link)" [markupData] = "[markup.link]"></s-markup>
         </a>
       </div>
     </template>
@@ -21,7 +21,7 @@
     <ul *ngIf="markup.list">
       <li *ngFor = "let listEntry of markup.list">
         <span *ngIf = "isString(listEntry)">{{listEntry}}</span>
-        <m-markup *ngIf = "isObject(listEntry)" [markupData] = "[listEntry]"></m-markup>
+        <s-markup *ngIf = "isObject(listEntry)" [markupData] = "[listEntry]"></s-markup>
       </li>
     </ul>
 

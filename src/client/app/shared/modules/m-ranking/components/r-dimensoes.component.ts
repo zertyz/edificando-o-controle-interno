@@ -29,11 +29,15 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
+// config
+import { CAMPOS_E_TITULOS_DAS_DIMENSOES,
+         NOME_DO_CAMPO_DO_CONCORRENTE    } from '../RankingConfig';
+
 // services
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../model/IRankings';
 
-// module libs
+// business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
 
 @Component({
@@ -51,7 +55,7 @@ export class RDimensoesComponent implements OnInit {
 
   // dados do JSON
   public rankings: IRankings[];
-  // a lista de municípios, ordenada pela dimensão escolhida
+  // a lista de candidatos, ordenada pela dimensão escolhida
   public notas: IRankings;
   // transformações do nome do campo para o título, na ordem em que devem aparecer. TODO: substituir por config.CAMPOS_E_TITULOS_DAS_DIMENSOES
   public mapaDeCamposParaTitulos: string[][] = [
@@ -114,9 +118,9 @@ export class RDimensoesComponent implements OnInit {
     if (this.rankings != null) {
       let rankingOrdenadoPorDimensao: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensao] - e1[this.dimensao]);
 
-      // encontra 'notas' baseado no índice (se 'município' for um número) ou no nome do município (se for uma string)
+      // encontra 'notas' baseado no índice (se 'candidato' for um número) ou no nome do candidato (se for uma string)
       if (isNaN(Number(this.concorrente))) {
-        this.notas = rankingOrdenadoPorDimensao.find(e => e.municipio == this.concorrente);
+        this.notas = rankingOrdenadoPorDimensao.find(e => e[NOME_DO_CAMPO_DO_CONCORRENTE] == this.concorrente);
       } else {
         this.notas = rankingOrdenadoPorDimensao[Number(this.concorrente)];
       }

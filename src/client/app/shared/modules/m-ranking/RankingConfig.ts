@@ -45,6 +45,7 @@ export const CUSTOM_RANKING_DATA_URL: string = 'assets/dados/m-ranking/ranking_e
 export const NOME_DO_CAMPO_DO_CONCORRENTE: string = 'municipio';
 
 /** Define o nome do campo da estrutura 'ICustomRankingData' que especifica a dimensão principal. Exemplo: geral */
+export const DIMENSAO_PRINCIPAL: string           = 'geral';
 
 /** Relação de "nomes de campos" para "títulos" das demais dimensões (excluindo a principal), bem como a ordem de
  *  exibição delas. Em 'nomeCampo' devem ser usados os mesmos nomes de campos definidos na estrutura 'ICustomRankingData'  */

@@ -24,11 +24,15 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
+// config
+import { NOME_DO_CAMPO_DO_CONCORRENTE,
+         DIMENSAO_PRINCIPAL               } from '../RankingConfig';
+
 // services
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../model/IRankings';
 
-// module libs
+// business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
 
 
@@ -53,9 +57,9 @@ export class RTop5Component {
   constructor(private rankingsService: RankingsService,
               private gradacoes: RegrasDeApresentacao) {
     rankingsService.fetchRankings().subscribe(response => {
-      let rankings: IRankings[] = response.sort( (e1, e2) => e2.geral - e1.geral);
+      let rankings: IRankings[] = response.sort( (e1, e2) => e2[DIMENSAO_PRINCIPAL] - e1[DIMENSAO_PRINCIPAL]);
       for (let i = 0; i < this.top5Concorrentes.length; i++) {
-        this.top5Concorrentes[i] = rankings[i].municipio;
+        this.top5Concorrentes[i] = rankings[i][NOME_DO_CAMPO_DO_CONCORRENTE];
         this.top5Notas[i]        = rankings[i][this.dimensao];
       }
     }, error => this.errorMessage = < any > error);

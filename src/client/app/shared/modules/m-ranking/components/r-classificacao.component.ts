@@ -7,11 +7,10 @@
  *
  * Recebe as seguintes propriedades:
  *  dimensao:         o nome de uma variável numérica da interface 'IRankings', usada para a ordenação dos concorrentes
- *  dimensaoPrincipal: idem, porém contém o nome do campo da dimensão que representa a classificação principal, para desempate.
  *
  * Exemplo de uso:
  *
- *  <r-classificacao dimensao="transparencia" dimensaoPrincipal="geral"></r-classificacao>
+ *  <r-classificacao dimensao="transparencia"></r-classificacao>
  *
  * @see IRankings
  * @author luiz
@@ -25,11 +24,14 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
+// config
+import { DIMENSAO_PRINCIPAL } from '../RankingConfig';
+
 // services
 import { RankingsService } from '../services/rankings.service';
 import { IRankings }       from '../model/IRankings';
 
-// module libs
+// business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
 
 
@@ -43,8 +45,6 @@ export class RClassificacaoComponent {
 
   // parâmetros do componente
   @Input() dimensao:          string;
-  @Input() dimensaoPrincipal: string;
-
 
   // dados do JSON
   public ranking: IRankings[];
@@ -68,7 +68,7 @@ export class RClassificacaoComponent {
 
   ngOnChanges() {
     if (this.ranking) {
-      this.rankingOrdenado = this.ranking.sort((e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2[this.dimensaoPrincipal]) - (e1[this.dimensao]*e1[this.dimensao]+e1[this.dimensaoPrincipal]));
+      this.rankingOrdenado = this.ranking.sort((e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2[DIMENSAO_PRINCIPAL]) - (e1[this.dimensao]*e1[this.dimensao]+e1[DIMENSAO_PRINCIPAL]));
     }
   }
 

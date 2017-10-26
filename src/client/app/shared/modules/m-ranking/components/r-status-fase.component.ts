@@ -3,7 +3,7 @@
  * =======================
  * (created by luiz on Qui, jun, 01, 2017)
  *
- * Apresenta visualmente a nota do município, através de uma imagem ilustrativa (prédio)
+ * Apresenta visualmente a nota do concorrente e sua fase, através de uma imagem ilustrativa (prédio)
  * com a descrição do status atual e os pontos a melhorar
  *
  * Recebe as seguintes propriedades:
@@ -11,11 +11,10 @@
  *                     Pode ser uma string com o nome exato do concorrente (município), ou um número, com sua posição no array do ranking,
  *                     começando em zero;
  *  dimensao:          o nome do campo de 'IRankings' que contém as notas que devem ser usadas para classificação.
- *  dimensaoPrincipal: idem, porém contém o nome do campo da dimensão que representa a classificação principal, para comparação.
  *
  * Exemplo de uso:
  *
- *  <r-status-fase concorrente="Rio de Janeiro" dimensao="transparencia" dimensaoPrincipal="geral"></e-status-fase>
+ *  <r-status-fase concorrente="Rio de Janeiro" dimensao="transparencia"></e-status-fase>
  *
  * @see RelatedClass(es)
  * @author luiz
@@ -29,12 +28,16 @@ import { Observable } from 'rxjs/Observable';
 import { Config, LogService, ILang } from '../../../../modules/core/index';
 import { Input } from '@angular/core';
 
+// config
+import { NOME_DO_CAMPO_DO_CONCORRENTE,
+         DIMENSAO_PRINCIPAL            } from '../RankingConfig';
+
 // services
 import { RankingsService }   from '../services/rankings.service';
 import { IRankings }         from '../model/IRankings';
 import { IDadosConcorrente } from '../model/IDadosConcorrente';
 
-// module libs
+// business logic
 import { RegrasDeApresentacao } from '../RegrasDeApresentacao';
 
 
@@ -49,8 +52,7 @@ export class RStatusFaseComponent {
   // parâmetros do componente
   @Input() concorrente:       string = '0';
   @Input() dimensao:          string = '§§ DIMENSÃO §§';
-  @Input() dimensaoPrincipal: string = '§§ DIMENSÃO PRINCIPAL §§';
-  public   nomeConcorrente:   string = '§§ MUNICIPIO §§';
+  public   nomeConcorrente:   string = '§§ CONCORRENTE §§';
 
   // dados dos JSONs
   public rankings:             IRankings[];
@@ -79,8 +81,8 @@ export class RStatusFaseComponent {
       this.ngOnChanges();
     }, error => this.rankingsErrorMessage = < any > error);
 
-    // dados dos municípios
-    rankingsService.fetchDadosMunicipios().subscribe(response => {
+    // dados dos concorrentes
+    rankingsService.fetchDadosDosConcorrentes().subscribe(response => {
       this.dadosDosConcorrentes = response;
       this.ngOnChanges();
     }, error => this.dadosDosConcorrentesErrorMessage = < any > error);
@@ -99,27 +101,27 @@ export class RStatusFaseComponent {
     this.posicao = -1;
     this.nota    = -1;
     if (this.rankings != null) {
-      let rankingOrdenadoPorDimensao:      IRankings[] = this.rankings.sort( (e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2.geral) - (e1[this.dimensao]*e1[this.dimensao]+e1.geral));
+      let rankingOrdenadoPorDimensao:      IRankings[] = this.rankings.sort( (e1, e2) => (e2[this.dimensao]*e2[this.dimensao]+e2[DIMENSAO_PRINCIPAL]) - (e1[this.dimensao]*e1[this.dimensao]+e1[DIMENSAO_PRINCIPAL]));
 
-      // encontra 'elemento' baseado no índice (se 'município' for um número) ou no nome do município (se for uma string)
+      // encontra 'elemento' baseado no índice (se 'concorrente' for um número) ou no nome do concorrente (se for uma string)
       let elemento: IRankings;
       if (isNaN(Number(this.concorrente))) {
-        elemento = rankingOrdenadoPorDimensao.find(e => e.municipio == this.concorrente);
+        elemento = rankingOrdenadoPorDimensao.find(e => e[NOME_DO_CAMPO_DO_CONCORRENTE] == this.concorrente);
       } else {
         elemento = this.rankings[Number(this.concorrente)];
       }
       if (elemento) {
-        this.nomeConcorrente = elemento.municipio;
+        this.nomeConcorrente = elemento[NOME_DO_CAMPO_DO_CONCORRENTE];
         this.posicao = 1 + rankingOrdenadoPorDimensao.indexOf(elemento);
         this.nota    = elemento[this.dimensao];
         if (this.dadosDosConcorrentes) {
-          this.dadosDoConcorrente = this.dadosDosConcorrentes.find(e => e.municipio == this.nomeConcorrente);
+          this.dadosDoConcorrente = this.dadosDosConcorrentes.find(e => e[NOME_DO_CAMPO_DO_CONCORRENTE] == this.nomeConcorrente);
         }
 
         // computa dados da dimensão principal
-        let rankingOrdenadoPorDimensaoPrincipal: IRankings[] = this.rankings.sort( (e1, e2) => e2[this.dimensaoPrincipal] - e1[this.dimensaoPrincipal]);
+        let rankingOrdenadoPorDimensaoPrincipal: IRankings[] = this.rankings.sort( (e1, e2) => e2[DIMENSAO_PRINCIPAL] - e1[DIMENSAO_PRINCIPAL]);
         this.posicaoPrincipal = 1 + rankingOrdenadoPorDimensaoPrincipal.indexOf(elemento);
-        this.notaPrincipal    = elemento[this.dimensaoPrincipal];
+        this.notaPrincipal    = elemento[DIMENSAO_PRINCIPAL];
 
       }
     }

@@ -45,7 +45,7 @@ export class RankingsService {
                     }).catch((error:any) => Observable.throw(error.json().error || 'Erro no servidor ao resgatar rankings'));
   }
 
-  public fetchDadosMunicipios(): Observable < IDadosConcorrente[] > {
+  public fetchDadosDosConcorrentes(): Observable < IDadosConcorrente[] > {
     return this.http.get(this.dadosMunicipiosJsonFileURL)
       .map((response: Response) => {
         return < IDadosConcorrente[] > response.json();

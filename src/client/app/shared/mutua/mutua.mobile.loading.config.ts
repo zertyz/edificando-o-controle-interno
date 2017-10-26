@@ -35,9 +35,7 @@ export const MutuaExportedRoutes: any[] = [...MPEdificandoOControleInternoHomeRo
 // modules
 //////////
 
-// MEdificandoOControleInternoModule
-import { MEdificandoOControleInternoModule } from '../modules/m-edificando-o-controle-interno/m-edificando-o-controle-interno.module';
 
-export const MutuaExportedModules: any[] = [MEdificandoOControleInternoModule.forRoot()];
+export const MutuaExportedModules: any[] = [];
 
 export const MutuaAppComponent: any = AppComponent;

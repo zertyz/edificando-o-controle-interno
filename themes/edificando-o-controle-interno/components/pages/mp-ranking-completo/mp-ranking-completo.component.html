@@ -7,7 +7,7 @@
       <table>
         <tr>
           <td><a [routerLink]="['/']">
-            <img src="assets/img/Logo Edificando o Controle Interno.png" height="150px">
+            <img src="./assets/img/Logo Edificando o Controle Interno.png" height="150px">
           </a>
           </td>
           <td style="padding-left: 10%;"><span class="title">Ranking </span> <br/>
@@ -24,15 +24,15 @@
       </table>
 
       <!-- Outros Rankings -->
-      <e-ranking-geral dimensao="{{dimensao}}"> </e-ranking-geral>
+      <r-classificacao dimensao="{{dimensao}}"> </r-classificacao>
     </div>
 
     <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12">
-      <e-status-edificacao municipio="{{municipio}}" dimensao="{{dimensao}}"></e-status-edificacao>
+      <r-status-fase concorrente="{{municipio}}" dimensao="{{dimensao}}"></r-status-fase>
     </div>
 
     <div class="col-xl-5 col-lg-5 col-md-8 col-xs-12">
-    <e-dimensoes municipio="{{municipio}}" dimensao="{{dimensao}}" ordenacao="titulo"></e-dimensoes>
+    <r-dimensoes concorrente="{{municipio}}" dimensao="{{dimensao}}" ordenacao="titulo"></r-dimensoes>
     </div>
   </div>
 

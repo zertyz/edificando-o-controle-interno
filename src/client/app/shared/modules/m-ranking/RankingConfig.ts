@@ -17,9 +17,11 @@ import { IDimension } from 'model/IDimension';
  *  serão carregados através do JSON especificado por 'CUSTOM_RANKING_DATA_URL'.
  *  Os dados serão convertidos para as estruturas de dados definidas neste módulo nas funções seguintes. */
 export interface ICustomRankingData {
-  municipio: string;
-  // dimensões
+  // concorrente
+  municipio:                string;
+  // dimensão principal
   geral:                    number;
+  // dimensões
   auditoria:                number;
   ouvidoria:                number;
   correicao:                number;
@@ -37,6 +39,11 @@ export interface ICustomRankingData {
   iniciativaLouvavel:       number;
   evolucao:                 number;
 }
+
+/** Valores default para um registro de 'ICustomRankingData' não encontrado ou não preenchido, de modo a permitir exibição sem quebrar a interface */
+export const DEFAULT_CUSTOM_RANKING_DATA: ICustomRankingData = {municipio: 'desconhecido', geral: -1, auditoria: -1, ouvidoria: -1, correicao: -1, controladoria: -1,
+                                                                estrutura: -1, evolucao: -1, planejamento: -1, transparencia: -1, auxilioAoControleExterno: -1, orcamento: -1,
+                                                                regulamentacao: -1, autonomia: -1, concretizacao: -1, abrangencia: -1, resolutividade: -1, iniciativaLouvavel: -1};
 
 /** Fonte dos dados no formato JSON, em modelo natural, tal como especificado por 'ICustomRankingData' */
 export const CUSTOM_RANKING_DATA_URL: string = 'assets/dados/m-ranking/ranking_exemplo.json';
